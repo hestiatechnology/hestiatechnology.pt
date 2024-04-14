@@ -1,0 +1,8 @@
+@use '@angular/material-experimental' as matx;
+$theme: matx.define-theme((
+  color: (
+    theme-type: light,
+    primary: matx.$m3-azure-palette,
+    tertiary: matx.$m3-blue-palette,
+  )
+));
