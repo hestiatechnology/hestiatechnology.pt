@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatToolbarModule } from '@angular/material/toolbar';
-import {MatCardModule} from '@angular/material/card';
+import { MatCardModule } from '@angular/material/card';
 
 @Component({
   selector: 'app-homepage',
@@ -13,9 +13,9 @@ import {MatCardModule} from '@angular/material/card';
 })
 
 export class HomepageComponent {
-  showAlert = true;
-
-  hideAlert() {
-    this.showAlert = false;
-  }
+  //showAlert = true;
+  //
+  //hideAlert() {
+  //  this.showAlert = false;
+  //}
 }
