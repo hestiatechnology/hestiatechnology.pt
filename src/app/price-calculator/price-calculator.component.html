@@ -1,0 +1,10 @@
+<form>
+  <mat-form-field>
+    <mat-label>Tipo de empresa</mat-label>
+    <mat-select>
+      @for (company of companyTypes; track company) {
+      <mat-option [value]="company.value">{{company.name}}</mat-option>
+      }
+    </mat-select>
+  </mat-form-field>
+</form>
