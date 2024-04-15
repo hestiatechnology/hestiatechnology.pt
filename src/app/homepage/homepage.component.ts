@@ -13,5 +13,9 @@ import {MatCardModule} from '@angular/material/card';
 })
 
 export class HomepageComponent {
+  showAlert = true;
 
+  hideAlert() {
+    this.showAlert = false;
+  }
 }
