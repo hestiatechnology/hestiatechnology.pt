@@ -5,10 +5,10 @@
 @use 'theme' as theme;
 
 @include mat.core();
+// Required for color=, increases the budget by about 100kb+-, disable when full material 3 theming is supported
+@include matx.color-variants-back-compat(theme.$theme);
 
 html {
   @include mat.all-component-themes(theme.$theme);
-  // Required for color=, increases the budget by about 100kb+-, disable when full material 3 theming is supported
-  @include matx.color-variants-back-compat(theme.$theme);
 }
 
