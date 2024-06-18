@@ -4,7 +4,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatCardModule } from '@angular/material/card';
 import { createWidget } from '@typeform/embed'
-import '@typeform/embed/build/css/widget.css'
+
 @Component({
   selector: 'app-homepage',
   standalone: true,
@@ -21,7 +21,6 @@ export class HomepageComponent implements OnInit {
   //}
 
   ngOnInit(): void {
-
     const contactForm = document.getElementById('contactform')
     console.log(contactForm)
     if (!contactForm) return
