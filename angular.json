@@ -17,6 +17,9 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
+            "allowedCommonJsDependencies": [
+              "@typeform/embed"
+            ],
             "outputPath": "dist/hestiatechnology.pt",
             "index": "src/index.html",
             "browser": "src/main.ts",
