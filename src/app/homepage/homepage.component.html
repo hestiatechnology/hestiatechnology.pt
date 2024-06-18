@@ -1,32 +1,16 @@
-<!-- <mat-toolbar class="gap-2">
-
-  <a href="#"><img class="h-12" src="assets/logo.svg" alt="Hestia Technology"/></a>
-
-  <!--<span class="flex-auto"></span>--><!--
-  <a href="#solutions" mat-button>Soluções</a>
-  <button mat-button>Preços</button>
-</mat-toolbar>
-
-@if (showAlert) {
-<div class="flex items-center p-4 justify-between bg-yellow-400">
-  <span>Website em construção</span>
-  <button mat-button (click)="hideAlert()">Fechar</button>
-</div>
-}-->
-
-
 <nav class="flex items-center justify-between p-4">
-  <div class="flex items-center gap-4">
+  <div class="flex gap-4">
     <a href="#"><img class="h-16" src="assets/logo.svg" alt="Hestia Technology" /></a>
-    <a mat-button href="#solutions">Soluções</a>
-    <a mat-button href="#pricing">Preços</a>
+    <div class="hidden sm:flex sm:items-center sm:gap-4">
+      <a mat-button href="#solutions">Soluções</a>
+      <a mat-button href="#pricing" disabled>Preços</a>
+    </div>
   </div>
 
-  <div class="flex items-center gap-4">
 
+  <div class="hidden sm:flex sm:items-center sm:gap-4">
     <a mat-button href="#contact">Contacto</a>
     <a mat-flat-button color="primary" href="#login" disabled>Login</a>
-
   </div>
 
 </nav>
@@ -34,8 +18,8 @@
 
 <h1 class="mx-auto mt-48 max-w-3xl text-7xl text-center font-bold">Gestão
   <span class="relative primary">
-    <svg aria-hidden="true" viewBox="0 0 418 42" class="absolute left-0 top-2/3 h-[0.58em] w-full fill-blue-300/70"
-      preserveAspectRatio="none">
+    <svg aria-hidden="true" viewBox="0 0 418 42"
+      class="hidden sm:block absolute left-0 top-2/3 h-[0.58em] w-full fill-blue-300/70" preserveAspectRatio="none">
       <path
         d="M203.371.916c-26.013-2.078-76.686 1.963-124.73 9.946L67.3 12.749C35.421 18.062 18.2 21.766 6.004 25.934 1.244 27.561.828 27.778.874 28.61c.07 1.214.828 1.121 9.595-1.176 9.072-2.377 17.15-3.92 39.246-7.496C123.565 7.986 157.869 4.492 195.942 5.046c7.461.108 19.25 1.696 19.17 2.582-.107 1.183-7.874 4.31-25.75 10.366-21.992 7.45-35.43 12.534-36.701 13.884-2.173 2.308-.202 4.407 4.442 4.734 2.654.187 3.263.157 15.593-.78 35.401-2.686 57.944-3.488 88.365-3.143 46.327.526 75.721 2.23 130.788 7.584 19.787 1.924 20.814 1.98 24.557 1.332l.066-.011c1.201-.203 1.53-1.825.399-2.335-2.911-1.31-4.893-1.604-22.048-3.261-57.509-5.556-87.871-7.36-132.059-7.842-23.239-.254-33.617-.116-50.627.674-11.629.54-42.371 2.494-46.696 2.967-2.359.259 8.133-3.625 26.504-9.81 23.239-7.825 27.934-10.149 28.304-14.005.417-4.348-3.529-6-16.878-7.066Z">
       </path>
@@ -49,33 +33,31 @@
   empresas.
 </h2>
 <div class="flex justify-center gap-4 mt-8">
-  <a mat-flat-button color="primary">Saber mais</a>
-  <a mat-raised-button color="primary">Funcionalidades</a>
+  <a mat-flat-button color="primary" href="#solutions">Saber mais</a>
+  <a mat-raised-button color="primary" disabled="true">Mais em breve</a>
 </div>
 
 <div class="mt-44">
   <h5 class="text-lg text-center font-medium">Parceiros</h5>
   <div class="mx-auto flex items-center justify-center mt-8 gap-x-8">
-    <img class="h-32" src="assets/LogoIPCA.png" alt="Logotipo do IPCA">
-    <img class="w-32" src="assets/LogoEIA_bw.png" alt="Logotipo da European Innovation Academy">
+    <img class="h-28" src="assets/LogoIPCA.png" alt="Logotipo do IPCA">
+    <img class="w-28" src="assets/LogoEIA_bw.png" alt="Logotipo da European Innovation Academy">
   </div>
 </div>
 
 
 
-<section #solutions class="primary-bg mt-8 overflow-hidden">
-  <h1 class="mt-12 mb-6 text-center text-5xl text-white">A nossas soluções</h1>
-  <div class=" flex flex-row justify-around mb-8">
+<section id="solutions" class="primary-bg mt-8 overflow-hidden">
+  <h1 class="mt-12 mb-6 text-center text-4xl text-white">A nossas soluções</h1>
+  <div class=" flex flex-col md:flex-row items-center justify-around mb-8 gap-4">
     <mat-card class="max-w-96">
       <mat-card-header>
         <mat-card-title>ERP</mat-card-title>
       </mat-card-header>
-      <!-- <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu"> -->
       <mat-card-content>
         <p>
-          The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
-          A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
-          bred for hunting.
+          Simplifique a gestão da sua empresa com um único sistema. Controle finanças, vendas e stock para aumentar a
+          produtividade e tomar decisões fundamentadas em dados.
         </p>
       </mat-card-content>
       <mat-card-actions align="end">
@@ -86,12 +68,10 @@
       <mat-card-header>
         <mat-card-title>Industria Têxtil</mat-card-title>
       </mat-card-header>
-      <!-- <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu"> -->
       <mat-card-content>
         <p>
-          The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
-          A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
-          bred for hunting.
+          Optimização da produção, redução de custos e melhoria da qualidade. Software especializado para o sector
+          têxtil, desde a matéria-prima até à expedição.
         </p>
       </mat-card-content>
       <mat-card-actions align="end">
@@ -102,12 +82,10 @@
       <mat-card-header>
         <mat-card-title>eCommerce</mat-card-title>
       </mat-card-header>
-      <!-- <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu"> -->
       <mat-card-content>
         <p>
-          The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
-          A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
-          bred for hunting.
+          Venda online de forma simples. Gestão de stock, processamento rápido de encomendas e integração com
+          marketplaces e sistemas de pagamento.
         </p>
       </mat-card-content>
       <mat-card-actions align="end">
@@ -117,4 +95,16 @@
   </div>
 </section>
 
-<div id="contactform" class="h-1/2"></div>
+<div id="contact" class="h-full"></div>
+
+<footer class="primary-bg mt-8">
+  <div class="flex flex-col sm:flex-row items-center justify-center gap-8 p-8">
+    <img class="h-16" src="assets/LogoWhite.svg" alt="Hestia Technology" />
+    <!--Dados da empresa-->
+    <div class="flex flex-col">
+      <!-- <h3 class="text-white mt-0 mb-0">Morada</h3> -->
+      <!-- <p class="text-white mt-0 mb-0">Rua do Ouro, 123</p> -->
+      <p class="text-white mt-0 mb-0">Barcelos, Portugal</p>
+    </div>
+  </div>
+</footer>
