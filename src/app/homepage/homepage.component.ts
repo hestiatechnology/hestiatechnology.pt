@@ -24,6 +24,6 @@ export class HomepageComponent implements OnInit {
     const contactForm = document.getElementById('contact')
     console.log(contactForm)
     if (!contactForm) return
-    createWidget('ytY4mJiA', { container: contactForm })
+    createWidget('ytY4mJiA', { container: contactForm, lazy: true })
   }
 }
