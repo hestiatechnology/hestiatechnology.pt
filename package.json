@@ -19,7 +19,7 @@
     "@angular/core": "^18.0.3",
     "@angular/forms": "^18.0.3",
     "@angular/material": "^18.0.3",
-    "@angular/platform-browser": "^18.0.3",
+    "@angular/platform-browser": "^18.2.4",
     "@angular/platform-browser-dynamic": "^18.0.3",
     "@angular/router": "^18.0.3",
     "@typeform/embed": "^4.10.0",
