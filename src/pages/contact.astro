@@ -1,0 +1,50 @@
+---
+import { Input } from "@/components/ui/input";
+import Layout from "../layouts/Layout.astro";
+import { Label } from "@/components/ui/label";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Textarea } from "@/components/ui/textarea";
+import { Button } from "@/components/ui/button";
+import { actions } from "astro:actions";
+
+export const prerender = false;
+
+if (Astro.request.method === "POST") {
+  try {
+    const formData = await Astro.request.formData();
+    const { data, error } = await Astro.callAction(actions.email, formData);
+    return Astro.redirect("/contact?submitted=true");
+  } catch (error) {
+    if (error instanceof Error) {
+      console.error(error.message);
+    }
+  }
+}
+---
+
+<Layout>
+  <section class="max-w-3xl mx-auto py-15 px-3 md:px-0">
+    <Card>
+      <CardHeader>
+        <CardTitle className="text-3xl font-bold">Contacto</CardTitle>
+      </CardHeader>
+      <CardContent>
+        <form method="POST" class="flex flex-col gap-y-5">
+          <div>
+            <Label htmlFor="empresa">Empresa</Label>
+            <Input id="empresa" type="text" name="company" />
+          </div>
+          <div>
+            <Label htmlFor="email">Email</Label>
+            <Input id="email" type="email" name="email" />
+          </div>
+          <div>
+            <Label htmlFor="message">Mensagem</Label>
+            <Textarea id="message" name="message" />
+          </div>
+          <Button>Submit</Button>
+        </form>
+      </CardContent>
+    </Card>
+  </section>
+</Layout>
