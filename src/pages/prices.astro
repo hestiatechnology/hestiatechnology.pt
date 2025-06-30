@@ -1,22 +1,6 @@
 ---
 import { Badge } from "@/components/ui/badge";
 import Layout from "../layouts/Layout.astro";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
-import {
-  DollarSign,
-  FileText,
-  Package,
-  Shield,
-  TrendingUp,
-  Users,
-} from "lucide-react";
-import PricingSection from "@/components/PricingSection";
 import { StepperWithDescription } from "@/components/PricingStepper";
 ---
 
@@ -26,11 +10,11 @@ import { StepperWithDescription } from "@/components/PricingStepper";
       <div class="text-center mb-12">
         <Badge className="mb-4 bg-blue-100 text-blue-800">Recursos</Badge>
         <h2
-          class="text-3xl font-bold tracking-tighter sm:text-5xl text-gray-900 mb-4"
+          class="text-3xl font-bold tracking-tighter sm:text-5xl text-foreground mb-4"
         >
           Módulos
         </h2>
-        <p class="max-w-[900px] mx-auto text-gray-600 md:text-xl">
+        <p class="max-w-[900px] mx-auto text-muted-foreground md:text-xl">
           Nosso ERP oferece módulos, permitindo nos adaptar às suas necessidades
         </p>
       </div>

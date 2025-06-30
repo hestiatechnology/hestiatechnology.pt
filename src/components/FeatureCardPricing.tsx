@@ -57,7 +57,7 @@ export default function FeatureCardSelect({
       className={cn(
         "border shadow-lg hover:shadow-xl transition-shadow",
         isSelected ? "border-2 border-primary border-solid" : "border-border",
-        data.disabled && "bg-secondary"
+        data.disabled && "bg-muted"
       )}
       onClick={!data.disabled ? () => onSelect?.(data) : undefined}
     >

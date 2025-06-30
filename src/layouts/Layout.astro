@@ -2,6 +2,7 @@
 import "@/styles/global.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { AnnouncementBar } from "@/components/annoucement-bar";
 ---
 
 <html lang="en">
@@ -10,14 +11,27 @@ import Footer from "@/components/Footer";
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
+    <link
+      href="https://calendar.google.com/calendar/scheduling-button-script.css"
+      rel="stylesheet"
+    />
+    <script
+      src="https://calendar.google.com/calendar/scheduling-button-script.js"
+      async></script>
     <title>Hestia Technology</title>
   </head>
-  <body class="min-h-screen flex flex-col">
-    <Header client:load />
+  <body class="min-h-screen flex flex-col antialiased">
+    <AnnouncementBar
+      message="🎉 We are looking for investors!"
+      type="promotion"
+      actionText="Find More"
+      actionHref="/investments"
+    />
+    <Header client:only="react" />
     <main class="flex-1">
       <slot />
     </main>
-    <Footer />
+    <Footer client:only="react" />
   </body>
 </html>
 

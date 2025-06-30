@@ -1,20 +1,33 @@
 import Logo from "@/assets/HestiaTechnologyWhite.svg";
-import { Building2, MapPin, Mail, Phone } from "lucide-react";
+import LogoNormal from "@/assets/HestiaTechnology.svg";
+import { MapPin, Mail, Phone } from "lucide-react";
+import { useTheme } from "@/hooks/useTheme";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
+  const { isDarkMode } = useTheme();
 
   return (
-    <footer className="bg-primary text-white">
+    <footer className="bg-primary text-primary-foreground">
       <div className="container mx-auto px-4 md:px-6">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 py-12">
           <div className="flex flex-col gap-4">
-            <img
-              src={Logo.src}
-              alt="Hestia Logo"
-              className="h-10 w-auto mr-auto"
-              loading="lazy"
-            />
+            {isDarkMode ? (
+              <img
+                src={LogoNormal.src}
+                alt="Hestia Logo"
+                className="h-10 w-auto mr-auto"
+                loading="lazy"
+              />
+            ) : (
+              <img
+                src={Logo.src}
+                alt="Hestia Logo"
+                className="h-10 w-auto mr-auto"
+                loading="lazy"
+              />
+            )}
+
             <div className="flex flex-col gap-2">
               <p className="font-semibold text-lg">Hestia Technology, Lda</p>
               <p>NIF: 518567680</p>
