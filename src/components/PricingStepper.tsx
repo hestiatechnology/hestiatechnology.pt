@@ -27,7 +27,7 @@ const { Stepper } = defineStepper(
   }
 );
 
-export function StepperWithDescription() {
+export function PricingStepper() {
   const selectedModules = useStore($selectedModules);
 
   return (

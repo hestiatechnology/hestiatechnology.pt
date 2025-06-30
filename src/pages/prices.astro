@@ -1,7 +1,7 @@
 ---
 import { Badge } from "@/components/ui/badge";
 import Layout from "../layouts/Layout.astro";
-import { StepperWithDescription } from "@/components/PricingStepper";
+import { PricingStepper } from "@/components/PricingStepper";
 ---
 
 <Layout>
@@ -19,7 +19,7 @@ import { StepperWithDescription } from "@/components/PricingStepper";
         </p>
       </div>
 
-      <StepperWithDescription client:only="react" />
+      <PricingStepper client:only="react" />
     </div>
   </section>
 </Layout>
