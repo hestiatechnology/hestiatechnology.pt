@@ -14,7 +14,6 @@ import {
 } from "@/components/ui/popover";
 import { ModeToggle } from "./ModeToggle";
 import { useTheme } from "@/hooks/useTheme";
-import { AnnouncementBar } from "./annoucement-bar";
 
 const navigationLinks = [
   { href: "/", label: "Home", active: true },
