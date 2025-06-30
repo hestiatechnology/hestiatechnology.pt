@@ -1,4 +1,5 @@
 import Logo from "@/assets/HestiaTechnology.svg";
+import LogoWhite from "@/assets/HestiaTechnologyWhite.svg";
 import { Button } from "@/components/ui/button";
 import {
   NavigationMenu,
@@ -11,6 +12,8 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover";
+import { ModeToggle } from "./ModeToggle";
+import { useTheme } from "@/hooks/useTheme";
 
 const navigationLinks = [
   { href: "/", label: "Home", active: true },
@@ -20,6 +23,7 @@ const navigationLinks = [
 ];
 
 export default function Header() {
+  const { isDarkMode } = useTheme();
   return (
     <header className="border-t bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 sticky bottom-0 z-50 px-4 md:px-6">
       <div className="flex h-16 items-center justify-between gap-4">
@@ -79,7 +83,11 @@ export default function Header() {
 
           <div className="flex items-center gap-6">
             <a href="/" className="text-primary hover:text-primary/90">
-              <img src={Logo.src} alt="Hestia Logo" className="h-10 w-auto" />
+              <img
+                src={isDarkMode ? LogoWhite.src : Logo.src}
+                alt="Hestia Logo"
+                className="h-10 w-auto"
+              />
             </a>
 
             <NavigationMenu className="max-md:hidden">
@@ -107,6 +115,7 @@ export default function Header() {
           <Button asChild size="sm" className="text-sm">
             <a href="/contact">Sign In</a>
           </Button>
+          <ModeToggle />
         </div>
       </div>
     </header>

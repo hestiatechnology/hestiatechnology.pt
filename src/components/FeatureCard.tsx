@@ -12,15 +12,18 @@ export default function FeatureCard({ data }: FeatureCardProps) {
     <Card
       className={cn(
         "border shadow-lg hover:shadow-xl transition-shadow",
-        data.disabled && "bg-secondary"
+        data.disabled && "bg-muted"
       )}
     >
       <CardHeader>
         <div className="flex items-center justify-between">
           <div
             className={`w-12 h-12 ${data.bgColor} rounded-lg flex items-center justify-center mb-4`}
+            // TODO: Consider using bg-primary or bg-muted if data.bgColor is not a CSS variable
           >
-            <data.icon className={`h-6 w-6 ${data.iconColor}`} />
+            <data.icon
+              className={`h-6 w-6 ${data.iconColor}`} /* TODO: Consider using text-primary or text-foreground if data.iconColor is not a CSS variable */
+            />
           </div>
 
           {data.disabled && <Badge>Em breve</Badge>}

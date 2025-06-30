@@ -5,7 +5,6 @@ import { Badge } from "@/components/ui/badge";
 
 import FeatureCard from "@/components/FeatureCard";
 import { Modules } from "@/data/features";
-import { Separator } from "@/components/ui/separator";
 import { Image } from "astro:assets";
 import IPCALogo from "@/assets/ipca.png";
 import STARTIpca from "@/assets/start-ipca.png";
@@ -16,18 +15,16 @@ import STARTIpca from "@/assets/start-ipca.png";
     <section class="py-12 md:py-24 lg:py-32">
       <div class="container mx-auto px-4 md:px-6">
         <div class="flex flex-col gap-y-6 justify-center items-center">
-          <Badge
-            className="w-fit h-fit bg-blue-100 text-[#003da5] hover:bg-blue-200"
-          >
+          <Badge className="w-fit h-fit text-primary bg-primary-foreground">
             ✨ Em estado de Beta
           </Badge>
           <h1
-            class="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none text-gray-900 text-center"
+            class="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none text-foreground text-center"
           >
-            Gestão <span class="text-[#003da5]">feita simples</span> para empresas.
+            Gestão <span class="text-primary">feita simples</span> para empresas.
           </h1>
 
-          <p class="max-w-[600px] text-gray-600 md:text-xl text-center">
+          <p class="max-w-[600px] text-muted-foreground md:text-xl text-center">
             Cresça com o seu negócio. O nosso software de gestão adapta-se às
             suas necessidades, desde startups até grandes empresas.
           </p>
@@ -47,7 +44,7 @@ import STARTIpca from "@/assets/start-ipca.png";
     <section id="patners">
       <div class="container mx-auto">
         <h2
-          class="text-3xl font-bold tracking-tighter sm:text-5xl text-gray-900 mb-4 text-center"
+          class="text-3xl font-bold tracking-tighter sm:text-5xl text-foreground mb-4 text-center"
         >
           Parceiros
         </h2>
@@ -65,11 +62,11 @@ import STARTIpca from "@/assets/start-ipca.png";
         <div class="text-center mb-12">
           <Badge className="mb-4 bg-blue-100 text-blue-800">Recursos</Badge>
           <h2
-            class="text-3xl font-bold tracking-tighter sm:text-5xl text-gray-900 mb-4"
+            class="text-3xl font-bold tracking-tighter sm:text-5xl text-foreground mb-4"
           >
             Tudo que sua empresa precisa em um só lugar
           </h2>
-          <p class="max-w-[900px] mx-auto text-gray-600 md:text-xl">
+          <p class="max-w-[900px] mx-auto text-muted-foreground md:text-xl">
             Nosso ERP oferece módulos integrados para gerenciar todos os
             aspectos do seu negócio
           </p>

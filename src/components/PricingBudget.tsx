@@ -9,12 +9,12 @@ import {
 import { Badge } from "./ui/badge";
 import { DollarSign, Info, Plus, Users } from "lucide-react";
 import { Separator } from "./ui/separator";
+import { useStore } from "@nanostores/react";
+import { $selectedModules } from "@/states/modules";
 
-export default function PricingBudget({
-  selectedItems,
-}: {
-  selectedItems: ModuleType[];
-}) {
+export default function PricingBudget() {
+  const selectedModules = useStore($selectedModules);
+
   const calculateModuleTotal = (module: ModuleType) => {
     let total = module.price || 0;
     if (module.extraPrice) {
@@ -23,7 +23,7 @@ export default function PricingBudget({
     return total;
   };
 
-  const grandTotal = selectedItems.reduce(
+  const grandTotal = selectedModules.reduce(
     (sum, module) => sum + calculateModuleTotal(module),
     0
   );
@@ -32,13 +32,13 @@ export default function PricingBudget({
     <div className="max-w-4xl mx-auto p-6 space-y-6">
       {/* Header */}
       <div className="text-center space-y-2">
-        <h1 className="text-3xl font-bold text-gray-900">Orçamento</h1>
-        <p className="text-gray-600">
+        <h1 className="text-3xl font-bold text-foreground">Orçamento</h1>
+        <p className="text-muted-foreground">
           Resumo detalhado dos módulos selecionados
         </p>
       </div>
       <div className="space-y-4">
-        {selectedItems.map((module, index) => {
+        {selectedModules.map((module, index) => {
           const moduleTotal = calculateModuleTotal(module);
           const IconComponent = module.icon;
 
@@ -54,7 +54,7 @@ export default function PricingBudget({
                     </div>
                     <div>
                       <CardTitle className="text-lg">{module.title}</CardTitle>
-                      <p className="text-sm text-gray-600 mt-1">
+                      <p className="text-sm text-muted-foreground mt-1">
                         {module.description}
                       </p>
                     </div>
@@ -69,12 +69,12 @@ export default function PricingBudget({
               </CardHeader>
 
               <CardContent className="pt-0">
-                <div className="bg-gray-50 rounded-lg p-4 space-y-3">
+                <div className="bg-muted rounded-lg p-4 space-y-3">
                   {module.price && (
                     <div className="flex items-center justify-between">
                       <div className="flex items-center space-x-2">
-                        <DollarSign className="w-4 h-4 text-gray-500" />
-                        <span className="text-sm text-gray-700">
+                        <DollarSign className="w-4 h-4 text-muted-foreground" />
+                        <span className="text-sm text-foreground">
                           Preço base
                         </span>
                       </div>
@@ -88,8 +88,8 @@ export default function PricingBudget({
                   {module.includedUsers && (
                     <div className="flex items-center justify-between">
                       <div className="flex items-center space-x-2">
-                        <Users className="w-4 h-4 text-gray-500" />
-                        <span className="text-sm text-gray-700">
+                        <Users className="w-4 h-4 text-muted-foreground" />
+                        <span className="text-sm text-foreground">
                           Utilizadores incluídos
                         </span>
                       </div>
@@ -103,8 +103,8 @@ export default function PricingBudget({
                   {module.extraPrice && (
                     <div className="flex items-center justify-between">
                       <div className="flex items-center space-x-2">
-                        <Plus className="w-4 h-4 text-gray-500" />
-                        <span className="text-sm text-gray-700">
+                        <Plus className="w-4 h-4 text-muted-foreground" />
+                        <span className="text-sm text-foreground">
                           {module.extraUsers
                             ? `Utilizadores extra (${module.extraUsers} utilizadores)`
                             : "Extras"}
@@ -118,26 +118,26 @@ export default function PricingBudget({
 
                   {/* Module Information */}
                   {module.information && (
-                    <div className="mt-4 pt-3 border-t border-gray-200">
+                    <div className="mt-4 pt-3 border-t border-border">
                       <div className="flex items-start space-x-2">
                         <Info className="w-4 h-4 text-blue-500 mt-0.5" />
                         <div className="flex-1">
-                          <h4 className="text-sm font-medium text-gray-900 mb-1">
+                          <h4 className="text-sm font-medium text-foreground mb-1">
                             {module.information.title}
                           </h4>
-                          <ul className="text-xs text-gray-600 space-y-1">
+                          <ul className="text-xs text-muted-foreground space-y-1">
                             {module.information.included.map((item, idx) => (
                               <li
                                 key={idx}
                                 className="flex items-center space-x-1"
                               >
-                                <span className="w-1 h-1 bg-gray-400 rounded-full"></span>
+                                <span className="w-1 h-1 bg-muted-foreground rounded-full"></span>
                                 <span>{item}</span>
                               </li>
                             ))}
                           </ul>
                           {module.information.comment && (
-                            <p className="text-xs text-gray-500 mt-2 italic">
+                            <p className="text-xs text-muted-foreground mt-2 italic">
                               {module.information.comment}
                             </p>
                           )}
@@ -153,24 +153,24 @@ export default function PricingBudget({
       </div>
 
       {/* Total Summary */}
-      <Card className="bg-gradient-to-r from-blue-50 to-indigo-50 border-blue-200">
+      <Card className="bg-card border-border">
         <CardContent className="p-6">
           <div className="flex items-center justify-between">
             <div>
-              <h3 className="text-xl font-bold text-gray-900">
+              <h3 className="text-xl font-bold text-foreground">
                 Total do Orçamento
               </h3>
-              <p className="text-sm text-gray-600 mt-1">
-                {selectedItems.length} módulo
-                {selectedItems.length !== 1 ? "s" : ""} selecionado
-                {selectedItems.length !== 1 ? "s" : ""}
+              <p className="text-sm text-muted-foreground mt-1">
+                {selectedModules.length} módulo
+                {selectedModules.length !== 1 ? "s" : ""} selecionado
+                {selectedModules.length !== 1 ? "s" : ""}
               </p>
             </div>
             <div className="text-right">
-              <div className="text-3xl font-bold text-blue-600">
+              <div className="text-3xl font-bold text-primary">
                 €{grandTotal.toFixed(2)}
               </div>
-              <p className="text-sm text-gray-600">por ano</p>
+              <p className="text-sm text-primary">por ano</p>
             </div>
           </div>
 
@@ -178,26 +178,26 @@ export default function PricingBudget({
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-center">
             <div>
-              <div className="text-2xl font-bold text-gray-900">
-                {selectedItems.length}
+              <div className="text-2xl font-bold text-foreground">
+                {selectedModules.length}
               </div>
-              <div className="text-sm text-gray-600">Módulos</div>
+              <div className="text-sm text-muted-foreground">Módulos</div>
             </div>
             <div>
-              <div className="text-2xl font-bold text-gray-900">
-                {selectedItems.reduce(
+              <div className="text-2xl font-bold text-foreground">
+                {selectedModules.reduce(
                   (sum, m) =>
                     sum + (m.includedUsers || 0) + (m.extraUsers || 0),
                   0
                 )}
               </div>
-              <div className="text-sm text-gray-600">Utilizadores</div>
+              <div className="text-sm text-muted-foreground">Utilizadores</div>
             </div>
             <div>
-              <div className="text-2xl font-bold text-green-600">
+              <div className="text-2xl font-bold text-primary">
                 €{grandTotal.toFixed(2)}
               </div>
-              <div className="text-sm text-gray-600">Anual</div>
+              <div className="text-sm text-primary">Anual</div>
             </div>
           </div>
         </CardContent>
