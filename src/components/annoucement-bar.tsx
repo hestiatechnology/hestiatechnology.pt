@@ -48,10 +48,10 @@ export function AnnouncementBar({
         className
       )}
     >
-      {/* Animated background pattern */}
+      {/* Animated background pattern 
       <div className="absolute inset-0 opacity-10">
         <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent animate-pulse" />
-      </div>
+      </div>*/}
 
       <div className="relative flex items-center justify-center px-4 py-3 sm:px-6">
         <div className="flex items-center space-x-3">

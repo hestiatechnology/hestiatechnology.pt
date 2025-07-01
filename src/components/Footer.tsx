@@ -103,19 +103,19 @@ export default function Footer() {
               <div className="flex items-center gap-2">
                 <Mail className="w-5 h-5" />
                 <a
-                  href="mailto:contact@hestia.pt"
+                  href="mailto:info@hestiatechnology.pt"
                   className="hover:text-primary-foreground/80 transition-colors"
                 >
-                  contact@hestia.pt
+                  info@hestiatechnology.pt
                 </a>
               </div>
               <div className="flex items-center gap-2">
                 <Phone className="w-5 h-5" />
                 <a
-                  href="tel:+351123456789"
+                  href="tel:+351928251008"
                   className="hover:text-primary-foreground/80 transition-colors"
                 >
-                  +351 123 456 789
+                  +351 928 251 008
                 </a>
               </div>
             </div>

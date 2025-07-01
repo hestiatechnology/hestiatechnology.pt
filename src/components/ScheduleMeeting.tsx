@@ -10,10 +10,10 @@ export default function ScheduleMeeting() {
       <Button
         variant="outline"
         size="lg"
-        className="px-8"
+        className="px-8 cursor-pointer"
         onClick={() => setShowIframe(true)}
       >
-        Agendar Reunião
+        Agendar uma reunião
       </Button>
       <Dialog open={showIframe} onOpenChange={setShowIframe}>
         <DialogContent className="!bg-white !text-black dark:!bg-white dark:!text-black">
