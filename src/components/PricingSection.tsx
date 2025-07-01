@@ -12,6 +12,8 @@ import {
 export default function PricingSection() {
   const selectedModules = useStore($selectedModules);
 
+  console.log(selectedModules);
+
   const handleSelection = (data: ModuleType) => {
     const isAlreadySelected = selectedModules.some(
       (item) => item.title === data.title

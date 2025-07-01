@@ -55,7 +55,7 @@ export default function FeatureCardSelect({
   return (
     <Card
       className={cn(
-        "border shadow-lg hover:shadow-xl transition-shadow",
+        "border shadow-lg hover:shadow-xl transition-shadow z-20",
         isSelected ? "border-2 border-primary border-solid" : "border-border",
         data.disabled && "bg-muted"
       )}

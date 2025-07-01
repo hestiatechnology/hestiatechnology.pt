@@ -53,7 +53,7 @@ export function PricingStepper() {
           </Stepper.Navigation>
           {methods.switch({
             "step-1": () => <PricingSection />,
-            "step-2": (step) => <PricingBudget />,
+            "step-2": () => <PricingBudget />,
             "step-3": () => (
               <div className="max-w-4xl mx-auto p-6 space-y-6">
                 <div className="text-center space-y-2">
@@ -64,10 +64,11 @@ export function PricingStepper() {
                     Deseja continuar com o pedido de orçamento personalizado?
                   </p>
                 </div>
-
-                <Button type="submit" asChild>
-                  <a href="/contact">Pedir orçamento</a>
-                </Button>
+                <div className="flex justify-center">
+                  <Button type="submit" asChild>
+                    <a href="/contact">Pedir orçamento</a>
+                  </Button>
+                </div>
               </div>
             ),
           })}
