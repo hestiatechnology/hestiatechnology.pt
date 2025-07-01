@@ -11,7 +11,7 @@ export default function FeatureCard({ data }: FeatureCardProps) {
   return (
     <Card
       className={cn(
-        "border shadow-lg hover:shadow-xl transition-shadow",
+        "border shadow-lg hover:shadow-xl transition-shadow z-50",
         data.disabled && "bg-muted"
       )}
     >

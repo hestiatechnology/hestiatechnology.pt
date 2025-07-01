@@ -43,7 +43,7 @@ export function AnnouncementBar({
   return (
     <div
       className={cn(
-        "border-b transition-all duration-300 ease-in-out",
+        "border-b transition-all duration-300 ease-in-out z-0",
         typeStyles[type],
         className
       )}
