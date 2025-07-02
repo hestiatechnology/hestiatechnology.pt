@@ -7,7 +7,7 @@ import { Button } from "./ui/button";
 
 import { actions } from "astro:actions";
 import type { FormEvent } from "react";
-import { Card, CardHeader, CardTitle } from "./ui/card";
+import { Card, CardDescription, CardHeader, CardTitle } from "./ui/card";
 
 export default function BudgetContact() {
   const selectedModules = useStore($selectedModules);
@@ -31,24 +31,30 @@ export default function BudgetContact() {
   return (
     <div className="max-w-4xl mx-auto p-6 space-y-6">
       <form onSubmit={handleSubmit} className="flex flex-col gap-y-5">
-        <div>
+        <div className="flex flex-col gap-y-2">
           <Label htmlFor="empresa">Empresa</Label>
           <Input id="empresa" type="text" name="company" />
         </div>
-        <div>
+        <div className="flex flex-col gap-y-2">
           <Label htmlFor="email">Email</Label>
           <Input id="email" type="email" name="email" />
         </div>
-        <div>
+        <div className="flex flex-col gap-y-2">
           <Label htmlFor="message">Mensagem</Label>
           <Textarea id="message" name="message" />
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           {selectedModules?.map((module, i) => (
             <Card key={i}>
-              <CardHeader className="flex justify-center items-center gap-x-3">
-                <module.icon className={`h-6 w-6 ${module.iconColor}`} />
-                <CardTitle>{module.title}</CardTitle>
+              <CardHeader>
+                <div className="flex justify-center items-center gap-x-3">
+                  <module.icon className={`h-6 w-6 ${module.iconColor}`} />
+                  <CardTitle>{module.title}</CardTitle>
+                </div>
+                <CardDescription>
+                  Utilizadores:{" "}
+                  {(module.includedUsers ?? 0) + (module.extraUsers ?? 0)}
+                </CardDescription>
               </CardHeader>
             </Card>
           ))}

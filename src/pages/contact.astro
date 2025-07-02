@@ -30,15 +30,15 @@ if (Astro.request.method === "POST") {
       </CardHeader>
       <CardContent>
         <form method="POST" class="flex flex-col gap-y-5">
-          <div>
+          <div class="flex flex-col gap-y-1">
             <Label htmlFor="empresa">Empresa</Label>
             <Input id="empresa" type="text" name="company" />
           </div>
-          <div>
+          <div class="flex flex-col gap-y-1">
             <Label htmlFor="email">Email</Label>
             <Input id="email" type="email" name="email" />
           </div>
-          <div>
+          <div class="flex flex-col gap-y-1">
             <Label htmlFor="message">Mensagem</Label>
             <Textarea id="message" name="message" />
           </div>
