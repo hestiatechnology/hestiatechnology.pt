@@ -7,25 +7,30 @@ import {
   Users,
   type LucideIcon,
 } from "lucide-react";
+import { z } from "zod";
 
-export interface ModuleType {
-  title: string;
-  description: string;
-  icon: LucideIcon;
-  bgColor: string;
-  iconColor: string;
-  price?: number;
-  includedUsers?: number;
-  pricePerUser?: number;
-  extraUsers?: number;
-  extraPrice?: number;
-  disabled?: boolean;
-  information?: {
-    title: string;
-    included: string[];
-    comment?: string;
-  };
-}
+export const moduleTypeSchema = z.object({
+  title: z.string(),
+  description: z.string(),
+  icon: z.any(),
+  bgColor: z.string(),
+  iconColor: z.string(),
+  price: z.number().optional(),
+  includedUsers: z.number().optional(),
+  pricePerUser: z.number().optional(),
+  extraUsers: z.number().optional(),
+  extraPrice: z.number().optional(),
+  disabled: z.boolean().optional(),
+  information: z
+    .object({
+      title: z.string(),
+      included: z.array(z.string()),
+      comment: z.string().optional(),
+    })
+    .optional(),
+});
+
+export type ModuleType = z.infer<typeof moduleTypeSchema>;
 
 export const Modules: ModuleType[] = [
   {

@@ -1,3 +1,4 @@
+import { moduleTypeSchema } from "@/data/features";
 import { ActionError, defineAction } from "astro:actions";
 import { z } from "astro:schema";
 import { Resend } from "resend";
@@ -11,6 +12,7 @@ export const server = {
       company: z.string(),
       email: z.string().email(),
       message: z.string(),
+      selectedItems: z.array(moduleTypeSchema).optional(),
     }),
     handler: async (formData) => {
       console.log(formData);

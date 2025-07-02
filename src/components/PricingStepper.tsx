@@ -8,6 +8,7 @@ import { defineStepper } from "@/components/stepper";
 import { Button } from "@/components/ui/button";
 import PricingSection from "./PricingSection";
 import PricingBudget from "./PricingBudget";
+import BudgetContact from "./BudgetContact";
 
 const { Stepper } = defineStepper(
   {
@@ -54,23 +55,7 @@ export function PricingStepper() {
           {methods.switch({
             "step-1": () => <PricingSection />,
             "step-2": () => <PricingBudget />,
-            "step-3": () => (
-              <div className="max-w-4xl mx-auto p-6 space-y-6">
-                <div className="text-center space-y-2">
-                  <h1 className="text-3xl font-bold text-foreground">
-                    Contacto
-                  </h1>
-                  <p className="text-muted-foreground">
-                    Deseja continuar com o pedido de orçamento personalizado?
-                  </p>
-                </div>
-                <div className="flex justify-center">
-                  <Button type="submit" asChild>
-                    <a href="/contact">Pedir orçamento</a>
-                  </Button>
-                </div>
-              </div>
-            ),
+            "step-3": () => <BudgetContact />,
           })}
           <Stepper.Controls>
             {!methods.isLast && (
