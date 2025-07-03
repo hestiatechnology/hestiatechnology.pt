@@ -18,7 +18,7 @@ interface ConfirmationEmailProps {
 const baseUrl = process.env.ASTRO_BASE_URL
   ? `
 https://
-${process.env.VERCEL_URL}
+${process.env.ASTRO_BASE_URL}
 `
   : "";
 export const ConfirmationEmail = ({ clientName }: ConfirmationEmailProps) => {

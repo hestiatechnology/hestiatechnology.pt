@@ -10,7 +10,6 @@ import {
   Tailwind,
   Text,
 } from "@react-email/components";
-import HESTIALogo from "@/assets/HestiaTechnology.svg";
 
 interface InternalNotificationEmailProps {
   company: string;
@@ -21,7 +20,7 @@ interface InternalNotificationEmailProps {
 const baseUrl = process.env.ASTRO_BASE_URL
   ? `
 https://
-${process.env.VERCEL_URL}
+${process.env.ASTRO_BASE_URL}
 `
   : "";
 
