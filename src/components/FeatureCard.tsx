@@ -22,7 +22,7 @@ export default function FeatureCard({ data }: FeatureCardProps) {
             // TODO: Consider using bg-primary or bg-muted if data.bgColor is not a CSS variable
           >
             <data.icon
-              className={`h-6 w-6 ${data.iconColor}`} /* TODO: Consider using text-primary or text-foreground if data.iconColor is not a CSS variable */
+              className={`h-6 w-6 ${data.iconColor}`} 
             />
           </div>
 

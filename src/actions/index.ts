@@ -1,3 +1,5 @@
+import ConfirmationEmail from "@/components/email/client-email-template";
+import InternalNotificationEmail from "@/components/email/company-email";
 import { moduleTypeSchema } from "@/data/features";
 import { ActionError, defineAction } from "astro:actions";
 import { z } from "astro:schema";
@@ -18,21 +20,32 @@ export const server = {
       console.log(formData);
 
       const { company, email, message } = formData;
-      const { data, error } = await resend.emails.send({
-        from: "Hestia <hestia@mail.hestiatechnology.pt>",
-        to: ["info@hestiatechnology.pt"],
-        subject: company,
-        html: "<strong>dfsfdsfds</strong>",
-      });
 
-      if (error) {
+      const [internalResult, clientResult] = await Promise.all([
+        resend.emails.send({
+          from: "Hestia <hestia@mail.hestiatechnology.pt>",
+          to: ["info@hestiatechnology.pt"],
+          subject: `Novo Pedido de Contacto: ${company}`,
+          react: InternalNotificationEmail({ company, email, message }),
+        }),
+        resend.emails.send({
+          from: "Hestia <hestia@mail.hestiatechnology.pt>",
+          to: [email],
+          subject: "Confirmação de Submissão",
+          react: ConfirmationEmail({ clientName: company }),
+        }),
+      ]);
+
+      const [internalEmail, clientEmail] = [internalResult, clientResult];
+
+      if (internalEmail.error || clientEmail.error) {
         throw new ActionError({
           code: "BAD_REQUEST",
-          message: error.message,
+          message: internalEmail.error?.message || clientEmail.error?.message,
         });
       }
 
-      return data;
+      return { internal: internalEmail.data, client: clientEmail.data };
     },
   }),
 };

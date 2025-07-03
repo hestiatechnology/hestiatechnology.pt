@@ -1,0 +1,287 @@
+---
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { Separator } from "@/components/ui/separator";
+import Layout from "@/layouts/Layout.astro";
+import IPCA from "@/assets/ipca_cor.png";
+import TeamSection from "@/components/TeamSection";
+---
+
+<Layout>
+  <!-- Hero Section -->
+  <section
+    class="py-12 md:py-24 lg:py-32 bg-gradient-to-br from-background to-muted"
+  >
+    <div class="container mx-auto px-4 md:px-6">
+      <div class="text-center mb-12">
+        <Badge variant="outline" className="mb-4"> 🏢 Sobre Nós </Badge>
+        <h1
+          class="text-3xl font-bold tracking-tighter sm:text-5xl text-foreground mb-4"
+        >
+          A Nossa História
+        </h1>
+        <p class="max-w-[900px] mx-auto text-muted-foreground md:text-xl">
+          Somos uma equipa apaixonada por inovação, dedicada a criar soluções
+          que transformam a forma como as pessoas trabalham e vivem.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Mission & Vision -->
+  <section class="py-12 md:py-24">
+    <div class="container mx-auto px-4 md:px-6">
+      <div class="grid gap-8 md:grid-cols-2 max-w-6xl mx-auto">
+        <Card className="hover:shadow-lg transition-shadow">
+          <CardHeader>
+            <div
+              class="w-16 h-16 bg-primary/10 rounded-lg flex items-center justify-center mb-4"
+            >
+              <span class="text-3xl">🎯</span>
+            </div>
+            <CardTitle className="text-2xl">A Nossa Missão</CardTitle>
+          </CardHeader>
+          <CardContent>
+            <CardDescription className="text-base leading-relaxed">
+              Democratizar o acesso à tecnologia avançada, criando ferramentas
+              intuitivas que capacitam indivíduos e empresas a alcançar o seu
+              máximo potencial. Acreditamos que a inovação deve ser acessível a
+              todos.
+            </CardDescription>
+          </CardContent>
+        </Card>
+
+        <Card className="hover:shadow-lg transition-shadow">
+          <CardHeader>
+            <div
+              class="w-16 h-16 bg-chart-2/10 rounded-lg flex items-center justify-center mb-4"
+            >
+              <span class="text-3xl">🔮</span>
+            </div>
+            <CardTitle className="text-2xl">A Nossa Visão</CardTitle>
+          </CardHeader>
+          <CardContent>
+            <CardDescription className="text-base leading-relaxed">
+              Ser reconhecidos como líderes globais em inovação tecnológica,
+              criando um futuro onde a tecnologia serve verdadeiramente a
+              humanidade, promovendo crescimento sustentável e inclusivo.
+            </CardDescription>
+          </CardContent>
+        </Card>
+      </div>
+    </div>
+  </section>
+
+  <!-- Company Story -->
+  <section class="py-12 md:py-24 bg-muted/30">
+    <div class="container mx-auto px-4 md:px-6">
+      <div class="max-w-4xl mx-auto">
+        <div class="text-center mb-12">
+          <h2
+            class="text-2xl font-bold tracking-tighter sm:text-4xl text-foreground mb-4"
+          >
+            A Nossa Jornada
+          </h2>
+          <p class="text-muted-foreground">
+            Desde os primeiros dias até hoje, a nossa história é de perseverança
+            e inovação
+          </p>
+        </div>
+
+        <div class="space-y-8">
+          <Card>
+            <CardContent className="p-6">
+              <div class="flex items-start gap-4">
+                <Badge variant="secondary" className="mt-1">2023</Badge>
+                <div>
+                  <h3 class="font-semibold text-lg mb-2">O Início</h3>
+                  <p class="text-muted-foreground">
+                    Fundada por uma equipa de visionários com experiência em
+                    tecnologia e negócios, a empresa nasceu da necessidade de
+                    resolver problemas reais do mercado com soluções inovadoras.
+                  </p>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent className="p-6">
+              <div class="flex items-start gap-4">
+                <Badge variant="secondary" className="mt-1">2024</Badge>
+                <div>
+                  <h3 class="font-semibold text-lg mb-2">Primeiros Marcos</h3>
+                  <p class="text-muted-foreground">
+                    Desenvolvimento do MVP, validação do produto no mercado e
+                    conquista dos primeiros clientes. Estabelecimento de
+                    parcerias estratégicas fundamentais para o crescimento.
+                  </p>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent className="p-6">
+              <div class="flex items-start gap-4">
+                <Badge className="mt-1">2025</Badge>
+                <div>
+                  <h3 class="font-semibold text-lg mb-2">
+                    Expansão e Crescimento
+                  </h3>
+                  <p class="text-muted-foreground">
+                    Lançamento da ronda de investimento pre-seed, expansão da
+                    equipa e preparação para escalar as operações. Foco na
+                    inovação contínua e satisfação do cliente.
+                  </p>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Team Section -->
+  <section class="py-12 md:py-24">
+    <div class="container mx-auto px-4 md:px-6">
+      <div class="text-center mb-12">
+        <h2
+          class="text-2xl font-bold tracking-tighter sm:text-4xl text-foreground mb-4"
+        >
+          A Nossa Equipa
+        </h2>
+        <p class="max-w-[700px] mx-auto text-muted-foreground">
+          Conheça as pessoas por trás da nossa visão e missão
+        </p>
+      </div>
+
+      <TeamSection client:load />
+    </div>
+  </section>
+
+  <Separator className="my-12" />
+
+  <!-- Values Section -->
+  <section class="py-12 md:py-24">
+    <div class="container mx-auto px-4 md:px-6">
+      <div class="text-center mb-12">
+        <h2
+          class="text-2xl font-bold tracking-tighter sm:text-4xl text-foreground mb-4"
+        >
+          Os Nossos Valores
+        </h2>
+        <p class="max-w-[700px] mx-auto text-muted-foreground">
+          Princípios que guiam todas as nossas decisões e ações
+        </p>
+      </div>
+
+      <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-4 max-w-6xl mx-auto">
+        <Card className="text-center hover:shadow-lg transition-shadow">
+          <CardHeader>
+            <div
+              class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mx-auto mb-2"
+            >
+              <span class="text-2xl">💡</span>
+            </div>
+            <CardTitle className="text-lg">Inovação</CardTitle>
+          </CardHeader>
+          <CardContent>
+            <CardDescription>
+              Buscamos constantemente novas formas de resolver problemas e criar
+              valor.
+            </CardDescription>
+          </CardContent>
+        </Card>
+
+        <Card className="text-center hover:shadow-lg transition-shadow">
+          <CardHeader>
+            <div
+              class="w-12 h-12 bg-chart-1/10 rounded-lg flex items-center justify-center mx-auto mb-2"
+            >
+              <span class="text-2xl">🤝</span>
+            </div>
+            <CardTitle className="text-lg">Transparência</CardTitle>
+          </CardHeader>
+          <CardContent>
+            <CardDescription>
+              Comunicação aberta e honesta em todas as nossas relações.
+            </CardDescription>
+          </CardContent>
+        </Card>
+
+        <Card className="text-center hover:shadow-lg transition-shadow">
+          <CardHeader>
+            <div
+              class="w-12 h-12 bg-chart-2/10 rounded-lg flex items-center justify-center mx-auto mb-2"
+            >
+              <span class="text-2xl">🎯</span>
+            </div>
+            <CardTitle className="text-lg">Excelência</CardTitle>
+          </CardHeader>
+          <CardContent>
+            <CardDescription>
+              Comprometimento com a qualidade em tudo o que fazemos.
+            </CardDescription>
+          </CardContent>
+        </Card>
+
+        <Card className="text-center hover:shadow-lg transition-shadow">
+          <CardHeader>
+            <div
+              class="w-12 h-12 bg-chart-3/10 rounded-lg flex items-center justify-center mx-auto mb-2"
+            >
+              <span class="text-2xl">🌱</span>
+            </div>
+            <CardTitle className="text-lg">Sustentabilidade</CardTitle>
+          </CardHeader>
+          <CardContent>
+            <CardDescription>
+              Responsabilidade social e ambiental em todas as nossas operações.
+            </CardDescription>
+          </CardContent>
+        </Card>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-12 md:py-24 bg-muted/30">
+    <div class="container mx-auto px-4 md:px-6">
+      <Card className="bg-gradient-to-r from-primary to-chart-2 border-0">
+        <CardContent className="p-8 md:p-12 text-center">
+          <h2
+            class="text-2xl font-bold tracking-tighter sm:text-4xl text-primary-foreground mb-4"
+          >
+            Quer Fazer Parte da Nossa História?
+          </h2>
+          <p class="max-w-[600px] mx-auto text-primary-foreground/90 mb-8">
+            Estamos sempre à procura de talentos excepcionais e parceiros que
+            partilhem a nossa visão. Junta-te a nós!
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <Button variant="secondary" size="lg" className="px-8">
+              Ver Oportunidades
+            </Button>
+            <Button
+              variant="outline"
+              size="lg"
+              className="px-8 border-primary-foreground/20 text-primary-foreground hover:bg-primary-foreground/10"
+            >
+              Contactar-nos
+            </Button>
+          </div>
+        </CardContent>
+      </Card>
+    </div>
+  </section>
+</Layout>
