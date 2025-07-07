@@ -19,11 +19,8 @@ export default function FeatureCard({ data }: FeatureCardProps) {
         <div className="flex items-center justify-between">
           <div
             className={`w-12 h-12 ${data.bgColor} rounded-lg flex items-center justify-center mb-4`}
-            // TODO: Consider using bg-primary or bg-muted if data.bgColor is not a CSS variable
           >
-            <data.icon
-              className={`h-6 w-6 ${data.iconColor}`} 
-            />
+            <data.icon className={`h-6 w-6 ${data.iconColor}`} />
           </div>
 
           {data.disabled && <Badge>Em breve</Badge>}

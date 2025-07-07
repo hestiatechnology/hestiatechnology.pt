@@ -9,6 +9,9 @@ import { Image } from "astro:assets";
 import IPCALogo from "@/assets/ipca_cor.png";
 import STARTIpca from "@/assets/start-ipca.png";
 import SAFARIBackground from "@/assets/safari.png";
+import ERPDashDark from "@/assets/dashboard_darkmode.png";
+import ERPDashLight from "@/assets/Dashboard.png";
+import SafariBackground from "@/components/SafariBackground";
 ---
 
 <Layout>
@@ -30,14 +33,7 @@ import SAFARIBackground from "@/assets/safari.png";
             suas necessidades, desde startups até grandes empresas.
           </p>
 
-          <div class="relative">
-            <Safari
-              url="erp.hestiatechnology.pt"
-              className="size-full"
-              imageSrc={SAFARIBackground.src}
-              client:only="react"
-            />
-          </div>
+          <SafariBackground client:only="react" />
         </div>
       </div>
     </section>
