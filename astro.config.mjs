@@ -7,9 +7,12 @@ import tailwindcss from '@tailwindcss/vite';
 
 import node from '@astrojs/node';
 
+import sitemap from '@astrojs/sitemap';
+
 // https://astro.build/config
 export default defineConfig({
-  integrations: [react()],
+  site: 'https://hestiatechnology.pt',
+  integrations: [react(), sitemap()],
 
   vite: {
     plugins: [tailwindcss()]

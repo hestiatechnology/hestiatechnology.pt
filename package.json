@@ -12,6 +12,7 @@
   "dependencies": {
     "@astrojs/node": "^9.3.0",
     "@astrojs/react": "^4.3.0",
+    "@astrojs/sitemap": "^3.4.1",
     "@nanostores/persistent": "^1.0.0",
     "@nanostores/react": "^1.0.0",
     "@radix-ui/react-avatar": "^1.1.10",
