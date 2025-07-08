@@ -3,6 +3,8 @@ import "@/styles/global.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { AnnouncementBar } from "@/components/annoucement-bar";
+
+const { title } = Astro.props;
 ---
 
 <html lang="en">
@@ -12,6 +14,21 @@ import { AnnouncementBar } from "@/components/annoucement-bar";
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
+
+    <title>{title}</title>
+    <meta
+      name="description"
+      content="Aumente a eficiência e o controlo. O ERP da Hestia integra os seus processos essenciais para operações fluidas."
+    />
+
+    <meta property="og:title" content="Hestia Technology Lda" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://hestiatechnology.pt/" />
+    <meta
+      property="og:description"
+      content="Welcome to Hestia Technology Lda"
+    />
+
     <link
       href="https://calendar.google.com/calendar/scheduling-button-script.css"
       rel="stylesheet"
@@ -19,7 +36,6 @@ import { AnnouncementBar } from "@/components/annoucement-bar";
     <script
       src="https://calendar.google.com/calendar/scheduling-button-script.js"
       async></script>
-    <title>Hestia Technology</title>
   </head>
   <body class="min-h-screen flex flex-col antialiased">
     <AnnouncementBar
