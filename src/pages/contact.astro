@@ -30,6 +30,8 @@ if (Astro.request.method === "POST") {
 
     const captchaResult = await captchaVerify.json();
 
+    console.log("hCaptcha result:", captchaResult);
+
     if (!captchaResult.success) {
       captchaError = "Captcha failed. Please try again.";
     } else {
