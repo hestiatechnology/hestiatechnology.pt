@@ -24,7 +24,7 @@ if (Astro.request.method === "POST") {
         secret: import.meta.env.HCAPTCHA_SECRET_KEY,
         response: captchaToken?.toString() || "",
         remoteip: Astro.request.headers.get("x-forwarded-for") || "",
-        sitekey: "bdaa5ad0-6866-4f88-ace4-cbb2aa40c2fc",
+        sitekey: "22ee0f18-378a-46ce-9246-473c5c64bd9a",
       }),
     });
 
@@ -72,7 +72,7 @@ if (Astro.request.method === "POST") {
           </div>
           <div
             class="h-captcha"
-            data-sitekey="bdaa5ad0-6866-4f88-ace4-cbb2aa40c2fc"
+            data-sitekey="22ee0f18-378a-46ce-9246-473c5c64bd9a"
           >
           </div>
           <Button>Submit</Button>
