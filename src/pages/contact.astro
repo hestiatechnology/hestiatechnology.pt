@@ -12,6 +12,25 @@ export const prerender = false;
 if (Astro.request.method === "POST") {
   try {
     const formData = await Astro.request.formData();
+
+    const captchaToken = formData.get("h-captcha-response");
+
+    const captchaVerify = await fetch("https://hcaptcha.com/siteverify", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: new URLSearchParams({
+        secret: import.meta.env.HCAPTCHA_SECRET_KEY,
+        response: captchaToken?.toString() || "",
+        remoteip: Astro.request.headers.get("x-forwarded-for") || "",
+      }),
+    });
+
+    const captchaResult = await captchaVerify.json();
+
+    if (!captchaResult.success) {
+      return new Response("Captcha failed. Please try again.", { status: 400 });
+    }
+
     const { data, error } = await Astro.callAction(actions.email, formData);
     return Astro.redirect("/contact?submitted=true");
   } catch (error) {
@@ -42,9 +61,16 @@ if (Astro.request.method === "POST") {
             <Label htmlFor="message">Mensagem</Label>
             <Textarea id="message" name="message" />
           </div>
+          <div
+            class="h-captcha"
+            data-sitekey="bdaa5ad0-6866-4f88-ace4-cbb2aa40c2fc"
+          >
+          </div>
           <Button>Submit</Button>
         </form>
       </CardContent>
     </Card>
   </section>
 </Layout>
+
+<script src="https://hcaptcha.com/1/api.js" async defer></script>
