@@ -9,32 +9,36 @@ import { actions } from "astro:actions";
 
 export const prerender = false;
 
+let captchaError = "";
+
 if (Astro.request.method === "POST") {
   try {
     const formData = await Astro.request.formData();
 
     const captchaToken = formData.get("h-captcha-response");
 
-    const captchaVerify = await fetch("https://hcaptcha.com/siteverify", {
+    const captchaVerify = await fetch("https://api.hcaptcha.com/siteverify", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: new URLSearchParams({
         secret: import.meta.env.HCAPTCHA_SECRET_KEY,
         response: captchaToken?.toString() || "",
         remoteip: Astro.request.headers.get("x-forwarded-for") || "",
+        sitekey: "bdaa5ad0-6866-4f88-ace4-cbb2aa40c2fc",
       }),
     });
 
     const captchaResult = await captchaVerify.json();
 
     if (!captchaResult.success) {
-      return new Response("Captcha failed. Please try again.", { status: 400 });
+      captchaError = "Captcha failed. Please try again.";
+    } else {
+      const { data, error } = await Astro.callAction(actions.email, formData);
+      return Astro.redirect("/contact?submitted=true");
     }
-
-    const { data, error } = await Astro.callAction(actions.email, formData);
-    return Astro.redirect("/contact?submitted=true");
   } catch (error) {
     if (error instanceof Error) {
+      captchaError = "Ocorreu um erro. Tente novamente.";
       console.error(error.message);
     }
   }
@@ -48,6 +52,9 @@ if (Astro.request.method === "POST") {
         <CardTitle className="text-3xl font-bold">Contacto</CardTitle>
       </CardHeader>
       <CardContent>
+        {captchaError && (
+          <div class="text-red-600 mb-2">{captchaError}</div>
+        )}
         <form method="POST" class="flex flex-col gap-y-5">
           <div class="flex flex-col gap-y-1">
             <Label htmlFor="empresa">Empresa</Label>
