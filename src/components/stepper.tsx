@@ -1,10 +1,9 @@
 import { Slot } from "@radix-ui/react-slot";
 import * as Stepperize from "@stepperize/react";
-import { type VariantProps, cva } from "class-variance-authority";
+import { cva, type VariantProps } from "class-variance-authority";
 import * as React from "react";
-
-import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
 
 const StepperContext = React.createContext<Stepper.ConfigProps | null>(null);
 
@@ -77,7 +76,7 @@ const defineStepper = <const Steps extends Stepperize.Step[]>(
       }) => {
         const { variant } = useStepperProvider();
         return (
-          <nav
+          <div
             date-component="stepper-navigation"
             aria-label={ariaLabel}
             role="tablist"
@@ -89,7 +88,7 @@ const defineStepper = <const Steps extends Stepperize.Step[]>(
             >
               {children}
             </ol>
-          </nav>
+          </div>
         );
       },
       Step: ({ children, className, icon, ...props }) => {
@@ -308,12 +307,11 @@ const StepperSeparator = ({
     return null;
   }
   return (
-    <div
+    <hr
       date-component="stepper-separator"
       data-orientation={orientation}
       data-state={state}
       data-disabled={disabled}
-      role="separator"
       tabIndex={-1}
       className={classForSeparator({ orientation, labelOrientation })}
     />
@@ -503,7 +501,7 @@ namespace Stepper {
                 }) => React.ReactNode);
           },
       ) => React.ReactElement;
-      Navigation: (props: React.ComponentProps<"nav">) => React.ReactElement;
+      Navigation: (props: React.ComponentProps<"div">) => React.ReactElement;
       Step: (
         props: React.ComponentProps<"button"> & {
           of: Stepperize.Get.Id<Steps>;

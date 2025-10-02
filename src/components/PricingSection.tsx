@@ -40,13 +40,13 @@ export default function PricingSection({
 
   return (
     <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-      {features.map((resource, index) => {
+      {features.map((resource) => {
         const selected = selectedModules.find(
           (item) => item.title === resource.title,
         );
         return (
           <FeatureCardSelect
-            key={index}
+            key={resource.title}
             data={selected || resource}
             onSelect={handleSelection}
             showInfo={!resource.disabled}

@@ -1,11 +1,5 @@
 import type { ModuleType } from "@/data/schemas";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "./ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
 import { Badge } from "./ui/badge";
 import { DollarSign, Info, Plus, Users } from "lucide-react";
 import { Separator } from "./ui/separator";
@@ -24,7 +18,7 @@ export default function PricingBudget({ locale }: PricingBudgetProps) {
     key: keyof (typeof translations)[typeof locale],
     replacements?: { [key: string]: string | number },
   ) => {
-    let translation = translations[locale][key] || translations["en"][key];
+    let translation = translations[locale][key] || translations.en[key];
     if (replacements) {
       for (const [placeholder, value] of Object.entries(replacements)) {
         translation = translation.replace(`{${placeholder}}`, String(value));
@@ -56,12 +50,12 @@ export default function PricingBudget({ locale }: PricingBudgetProps) {
         <p className="text-muted-foreground">{t("budget.description")}</p>
       </div>
       <div className="space-y-4">
-        {selectedModules.map((module, index) => {
+        {selectedModules.map((module) => {
           const moduleTotal = calculateModuleTotal(module);
           const IconComponent = module.icon;
 
           return (
-            <Card key={index} className="overflow-hidden">
+            <Card key={module.title} className="overflow-hidden">
               <CardHeader className="pb-4">
                 <div className="flex items-start justify-between">
                   <div className="flex items-center space-x-3">
@@ -146,17 +140,15 @@ export default function PricingBudget({ locale }: PricingBudgetProps) {
                             {module.information.title}
                           </h4>
                           <ul className="text-xs text-muted-foreground space-y-1">
-                            {module.information.included.map(
-                              (item: string, idx: number) => (
-                                <li
-                                  key={idx}
-                                  className="flex items-center space-x-1"
-                                >
-                                  <span className="w-1 h-1 bg-muted-foreground rounded-full"></span>
-                                  <span>{item}</span>
-                                </li>
-                              ),
-                            )}
+                            {module.information.included.map((item: string) => (
+                              <li
+                                key={item}
+                                className="flex items-center space-x-1"
+                              >
+                                <span className="w-1 h-1 bg-muted-foreground rounded-full"></span>
+                                <span>{item}</span>
+                              </li>
+                            ))}
                           </ul>
                           {module.information.comment && (
                             <p className="text-xs text-muted-foreground mt-2 italic">
@@ -184,7 +176,9 @@ export default function PricingBudget({ locale }: PricingBudgetProps) {
               </h3>
               <p className="text-sm text-muted-foreground mt-1">
                 {selectedModules.length} {t("budget.module")}
-                {selectedModules.length !== 1 ? t("budget.plural_suffix") : ""}{" "}
+                {selectedModules.length !== 1
+                  ? t("budget.plural_suffix")
+                  : ""}{" "}
                 {t("budget.selected")}
               </p>
             </div>

@@ -25,7 +25,7 @@ export default function Header({ locale }: HeaderProps) {
   const { isDarkMode } = useTheme();
 
   const t = (key: keyof (typeof translations)[typeof locale]) => {
-    return translations[locale][key] || translations["en"][key];
+    return translations[locale][key] || translations.en[key];
   };
 
   const navigationLinks = [
@@ -34,8 +34,6 @@ export default function Header({ locale }: HeaderProps) {
     { href: `/${locale}/prices`, label: t("header.nav.prices") },
     { href: `/${locale}/about`, label: t("header.nav.about") },
   ];
-
-  const otherLocale = locale === "en" ? "pt" : "en";
 
   return (
     <header className="border-t bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 sticky bottom-0 z-50 px-4 md:px-6">
@@ -60,6 +58,7 @@ export default function Header({ locale }: HeaderProps) {
                   strokeLinejoin="round"
                   xmlns="http://www.w3.org/2000/svg"
                 >
+                  <title>{t('header.mobile_nav_toggle')}</title>
                   <path
                     d="M4 12L20 12"
                     className="origin-center -translate-y-[7px] transition-all duration-300 ease-[cubic-bezier(.5,.85,.25,1.1)] group-aria-expanded:translate-x-0 group-aria-expanded:translate-y-0 group-aria-expanded:rotate-[315deg]"
@@ -78,8 +77,8 @@ export default function Header({ locale }: HeaderProps) {
             <PopoverContent align="start" className="w-36 p-1 md:hidden">
               <NavigationMenu className="max-w-none *:w-full">
                 <NavigationMenuList className="flex-col items-start gap-0 md:gap-2">
-                  {navigationLinks.map((link, index) => (
-                    <NavigationMenuItem key={index} className="w-full">
+                  {navigationLinks.map((link) => (
+                    <NavigationMenuItem key={link.href} className="w-full">
                       <NavigationMenuLink href={link.href} className="py-1.5">
                         {link.label}
                       </NavigationMenuLink>
@@ -104,8 +103,8 @@ export default function Header({ locale }: HeaderProps) {
 
             <NavigationMenu className="max-md:hidden">
               <NavigationMenuList className="gap-2">
-                {navigationLinks.map((link, index) => (
-                  <NavigationMenuItem key={index}>
+                {navigationLinks.map((link) => (
+                  <NavigationMenuItem key={link.href}>
                     <NavigationMenuLink
                       href={link.href}
                       className="text-muted-foreground hover:text-primary py-1.5 font-medium"

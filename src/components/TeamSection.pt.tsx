@@ -2,6 +2,7 @@ import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar";
 import { Badge } from "./ui/badge";
 import { Card, CardContent } from "./ui/card";
 import CEO from "@/assets/CEO.jpg";
+import { useId } from "react";
 
 const teamMembers = [
   {
@@ -23,8 +24,9 @@ const teamMembers = [
 ];
 
 export default function TeamSection() {
+  const teamId = useId();
   return (
-    <section id="team" className="py-12 md:py-24">
+    <section id={teamId} className="py-12 md:py-24">
       <div className="container mx-auto px-4 md:px-6">
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl text-foreground">

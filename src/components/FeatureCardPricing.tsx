@@ -1,3 +1,7 @@
+import { useState, useEffect, useId } from "react";
+import { translations } from "@/lib/translations";
+
+import { cn } from "@/lib/utils";
 import { Info } from "lucide-react";
 import {
   Card,
@@ -6,15 +10,12 @@ import {
   CardHeader,
   CardTitle,
 } from "./ui/card";
-import { cn } from "@/lib/utils";
 import { Badge } from "./ui/badge";
-import type { ModuleType } from "@/data/schemas";
 import { Button } from "./ui/button";
 import { Input } from "./ui/input";
 import { Label } from "./ui/label";
 import { HoverCard, HoverCardContent, HoverCardTrigger } from "./ui/hover-card";
-import { useState, useEffect } from "react";
-import { translations } from "@/lib/translations";
+import type { ModuleType } from "@/data/schemas";
 
 interface FeatureCardProps {
   data: ModuleType;
@@ -33,6 +34,7 @@ export default function FeatureCardSelect({
   onUpdate,
   locale,
 }: FeatureCardProps) {
+  const counterId = useId();
   const [userCount, setUserCount] = useState(
     (data.includedUsers ?? 1) + (data.extraUsers ?? 0),
   );
@@ -46,7 +48,7 @@ export default function FeatureCardSelect({
   }
 
   const t = (key: keyof (typeof translations)[typeof locale]) => {
-    return translations[locale][key] || translations["en"][key];
+    return translations[locale][key] || translations.en[key];
   };
 
   const includedList = [
@@ -54,10 +56,10 @@ export default function FeatureCardSelect({
     ...(data.information?.included ?? []),
   ];
 
-  const extraUsers = userCount - (data.includedUsers ?? 1);
+  //const extraUsers = userCount - (data.includedUsers ?? 1);
 
-  const extraPrice =
-    extraUsers > 0 && data.pricePerUser ? extraUsers * data.pricePerUser : 0;
+  //const extraPrice =
+  //  extraUsers > 0 && data.pricePerUser ? extraUsers * data.pricePerUser : 0;
 
   return (
     <Card
@@ -110,8 +112,8 @@ export default function FeatureCardSelect({
                         {data.information?.title}
                       </h1>
                       <ul>
-                        {includedList.map((item, i) => (
-                          <li key={i}>{item}</li>
+                        {includedList.map((item) => (
+                          <li key={item}>{item}</li>
                         ))}
                       </ul>
                       <span className="text-sm text-muted-foreground">
@@ -131,9 +133,9 @@ export default function FeatureCardSelect({
         <CardContent>
           <div className="flex items-center justify-center gap-x-2">
             <div className="flex items-center gap-x-2">
-              <Label htmlFor="counter">Utilizadores</Label>
+              <Label htmlFor={counterId}>Utilizadores</Label>
               <Input
-                id="counter"
+                id={counterId}
                 value={userCount}
                 readOnly
                 className="text-center"

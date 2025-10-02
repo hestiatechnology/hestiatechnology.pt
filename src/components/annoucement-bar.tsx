@@ -37,7 +37,7 @@ export function AnnouncementBar({
   icon,
   actionText,
   actionHref,
-  onClose,
+  _onClose,
   className,
 }: AnnouncementBarProps) {
   return (

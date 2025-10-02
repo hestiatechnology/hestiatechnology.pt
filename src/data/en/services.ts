@@ -1,9 +1,6 @@
 import {
-  BookOpen,
   Briefcase,
   DollarSign,
-  Shirt,
-  Truck,
   Users,
   type LucideIcon,
 } from "lucide-react";

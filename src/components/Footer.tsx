@@ -13,7 +13,7 @@ export default function Footer({ locale }: FooterProps) {
   const { isDarkMode } = useTheme();
 
   const t = (key: keyof (typeof translations)[typeof locale]) => {
-    return translations[locale][key] || translations["en"][key];
+    return translations[locale][key] || translations.en[key];
   };
 
   return (

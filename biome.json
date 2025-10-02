@@ -11,14 +11,14 @@
   "formatter": {
     "enabled": true,
     "indentStyle": "space",
-    "includes": ["**", "!**/node_modules/**", "!**/dist/**"]
+    "includes": ["**", "!**/node_modules/**", "!**/dist/**", "!**/.astro/**"]
   },
   "linter": {
     "enabled": true,
     "rules": {
       "recommended": true
     },
-    "includes": ["**", "!**/node_modules/**", "!**/dist/**"]
+    "includes": ["**", "!**/node_modules/**", "!**/dist/**", "!**/.astro/**"]
   },
   "javascript": {
     "formatter": {

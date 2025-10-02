@@ -9,7 +9,7 @@ const { title } = Astro.props;
 const locale = Astro.currentLocale as keyof typeof translations;
 
 const t = (key: keyof (typeof translations)[typeof locale]) => {
-  return translations[locale][key] || translations["en"][key];
+  return translations[locale][key] || translations.en[key];
 };
 ---
 
