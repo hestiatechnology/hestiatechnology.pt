@@ -8,12 +8,13 @@ import {
 } from "./ui/card";
 import { cn } from "@/lib/utils";
 import { Badge } from "./ui/badge";
-import type { ModuleType } from "@/data/features";
+import type { ModuleType } from "@/data/schemas";
 import { Button } from "./ui/button";
 import { Input } from "./ui/input";
 import { Label } from "./ui/label";
 import { HoverCard, HoverCardContent, HoverCardTrigger } from "./ui/hover-card";
 import { useState, useEffect } from "react";
+import { translations } from "@/lib/translations";
 
 interface FeatureCardProps {
   data: ModuleType;
@@ -21,6 +22,7 @@ interface FeatureCardProps {
   onUpdate?: (data: ModuleType) => void;
   isSelected?: boolean;
   showInfo?: boolean;
+  locale: keyof typeof translations;
 }
 
 export default function FeatureCardSelect({
@@ -29,9 +31,10 @@ export default function FeatureCardSelect({
   isSelected,
   showInfo,
   onUpdate,
+  locale,
 }: FeatureCardProps) {
   const [userCount, setUserCount] = useState(
-    (data.includedUsers ?? 1) + (data.extraUsers ?? 0)
+    (data.includedUsers ?? 1) + (data.extraUsers ?? 0),
   );
 
   useEffect(() => {
@@ -41,6 +44,10 @@ export default function FeatureCardSelect({
   if (!data) {
     return null;
   }
+
+  const t = (key: keyof (typeof translations)[typeof locale]) => {
+    return translations[locale][key] || translations["en"][key];
+  };
 
   const includedList = [
     ...(data.includedUsers ? [`${data.includedUsers} Utilizadores`] : []),
@@ -57,7 +64,7 @@ export default function FeatureCardSelect({
       className={cn(
         "border shadow-lg hover:shadow-xl transition-shadow z-20",
         isSelected ? "border-2 border-primary border-solid" : "border-border",
-        data.disabled && "bg-muted"
+        data.disabled && "bg-muted",
       )}
       onClick={!data.disabled ? () => onSelect?.(data) : undefined}
     >
@@ -71,18 +78,20 @@ export default function FeatureCardSelect({
             <data.icon className={`h-6 w-6 ${data.iconColor}`} />
           </div>
 
-          {data.disabled && <Badge>Em breve</Badge>}
+          {data.disabled && <Badge>{t("pricing.coming_soon")}</Badge>}
 
           {showInfo && (
             <div className="flex items-center gap-x-3">
               <p className="text-xl font-semibold">
                 {data.price}
-                <span className="text-sm text-foreground">€/ano</span>
+                <span className="text-sm text-foreground">
+                  {t("pricing.per_year")}
+                </span>
               </p>
               {userCount > (data.includedUsers ?? 1) && data.pricePerUser && (
                 <span className="block text-sm text-primary font-medium mt-1">
                   +{(userCount - (data.includedUsers ?? 1)) * data.pricePerUser}
-                  €/ano
+                  {t("pricing.per_year")}
                 </span>
               )}
               <HoverCard>

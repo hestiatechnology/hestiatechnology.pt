@@ -48,7 +48,7 @@ const t = (key: keyof typeof translations[typeof locale]) => {
       message={t("announcement.message")}
       type="promotion"
       actionText={t("announcement.action")}
-      actionHref="/investments"
+      actionHref=`/${Astro.currentLocale}/investments`
     />
     <Header client:only="react" locale={locale} />
     <main class="flex-1">

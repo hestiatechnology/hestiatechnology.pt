@@ -2,52 +2,46 @@
 import Layout from "@/layouts/Layout.astro";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Check, X } from "lucide-react";
+import { Recycle, Users, Database, Link, Container, FileText, ShieldCheck } from "lucide-react";
 
-const comparisonData = [
+const whatIsDpp = [
   {
-    feature: "End-to-End Traceability",
-    legacy: {
-      text: "Lacks granular data architecture. Cannot track materials from origin to final product.",
-      supported: false,
-    },
-    hestia: {
-      text: "Built-in, detailed tracking of the entire supply chain.",
-      supported: true,
-    },
+    title: "Sustainability and Circularity",
+    description: "The DPP aims to make products more sustainable and circular, providing information about a product's origin, materials, and environmental impact.",
+    icon: Recycle,
   },
   {
-    feature: "Digital Product Passport (DPP) Ready",
-    legacy: {
-      text: "Not designed for DPP. Requires expensive, custom, and risky patchwork solutions.",
-      supported: false,
-    },
-    hestia: {
-      text: "Natively supports DPP requirements, ensuring seamless compliance.",
-      supported: true,
-    },
+    title: "Transparency for Consumers and Businesses",
+    description: "It will provide consumers and businesses with detailed information about a product's journey, fostering trust and informed choices.",
+    icon: Users,
   },
   {
-    feature: "Rapid & Flexible Implementation",
-    legacy: {
-      text: "Months or years to implement. Inflexible and slow to adapt.",
-      supported: false,
-    },
-    hestia: {
-      text: "Agile and fast to deploy, designed for the modern textile factory.",
-      supported: true,
-    },
+    title: "Complete Digital Record",
+    description: "For the textile industry, this means a complete digital record of the entire supply chain, from raw materials to the final garment.",
+    icon: Database,
+  },
+];
+
+const hestiaBenefits = [
+  {
+    title: "End-to-End Traceability",
+    description: "Track your entire supply chain from raw materials to finished product, ensuring full transparency and compliance.",
+    icon: Link,
   },
   {
-    feature: "Data-Driven & Proactive Operations",
-    legacy: {
-      text: "Data is siloed and difficult to access, leading to reactive problem-solving.",
-      supported: false,
-    },
-    hestia: {
-      text: "Provides a single source of truth with real-time alerts for proactive management.",
-      supported: true,
-    },
+    title: "Centralized Data Hub",
+    description: "A single source of truth for all your product data, making it easy to manage and share information as required by the DPP.",
+    icon: Container,
+  },
+  {
+    title: "Automated Reporting",
+    description: "Generate DPP-compliant reports with ease, saving time and reducing the risk of errors.",
+    icon: FileText,
+  },
+  {
+    title: "Future-Proof",
+    description: "Stay ahead of evolving regulations and be ready for the future of the textile industry.",
+    icon: ShieldCheck,
   },
 ];
 ---
@@ -73,49 +67,48 @@ const comparisonData = [
     </div>
   </section>
 
-  <!-- The Compliance Gap Section -->
-  <section id="compliance-gap" class="py-12 md:py-24 bg-muted">
+  <!-- What is DPP Section -->
+  <section id="what-is-dpp" class="py-12 md:py-24 bg-muted">
     <div class="container mx-auto px-4 md:px-6">
       <div class="text-center mb-12">
         <h2 class="text-3xl font-bold tracking-tighter sm:text-4xl text-foreground">
-          The Compliance Gap: Why Legacy Systems Will Fail
+          What is the Digital Product Passport?
         </h2>
         <p class="max-w-3xl mx-auto mt-4 text-muted-foreground md:text-lg">
-          The DPP introduces new, complex data requirements that legacy systems
-          are simply not equipped to handle. This creates a compliance gap that
-          puts your business at risk.
+          The Digital Product Passport (DPP) is a new EU requirement that aims to make products more sustainable and circular. Hestia ERP provides the data infrastructure you need to collect, manage, and share this information seamlessly.
         </p>
       </div>
+      <div class="grid gap-8 md:grid-cols-3">
+        {whatIsDpp.map((item) => (
+          <div class="flex flex-col items-center text-center">
+            <item.icon className="w-12 h-12 text-primary" />
+            <h3 class="mt-4 text-xl font-bold">{item.title}</h3>
+            <p class="mt-2 text-muted-foreground">{item.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
 
-      <div class="overflow-x-auto">
-        <table class="w-full max-w-5xl mx-auto border-collapse text-left">
-          <thead>
-            <tr class="border-b">
-              <th class="p-4 font-semibold text-lg">Critical Future Needs (EU DPP 2027)</th>
-              <th class="p-4 font-semibold text-lg">Legacy & Generic Systems</th>
-              <th class="p-4 font-semibold text-lg">Hestia ERP</th>
-            </tr>
-          </thead>
-          <tbody>
-            {comparisonData.map((item) => (
-                <tr class="border-b">
-                  <td class="p-4 font-medium">{item.feature}</td>
-                  <td class="p-4">
-                    <div class="flex items-start">
-                      <X className="w-5 h-5 text-destructive mr-2 flex-shrink-0 mt-1" />
-                      <span>{item.legacy.text}</span>
-                    </div>
-                  </td>
-                  <td class="p-4">
-                    <div class="flex items-start">
-                      <Check className="w-5 h-5 text-green-500 mr-2 flex-shrink-0 mt-1" />
-                      <span>{item.hestia.text}</span>
-                    </div>
-                  </td>
-                </tr>
-              ))}
-          </tbody>
-        </table>
+  <!-- Why Hestia Section -->
+  <section id="why-hestia" class="py-12 md:py-24">
+    <div class="container mx-auto px-4 md:px-6">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold tracking-tighter sm:text-4xl text-foreground">
+          Why Hestia ERP for DPP Compliance?
+        </h2>
+        <p class="max-w-3xl mx-auto mt-4 text-muted-foreground md:text-lg">
+          Hestia ERP is more than just a compliance tool. It's a complete operations platform designed to give you a competitive edge in the new era of digital transparency.
+        </p>
+      </div>
+      <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+        {hestiaBenefits.map((item) => (
+          <div class="flex flex-col items-center text-center">
+            <item.icon className="w-12 h-12 text-primary" />
+            <h3 class="mt-4 text-xl font-bold">{item.title}</h3>
+            <p class="mt-2 text-muted-foreground">{item.description}</p>
+          </div>
+        ))}
       </div>
     </div>
   </section>
@@ -132,8 +125,8 @@ const comparisonData = [
         today.
       </p>
       <div class="mt-8">
-        <Button size="lg" asChild>
-          <a href="/contact">Schedule a Demo</a>
+        <Button size="lg">
+          <a href={`/${Astro.currentLocale}/contact`}>Schedule a Demo</a>
         </Button>
       </div>
     </div>

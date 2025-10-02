@@ -8,9 +8,18 @@ import { Button } from "./ui/button";
 import { actions } from "astro:actions";
 import type { FormEvent } from "react";
 import { Card, CardDescription, CardHeader, CardTitle } from "./ui/card";
+import { translations } from "@/lib/translations";
 
-export default function BudgetContact() {
+interface BudgetContactProps {
+  locale: keyof typeof translations;
+}
+
+export default function BudgetContact({ locale }: BudgetContactProps) {
   const selectedModules = useStore($selectedModules);
+
+  const t = (key: keyof typeof translations[typeof locale]) => {
+    return translations[locale][key] || translations["en"][key];
+  };
 
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -32,15 +41,15 @@ export default function BudgetContact() {
     <div className="max-w-4xl mx-auto p-6 space-y-6">
       <form onSubmit={handleSubmit} className="flex flex-col gap-y-5">
         <div className="flex flex-col gap-y-2">
-          <Label htmlFor="empresa">Empresa</Label>
+          <Label htmlFor="empresa">{t('contact.company')}</Label>
           <Input id="empresa" type="text" name="company" />
         </div>
         <div className="flex flex-col gap-y-2">
-          <Label htmlFor="email">Email</Label>
+          <Label htmlFor="email">{t('contact.email')}</Label>
           <Input id="email" type="email" name="email" />
         </div>
         <div className="flex flex-col gap-y-2">
-          <Label htmlFor="message">Mensagem</Label>
+          <Label htmlFor="message">{t('contact.message')}</Label>
           <Textarea id="message" name="message" />
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
@@ -52,14 +61,14 @@ export default function BudgetContact() {
                   <CardTitle>{module.title}</CardTitle>
                 </div>
                 <CardDescription>
-                  Utilizadores:{" "}
+                  {t('contact.users')}:{" "}
                   {(module.includedUsers ?? 0) + (module.extraUsers ?? 0)}
                 </CardDescription>
               </CardHeader>
             </Card>
           ))}
         </div>
-        <Button>Submit</Button>
+        <Button>{t('contact.submit')}</Button>
       </form>
     </div>
   );

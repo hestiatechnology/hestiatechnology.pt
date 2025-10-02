@@ -1,6 +1,6 @@
 import { useStore } from "@nanostores/react";
 
-import { Modules, type ModuleType } from "@/data/features";
+import { type ModuleType } from "@/data/schemas";
 import FeatureCardSelect from "./FeatureCardPricing";
 import {
   $selectedModules,
@@ -8,15 +8,24 @@ import {
   removeModule,
   updateModule,
 } from "@/states/modules";
+import { translations } from "@/lib/translations";
 
-export default function PricingSection() {
+interface PricingSectionProps {
+  features: ModuleType[];
+  locale: keyof typeof translations;
+}
+
+export default function PricingSection({
+  features,
+  locale,
+}: PricingSectionProps) {
   const selectedModules = useStore($selectedModules);
 
   console.log(selectedModules);
 
   const handleSelection = (data: ModuleType) => {
     const isAlreadySelected = selectedModules.some(
-      (item) => item.title === data.title
+      (item) => item.title === data.title,
     );
     if (isAlreadySelected) {
       removeModule(data);
@@ -31,9 +40,9 @@ export default function PricingSection() {
 
   return (
     <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-      {Modules.map((resource, index) => {
+      {features.map((resource, index) => {
         const selected = selectedModules.find(
-          (item) => item.title === resource.title
+          (item) => item.title === resource.title,
         );
         return (
           <FeatureCardSelect
@@ -43,6 +52,7 @@ export default function PricingSection() {
             showInfo={!resource.disabled}
             onUpdate={handleUpdate}
             isSelected={!!selected}
+            locale={locale}
           />
         );
       })}

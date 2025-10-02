@@ -19,7 +19,9 @@ export default defineConfig({
   integrations: [react(), sitemap()],
 
   vite: {
-    plugins: [tailwindcss()]
+    plugins: [tailwindcss({
+      config: './tailwind.config.mjs'
+    })]
   },
 
   adapter: node({

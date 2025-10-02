@@ -2,7 +2,8 @@
 import Layout from "@/layouts/Layout.astro";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import FeatureCard from "@/components/FeatureCard";
+import FeatureShowcase from "@/components/FeatureShowcase";
+import { features } from "@/data/en/features.ts";
 import { CheckCircle, XCircle, Zap } from "lucide-react";
 import TeamSection from "@/components/TeamSection.en";
 import { Image } from "astro:assets";
@@ -10,47 +11,7 @@ import IPCALogo from "@/assets/ipca_cor.png";
 import STARTIpca from "@/assets/start-ipca.png";
 import SafariBackground from "@/components/SafariBackground";
 
-const problems = [
-  {
-    title: "The Production Black Hole",
-    description:
-      "Production stops because a fabric delivery is late, with no prior warning about the delay.",
-    icon: "XCircle",
-  },
-  {
-    title: "The Coordination Chaos",
-    description:
-      "Getting one status update means chasing emails, checking spreadsheets, and making multiple phone calls. It's all guesswork.",
-    icon: "XCircle",
-  },
-  {
-    title: "The Trust Deficit",
-    description:
-      "Promising a client a delivery date without any real confidence it can be met, risking the company's reputation.",
-    icon: "XCircle",
-  },
-];
 
-const solutions = [
-  {
-    title: "From Flying Blind to Seeing Everything",
-    description:
-      "Eliminate unexpected production stops with total visibility, turning proactive alerts into uninterrupted workflow.",
-    icon: "CheckCircle",
-  },
-  {
-    title: "From Guesswork to Absolute Certainty",
-    description:
-      "Replace scattered emails and spreadsheets with a single, real-time source of truth for your entire supply chain.",
-    icon: "CheckCircle",
-  },
-  {
-    title: "From Broken Promises to Unbreakable Trust",
-    description:
-      "Transform risky delivery estimates into reliable deadlines you can confidently promise and consistently meet.",
-    icon: "CheckCircle",
-  },
-];
 ---
 
 <Layout title="Hestia ERP - The Operations Platform for Textile Manufacturers">
@@ -73,11 +34,11 @@ const solutions = [
           strengths. Move from operational chaos to full control.
         </p>
         <div class="mt-8 flex justify-center gap-4">
-          <Button size="lg" asChild>
-            <a href="/contact">Schedule a Demo</a>
+          <Button size="lg">
+            <a href={`/${Astro.currentLocale}/contact`}>Schedule a Demo</a>
           </Button>
-          <Button size="lg" variant="outline" asChild>
-            <a href="/prices">View Pricing</a>
+          <Button size="lg" variant="outline">
+            <a href={`/${Astro.currentLocale}/prices`}>View Pricing</a>
           </Button>
         </div>
 		<div class="mt-8">
@@ -86,90 +47,31 @@ const solutions = [
       </div>
     </section>
 
-    <!-- Problems Section -->
-    <section id="problems" class="py-12 md:py-24 bg-muted">
-      <div class="container mx-auto px-4 md:px-6">
-        <div class="text-center mb-12">
-          <h2 class="text-3xl font-bold tracking-tighter sm:text-4xl text-foreground">
-            Flying Blind in Your Supply Chain?
-          </h2>
-          <p class="max-w-2xl mx-auto mt-4 text-muted-foreground md:text-lg">
-            This isn't an inconvenience. It's an annual tax of up to €100k on
-            your business.
-          </p>
-        </div>
-        <div class="grid gap-8 md:grid-cols-3">
-          {
-            problems.map((problem) => (
-              <div class="flex flex-col items-center text-center">
-                <XCircle className="w-12 h-12 text-destructive" />
-                <h3 class="mt-4 text-xl font-bold">{problem.title}</h3>
-                <p class="mt-2 text-muted-foreground">
-                  {problem.description}
-                </p>
-              </div>
-            ))
-          }
-        </div>
-      </div>
-    </section>
+<FeatureShowcase
+client:load
+features={features}
+title="All the tools you need"
+description="Hestia ERP is a modular platform that allows you to choose the tools you need to manage your business."
+/>
 
-    <!-- Solutions Section -->
-    <section id="solutions" class="py-12 md:py-24">
-      <div class="container mx-auto px-4 md:px-6">
-        <div class="text-center mb-12">
-          <h2 class="text-3xl font-bold tracking-tighter sm:text-4xl text-foreground">
-            From Operational Chaos to Full Control
-          </h2>
-          <p class="max-w-2xl mx-auto mt-4 text-muted-foreground md:text-lg">
-            Hestia ERP turns your biggest operational challenges into your
-            greatest strengths.
-          </p>
-        </div>
-        <div class="grid gap-8 md:grid-cols-3">
-          {
-            solutions.map((solution) => (
-              <div class="flex flex-col items-center text-center">
-                <CheckCircle className="w-12 h-12 text-green-500" />
-                <h3 class="mt-4 text-xl font-bold">{solution.title}</h3>
-                <p class="mt-2 text-muted-foreground">
-                  {solution.description}
-                </p>
-              </div>
-            ))
-          }
-        </div>
-      </div>
-    </section>
-
-    <!-- Why Now? Section -->
-    <section id="why-now" class="py-12 md:py-24 bg-muted">
+    <!-- DPP Section -->
+    <section id="dpp" class="py-12 md:py-24 bg-muted">
       <div class="container mx-auto px-4 md:px-6">
         <div class="text-center">
           <Zap className="w-12 h-12 text-primary mx-auto" />
           <h2
             class="mt-4 text-3xl font-bold tracking-tighter sm:text-4xl text-foreground"
           >
-            So... Why now?
+            Get Ready for the Digital Product Passport (DPP)
           </h2>
           <p
             class="max-w-3xl mx-auto mt-4 text-muted-foreground md:text-lg"
           >
-            The <span class="font-bold text-foreground"
-              >EU Digital Product Passport (DPP)</span
-            > will be mandatory by 2027. Legacy systems cannot handle this,
-            lacking the data architecture to track information from origin to
-            final product.
-          </p>
-          <p
-            class="max-w-3xl mx-auto mt-4 text-lg font-semibold text-foreground"
-          >
-            Hestia is built from the ground up for this new reality, with
-            native support for DPP requirements to ensure seamless compliance.
+            The upcoming EU Digital Product Passport will revolutionize the textile industry, requiring unprecedented transparency and traceability. Hestia ERP is designed to meet these new standards from day one, providing you with a robust and scalable solution to ensure your business is not just compliant, but a leader in the new digital era.
           </p>
           <div class="mt-8">
-            <Button asChild>
-              <a href="/dpp">Learn About DPP Compliance</a>
+            <Button>
+              <a href={`/${Astro.currentLocale}/dpp`}>Learn More About DPP</a>
             </Button>
           </div>
         </div>

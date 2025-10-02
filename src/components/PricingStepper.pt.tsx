@@ -9,6 +9,8 @@ import { Button } from "@/components/ui/button";
 import PricingSection from "./PricingSection";
 import PricingBudget from "./PricingBudget";
 import BudgetContact from "./BudgetContact";
+import { features } from "@/data/pt/features";
+import { translations } from "@/lib/translations";
 
 const { Stepper } = defineStepper(
   {
@@ -28,7 +30,7 @@ const { Stepper } = defineStepper(
   }
 );
 
-export function PricingStepper() {
+export function PricingStepper({ locale }: { locale: keyof typeof translations }) {
   const selectedModules = useStore($selectedModules);
 
   return (
@@ -53,9 +55,9 @@ export function PricingStepper() {
             ))}
           </Stepper.Navigation>
           {methods.switch({
-            "step-1": () => <PricingSection />,
-            "step-2": () => <PricingBudget />,
-            "step-3": () => <BudgetContact />,
+            "step-1": () => <PricingSection features={features} locale={locale} />,
+            "step-2": () => <PricingBudget locale={locale} />,
+            "step-3": () => <BudgetContact locale={locale} />,
           })}
           <Stepper.Controls>
             {!methods.isLast && (
@@ -64,14 +66,14 @@ export function PricingStepper() {
                 onClick={methods.prev}
                 disabled={methods.isFirst}
               >
-                Previous
+                Anterior
               </Button>
             )}
             <Button
               onClick={methods.isLast ? methods.reset : methods.next}
               disabled={selectedModules.length <= 0}
             >
-              {methods.isLast ? "Reset" : "Next"}
+              {methods.isLast ? "Reiniciar" : "Próximo"}
             </Button>
           </Stepper.Controls>
         </React.Fragment>

@@ -2,52 +2,46 @@
 import Layout from "@/layouts/Layout.astro";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Check, X } from "lucide-react";
+import { Recycle, Users, Database, Link, Container, FileText, ShieldCheck } from "lucide-react";
 
-const comparisonData = [
+const whatIsDpp = [
   {
-    feature: "End-to-End Traceability",
-    legacy: {
-      text: "Lacks granular data architecture. Cannot track materials from origin to final product.",
-      supported: false,
-    },
-    hestia: {
-      text: "Built-in, detailed tracking of the entire supply chain.",
-      supported: true,
-    },
+    title: "Sustentabilidade e Circularidade",
+    description: "O DPP visa tornar os produtos mais sustentáveis e circulares, fornecendo informações sobre a origem, materiais e impacto ambiental de um produto.",
+    icon: Recycle,
   },
   {
-    feature: "Digital Product Passport (DPP) Ready",
-    legacy: {
-      text: "Not designed for DPP. Requires expensive, custom, and risky patchwork solutions.",
-      supported: false,
-    },
-    hestia: {
-      text: "Natively supports DPP requirements, ensuring seamless compliance.",
-      supported: true,
-    },
+    title: "Transparência para Consumidores e Empresas",
+    description: "Irá fornecer aos consumidores e às empresas informações detalhadas sobre o percurso de um produto, promovendo a confiança e escolhas informadas.",
+    icon: Users,
   },
   {
-    feature: "Rapid & Flexible Implementation",
-    legacy: {
-      text: "Months or years to implement. Inflexible and slow to adapt.",
-      supported: false,
-    },
-    hestia: {
-      text: "Agile and fast to deploy, designed for the modern textile factory.",
-      supported: true,
-    },
+    title: "Registo Digital Completo",
+    description: "Para a indústria têxtil, isto significa um registo digital completo de toda a cadeia de abastecimento, desde as matérias-primas até à peça de vestuário final.",
+    icon: Database,
+  },
+];
+
+const hestiaBenefits = [
+  {
+    title: "Rastreabilidade de Ponta a Ponta",
+    description: "Rastreie toda a sua cadeia de abastecimento, desde as matérias-primas até ao produto acabado, garantindo total transparência e conformidade.",
+    icon: Link,
   },
   {
-    feature: "Data-Driven & Proactive Operations",
-    legacy: {
-      text: "Data is siloed and difficult to access, leading to reactive problem-solving.",
-      supported: false,
-    },
-    hestia: {
-      text: "Provides a single source of truth with real-time alerts for proactive management.",
-      supported: true,
-    },
+    title: "Hub de Dados Centralizado",
+    description: "Uma única fonte de verdade para todos os dados do seu produto, facilitando a gestão e partilha de informação conforme exigido pelo DPP.",
+    icon: Container,
+  },
+  {
+    title: "Relatórios Automatizados",
+    description: "Gere relatórios em conformidade com o DPP com facilidade, poupando tempo e reduzindo o risco de erros.",
+    icon: FileText,
+  },
+  {
+    title: "À Prova de Futuro",
+    description: "Mantenha-se à frente da evolução dos regulamentos e esteja preparado para o futuro da indústria têxtil.",
+    icon: ShieldCheck,
   },
 ];
 ---
@@ -57,65 +51,62 @@ const comparisonData = [
   <section class="py-20 md:py-32 text-center">
     <div class="container mx-auto px-4 md:px-6">
       <Badge className="mb-4 bg-primary text-primary-foreground"
-        >Future-Proof Your Business</Badge
+        >À Prova de Futuro para o Seu Negócio</Badge
       >
       <h1
         class="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tighter text-foreground"
       >
-        EU Digital Product Passport (DPP) Compliance with
+        Conformidade com o Passaporte Digital de Produto (DPP) da UE com o
         <span class="text-primary"> Hestia ERP</span>
       </h1>
       <p class="max-w-3xl mx-auto mt-4 text-muted-foreground md:text-xl">
-        The EU Digital Product Passport (DPP) is coming. Hestia ERP is built
-        from the ground up to ensure you are not just compliant, but ahead of
-        the curve.
+        O Passaporte Digital de Produto (DPP) da UE está a chegar. O Hestia ERP foi construído de raiz para garantir que não só está em conformidade, mas também à frente da curva.
       </p>
     </div>
   </section>
 
-  <!-- The Compliance Gap Section -->
-  <section id="compliance-gap" class="py-12 md:py-24 bg-muted">
+  <!-- What is DPP Section -->
+  <section id="what-is-dpp" class="py-12 md:py-24 bg-muted">
     <div class="container mx-auto px-4 md:px-6">
       <div class="text-center mb-12">
         <h2 class="text-3xl font-bold tracking-tighter sm:text-4xl text-foreground">
-          The Compliance Gap: Why Legacy Systems Will Fail
+          O que é o Passaporte Digital de Produto?
         </h2>
         <p class="max-w-3xl mx-auto mt-4 text-muted-foreground md:text-lg">
-          The DPP introduces new, complex data requirements that legacy systems
-          are simply not equipped to handle. This creates a compliance gap that
-          puts your business at risk.
+          O Passaporte Digital de Produto (DPP) é um novo requisito da UE que visa tornar os produtos mais sustentáveis e circulares. O Hestia ERP fornece a infraestrutura de dados de que necessita para recolher, gerir e partilhar esta informação de forma transparente.
         </p>
       </div>
+      <div class="grid gap-8 md:grid-cols-3">
+        {whatIsDpp.map((item) => (
+          <div class="flex flex-col items-center text-center">
+            <item.icon className="w-12 h-12 text-primary" />
+            <h3 class="mt-4 text-xl font-bold">{item.title}</h3>
+            <p class="mt-2 text-muted-foreground">{item.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
 
-      <div class="overflow-x-auto">
-        <table class="w-full max-w-5xl mx-auto border-collapse text-left">
-          <thead>
-            <tr class="border-b">
-              <th class="p-4 font-semibold text-lg">Critical Future Needs (EU DPP 2027)</th>
-              <th class="p-4 font-semibold text-lg">Legacy & Generic Systems</th>
-              <th class="p-4 font-semibold text-lg">Hestia ERP</th>
-            </tr>
-          </thead>
-          <tbody>
-            {comparisonData.map((item) => (
-                <tr class="border-b">
-                  <td class="p-4 font-medium">{item.feature}</td>
-                  <td class="p-4">
-                    <div class="flex items-start">
-                      <X className="w-5 h-5 text-destructive mr-2 flex-shrink-0 mt-1" />
-                      <span>{item.legacy.text}</span>
-                    </div>
-                  </td>
-                  <td class="p-4">
-                    <div class="flex items-start">
-                      <Check className="w-5 h-5 text-green-500 mr-2 flex-shrink-0 mt-1" />
-                      <span>{item.hestia.text}</span>
-                    </div>
-                  </td>
-                </tr>
-              ))}
-          </tbody>
-        </table>
+  <!-- Why Hestia Section -->
+  <section id="why-hestia" class="py-12 md:py-24">
+    <div class="container mx-auto px-4 md:px-6">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold tracking-tighter sm:text-4xl text-foreground">
+          Porque o Hestia ERP para a Conformidade com o DPP?
+        </h2>
+        <p class="max-w-3xl mx-auto mt-4 text-muted-foreground md:text-lg">
+          O Hestia ERP é mais do que uma ferramenta de conformidade. É uma plataforma de operações completa, concebida para lhe dar uma vantagem competitiva na nova era da transparência digital.
+        </p>
+      </div>
+      <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+        {hestiaBenefits.map((item) => (
+          <div class="flex flex-col items-center text-center">
+            <item.icon className="w-12 h-12 text-primary" />
+            <h3 class="mt-4 text-xl font-bold">{item.title}</h3>
+            <p class="mt-2 text-muted-foreground">{item.description}</p>
+          </div>
+        ))}
       </div>
     </div>
   </section>
@@ -124,16 +115,14 @@ const comparisonData = [
   <section class="py-20 md:py-32 text-center">
     <div class="container mx-auto px-4 md:px-6">
       <h2 class="text-3xl font-bold tracking-tighter sm:text-4xl text-foreground">
-        Ready to Get Compliant?
+        Pronto para Estar em Conformidade?
       </h2>
       <p class="max-w-2xl mx-auto mt-4 text-muted-foreground md:text-lg">
-        Don't wait until it's too late. Secure your place in the future of the
-        textile industry. Schedule a free, no-obligation demo of Hestia ERP
-        today.
+        Não espere até ser tarde demais. Garanta o seu lugar no futuro da indústria têxtil. Agende hoje mesmo uma demonstração gratuita e sem compromisso do Hestia ERP.
       </p>
       <div class="mt-8">
-        <Button size="lg" asChild>
-          <a href="/contact">Schedule a Demo</a>
+        <Button size="lg">
+          <a href={`/${Astro.currentLocale}/contact`}>Agendar uma Demonstração</a>
         </Button>
       </div>
     </div>
