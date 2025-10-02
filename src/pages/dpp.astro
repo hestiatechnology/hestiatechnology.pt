@@ -1,0 +1,141 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import { Check, X } from "lucide-react";
+
+const comparisonData = [
+  {
+    feature: "End-to-End Traceability",
+    legacy: {
+      text: "Lacks granular data architecture. Cannot track materials from origin to final product.",
+      supported: false,
+    },
+    hestia: {
+      text: "Built-in, detailed tracking of the entire supply chain.",
+      supported: true,
+    },
+  },
+  {
+    feature: "Digital Product Passport (DPP) Ready",
+    legacy: {
+      text: "Not designed for DPP. Requires expensive, custom, and risky patchwork solutions.",
+      supported: false,
+    },
+    hestia: {
+      text: "Natively supports DPP requirements, ensuring seamless compliance.",
+      supported: true,
+    },
+  },
+  {
+    feature: "Rapid & Flexible Implementation",
+    legacy: {
+      text: "Months or years to implement. Inflexible and slow to adapt.",
+      supported: false,
+    },
+    hestia: {
+      text: "Agile and fast to deploy, designed for the modern textile factory.",
+      supported: true,
+    },
+  },
+  {
+    feature: "Data-Driven & Proactive Operations",
+    legacy: {
+      text: "Data is siloed and difficult to access, leading to reactive problem-solving.",
+      supported: false,
+    },
+    hestia: {
+      text: "Provides a single source of truth with real-time alerts for proactive management.",
+      supported: true,
+    },
+  },
+];
+---
+
+<Layout title="EU Digital Product Passport (DPP) Compliance">
+  <!-- Hero Section -->
+  <section class="py-20 md:py-32 text-center">
+    <div class="container mx-auto px-4 md:px-6">
+      <Badge className="mb-4 bg-primary text-primary-foreground"
+        >Future-Proof Your Business</Badge
+      >
+      <h1
+        class="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tighter text-foreground"
+      >
+        EU Digital Product Passport (DPP) Compliance with
+        <span class="text-primary"> Hestia ERP</span>
+      </h1>
+      <p class="max-w-3xl mx-auto mt-4 text-muted-foreground md:text-xl">
+        The EU Digital Product Passport (DPP) is coming. Hestia ERP is built
+        from the ground up to ensure you are not just compliant, but ahead of
+        the curve.
+      </p>
+    </div>
+  </section>
+
+  <!-- The Compliance Gap Section -->
+  <section id="compliance-gap" class="py-12 md:py-24 bg-muted">
+    <div class="container mx-auto px-4 md:px-6">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold tracking-tighter sm:text-4xl text-foreground">
+          The Compliance Gap: Why Legacy Systems Will Fail
+        </h2>
+        <p class="max-w-3xl mx-auto mt-4 text-muted-foreground md:text-lg">
+          The DPP introduces new, complex data requirements that legacy systems
+          are simply not equipped to handle. This creates a compliance gap that
+          puts your business at risk.
+        </p>
+      </div>
+
+      <div class="overflow-x-auto">
+        <table class="w-full max-w-5xl mx-auto border-collapse text-left">
+          <thead>
+            <tr class="border-b">
+              <th class="p-4 font-semibold text-lg">Critical Future Needs (EU DPP 2027)</th>
+              <th class="p-4 font-semibold text-lg">Legacy & Generic Systems</th>
+              <th class="p-4 font-semibold text-lg">Hestia ERP</th>
+            </tr>
+          </thead>
+          <tbody>
+            {comparisonData.map((item) => (
+                <tr class="border-b">
+                  <td class="p-4 font-medium">{item.feature}</td>
+                  <td class="p-4">
+                    <div class="flex items-start">
+                      <X className="w-5 h-5 text-destructive mr-2 flex-shrink-0 mt-1" />
+                      <span>{item.legacy.text}</span>
+                    </div>
+                  </td>
+                  <td class="p-4">
+                    <div class="flex items-start">
+                      <Check className="w-5 h-5 text-green-500 mr-2 flex-shrink-0 mt-1" />
+                      <span>{item.hestia.text}</span>
+                    </div>
+                  </td>
+                </tr>
+              ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-20 md:py-32 text-center">
+    <div class="container mx-auto px-4 md:px-6">
+      <h2 class="text-3xl font-bold tracking-tighter sm:text-4xl text-foreground">
+        Ready to Get Compliant?
+      </h2>
+      <p class="max-w-2xl mx-auto mt-4 text-muted-foreground md:text-lg">
+        Don't wait until it's too late. Secure your place in the future of the
+        textile industry. Schedule a free, no-obligation demo of Hestia ERP
+        today.
+      </p>
+      <div class="mt-8">
+        <Button size="lg" asChild>
+          <a href="/contact">Schedule a Demo</a>
+        </Button>
+      </div>
+    </div>
+  </section>
+</Layout>
