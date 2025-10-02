@@ -1,6 +1,6 @@
 import { useStore } from "@nanostores/react";
 
-import { type ModuleType } from "@/data/schemas";
+import type { ModuleType } from "@/data/schemas";
 import FeatureCardSelect from "./FeatureCardPricing";
 import {
   $selectedModules,
@@ -8,7 +8,7 @@ import {
   removeModule,
   updateModule,
 } from "@/states/modules";
-import { translations } from "@/lib/translations";
+import type { translations } from "@/lib/translations";
 
 interface PricingSectionProps {
   features: ModuleType[];

@@ -1,4 +1,11 @@
-import { BookOpen, Briefcase, DollarSign, Shirt, Truck, Users } from "lucide-react";
+import {
+  BookOpen,
+  Briefcase,
+  DollarSign,
+  Shirt,
+  Truck,
+  Users,
+} from "lucide-react";
 
 export const features = [
   {

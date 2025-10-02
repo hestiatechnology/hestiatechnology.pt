@@ -10,7 +10,7 @@ import PricingSection from "./PricingSection";
 import PricingBudget from "./PricingBudget";
 import BudgetContact from "./BudgetContact";
 import { features } from "@/data/en/features";
-import { translations } from "@/lib/translations";
+import type { translations } from "@/lib/translations";
 
 const { Stepper } = defineStepper(
   {
@@ -27,10 +27,14 @@ const { Stepper } = defineStepper(
     id: "step-3",
     title: "Finish",
     description: "Finish",
-  }
+  },
 );
 
-export function PricingStepper({ locale }: { locale: keyof typeof translations }) {
+export function PricingStepper({
+  locale,
+}: {
+  locale: keyof typeof translations;
+}) {
   const selectedModules = useStore($selectedModules);
 
   return (
@@ -55,7 +59,9 @@ export function PricingStepper({ locale }: { locale: keyof typeof translations }
             ))}
           </Stepper.Navigation>
           {methods.switch({
-            "step-1": () => <PricingSection features={features} locale={locale} />,
+            "step-1": () => (
+              <PricingSection features={features} locale={locale} />
+            ),
             "step-2": () => <PricingBudget locale={locale} />,
             "step-3": () => <BudgetContact locale={locale} />,
           })}

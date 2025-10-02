@@ -17,7 +17,7 @@ interface BudgetContactProps {
 export default function BudgetContact({ locale }: BudgetContactProps) {
   const selectedModules = useStore($selectedModules);
 
-  const t = (key: keyof typeof translations[typeof locale]) => {
+  const t = (key: keyof (typeof translations)[typeof locale]) => {
     return translations[locale][key] || translations["en"][key];
   };
 
@@ -41,15 +41,15 @@ export default function BudgetContact({ locale }: BudgetContactProps) {
     <div className="max-w-4xl mx-auto p-6 space-y-6">
       <form onSubmit={handleSubmit} className="flex flex-col gap-y-5">
         <div className="flex flex-col gap-y-2">
-          <Label htmlFor="empresa">{t('contact.company')}</Label>
+          <Label htmlFor="empresa">{t("contact.company")}</Label>
           <Input id="empresa" type="text" name="company" />
         </div>
         <div className="flex flex-col gap-y-2">
-          <Label htmlFor="email">{t('contact.email')}</Label>
+          <Label htmlFor="email">{t("contact.email")}</Label>
           <Input id="email" type="email" name="email" />
         </div>
         <div className="flex flex-col gap-y-2">
-          <Label htmlFor="message">{t('contact.message')}</Label>
+          <Label htmlFor="message">{t("contact.message")}</Label>
           <Textarea id="message" name="message" />
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
@@ -61,14 +61,14 @@ export default function BudgetContact({ locale }: BudgetContactProps) {
                   <CardTitle>{module.title}</CardTitle>
                 </div>
                 <CardDescription>
-                  {t('contact.users')}:{" "}
+                  {t("contact.users")}:{" "}
                   {(module.includedUsers ?? 0) + (module.extraUsers ?? 0)}
                 </CardDescription>
               </CardHeader>
             </Card>
           ))}
         </div>
-        <Button>{t('contact.submit')}</Button>
+        <Button>{t("contact.submit")}</Button>
       </form>
     </div>
   );

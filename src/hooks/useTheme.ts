@@ -5,7 +5,7 @@ import { useState, useEffect } from "react";
  */
 export function useTheme() {
   const [isDarkMode, setIsDarkMode] = useState(() =>
-    document.documentElement.classList.contains("dark")
+    document.documentElement.classList.contains("dark"),
   );
 
   useEffect(() => {

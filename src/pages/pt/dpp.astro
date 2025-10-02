@@ -2,22 +2,33 @@
 import Layout from "@/layouts/Layout.astro";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Recycle, Users, Database, Link, Container, FileText, ShieldCheck } from "lucide-react";
+import {
+  Recycle,
+  Users,
+  Database,
+  Link,
+  Container,
+  FileText,
+  ShieldCheck,
+} from "lucide-react";
 
 const whatIsDpp = [
   {
     title: "Sustentabilidade e Circularidade",
-    description: "O DPP visa tornar os produtos mais sustentáveis e circulares, fornecendo informações sobre a origem, materiais e impacto ambiental de um produto.",
+    description:
+      "O DPP visa tornar os produtos mais sustentáveis e circulares, fornecendo informações sobre a origem, materiais e impacto ambiental de um produto.",
     icon: Recycle,
   },
   {
     title: "Transparência para Consumidores e Empresas",
-    description: "Irá fornecer aos consumidores e às empresas informações detalhadas sobre o percurso de um produto, promovendo a confiança e escolhas informadas.",
+    description:
+      "Irá fornecer aos consumidores e às empresas informações detalhadas sobre o percurso de um produto, promovendo a confiança e escolhas informadas.",
     icon: Users,
   },
   {
     title: "Registo Digital Completo",
-    description: "Para a indústria têxtil, isto significa um registo digital completo de toda a cadeia de abastecimento, desde as matérias-primas até à peça de vestuário final.",
+    description:
+      "Para a indústria têxtil, isto significa um registo digital completo de toda a cadeia de abastecimento, desde as matérias-primas até à peça de vestuário final.",
     icon: Database,
   },
 ];
@@ -25,22 +36,26 @@ const whatIsDpp = [
 const hestiaBenefits = [
   {
     title: "Rastreabilidade de Ponta a Ponta",
-    description: "Rastreie toda a sua cadeia de abastecimento, desde as matérias-primas até ao produto acabado, garantindo total transparência e conformidade.",
+    description:
+      "Rastreie toda a sua cadeia de abastecimento, desde as matérias-primas até ao produto acabado, garantindo total transparência e conformidade.",
     icon: Link,
   },
   {
     title: "Hub de Dados Centralizado",
-    description: "Uma única fonte de verdade para todos os dados do seu produto, facilitando a gestão e partilha de informação conforme exigido pelo DPP.",
+    description:
+      "Uma única fonte de verdade para todos os dados do seu produto, facilitando a gestão e partilha de informação conforme exigido pelo DPP.",
     icon: Container,
   },
   {
     title: "Relatórios Automatizados",
-    description: "Gere relatórios em conformidade com o DPP com facilidade, poupando tempo e reduzindo o risco de erros.",
+    description:
+      "Gere relatórios em conformidade com o DPP com facilidade, poupando tempo e reduzindo o risco de erros.",
     icon: FileText,
   },
   {
     title: "À Prova de Futuro",
-    description: "Mantenha-se à frente da evolução dos regulamentos e esteja preparado para o futuro da indústria têxtil.",
+    description:
+      "Mantenha-se à frente da evolução dos regulamentos e esteja preparado para o futuro da indústria têxtil.",
     icon: ShieldCheck,
   },
 ];

@@ -24,7 +24,7 @@ interface HeaderProps {
 export default function Header({ locale }: HeaderProps) {
   const { isDarkMode } = useTheme();
 
-  const t = (key: keyof typeof translations[typeof locale]) => {
+  const t = (key: keyof (typeof translations)[typeof locale]) => {
     return translations[locale][key] || translations["en"][key];
   };
 
@@ -80,10 +80,7 @@ export default function Header({ locale }: HeaderProps) {
                 <NavigationMenuList className="flex-col items-start gap-0 md:gap-2">
                   {navigationLinks.map((link, index) => (
                     <NavigationMenuItem key={index} className="w-full">
-                      <NavigationMenuLink
-                        href={link.href}
-                        className="py-1.5"
-                      >
+                      <NavigationMenuLink href={link.href} className="py-1.5">
                         {link.label}
                       </NavigationMenuLink>
                     </NavigationMenuItem>
@@ -94,7 +91,10 @@ export default function Header({ locale }: HeaderProps) {
           </Popover>
 
           <div className="flex items-center gap-6">
-            <a href={`/${locale}/`} className="text-primary hover:text-primary/90">
+            <a
+              href={`/${locale}/`}
+              className="text-primary hover:text-primary/90"
+            >
               <img
                 src={isDarkMode ? LogoWhite.src : Logo.src}
                 alt="Hestia Logo"
@@ -133,20 +133,20 @@ export default function Header({ locale }: HeaderProps) {
               </Button>
             </PopoverTrigger>
             <PopoverContent align="end" className="w-36 p-1">
-                <NavigationMenu className="max-w-none *:w-full">
-                    <NavigationMenuList className="flex-col items-start gap-0 md:gap-2">
-                        <NavigationMenuItem className="w-full">
-                            <NavigationMenuLink href={`/en/`} className="py-1.5">
-                                English
-                            </NavigationMenuLink>
-                        </NavigationMenuItem>
-                        <NavigationMenuItem className="w-full">
-                            <NavigationMenuLink href={`/pt/`} className="py-1.5">
-                                Português
-                            </NavigationMenuLink>
-                        </NavigationMenuItem>
-                    </NavigationMenuList>
-                </NavigationMenu>
+              <NavigationMenu className="max-w-none *:w-full">
+                <NavigationMenuList className="flex-col items-start gap-0 md:gap-2">
+                  <NavigationMenuItem className="w-full">
+                    <NavigationMenuLink href={`/en/`} className="py-1.5">
+                      English
+                    </NavigationMenuLink>
+                  </NavigationMenuItem>
+                  <NavigationMenuItem className="w-full">
+                    <NavigationMenuLink href={`/pt/`} className="py-1.5">
+                      Português
+                    </NavigationMenuLink>
+                  </NavigationMenuItem>
+                </NavigationMenuList>
+              </NavigationMenu>
             </PopoverContent>
           </Popover>
           <ModeToggle />

@@ -1,4 +1,4 @@
-import { defineCollection, z } from 'astro:content';
+import { defineCollection, z } from "astro:content";
 
 const legalCollection = defineCollection({
   schema: z.object({
@@ -7,5 +7,5 @@ const legalCollection = defineCollection({
 });
 
 export const collections = {
-  'legal': legalCollection,
+  legal: legalCollection,
 };

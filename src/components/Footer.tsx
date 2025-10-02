@@ -12,7 +12,7 @@ export default function Footer({ locale }: FooterProps) {
   const currentYear = new Date().getFullYear();
   const { isDarkMode } = useTheme();
 
-  const t = (key: keyof typeof translations[typeof locale]) => {
+  const t = (key: keyof (typeof translations)[typeof locale]) => {
     return translations[locale][key] || translations["en"][key];
   };
 
@@ -98,7 +98,9 @@ export default function Footer({ locale }: FooterProps) {
           </div>
 
           <div className="flex flex-col gap-4">
-            <h3 className="font-semibold text-lg">{t("footer.links.contact")}</h3>
+            <h3 className="font-semibold text-lg">
+              {t("footer.links.contact")}
+            </h3>
             <div className="flex flex-col gap-4">
               <div className="flex items-start gap-2">
                 <MapPin className="w-5 h-5 mt-1 flex-shrink-0" />
@@ -134,7 +136,10 @@ export default function Footer({ locale }: FooterProps) {
         <div className="border-t border-primary-foreground/20 py-6">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-sm text-primary-foreground/80">
-              {t("footer.copyright").replace("{currentYear}", currentYear.toString())}
+              {t("footer.copyright").replace(
+                "{currentYear}",
+                currentYear.toString(),
+              )}
             </p>
           </div>
         </div>

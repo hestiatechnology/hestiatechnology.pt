@@ -20,8 +20,17 @@ interface PricingBudgetProps {
 export default function PricingBudget({ locale }: PricingBudgetProps) {
   const selectedModules = useStore($selectedModules);
 
-  const t = (key: keyof typeof translations[typeof locale]) => {
-    return translations[locale][key] || translations["en"][key];
+  const t = (
+    key: keyof (typeof translations)[typeof locale],
+    replacements?: { [key: string]: string | number },
+  ) => {
+    let translation = translations[locale][key] || translations["en"][key];
+    if (replacements) {
+      for (const [placeholder, value] of Object.entries(replacements)) {
+        translation = translation.replace(`{${placeholder}}`, String(value));
+      }
+    }
+    return translation;
   };
 
   const calculateModuleTotal = (module: ModuleType) => {
@@ -41,10 +50,10 @@ export default function PricingBudget({ locale }: PricingBudgetProps) {
     <div className="max-w-4xl mx-auto p-6 space-y-6">
       {/* Header */}
       <div className="text-center space-y-2">
-        <h1 className="text-3xl font-bold text-foreground">{t('budget.title')}</h1>
-        <p className="text-muted-foreground">
-          {t('budget.description')}
-        </p>
+        <h1 className="text-3xl font-bold text-foreground">
+          {t("budget.title")}
+        </h1>
+        <p className="text-muted-foreground">{t("budget.description")}</p>
       </div>
       <div className="space-y-4">
         {selectedModules.map((module, index) => {
@@ -84,7 +93,7 @@ export default function PricingBudget({ locale }: PricingBudgetProps) {
                       <div className="flex items-center space-x-2">
                         <DollarSign className="w-4 h-4 text-muted-foreground" />
                         <span className="text-sm text-foreground">
-                          {t('budget.base_price')}
+                          {t("budget.base_price")}
                         </span>
                       </div>
                       <span className="font-medium">
@@ -99,7 +108,7 @@ export default function PricingBudget({ locale }: PricingBudgetProps) {
                       <div className="flex items-center space-x-2">
                         <Users className="w-4 h-4 text-muted-foreground" />
                         <span className="text-sm text-foreground">
-                          {t('budget.included_users')}
+                          {t("budget.included_users")}
                         </span>
                       </div>
                       <span className="font-medium">
@@ -115,8 +124,10 @@ export default function PricingBudget({ locale }: PricingBudgetProps) {
                         <Plus className="w-4 h-4 text-muted-foreground" />
                         <span className="text-sm text-foreground">
                           {module.extraUsers
-                            ? t('budget.extra_users', { count: module.extraUsers })
-                            : t('budget.extras')}
+                            ? t("budget.extra_users", {
+                                count: module.extraUsers,
+                              })
+                            : t("budget.extras")}
                         </span>
                       </div>
                       <span className="font-medium">
@@ -135,15 +146,17 @@ export default function PricingBudget({ locale }: PricingBudgetProps) {
                             {module.information.title}
                           </h4>
                           <ul className="text-xs text-muted-foreground space-y-1">
-                            {module.information.included.map((item: string, idx: number) => (
-                              <li
-                                key={idx}
-                                className="flex items-center space-x-1"
-                              >
-                                <span className="w-1 h-1 bg-muted-foreground rounded-full"></span>
-                                <span>{item}</span>
-                              </li>
-                            ))}
+                            {module.information.included.map(
+                              (item: string, idx: number) => (
+                                <li
+                                  key={idx}
+                                  className="flex items-center space-x-1"
+                                >
+                                  <span className="w-1 h-1 bg-muted-foreground rounded-full"></span>
+                                  <span>{item}</span>
+                                </li>
+                              ),
+                            )}
                           </ul>
                           {module.information.comment && (
                             <p className="text-xs text-muted-foreground mt-2 italic">
@@ -167,18 +180,19 @@ export default function PricingBudget({ locale }: PricingBudgetProps) {
           <div className="flex items-center justify-between">
             <div>
               <h3 className="text-xl font-bold text-foreground">
-                {t('budget.total_budget')}
+                {t("budget.total_budget")}
               </h3>
               <p className="text-sm text-muted-foreground mt-1">
-                {selectedModules.length} {t('budget.module')}
-                {selectedModules.length !== 1 ? t('budget.plural_suffix') : ""} {t('budget.selected')}
+                {selectedModules.length} {t("budget.module")}
+                {selectedModules.length !== 1 ? t("budget.plural_suffix") : ""}{" "}
+                {t("budget.selected")}
               </p>
             </div>
             <div className="text-right">
               <div className="text-3xl font-bold text-primary">
                 €{grandTotal.toFixed(2)}
               </div>
-              <p className="text-sm text-primary">{t('budget.per_year')}</p>
+              <p className="text-sm text-primary">{t("budget.per_year")}</p>
             </div>
           </div>
 
@@ -189,7 +203,9 @@ export default function PricingBudget({ locale }: PricingBudgetProps) {
               <div className="text-2xl font-bold text-foreground">
                 {selectedModules.length}
               </div>
-              <div className="text-sm text-muted-foreground">{t('budget.modules')}</div>
+              <div className="text-sm text-muted-foreground">
+                {t("budget.modules")}
+              </div>
             </div>
             <div>
               <div className="text-2xl font-bold text-foreground">
@@ -199,13 +215,15 @@ export default function PricingBudget({ locale }: PricingBudgetProps) {
                   0,
                 )}
               </div>
-              <div className="text-sm text-muted-foreground">{t('budget.users')}</div>
+              <div className="text-sm text-muted-foreground">
+                {t("budget.users")}
+              </div>
             </div>
             <div>
               <div className="text-2xl font-bold text-primary">
                 €{grandTotal.toFixed(2)}
               </div>
-              <div className="text-sm text-primary">{t('budget.annual')}</div>
+              <div className="text-sm text-primary">{t("budget.annual")}</div>
             </div>
           </div>
         </CardContent>
