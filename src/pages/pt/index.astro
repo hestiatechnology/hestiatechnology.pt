@@ -1,0 +1,203 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import FeatureCard from "@/components/FeatureCard";
+import { CheckCircle, XCircle, Zap } from "lucide-react";
+import TeamSection from "@/components/TeamSection.pt";
+import { Image } from "astro:assets";
+import IPCALogo from "@/assets/ipca_cor.png";
+import STARTIpca from "@/assets/start-ipca.png";
+import SafariBackground from "@/components/SafariBackground";
+
+const problems = [
+  {
+    title: "O Buraco Negro da Produção",
+    description:
+      "A produção para porque uma entrega de tecido está atrasada, sem aviso prévio do atraso.",
+    icon: "XCircle",
+  },
+  {
+    title: "O Caos da Coordenação",
+    description:
+      "Obter uma atualização de estado significa perseguir e-mails, verificar folhas de cálculo e fazer várias chamadas telefónicas. É tudo um palpite.",
+    icon: "XCircle",
+  },
+  {
+    title: "O Défice de Confiança",
+    description:
+      "Prometer uma data de entrega a um cliente sem qualquer confiança real de que possa ser cumprida, arriscando a reputação da empresa.",
+    icon: "XCircle",
+  },
+];
+
+const solutions = [
+  {
+    title: "De Voar às Cegas a Ver Tudo",
+    description:
+      "Elimine paragens de produção inesperadas com total visibilidade, transformando alertas proativos em fluxo de trabalho ininterrupto.",
+    icon: "CheckCircle",
+  },
+  {
+    title: "De Adivinhar à Certeza Absoluta",
+    description:
+      "Substitua e-mails dispersos e folhas de cálculo por uma única fonte de verdade em tempo real para toda a sua cadeia de abastecimento.",
+    icon: "CheckCircle",
+  },
+  {
+    title: "De Promessas Quebradas a Confiança Inabalável",
+    description:
+      "Transforme estimativas de entrega arriscadas em prazos fiáveis que pode prometer com confiança e cumprir consistentemente.",
+    icon: "CheckCircle",
+  },
+];
+---
+
+<Layout title="Hestia ERP - A Plataforma de Operações para Fabricantes Têxteis">
+  <div class="flex flex-col">
+    <!-- Hero Section -->
+    <section class="py-20 md:py-32 lg:py-40 text-center">
+      <div class="container mx-auto px-4 md:px-6">
+        <Badge className="mb-4 bg-primary text-primary-foreground">
+         Construído para o futuro dos negócios
+        </Badge>
+        <h1
+          class="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tighter text-foreground"
+        >
+          A Plataforma de Operações para <span class="text-primary"
+            >Fabricantes Têxteis</span
+          >
+        </h1>
+        <p class="max-w-3xl mx-auto mt-4 text-muted-foreground md:text-xl">
+          O Hestia ERP transforma os seus maiores desafios operacionais nas suas maiores forças. Passe do caos operacional para o controlo total.
+        </p>
+        <div class="mt-8 flex justify-center gap-4">
+          <Button size="lg" asChild>
+            <a href="/pt/contact">Agendar uma Demonstração</a>
+          </Button>
+          <Button size="lg" variant="outline" asChild>
+            <a href="/pt/prices">Ver Preços</a>
+          </Button>
+        </div>
+		<div class="mt-8">
+			<SafariBackground client:only="react" />
+		</div>
+      </div>
+    </section>
+
+    <!-- Problems Section -->
+    <section id="problems" class="py-12 md:py-24 bg-muted">
+      <div class="container mx-auto px-4 md:px-6">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl font-bold tracking-tighter sm:text-4xl text-foreground">
+            A Voar às Cegas na Sua Cadeia de Abastecimento?
+          </h2>
+          <p class="max-w-2xl mx-auto mt-4 text-muted-foreground md:text-lg">
+            Isto não é um inconveniente. É um imposto anual de até 100k€ no seu negócio.
+          </p>
+        </div>
+        <div class="grid gap-8 md:grid-cols-3">
+          {
+            problems.map((problem) => (
+              <div class="flex flex-col items-center text-center">
+                <XCircle className="w-12 h-12 text-destructive" />
+                <h3 class="mt-4 text-xl font-bold">{problem.title}</h3>
+                <p class="mt-2 text-muted-foreground">
+                  {problem.description}
+                </p>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <!-- Solutions Section -->
+    <section id="solutions" class="py-12 md:py-24">
+      <div class="container mx-auto px-4 md:px-6">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl font-bold tracking-tighter sm:text-4xl text-foreground">
+            Do Caos Operacional ao Controlo Total
+          </h2>
+          <p class="max-w-2xl mx-auto mt-4 text-muted-foreground md:text-lg">
+            O Hestia ERP transforma os seus maiores desafios operacionais nas suas maiores forças.
+          </p>
+        </div>
+        <div class="grid gap-8 md:grid-cols-3">
+          {
+            solutions.map((solution) => (
+              <div class="flex flex-col items-center text-center">
+                <CheckCircle className="w-12 h-12 text-green-500" />
+                <h3 class="mt-4 text-xl font-bold">{solution.title}</h3>
+                <p class="mt-2 text-muted-foreground">
+                  {solution.description}
+                </p>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Now? Section -->
+    <section id="why-now" class="py-12 md:py-24 bg-muted">
+      <div class="container mx-auto px-4 md:px-6">
+        <div class="text-center">
+          <Zap className="w-12 h-12 text-primary mx-auto" />
+          <h2
+            class="mt-4 text-3xl font-bold tracking-tighter sm:text-4xl text-foreground"
+          >
+            Então... Porquê agora?
+          </h2>
+          <p
+            class="max-w-3xl mx-auto mt-4 text-muted-foreground md:text-lg"
+          >
+            O <span class="font-bold text-foreground"
+              >Passaporte Digital de Produto da UE (DPP)</span
+            > será obrigatório até 2027. Os sistemas legados não conseguem lidar com isto, faltando-lhes a arquitetura de dados para rastrear a informação desde a origem até ao produto final.
+          </p>
+          <p
+            class="max-w-3xl mx-auto mt-4 text-lg font-semibold text-foreground"
+          >
+            A Hestia é construída de raiz para esta nova realidade, com suporte nativo para os requisitos do DPP para garantir uma conformidade perfeita.
+          </p>
+          <div class="mt-8">
+            <Button asChild>
+              <a href="/pt/dpp">Saber Mais Sobre a Conformidade DPP</a>
+            </Button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Team Section -->
+    <TeamSection client:load />
+
+    <!-- Partners Section -->
+    <section id="partners" class="py-12 md:py-24">
+      <div class="container mx-auto">
+        <h2
+          class="text-3xl font-bold tracking-tighter sm:text-5xl text-foreground mb-8 text-center"
+        >
+          Os Nossos Parceiros
+        </h2>
+        <div
+          class="flex flex-col md:flex-row items-center justify-center gap-x-12 gap-y-8"
+        >
+          <Image
+            src={IPCALogo}
+            height={120}
+            alt="IPCA Logo"
+            class="grayscale hover:grayscale-0 transition-all"
+          />
+          <Image
+            src={STARTIpca}
+            height={120}
+            alt="START IPCA Logo"
+            class="grayscale hover:grayscale-0 transition-all"
+          />
+        </div>
+      </div>
+    </section>
+  </div>
+</Layout>

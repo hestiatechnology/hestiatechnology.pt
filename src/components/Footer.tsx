@@ -2,10 +2,19 @@ import Logo from "@/assets/HestiaTechnologyWhite.svg";
 import LogoNormal from "@/assets/HestiaTechnology.svg";
 import { MapPin, Mail, Phone } from "lucide-react";
 import { useTheme } from "@/hooks/useTheme";
+import { translations } from "@/lib/translations";
 
-export default function Footer() {
+interface FooterProps {
+  locale: keyof typeof translations;
+}
+
+export default function Footer({ locale }: FooterProps) {
   const currentYear = new Date().getFullYear();
   const { isDarkMode } = useTheme();
+
+  const t = (key: keyof typeof translations[typeof locale]) => {
+    return translations[locale][key] || translations["en"][key];
+  };
 
   return (
     <footer className="bg-primary text-primary-foreground">
@@ -35,61 +44,61 @@ export default function Footer() {
           </div>
 
           <div className="flex flex-col gap-4">
-            <h3 className="font-semibold text-lg">Links Rápidos</h3>
+            <h3 className="font-semibold text-lg">{t("footer.links.quick")}</h3>
             <nav className="flex flex-col gap-2">
               <a
-                href="/"
+                href={`/${locale}/`}
                 className="hover:text-primary-foreground/80 transition-colors"
               >
-                Home
+                {t("footer.nav.home")}
               </a>
               <a
-                href="/prices"
+                href={`/${locale}/prices`}
                 className="hover:text-primary-foreground/80 transition-colors"
               >
-                Preços
+                {t("footer.nav.prices")}
               </a>
               <a
-                href="/about"
+                href={`/${locale}/about`}
                 className="hover:text-primary-foreground/80 transition-colors"
               >
-                Sobre Nós
+                {t("footer.nav.about")}
               </a>
               <a
-                href="/contact"
+                href={`/${locale}/contact`}
                 className="hover:text-primary-foreground/80 transition-colors"
               >
-                Contacto
+                {t("footer.nav.contact")}
               </a>
             </nav>
           </div>
 
           <div className="flex flex-col gap-4">
-            <h3 className="font-semibold text-lg">Legal</h3>
+            <h3 className="font-semibold text-lg">{t("footer.links.legal")}</h3>
             <nav className="flex flex-col gap-2">
               <a
-                href="/privacy"
+                href={`/${locale}/privacy`}
                 className="hover:text-primary-foreground/80 transition-colors"
               >
-                Política de Privacidade
+                {t("footer.nav.privacy")}
               </a>
               <a
-                href="/terms"
+                href={`/${locale}/terms`}
                 className="hover:text-primary-foreground/80 transition-colors"
               >
-                Termos de Serviço
+                {t("footer.nav.terms")}
               </a>
               <a
-                href="/cookies"
+                href={`/${locale}/cookies`}
                 className="hover:text-primary-foreground/80 transition-colors"
               >
-                Política de Cookies
+                {t("footer.nav.cookies")}
               </a>
             </nav>
           </div>
 
           <div className="flex flex-col gap-4">
-            <h3 className="font-semibold text-lg">Contacto</h3>
+            <h3 className="font-semibold text-lg">{t("footer.links.contact")}</h3>
             <div className="flex flex-col gap-4">
               <div className="flex items-start gap-2">
                 <MapPin className="w-5 h-5 mt-1 flex-shrink-0" />
@@ -125,8 +134,7 @@ export default function Footer() {
         <div className="border-t border-primary-foreground/20 py-6">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-sm text-primary-foreground/80">
-              © {currentYear} Hestia Technology, Lda. Todos os direitos
-              reservados.
+              {t("footer.copyright").replace("{currentYear}", currentYear.toString())}
             </p>
           </div>
         </div>

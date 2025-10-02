@@ -12,6 +12,10 @@ import sitemap from '@astrojs/sitemap';
 // https://astro.build/config
 export default defineConfig({
   site: 'https://hestiatechnology.pt',
+  i18n: {
+    defaultLocale: 'pt',
+    locales: ['en', 'pt'],
+  },
   integrations: [react(), sitemap()],
 
   vite: {

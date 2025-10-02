@@ -3,11 +3,17 @@ import "@/styles/global.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { AnnouncementBar } from "@/components/annoucement-bar";
+import { translations } from "@/lib/translations";
 
 const { title } = Astro.props;
+const locale = Astro.currentLocale as keyof typeof translations;
+
+const t = (key: keyof typeof translations[typeof locale]) => {
+  return translations[locale][key] || translations["en"][key];
+};
 ---
 
-<html lang="en">
+<html lang={locale}>
   <head>
     <meta charset="UTF-8" />
     <link rel="sitemap" href="/sitemap-index.xml" />
@@ -18,7 +24,7 @@ const { title } = Astro.props;
     <title>Hestia - {title}</title>
     <meta
       name="description"
-      content="Aumente a eficiência e o controlo. O ERP da Hestia integra os seus processos essenciais para operações fluidas."
+      content={t("layout.meta.description")}
     />
 
     <meta property="og:title" content="Hestia Technology Lda" />
@@ -26,7 +32,7 @@ const { title } = Astro.props;
     <meta property="og:url" content="https://hestiatechnology.pt/" />
     <meta
       property="og:description"
-      content="Bem vindo à Hestia Technology Lda"
+      content={t("layout.og.description")}
     />
 
     <link
@@ -39,16 +45,16 @@ const { title } = Astro.props;
   </head>
   <body class="min-h-screen flex flex-col antialiased">
     <AnnouncementBar
-      message="🎉 Estamos à procura de investidores!"
+      message={t("announcement.message")}
       type="promotion"
-      actionText="Saiba Mais"
+      actionText={t("announcement.action")}
       actionHref="/investments"
     />
-    <Header client:only="react" />
+    <Header client:only="react" locale={locale} />
     <main class="flex-1">
       <slot />
     </main>
-    <Footer client:only="react" />
+    <Footer client:only="react" locale={locale} />
   </body>
 </html>
 
