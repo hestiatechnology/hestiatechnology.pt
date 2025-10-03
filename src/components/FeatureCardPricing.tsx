@@ -1,3 +1,7 @@
+import { useState, useEffect, useId } from "react";
+import { translations } from "@/lib/translations";
+
+import { cn } from "@/lib/utils";
 import { Info } from "lucide-react";
 import {
   Card,
@@ -6,14 +10,12 @@ import {
   CardHeader,
   CardTitle,
 } from "./ui/card";
-import { cn } from "@/lib/utils";
 import { Badge } from "./ui/badge";
-import type { ModuleType } from "@/data/features";
 import { Button } from "./ui/button";
 import { Input } from "./ui/input";
 import { Label } from "./ui/label";
 import { HoverCard, HoverCardContent, HoverCardTrigger } from "./ui/hover-card";
-import { useState, useEffect } from "react";
+import type { ModuleType } from "@/data/schemas";
 
 interface FeatureCardProps {
   data: ModuleType;
@@ -21,6 +23,7 @@ interface FeatureCardProps {
   onUpdate?: (data: ModuleType) => void;
   isSelected?: boolean;
   showInfo?: boolean;
+  locale: keyof typeof translations;
 }
 
 export default function FeatureCardSelect({
@@ -29,9 +32,11 @@ export default function FeatureCardSelect({
   isSelected,
   showInfo,
   onUpdate,
+  locale,
 }: FeatureCardProps) {
+  const counterId = useId();
   const [userCount, setUserCount] = useState(
-    (data.includedUsers ?? 1) + (data.extraUsers ?? 0)
+    (data.includedUsers ?? 1) + (data.extraUsers ?? 0),
   );
 
   useEffect(() => {
@@ -42,22 +47,26 @@ export default function FeatureCardSelect({
     return null;
   }
 
+  const t = (key: keyof (typeof translations)[typeof locale]) => {
+    return translations[locale][key] || translations.en[key];
+  };
+
   const includedList = [
     ...(data.includedUsers ? [`${data.includedUsers} Utilizadores`] : []),
     ...(data.information?.included ?? []),
   ];
 
-  const extraUsers = userCount - (data.includedUsers ?? 1);
+  //const extraUsers = userCount - (data.includedUsers ?? 1);
 
-  const extraPrice =
-    extraUsers > 0 && data.pricePerUser ? extraUsers * data.pricePerUser : 0;
+  //const extraPrice =
+  //  extraUsers > 0 && data.pricePerUser ? extraUsers * data.pricePerUser : 0;
 
   return (
     <Card
       className={cn(
         "border shadow-lg hover:shadow-xl transition-shadow z-20",
         isSelected ? "border-2 border-primary border-solid" : "border-border",
-        data.disabled && "bg-muted"
+        data.disabled && "bg-muted",
       )}
       onClick={!data.disabled ? () => onSelect?.(data) : undefined}
     >
@@ -71,18 +80,20 @@ export default function FeatureCardSelect({
             <data.icon className={`h-6 w-6 ${data.iconColor}`} />
           </div>
 
-          {data.disabled && <Badge>Em breve</Badge>}
+          {data.disabled && <Badge>{t("pricing.coming_soon")}</Badge>}
 
           {showInfo && (
             <div className="flex items-center gap-x-3">
               <p className="text-xl font-semibold">
                 {data.price}
-                <span className="text-sm text-foreground">€/ano</span>
+                <span className="text-sm text-foreground">
+                  {t("pricing.per_year")}
+                </span>
               </p>
               {userCount > (data.includedUsers ?? 1) && data.pricePerUser && (
                 <span className="block text-sm text-primary font-medium mt-1">
                   +{(userCount - (data.includedUsers ?? 1)) * data.pricePerUser}
-                  €/ano
+                  {t("pricing.per_year")}
                 </span>
               )}
               <HoverCard>
@@ -101,8 +112,8 @@ export default function FeatureCardSelect({
                         {data.information?.title}
                       </h1>
                       <ul>
-                        {includedList.map((item, i) => (
-                          <li key={i}>{item}</li>
+                        {includedList.map((item) => (
+                          <li key={item}>{item}</li>
                         ))}
                       </ul>
                       <span className="text-sm text-muted-foreground">
@@ -122,9 +133,9 @@ export default function FeatureCardSelect({
         <CardContent>
           <div className="flex items-center justify-center gap-x-2">
             <div className="flex items-center gap-x-2">
-              <Label htmlFor="counter">Utilizadores</Label>
+              <Label htmlFor={counterId}>Utilizadores</Label>
               <Input
-                id="counter"
+                id={counterId}
                 value={userCount}
                 readOnly
                 className="text-center"

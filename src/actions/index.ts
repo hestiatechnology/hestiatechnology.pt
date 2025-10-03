@@ -1,6 +1,6 @@
 import ConfirmationEmail from "@/components/email/client-email-template";
 import InternalNotificationEmail from "@/components/email/company-email";
-import { moduleTypeSchema } from "@/data/features";
+import { moduleTypeSchema } from "@/data/schemas";
 import { ActionError, defineAction } from "astro:actions";
 import { z } from "astro:schema";
 import { Resend } from "resend";

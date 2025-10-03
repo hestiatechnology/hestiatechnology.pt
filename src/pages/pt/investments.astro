@@ -1,0 +1,215 @@
+---
+import ScheduleMeeting from "@/components/ScheduleMeeting";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import Layout from "@/layouts/Layout.astro";
+---
+
+<Layout title="Investimentos">
+  <section
+    id="hero"
+    class="py-12 md:py-24 lg:py-32 bg-gradient-to-br from-background to-muted"
+  >
+    <div class="container mx-auto px-4 md:px-6">
+      <div class="text-center mb-12">
+        <Badge
+          variant="outline"
+          className="mb-4 w-fit h-fit bg-primary text-primary-foreground"
+        >
+          🚀 Oportunidade de Investimento
+        </Badge>
+        <h1
+          class="text-3xl font-bold tracking-tighter sm:text-5xl text-foreground mb-4"
+        >
+          Estamos à procura de investidores!
+        </h1>
+        <p class="max-w-[900px] mx-auto text-muted-foreground md:text-xl mb-8">
+          Junte-se a nós numa jornada revolucionária. Procuramos investidores
+          visionários para acelerar o nosso crescimento e transformar o mercado.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <Button size="lg" className="px-8 z-1 cursor-pointer">
+            <a href="mailto:investors@hestiatechnology.pt">Investir agora</a>
+          </Button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-12 md:py-24">
+    <div class="container mx-auto px-4 md:px-6">
+      <div class="text-center mb-8">
+        <h2
+          class="text-2xl font-bold tracking-tighter sm:text-4xl text-foreground mb-4"
+        >
+          Pitch Deck
+        </h2>
+        <p class="max-w-[700px] mx-auto text-muted-foreground">
+          Conheça a nossa visão, estratégia e oportunidade de mercado
+        </p>
+      </div>
+
+      <div class="max-w-4xl mx-auto">
+        <Card>
+          <CardContent className="p-4">
+            <iframe
+              src="https://docs.google.com/presentation/d/e/2PACX-1vSc8ct3XoeALpqILbHoV3VKjl5yANi4-GpTRik1cQRZ-23l6UfixP0wmYZijEarFrde46B9QAhBfRJC/pubembed?start=false&loop=false&delayms=5000"
+              width="100%"
+              height="500"
+              allowfullscreen="true"
+              class="rounded-lg"
+              title="Hestia ERP Pitch Deck"></iframe>
+          </CardContent>
+        </Card>
+      </div>
+    </div>
+  </section>
+
+  <!-- Investment Information -->
+  <section class="py-12 md:py-24 bg-muted/30">
+    <div class="container mx-auto px-4 md:px-6">
+      <div class="max-w-3xl mx-auto text-center">
+        <Badge
+          variant="secondary"
+          className="mb-4 w-fit h-fit bg-primary text-primary-foreground"
+        >
+          💰 Ronda de Investimento
+        </Badge>
+        <h2
+          class="text-2xl font-bold tracking-tighter sm:text-4xl text-foreground mb-4"
+        >
+          Ronda Pre-Seed
+        </h2>
+        <p class="text-muted-foreground mb-8">
+          Estamos atualmente a levantar a nossa ronda pre-seed para acelerar o
+          desenvolvimento do produto e expansão de mercado.
+        </p>
+
+        <Card className="mb-8">
+          <CardHeader className="text-center">
+            <CardTitle className="text-6xl font-bold text-primary mb-4"
+              >€250K</CardTitle
+            >
+            <CardDescription className="text-xl">
+              Objetivo de investimento para esta ronda
+            </CardDescription>
+          </CardHeader>
+          <CardContent>
+            <div class="grid gap-4 md:grid-cols-3 text-center">
+              <Card className="border-0 shadow-none">
+                <CardContent className="p-4">
+                  <div class="text-sm text-foreground">
+                    Talento
+                  </div>
+                </CardContent>
+              </Card>
+              <Card className="border-0 shadow-none">
+                <CardContent className="p-4">
+                  <div class="text-sm text-foreground">Marketing</div>
+                </CardContent>
+              </Card>
+              <Card className="border-0 shadow-none">
+                <CardContent className="p-4">
+                  <div class="text-sm text-foreground">Infraestrutura</div>
+                </CardContent>
+              </Card>
+            </div>
+          </CardContent>
+        </Card>
+
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <Button size="lg" className="px-8 cursor-pointer">
+            Manifestar interesse
+          </Button>
+          <ScheduleMeeting client:only="react" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Additional Info Cards -->
+  <section class="py-12 md:py-24">
+    <div class="container mx-auto px-4 md:px-6">
+      <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3 max-w-5xl mx-auto">
+        <Card className="hover:shadow-lg transition-shadow">
+          <CardHeader>
+            <div
+              class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-2"
+            >
+              <span class="text-2xl">🎯</span>
+            </div>
+            <CardTitle>Mercado Alvo</CardTitle>
+            <CardDescription>
+              Foco em segmentos de alto crescimento com necessidades não
+              atendidas
+            </CardDescription>
+          </CardHeader>
+        </Card>
+
+        <Card className="hover:shadow-lg transition-shadow">
+          <CardHeader>
+            <div
+              class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-2"
+            >
+              <span class="text-2xl">⚡</span>
+            </div>
+            <CardTitle>Tração</CardTitle>
+            <CardDescription>
+              Crescimento consistente com métricas validadas pelo mercado
+            </CardDescription>
+          </CardHeader>
+        </Card>
+
+        <Card className="hover:shadow-lg transition-shadow">
+          <CardHeader>
+            <div
+              class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-2"
+            >
+              <span class="text-2xl">🚀</span>
+            </div>
+            <CardTitle>Roadmap</CardTitle>
+            <CardDescription>
+              Plano claro para os próximos 18 meses com marcos definidos
+            </CardDescription>
+          </CardHeader>
+        </Card>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-12 md:py-24">
+    <div class="container mx-auto px-4 md:px-6">
+      <Card className="bg-gradient-to-r from-primary to-chart-2 border-0">
+        <CardContent className="p-8 md:p-12 text-center">
+          <h2
+            class="text-2xl font-bold tracking-tighter sm:text-4xl text-primary-foreground mb-4"
+          >
+            Pronto para investir no futuro?
+          </h2>
+          <p class="max-w-[600px] mx-auto text-primary-foreground/90 mb-8">
+            Não perca esta oportunidade única. Junte-se aos nossos investidores
+            e faça parte da próxima grande revolução.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <Button variant="default" size="lg" className="px-8 cursor-pointer">
+              <a href="mailto:investors@hestiatechnology.pt"
+                >Contacte-nos agora</a
+              >
+            </Button>
+          </div>
+          <p class="text-primary-foreground mt-2">
+            investors [at] hestiatechnology.pt
+          </p>
+        </CardContent>
+      </Card>
+    </div>
+  </section>
+</Layout>

@@ -1,0 +1,145 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import {
+  Recycle,
+  Users,
+  Database,
+  Link,
+  Container,
+  FileText,
+  ShieldCheck,
+} from "lucide-react";
+
+const whatIsDpp = [
+  {
+    title: "Sustentabilidade e Circularidade",
+    description:
+      "O DPP visa tornar os produtos mais sustentáveis e circulares, fornecendo informações sobre a origem, materiais e impacto ambiental de um produto.",
+    icon: Recycle,
+  },
+  {
+    title: "Transparência para Consumidores e Empresas",
+    description:
+      "Irá fornecer aos consumidores e às empresas informações detalhadas sobre o percurso de um produto, promovendo a confiança e escolhas informadas.",
+    icon: Users,
+  },
+  {
+    title: "Registo Digital Completo",
+    description:
+      "Para a indústria têxtil, isto significa um registo digital completo de toda a cadeia de abastecimento, desde as matérias-primas até à peça de vestuário final.",
+    icon: Database,
+  },
+];
+
+const hestiaBenefits = [
+  {
+    title: "Rastreabilidade de Ponta a Ponta",
+    description:
+      "Rastreie toda a sua cadeia de abastecimento, desde as matérias-primas até ao produto acabado, garantindo total transparência e conformidade.",
+    icon: Link,
+  },
+  {
+    title: "Hub de Dados Centralizado",
+    description:
+      "Uma única fonte de verdade para todos os dados do seu produto, facilitando a gestão e partilha de informação conforme exigido pelo DPP.",
+    icon: Container,
+  },
+  {
+    title: "Relatórios Automatizados",
+    description:
+      "Gere relatórios em conformidade com o DPP com facilidade, poupando tempo e reduzindo o risco de erros.",
+    icon: FileText,
+  },
+  {
+    title: "À Prova de Futuro",
+    description:
+      "Mantenha-se à frente da evolução dos regulamentos e esteja preparado para o futuro da indústria têxtil.",
+    icon: ShieldCheck,
+  },
+];
+---
+
+<Layout title="EU Digital Product Passport (DPP) Compliance">
+  <!-- Hero Section -->
+  <section class="py-20 md:py-32 text-center">
+    <div class="container mx-auto px-4 md:px-6">
+      <Badge className="mb-4 bg-primary text-primary-foreground"
+        >À Prova de Futuro para o Seu Negócio</Badge
+      >
+      <h1
+        class="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tighter text-foreground"
+      >
+        Conformidade com o Passaporte Digital de Produto (DPP) da UE com o
+        <span class="text-primary"> Hestia ERP</span>
+      </h1>
+      <p class="max-w-3xl mx-auto mt-4 text-muted-foreground md:text-xl">
+        O Passaporte Digital de Produto (DPP) da UE está a chegar. O Hestia ERP foi construído de raiz para garantir que não só está em conformidade, mas também à frente da curva.
+      </p>
+    </div>
+  </section>
+
+  <!-- What is DPP Section -->
+  <section id="what-is-dpp" class="py-12 md:py-24 bg-muted">
+    <div class="container mx-auto px-4 md:px-6">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold tracking-tighter sm:text-4xl text-foreground">
+          O que é o Passaporte Digital de Produto?
+        </h2>
+        <p class="max-w-3xl mx-auto mt-4 text-muted-foreground md:text-lg">
+          O Passaporte Digital de Produto (DPP) é um novo requisito da UE que visa tornar os produtos mais sustentáveis e circulares. O Hestia ERP fornece a infraestrutura de dados de que necessita para recolher, gerir e partilhar esta informação de forma transparente.
+        </p>
+      </div>
+      <div class="grid gap-8 md:grid-cols-3">
+        {whatIsDpp.map((item) => (
+          <div class="flex flex-col items-center text-center">
+            <item.icon className="w-12 h-12 text-primary" />
+            <h3 class="mt-4 text-xl font-bold">{item.title}</h3>
+            <p class="mt-2 text-muted-foreground">{item.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Hestia Section -->
+  <section id="why-hestia" class="py-12 md:py-24">
+    <div class="container mx-auto px-4 md:px-6">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold tracking-tighter sm:text-4xl text-foreground">
+          Porque o Hestia ERP para a Conformidade com o DPP?
+        </h2>
+        <p class="max-w-3xl mx-auto mt-4 text-muted-foreground md:text-lg">
+          O Hestia ERP é mais do que uma ferramenta de conformidade. É uma plataforma de operações completa, concebida para lhe dar uma vantagem competitiva na nova era da transparência digital.
+        </p>
+      </div>
+      <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+        {hestiaBenefits.map((item) => (
+          <div class="flex flex-col items-center text-center">
+            <item.icon className="w-12 h-12 text-primary" />
+            <h3 class="mt-4 text-xl font-bold">{item.title}</h3>
+            <p class="mt-2 text-muted-foreground">{item.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-20 md:py-32 text-center">
+    <div class="container mx-auto px-4 md:px-6">
+      <h2 class="text-3xl font-bold tracking-tighter sm:text-4xl text-foreground">
+        Pronto para Estar em Conformidade?
+      </h2>
+      <p class="max-w-2xl mx-auto mt-4 text-muted-foreground md:text-lg">
+        Não espere até ser tarde demais. Garanta o seu lugar no futuro da indústria têxtil. Agende hoje mesmo uma demonstração gratuita e sem compromisso do Hestia ERP.
+      </p>
+      <div class="mt-8">
+        <Button size="lg">
+          <a href={`/${Astro.currentLocale}/contact`}>Agendar uma Demonstração</a>
+        </Button>
+      </div>
+    </div>
+  </section>
+</Layout>

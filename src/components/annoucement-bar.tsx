@@ -37,7 +37,7 @@ export function AnnouncementBar({
   icon,
   actionText,
   actionHref,
-  onClose,
+  _onClose,
   className,
 }: AnnouncementBarProps) {
   return (
@@ -45,7 +45,7 @@ export function AnnouncementBar({
       className={cn(
         "border-b transition-all duration-300 ease-in-out z-0",
         typeStyles[type],
-        className
+        className,
       )}
     >
       {/* Animated background pattern 

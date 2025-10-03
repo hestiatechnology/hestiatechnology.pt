@@ -1,4 +1,4 @@
-import { SVGProps } from "react";
+import { useId, type SVGProps } from "react";
 
 type SafariMode = "default" | "simple";
 
@@ -20,6 +20,9 @@ export function Safari({
   mode = "default",
   ...props
 }: SafariProps) {
+  const path0Id = useId();
+  const roundedBottomId = useId();
+
   return (
     <svg
       width={width}
@@ -29,7 +32,8 @@ export function Safari({
       xmlns="http://www.w3.org/2000/svg"
       {...props}
     >
-      <g clipPath="url(#path0)">
+      <title>{url ? `Safari - ${url}` : "Safari Browser"}</title>
+      <g clipPath={`url(#${path0Id})`}>
         <path
           d="M0 52H1202V741C1202 747.627 1196.63 753 1190 753H12C5.37258 753 0 747.627 0 741V52Z"
           className="fill-[#E5E5E5] dark:fill-[#404040]"
@@ -145,7 +149,7 @@ export function Safari({
             x="1"
             y="52"
             preserveAspectRatio="xMidYMid slice"
-            clipPath="url(#roundedBottom)"
+            clipPath={`url(#${roundedBottomId})`}
           />
         )}
         {videoSrc && (
@@ -155,7 +159,7 @@ export function Safari({
             width="1200"
             height="700"
             preserveAspectRatio="xMidYMid slice"
-            clipPath="url(#roundedBottom)"
+            clipPath={`url(#${roundedBottomId})`}
           >
             <video
               className="size-full overflow-hidden object-cover"
@@ -169,10 +173,10 @@ export function Safari({
         )}
       </g>
       <defs>
-        <clipPath id="path0">
+        <clipPath id={path0Id}>
           <rect width={width} height={height} fill="white" />
         </clipPath>
-        <clipPath id="roundedBottom">
+        <clipPath id={roundedBottomId}>
           <path
             d="M1 52H1201V741C1201 747.075 1196.08 752 1190 752H12C5.92486 752 1 747.075 1 741V52Z"
             fill="white"

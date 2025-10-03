@@ -1,7 +1,7 @@
 import { Card, CardDescription, CardHeader, CardTitle } from "./ui/card";
 import { cn } from "@/lib/utils";
 import { Badge } from "./ui/badge";
-import type { ModuleType } from "@/data/features";
+import type { ModuleType } from "@/data/schemas";
 
 interface FeatureCardProps {
   data: ModuleType;
@@ -12,7 +12,7 @@ export default function FeatureCard({ data }: FeatureCardProps) {
     <Card
       className={cn(
         "border shadow-lg hover:shadow-xl transition-shadow z-50",
-        data.disabled && "bg-muted"
+        data.disabled && "bg-muted",
       )}
     >
       <CardHeader>

@@ -1,7 +1,8 @@
 ---
 import { Badge } from "@/components/ui/badge";
-import Layout from "../layouts/Layout.astro";
-import { PricingStepper } from "@/components/PricingStepper";
+import Layout from "@/layouts/Layout.astro";
+import { PricingStepper } from "@/components/PricingStepper.pt";
+import { translations } from "@/lib/translations";
 ---
 
 <Layout title="Preços">
@@ -21,7 +22,7 @@ import { PricingStepper } from "@/components/PricingStepper";
         </p>
       </div>
 
-      <PricingStepper client:only="react" />
+      <PricingStepper client:only="react" locale={Astro.currentLocale as keyof typeof translations} />
     </div>
   </section>
 </Layout>

@@ -1,4 +1,4 @@
-import type { ModuleType } from "@/data/features";
+import type { ModuleType } from "@/data/schemas";
 import { atom } from "nanostores";
 
 export const $selectedModules = atom<ModuleType[]>([]);
@@ -9,7 +9,7 @@ export function addModule(module: ModuleType) {
 
 export function removeModule(module: ModuleType) {
   $selectedModules.set(
-    $selectedModules.get().filter((m) => m.title !== module.title)
+    $selectedModules.get().filter((m) => m.title !== module.title),
   );
 }
 
@@ -17,6 +17,6 @@ export function updateModule(updatedModule: ModuleType) {
   $selectedModules.set(
     $selectedModules
       .get()
-      .map((m) => (m.title === updatedModule.title ? updatedModule : m))
+      .map((m) => (m.title === updatedModule.title ? updatedModule : m)),
   );
 }

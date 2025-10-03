@@ -1,0 +1,85 @@
+---
+import { Input } from "@/components/ui/input";
+import Layout from "@/layouts/Layout.astro";
+import { Label } from "@/components/ui/label";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Textarea } from "@/components/ui/textarea";
+import { Button } from "@/components/ui/button";
+import { actions } from "astro:actions";
+
+export const prerender = false;
+
+let captchaError = "";
+
+if (Astro.request.method === "POST") {
+  try {
+    const formData = await Astro.request.formData();
+
+    const captchaToken = formData.get("h-captcha-response");
+
+    const captchaVerify = await fetch("https://api.hcaptcha.com/siteverify", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: new URLSearchParams({
+        secret: import.meta.env.HCAPTCHA_SECRET_KEY,
+        response: captchaToken?.toString() || "",
+        remoteip: Astro.request.headers.get("x-forwarded-for") || "",
+        sitekey: "22ee0f18-378a-46ce-9246-473c5c64bd9a",
+      }),
+    });
+
+    const captchaResult = await captchaVerify.json();
+
+    console.log("hCaptcha result:", captchaResult);
+
+    if (!captchaResult.success) {
+      captchaError = "Captcha failed. Please try again.";
+    } else {
+      const { data, error } = await Astro.callAction(actions.email, formData);
+      return Astro.redirect("/contact?submitted=true");
+    }
+  } catch (error) {
+    if (error instanceof Error) {
+      captchaError = "An error occurred. Please try again.";
+      console.error(error.message);
+    }
+  }
+}
+---
+
+<Layout title="Contact">
+  <section class="max-w-3xl mx-auto py-15 px-3 md:px-0">
+    <Card>
+      <CardHeader>
+        <CardTitle className="text-3xl font-bold">Contact</CardTitle>
+      </CardHeader>
+      <CardContent>
+        {captchaError && (
+          <div class="text-red-600 mb-2">{captchaError}</div>
+        )}
+        <form method="POST" class="flex flex-col gap-y-5">
+          <div class="flex flex-col gap-y-1">
+            <Label htmlFor="empresa">Company</Label>
+            <Input id="empresa" type="text" name="company" />
+          </div>
+          <div class="flex flex-col gap-y-1">
+            <Label htmlFor="email">Email</Label>
+            <Input id="email" type="email" name="email" />
+          </div>
+          <div class="flex flex-col gap-y-1">
+            <Label htmlFor="message">Message</Label>
+            <Textarea id="message" name="message" />
+          </div>
+          <div
+            class="h-captcha"
+            data-sitekey="22ee0f18-378a-46ce-9246-473c5c64bd9a"
+          >
+          </div>
+          <Button>Submit</Button>
+        </form>
+      </CardContent>
+    </Card>
+  </section>
+</Layout>
+
+<script src="https://js.hcaptcha.com/1/api.js" async defer></script>

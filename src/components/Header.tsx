@@ -14,16 +14,27 @@ import {
 } from "@/components/ui/popover";
 import { ModeToggle } from "./ModeToggle";
 import { useTheme } from "@/hooks/useTheme";
+import { translations } from "@/lib/translations";
+import { Globe } from "lucide-react";
 
-const navigationLinks = [
-  { href: "/", label: "Home", active: true },
-  { href: "/services", label: "Serviços" },
-  { href: "/prices", label: "Preços" },
-  { href: "/about", label: "Sobre Nós" },
-];
+interface HeaderProps {
+  locale: keyof typeof translations;
+}
 
-export default function Header() {
+export default function Header({ locale }: HeaderProps) {
   const { isDarkMode } = useTheme();
+
+  const t = (key: keyof (typeof translations)[typeof locale]) => {
+    return translations[locale][key] || translations.en[key];
+  };
+
+  const navigationLinks = [
+    { href: `/${locale}/`, label: t("header.nav.home") },
+    { href: `/${locale}/services`, label: t("header.nav.services") },
+    { href: `/${locale}/prices`, label: t("header.nav.prices") },
+    { href: `/${locale}/about`, label: t("header.nav.about") },
+  ];
+
   return (
     <header className="border-t bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 sticky bottom-0 z-50 px-4 md:px-6">
       <div className="flex h-16 items-center justify-between gap-4">
@@ -47,6 +58,7 @@ export default function Header() {
                   strokeLinejoin="round"
                   xmlns="http://www.w3.org/2000/svg"
                 >
+                  <title>{t('header.mobile_nav_toggle')}</title>
                   <path
                     d="M4 12L20 12"
                     className="origin-center -translate-y-[7px] transition-all duration-300 ease-[cubic-bezier(.5,.85,.25,1.1)] group-aria-expanded:translate-x-0 group-aria-expanded:translate-y-0 group-aria-expanded:rotate-[315deg]"
@@ -65,13 +77,9 @@ export default function Header() {
             <PopoverContent align="start" className="w-36 p-1 md:hidden">
               <NavigationMenu className="max-w-none *:w-full">
                 <NavigationMenuList className="flex-col items-start gap-0 md:gap-2">
-                  {navigationLinks.map((link, index) => (
-                    <NavigationMenuItem key={index} className="w-full">
-                      <NavigationMenuLink
-                        href={link.href}
-                        className="py-1.5"
-                        active={link.active}
-                      >
+                  {navigationLinks.map((link) => (
+                    <NavigationMenuItem key={link.href} className="w-full">
+                      <NavigationMenuLink href={link.href} className="py-1.5">
                         {link.label}
                       </NavigationMenuLink>
                     </NavigationMenuItem>
@@ -82,7 +90,10 @@ export default function Header() {
           </Popover>
 
           <div className="flex items-center gap-6">
-            <a href="/" className="text-primary hover:text-primary/90">
+            <a
+              href={`/${locale}/`}
+              className="text-primary hover:text-primary/90"
+            >
               <img
                 src={isDarkMode ? LogoWhite.src : Logo.src}
                 alt="Hestia Logo"
@@ -92,10 +103,9 @@ export default function Header() {
 
             <NavigationMenu className="max-md:hidden">
               <NavigationMenuList className="gap-2">
-                {navigationLinks.map((link, index) => (
-                  <NavigationMenuItem key={index}>
+                {navigationLinks.map((link) => (
+                  <NavigationMenuItem key={link.href}>
                     <NavigationMenuLink
-                      active={link.active}
                       href={link.href}
                       className="text-muted-foreground hover:text-primary py-1.5 font-medium"
                     >
@@ -110,11 +120,34 @@ export default function Header() {
 
         <div className="flex items-center gap-2">
           <Button asChild variant="outline" size="sm" className="text-sm">
-            <a href="/contact">Contact</a>
+            <a href={`/${locale}/contact`}>{t("header.button.contact")}</a>
           </Button>
           <Button asChild size="sm" className="text-sm">
-            <a href="/contact">Sign In</a>
+            <a href={`/${locale}/contact`}>{t("header.button.signin")}</a>
           </Button>
+          <Popover>
+            <PopoverTrigger asChild>
+              <Button variant="outline" size="icon">
+                <Globe className="h-4 w-4" />
+              </Button>
+            </PopoverTrigger>
+            <PopoverContent align="end" className="w-36 p-1">
+              <NavigationMenu className="max-w-none *:w-full">
+                <NavigationMenuList className="flex-col items-start gap-0 md:gap-2">
+                  <NavigationMenuItem className="w-full">
+                    <NavigationMenuLink href={`/en/`} className="py-1.5">
+                      English
+                    </NavigationMenuLink>
+                  </NavigationMenuItem>
+                  <NavigationMenuItem className="w-full">
+                    <NavigationMenuLink href={`/pt/`} className="py-1.5">
+                      Português
+                    </NavigationMenuLink>
+                  </NavigationMenuItem>
+                </NavigationMenuList>
+              </NavigationMenu>
+            </PopoverContent>
+          </Popover>
           <ModeToggle />
         </div>
       </div>

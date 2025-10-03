@@ -1,24 +1,32 @@
 // @ts-check
-import { defineConfig } from 'astro/config';
+import { defineConfig } from "astro/config";
 
-import react from '@astrojs/react';
+import react from "@astrojs/react";
 
-import tailwindcss from '@tailwindcss/vite';
+import tailwindcss from "@tailwindcss/vite";
 
-import node from '@astrojs/node';
+import node from "@astrojs/node";
 
-import sitemap from '@astrojs/sitemap';
+import sitemap from "@astrojs/sitemap";
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://hestiatechnology.pt',
+  site: "https://hestiatechnology.pt",
+  i18n: {
+    defaultLocale: "pt",
+    locales: ["en", "pt"],
+  },
   integrations: [react(), sitemap()],
 
   vite: {
-    plugins: [tailwindcss()]
+    plugins: [
+      tailwindcss({
+        config: "./tailwind.config.mjs",
+      }),
+    ],
   },
 
   adapter: node({
-    mode: 'standalone'
-  })
+    mode: "standalone",
+  }),
 });
