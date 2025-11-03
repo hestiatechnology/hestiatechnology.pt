@@ -1,8 +1,8 @@
 ---
 import "@/styles/global.css";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
 import { AnnouncementBar } from "@/components/annoucement-bar";
+import Footer from "@/components/Footer";
+import Header from "@/components/Header";
 import { translations } from "@/lib/translations";
 
 const { title } = Astro.props;
@@ -11,6 +11,19 @@ const locale = Astro.currentLocale as keyof typeof translations;
 const t = (key: keyof (typeof translations)[typeof locale]) => {
   return translations[locale][key] || translations.en[key];
 };
+
+// Get the current URL path
+const currentPath = Astro.url.pathname;
+const siteUrl = Astro.site || "https://hestiatechnology.pt";
+
+// Construct canonical URL
+const canonicalURL = new URL(currentPath, siteUrl).href;
+
+// Construct alternate language URLs
+// Remove locale prefix and rebuild URLs for each language
+const pathWithoutLocale = currentPath.replace(/^\/(en|pt)/, "") || "/";
+const enURL = new URL(`/en${pathWithoutLocale}`, siteUrl).href;
+const ptURL = new URL(`/pt${pathWithoutLocale}`, siteUrl).href;
 ---
 
 <html lang={locale}>
@@ -20,6 +33,12 @@ const t = (key: keyof (typeof translations)[typeof locale]) => {
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
+    
+    <!-- Canonical and alternate language tags for SEO -->
+    <link rel="canonical" href={canonicalURL} />
+    <link rel="alternate" hreflang="en" href={enURL} />
+    <link rel="alternate" hreflang="pt" href={ptURL} />
+    <link rel="alternate" hreflang="x-default" href={ptURL} />
 
     <title>Hestia - {title}</title>
     <meta
