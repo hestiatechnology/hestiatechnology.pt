@@ -1,70 +1,28 @@
-import {
-  BookOpen,
-  Briefcase,
-  DollarSign,
-  Shirt,
-  Truck,
-  Users,
-} from "lucide-react";
+import { Eye, ShieldCheck, Sparkles } from "lucide-react";
 
 export const features = [
   {
-    title: "Billing",
-    description: "Manage billing, issue invoices, receipts, and credit notes.",
-    icon: DollarSign,
+    title: "Automated DPP Compliance",
+    description:
+      "Hestia automates the data collection and reporting for the EU Digital Product Passport.",
+    icon: ShieldCheck,
     bgColor: "bg-blue-100",
     iconColor: "text-blue-600",
-    information: {
-      title: "Included",
-      included: ["Basic Support", "Included Training"],
-    },
-    price: 75,
-    includedUsers: 5,
-    pricePerUser: 5,
   },
   {
-    title: "Textile",
+    title: "AI-Powered Data Validation",
     description:
-      "Manage textile processes, production, work orders, and inventory.",
-    icon: Shirt,
+      "Our AI validates all the data you introduce, preventing costly errors.",
+    icon: Sparkles,
     bgColor: "bg-green-100",
     iconColor: "text-green-600",
-    price: 1300,
-    includedUsers: 5,
-    pricePerUser: 5,
   },
   {
-    title: "Logistics",
+    title: "Real-Time Production Visibility",
     description:
-      "Manage warehouses, shipping, receiving, and merchandise inventory.",
-    icon: Truck,
+      "Know the status of every order, without walking the factory floor or checking a spreadsheet.",
+    icon: Eye,
     bgColor: "bg-yellow-100",
     iconColor: "text-yellow-600",
-    disabled: true,
-  },
-  {
-    title: "Human Resources",
-    description: "Manage employees, payroll processing, and attendance.",
-    icon: Users,
-    bgColor: "bg-orange-100",
-    iconColor: "text-orange-600",
-    disabled: true,
-  },
-  {
-    title: "Financial",
-    description:
-      "Control finances, treasury, accounts payable, and receivable.",
-    icon: Briefcase,
-    bgColor: "bg-purple-100",
-    iconColor: "text-purple-600",
-    disabled: true,
-  },
-  {
-    title: "Accounting",
-    description: "Manage accounting, entries, trial balances, and tax reports.",
-    icon: BookOpen,
-    bgColor: "bg-red-100",
-    iconColor: "text-red-600",
-    disabled: true,
   },
 ];

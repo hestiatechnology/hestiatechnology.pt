@@ -1,28 +1,106 @@
 ---
-import { Badge } from "@/components/ui/badge";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
 import Layout from "@/layouts/Layout.astro";
-import { PricingStepper } from "@/components/PricingStepper.en";
-import { translations } from "@/lib/translations";
+import { Check } from "lucide-react";
+
+const tiers = [
+  {
+    name: "Compliance",
+    price: "4,800€",
+    period: "/year",
+    description: "Essential features to get you started.",
+    features: [
+      "Core ERP",
+      "Production Workflow",
+      "EU DPP Generation",
+    ],
+    buttonText: "Get Started",
+    buttonVariant: "outline",
+  },
+  {
+    name: "Pro",
+    price: "12,000€",
+    period: "/year",
+    description: "Advanced features for growing businesses.",
+    features: [
+      "Everything in Compliance",
+      "AI Document Validation",
+      "Advanced Supplier Integrations (Smartex, etc.)",
+      "Analytics",
+    ],
+    buttonText: "Upgrade Now",
+    buttonVariant: "default",
+  },
+  {
+    name: "Enterprise",
+    price: "Contact us",
+    period: "",
+    description: "Custom solutions for large-scale operations.",
+    features: [
+      "Everything in Pro",
+      "Custom Workflows",
+      "Dedicated Support",
+      "etc.",
+    ],
+    buttonText: "Contact Sales",
+    buttonVariant: "outline",
+  },
+];
 ---
 
-<Layout title="Prices">
-  <section id="features" class="py-12 md:py-24 lg:py-32">
+<Layout title="Pricing - Hestia ERP">
+  <section class="py-20 md:py-32 lg:py-40">
     <div class="container mx-auto px-4 md:px-6">
       <div class="text-center mb-12">
-        <Badge className="mb-4 w-fit h-fit bg-primary text-primary-foreground"
-          >Features</Badge
-        >
-        <h2
-          class="text-3xl font-bold tracking-tighter sm:text-5xl text-foreground mb-4"
-        >
-          Modules
-        </h2>
-        <p class="max-w-[900px] mx-auto text-muted-foreground md:text-xl">
-          Our ERP offers modules, allowing us to adapt to your needs
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tighter text-foreground">
+          Simple Subscription Tiers
+        </h1>
+        <p class="max-w-2xl mx-auto mt-4 text-muted-foreground md:text-xl">
+          Choose the perfect plan for your manufacturing needs.
         </p>
       </div>
-
-      <PricingStepper client:only="react" locale={Astro.currentLocale as keyof typeof translations} />
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {
+          tiers.map((tier) => (
+            <Card className={tier.name === 'Pro' ? 'border-primary' : ''}>
+              <CardHeader>
+                <CardTitle>{tier.name}</CardTitle>
+                <CardDescription>{tier.description}</CardDescription>
+              </CardHeader>
+              <CardContent className="space-y-6">
+                <div class="text-4xl font-bold">
+                  {tier.price}
+                  <span class="text-lg font-normal text-muted-foreground">
+                    {tier.period}
+                  </span>
+                </div>
+                <ul class="space-y-2">
+                  {tier.features.map((feature) => (
+                    <li class="flex items-center gap-2">
+                      <Check className="w-5 h-5 text-primary" />
+                      <span>{feature}</span>
+                    </li>
+                  ))}
+                </ul>
+                <Button
+                  size="lg"
+                  className="w-full"
+                  variant={tier.buttonVariant as any}
+                >
+                  {tier.buttonText}
+                </Button>
+              </CardContent>
+            </Card>
+          ))
+        }
+      </div>
     </div>
   </section>
 </Layout>

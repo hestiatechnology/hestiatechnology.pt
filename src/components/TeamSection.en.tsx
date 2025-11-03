@@ -9,7 +9,7 @@ const teamMembers = [
     name: "Daniel Pereira",
     role: "CEO & Co-Founder",
     description:
-      "Ex-Deloitte (SAP and ServiceNow), repeat founder with a grant from General Motors. Business-focused with deep industry connections.",
+      "Enterprise ERP Expert (Ex-Deloitte, SAP & ServiceNow). Proven Founder of a GM-backed climate tech startup. Expert in backend architecture and complex data integration.",
     image: CEO.src,
     fallback: "DP",
   },
@@ -17,7 +17,7 @@ const teamMembers = [
     name: "Álvaro Fernandes",
     role: "CTO & Co-Founder",
     description:
-      "Ex-Inforcavado (competitor), full-stack engineer with modern tech experience from 8x8 (public SaaS company).",
+      "Insider knowledge from Protextil (legacy competitor). Modern SaaS experience as a full-stack engineer at 8x8 (a public SaaS company). Deep understanding of the textile industry's needs.",
     image: null,
     fallback: "AF",
   },

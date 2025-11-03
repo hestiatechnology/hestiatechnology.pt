@@ -9,7 +9,7 @@ const teamMembers = [
     name: "Daniel Pereira",
     role: "CEO & Co-Fundador",
     description:
-      "Ex-Deloitte (SAP e ServiceNow), fundador reincidente com uma bolsa da General Motors. Focado em negócios com profundas conexões na indústria.",
+      "Especialista em ERP Empresarial (Ex-Deloitte, SAP & ServiceNow). Fundador comprovado de uma startup de tecnologia climática apoiada pela GM. Especialista em arquitetura de backend e integração de dados complexos.",
     image: CEO.src,
     fallback: "DP",
   },
@@ -17,7 +17,7 @@ const teamMembers = [
     name: "Álvaro Fernandes",
     role: "CTO & Co-Fundador",
     description:
-      "Ex-Inforcavado (concorrente), engenheiro full-stack com experiência em tecnologia moderna da 8x8 (empresa pública de SaaS).",
+      "Conhecimento interno da Protextil (concorrente legado). Experiência moderna em SaaS como engenheiro full-stack na 8x8 (uma empresa pública de SaaS). Profundo conhecimento das necessidades da indústria têxtil.",
     image: null,
     fallback: "AF",
   },

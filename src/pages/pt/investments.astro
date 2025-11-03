@@ -102,22 +102,26 @@ import Layout from "@/layouts/Layout.astro";
             </CardDescription>
           </CardHeader>
           <CardContent>
-            <div class="grid gap-4 md:grid-cols-3 text-center">
+            <div class="grid gap-4 md:grid-cols-2 text-center">
               <Card className="border-0 shadow-none">
                 <CardContent className="p-4">
-                  <div class="text-sm text-foreground">
-                    Talento
+                  <div class="text-lg font-semibold text-foreground">
+                    Engenharia (4 contratações)
                   </div>
+                  <p class="text-sm text-muted-foreground">
+                    Acelerar o desenvolvimento de produtos dos módulos
+                    principais de IA e Conformidade.
+                  </p>
                 </CardContent>
               </Card>
               <Card className="border-0 shadow-none">
                 <CardContent className="p-4">
-                  <div class="text-sm text-foreground">Marketing</div>
-                </CardContent>
-              </Card>
-              <Card className="border-0 shadow-none">
-                <CardContent className="p-4">
-                  <div class="text-sm text-foreground">Infraestrutura</div>
+                  <div class="text-lg font-semibold text-foreground">
+                    Vendas & Integração (1 contratação)
+                  </div>
+                  <p class="text-sm text-muted-foreground">
+                    Converter o nosso pipeline de LOI em clientes pagantes.
+                  </p>
                 </CardContent>
               </Card>
             </div>
@@ -130,6 +134,53 @@ import Layout from "@/layouts/Layout.astro";
           </Button>
           <ScheduleMeeting client:only="react" />
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Key Milestones -->
+  <section class="py-12 md:py-24">
+    <div class="container mx-auto px-4 md:px-6">
+      <div class="text-center mb-8">
+        <h2
+          class="text-2xl font-bold tracking-tighter sm:text-4xl text-foreground mb-4"
+        >
+          Marcos Principais
+        </h2>
+        <p class="max-w-[700px] mx-auto text-muted-foreground">
+          Os nossos objetivos para o futuro próximo.
+        </p>
+      </div>
+      <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-4 max-w-6xl mx-auto">
+        <Card className="hover:shadow-lg transition-shadow">
+          <CardHeader>
+            <CardTitle>Receita</CardTitle>
+            <CardDescription>Alcançar 15.000€ de MRR</CardDescription>
+          </CardHeader>
+        </Card>
+        <Card className="hover:shadow-lg transition-shadow">
+          <CardHeader>
+            <CardTitle>Clientes</CardTitle>
+            <CardDescription
+              >Integrar mais de 25 fabricantes pagantes</CardDescription
+            >
+          </CardHeader>
+        </Card>
+        <Card className="hover:shadow-lg transition-shadow">
+          <CardHeader>
+            <CardTitle>Produto</CardTitle>
+            <CardDescription>
+              Lançamento completo dos módulos de Validação por IA e
+              Conformidade com o DPP da UE
+            </CardDescription>
+          </CardHeader>
+        </Card>
+        <Card className="hover:shadow-lg transition-shadow">
+          <CardHeader>
+            <CardTitle>Cronograma</CardTitle>
+            <CardDescription>T1 2027</CardDescription>
+          </CardHeader>
+        </Card>
       </div>
     </div>
   </section>

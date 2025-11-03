@@ -1,72 +1,28 @@
-import {
-  BookOpen,
-  Briefcase,
-  DollarSign,
-  Shirt,
-  Truck,
-  Users,
-} from "lucide-react";
+import { Eye, ShieldCheck, Sparkles } from "lucide-react";
 
 export const features = [
   {
-    title: "Faturação",
+    title: "Conformidade Automatizada com o DPP",
     description:
-      "Gestão de faturação, emissão de faturas, recibos e notas de crédito.",
-    icon: DollarSign,
+      "O Hestia automatiza a recolha e o relato de dados para o Passaporte Digital de Produto da UE.",
+    icon: ShieldCheck,
     bgColor: "bg-blue-100",
     iconColor: "text-blue-600",
-    information: {
-      title: "Incluído",
-      included: ["Suporte Base", "Formação Incluida"],
-    },
-    price: 75,
-    includedUsers: 5,
-    pricePerUser: 5,
   },
   {
-    title: "Têxtil",
+    title: "Validação de Dados com IA",
     description:
-      "Gestão de processos têxteis, produção, ordens de fabrico e stocks.",
-    icon: Shirt,
+      "A nossa IA valida todos os dados que introduz, prevenindo erros dispendiosos.",
+    icon: Sparkles,
     bgColor: "bg-green-100",
     iconColor: "text-green-600",
-    price: 1300,
-    includedUsers: 5,
-    pricePerUser: 5,
   },
   {
-    title: "Logística",
+    title: "Visibilidade da Produção em Tempo Real",
     description:
-      "Gestão de armazéns, expedição, receção e inventário de mercadorias.",
-    icon: Truck,
+      "Saiba o estado de cada encomenda, sem ter de percorrer a fábrica ou verificar uma folha de cálculo.",
+    icon: Eye,
     bgColor: "bg-yellow-100",
     iconColor: "text-yellow-600",
-    disabled: true,
-  },
-  {
-    title: "Recursos Humanos",
-    description:
-      "Gestão de funcionários, processamento salarial e assiduidade.",
-    icon: Users,
-    bgColor: "bg-orange-100",
-    iconColor: "text-orange-600",
-    disabled: true,
-  },
-  {
-    title: "Financeiro",
-    description: "Controlo financeiro, tesouraria, contas a pagar e a receber.",
-    icon: Briefcase,
-    bgColor: "bg-purple-100",
-    iconColor: "text-purple-600",
-    disabled: true,
-  },
-  {
-    title: "Contabilidade",
-    description:
-      "Gestão contabilística, lançamentos, balancetes e relatórios fiscais.",
-    icon: BookOpen,
-    bgColor: "bg-red-100",
-    iconColor: "text-red-600",
-    disabled: true,
   },
 ];
