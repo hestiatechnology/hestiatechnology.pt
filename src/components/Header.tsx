@@ -30,7 +30,6 @@ export default function Header({ locale }: HeaderProps) {
 
   const navigationLinks = [
     { href: `/${locale}/`, label: t("header.nav.home") },
-    { href: `/${locale}/services`, label: t("header.nav.services") },
     { href: `/${locale}/prices`, label: t("header.nav.prices") },
     { href: `/${locale}/about`, label: t("header.nav.about") },
   ];
