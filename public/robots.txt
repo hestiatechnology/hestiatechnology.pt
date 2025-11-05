@@ -1,4 +1,14 @@
+# Hestia Technology - Robots.txt
+# Allow all bots to crawl the site
+
 User-agent: *
 Allow: /
 
+# Disallow URLs with query parameters to avoid duplicate content
+Disallow: /*?*
+
+# Preferred domain (non-www)
+Host: hestiatechnology.pt
+
+# Sitemap location
 Sitemap: https://hestiatechnology.pt/sitemap-index.xml

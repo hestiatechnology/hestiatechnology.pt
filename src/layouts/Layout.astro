@@ -16,8 +16,8 @@ const t = (key: keyof (typeof translations)[typeof locale]) => {
 const currentPath = Astro.url.pathname;
 const siteUrl = Astro.site || "https://hestiatechnology.pt";
 
-// Construct canonical URL
-const canonicalURL = new URL(currentPath, siteUrl).href;
+// Construct canonical URL (remove query parameters for clean canonical)
+const canonicalURL = new URL(currentPath, siteUrl).href.split('?')[0];
 
 // Construct alternate language URLs
 // Remove locale prefix and rebuild URLs for each language
@@ -29,11 +29,12 @@ const ptURL = new URL(`/pt${pathWithoutLocale}`, siteUrl).href;
 <html lang={locale}>
   <head>
     <meta charset="UTF-8" />
-    <link rel="sitemap" href="/sitemap-index.xml" />
     <meta name="viewport" content="width=device-width" />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
-    
+    <link rel="sitemap" href="/sitemap-index.xml" />
+
     <!-- Canonical and alternate language tags for SEO -->
     <link rel="canonical" href={canonicalURL} />
     <link rel="alternate" hreflang="en" href={enURL} />
@@ -61,6 +62,24 @@ const ptURL = new URL(`/pt${pathWithoutLocale}`, siteUrl).href;
     <script
       src="https://calendar.google.com/calendar/scheduling-button-script.js"
       async></script>
+
+    <!-- Structured Data for SEO -->
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Hestia Technology Lda",
+      "url": "https://hestiatechnology.pt",
+      "logo": "https://hestiatechnology.pt/HestiaTechnology.svg",
+      "description": t("layout.meta.description"),
+      "sameAs": [
+        "https://www.linkedin.com/company/hestia-technology"
+      ],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "Customer Service",
+        "availableLanguage": ["Portuguese", "English"]
+      }
+    })} />
   </head>
   <body class="min-h-screen flex flex-col antialiased">
     <AnnouncementBar

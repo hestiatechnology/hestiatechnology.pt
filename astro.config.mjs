@@ -12,18 +12,23 @@ import sitemap from "@astrojs/sitemap";
 // https://astro.build/config
 export default defineConfig({
   site: "https://hestiatechnology.pt",
+  trailingSlash: "never",
   i18n: {
     defaultLocale: "pt",
     locales: ["en", "pt"],
   },
-  integrations: [react(), sitemap()],
+  integrations: [
+    react(),
+    sitemap({
+      filter: (page) => {
+        // Exclude URLs with query parameters
+        return !page.includes("?");
+      },
+    }),
+  ],
 
   vite: {
-    plugins: [
-      tailwindcss({
-        config: "./tailwind.config.mjs",
-      }),
-    ],
+    plugins: [tailwindcss()],
   },
 
   adapter: node({
