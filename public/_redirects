@@ -1,8 +1,32 @@
 # Redirects for hestiatechnology.pt
-# Redirect www to non-www (301 permanent redirect)
-
+# Handle www to non-www (301 permanent redirect)
 https://www.hestiatechnology.pt/* https://hestiatechnology.pt/:splat 301!
 http://www.hestiatechnology.pt/* https://hestiatechnology.pt/:splat 301!
 
 # Force HTTPS
 http://hestiatechnology.pt/* https://hestiatechnology.pt/:splat 301!
+
+# Redirect trailing slashes to non-trailing slash URLs (301 permanent)
+# This ensures Google indexes the correct canonical version
+/en/ /en 301!
+/pt/ /pt 301!
+/en/about/ /en/about 301!
+/en/contact/ /en/contact 301!
+/en/dpp/ /en/dpp 301!
+/en/investments/ /en/investments 301!
+/en/prices/ /en/prices 301!
+/en/privacy/ /en/privacy 301!
+/en/terms/ /en/terms 301!
+/en/cookies/ /en/cookies 301!
+/pt/about/ /pt/about 301!
+/pt/contact/ /pt/contact 301!
+/pt/dpp/ /pt/dpp 301!
+/pt/investments/ /pt/investments 301!
+/pt/prices/ /pt/prices 301!
+/pt/privacy/ /pt/privacy 301!
+/pt/terms/ /pt/terms 301!
+/pt/cookies/ /pt/cookies 301!
+
+# Generic trailing slash redirect (catch-all for any other pages)
+# This should be last to not override specific rules above
+/*/ /:splat 301!

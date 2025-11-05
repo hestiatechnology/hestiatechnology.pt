@@ -47,7 +47,7 @@ export default function Footer({ locale }: FooterProps) {
             <h3 className="font-semibold text-lg">{t("footer.links.quick")}</h3>
             <nav className="flex flex-col gap-2">
               <a
-                href={`/${locale}/`}
+                href={`/${locale}`}
                 className="hover:text-primary-foreground/80 transition-colors"
               >
                 {t("footer.nav.home")}

@@ -16,12 +16,17 @@ const t = (key: keyof (typeof translations)[typeof locale]) => {
 const currentPath = Astro.url.pathname;
 const siteUrl = Astro.site || "https://hestiatechnology.pt";
 
-// Construct canonical URL (remove query parameters for clean canonical)
-const canonicalURL = new URL(currentPath, siteUrl).href.split('?')[0];
+// Remove trailing slash from path (except root)
+const cleanPath = currentPath !== "/" && currentPath.endsWith("/")
+  ? currentPath.slice(0, -1)
+  : currentPath;
 
-// Construct alternate language URLs
+// Construct canonical URL (remove query parameters and trailing slashes)
+const canonicalURL = new URL(cleanPath, siteUrl).href.split('?')[0];
+
+// Construct alternate language URLs without trailing slashes
 // Remove locale prefix and rebuild URLs for each language
-const pathWithoutLocale = currentPath.replace(/^\/(en|pt)/, "") || "/";
+const pathWithoutLocale = cleanPath.replace(/^\/(en|pt)/, "") || "";
 const enURL = new URL(`/en${pathWithoutLocale}`, siteUrl).href;
 const ptURL = new URL(`/pt${pathWithoutLocale}`, siteUrl).href;
 ---

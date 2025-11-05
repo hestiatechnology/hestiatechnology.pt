@@ -29,7 +29,8 @@ export default function Header({ locale }: HeaderProps) {
   };
 
   const navigationLinks = [
-    { href: `/${locale}/`, label: t("header.nav.home") },
+    { href: `/${locale}`, label: t("header.nav.home") },
+    { href: `/${locale}/services`, label: t("header.nav.services") },
     { href: `/${locale}/prices`, label: t("header.nav.prices") },
     { href: `/${locale}/about`, label: t("header.nav.about") },
   ];
@@ -57,7 +58,7 @@ export default function Header({ locale }: HeaderProps) {
                   strokeLinejoin="round"
                   xmlns="http://www.w3.org/2000/svg"
                 >
-                  <title>{t('header.mobile_nav_toggle')}</title>
+                  <title>{t("header.mobile_nav_toggle")}</title>
                   <path
                     d="M4 12L20 12"
                     className="origin-center -translate-y-[7px] transition-all duration-300 ease-[cubic-bezier(.5,.85,.25,1.1)] group-aria-expanded:translate-x-0 group-aria-expanded:translate-y-0 group-aria-expanded:rotate-[315deg]"
@@ -90,7 +91,7 @@ export default function Header({ locale }: HeaderProps) {
 
           <div className="flex items-center gap-6">
             <a
-              href={`/${locale}/`}
+              href={`/${locale}`}
               className="text-primary hover:text-primary/90"
             >
               <img
@@ -134,12 +135,12 @@ export default function Header({ locale }: HeaderProps) {
               <NavigationMenu className="max-w-none *:w-full">
                 <NavigationMenuList className="flex-col items-start gap-0 md:gap-2">
                   <NavigationMenuItem className="w-full">
-                    <NavigationMenuLink href={`/en/`} className="py-1.5">
+                    <NavigationMenuLink href="/en" className="py-1.5">
                       English
                     </NavigationMenuLink>
                   </NavigationMenuItem>
                   <NavigationMenuItem className="w-full">
-                    <NavigationMenuLink href={`/pt/`} className="py-1.5">
+                    <NavigationMenuLink href="/pt" className="py-1.5">
                       Português
                     </NavigationMenuLink>
                   </NavigationMenuItem>
