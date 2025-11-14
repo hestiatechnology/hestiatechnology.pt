@@ -1,37 +1,41 @@
 ---
 import Layout from "@/layouts/Layout.astro";
-import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import FeatureShowcase from "@/components/FeatureShowcase";
 import { features } from "@/data/en/features.ts";
-import { CheckCircle, XCircle, Zap } from "lucide-react";
 import TeamSection from "@/components/TeamSection.en";
 import { Image } from "astro:assets";
 import IPCALogo from "@/assets/ipca_cor.png";
 import STARTIpca from "@/assets/start-ipca.png";
-import SafariBackground from "@/components/SafariBackground";
 ---
 
 <Layout title="Hestia ERP - The Operations Platform for Textile Manufacturers">
   <div class="flex flex-col">
     <!-- Hero Section -->
-    <section class="py-20 md:py-32 lg:py-40 text-center">
+    <section class="min-h-screen flex items-center justify-center text-center relative overflow-hidden">
+      <video
+        autoplay
+        loop
+        muted
+        playsinline
+        class="absolute top-0 left-0 w-full h-full object-cover -z-10"
+      >
+        <source src="https://cdn.dribbble.com/userupload/12642457/file/original-100a4b8493117d721a001f2a0e3f5b89.mp4" type="video/mp4" />
+      </video>
+      <div class="absolute top-0 left-0 w-full h-full bg-black/50 -z-10"></div>
       <div class="container mx-auto px-4 md:px-6">
-        <Badge className="mb-4 bg-primary text-primary-foreground">
-         Built for the future of business
-        </Badge>
         <h1
-          class="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tighter text-foreground"
+          class="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tighter text-white"
         >
           The AI-enabled Operations Platform for <span class="text-primary"
             >Manufacturers</span
           >
         </h1>
-        <p class="max-w-3xl mx-auto mt-4 text-muted-foreground md:text-xl">
+        <p class="max-w-3xl mx-auto mt-6 text-lg text-gray-300 md:text-xl">
           Hestia is the intelligent ERP for textile manufacturers, automating EU
           compliance and production tracking.
         </p>
-        <div class="mt-8 flex justify-center gap-4">
+        <div class="mt-10 flex justify-center gap-4">
           <Button size="lg">
             <a href={`/${Astro.currentLocale}/contact`}>Schedule a Demo</a>
           </Button>
@@ -39,36 +43,33 @@ import SafariBackground from "@/components/SafariBackground";
             <a href={`/${Astro.currentLocale}/prices`}>View Pricing</a>
           </Button>
         </div>
-		<div class="mt-8">
-			<SafariBackground client:only="react" />
-		</div>
       </div>
     </section>
 
-<FeatureShowcase
-client:load
-features={features}
-title="The Intelligent ERP for Textile Manufacturers"
-description="We automate EU compliance and production tracking, replacing costly and unreliable legacy systems."
-/>
+    <!-- Features Section -->
+    <FeatureShowcase
+      client:load
+      features={features}
+      title="The Intelligent ERP for Textile Manufacturers"
+      description="We automate EU compliance and production tracking, replacing costly and unreliable legacy systems."
+    />
 
     <!-- DPP Section -->
-    <section id="dpp" class="py-12 md:py-24 bg-muted">
+    <section id="dpp" class="py-20 md:py-32 bg-muted">
       <div class="container mx-auto px-4 md:px-6">
-        <div class="text-center">
-          <Zap className="w-12 h-12 text-primary mx-auto" />
+        <div class="text-center max-w-4xl mx-auto">
           <h2
-            class="mt-4 text-3xl font-bold tracking-tighter sm:text-4xl text-foreground"
+            class="text-4xl font-bold tracking-tighter sm:text-5xl text-foreground"
           >
             Get Ready for the Digital Product Passport (DPP)
           </h2>
           <p
-            class="max-w-3xl mx-auto mt-4 text-muted-foreground md:text-lg"
+            class="max-w-3xl mx-auto mt-6 text-lg text-muted-foreground"
           >
             The upcoming EU Digital Product Passport will revolutionize the textile industry, requiring unprecedented transparency and traceability. Hestia ERP is designed to meet these new standards from day one, providing you with a robust and scalable solution to ensure your business is not just compliant, but a leader in the new digital era.
           </p>
-          <div class="mt-8">
-            <Button>
+          <div class="mt-10">
+            <Button size="lg">
               <a href={`/${Astro.currentLocale}/dpp`}>Learn More About DPP</a>
             </Button>
           </div>
@@ -80,25 +81,25 @@ description="We automate EU compliance and production tracking, replacing costly
     <TeamSection client:load />
 
     <!-- Partners Section -->
-    <section id="partners" class="py-12 md:py-24">
+    <section id="partners" class="py-20 md:py-32">
       <div class="container mx-auto">
         <h2
-          class="text-3xl font-bold tracking-tighter sm:text-5xl text-foreground mb-8 text-center"
+          class="text-4xl font-bold tracking-tighter sm:text-5xl text-foreground mb-12 text-center"
         >
           Our Partners
         </h2>
         <div
-          class="flex flex-col md:flex-row items-center justify-center gap-x-12 gap-y-8"
+          class="flex flex-col md:flex-row items-center justify-center gap-x-16 gap-y-10"
         >
           <Image
             src={IPCALogo}
-            height={120}
+            height={100}
             alt="IPCA Logo"
             class="grayscale hover:grayscale-0 transition-all"
           />
           <Image
             src={STARTIpca}
-            height={120}
+            height={100}
             alt="START IPCA Logo"
             class="grayscale hover:grayscale-0 transition-all"
           />
