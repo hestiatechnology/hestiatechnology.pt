@@ -2,9 +2,22 @@ import typography from "@tailwindcss/typography";
 
 /** @type {import('tailwindcss').Config} */
 export default {
+  darkMode: "class",
   content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        sans: ["Inter", "sans-serif"],
+      },
+      fontSize: {
+        '7xl': '5rem',
+        '8xl': '6rem',
+      },
+      spacing: {
+        '128': '32rem',
+        '144': '36rem',
+      }
+    },
   },
   plugins: [typography],
 };

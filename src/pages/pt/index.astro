@@ -12,7 +12,7 @@ import STARTIpca from "@/assets/start-ipca.png";
 <Layout title="Hestia ERP - A Plataforma de Operações para Fabricantes Têxteis">
   <div class="flex flex-col">
     <!-- Hero Section -->
-    <section class="min-h-screen flex items-center justify-center text-center relative overflow-hidden">
+    <section class="min-h-screen flex items-center justify-center text-center relative overflow-hidden py-20 md:py-32">
       <video
         autoplay
         loop
@@ -22,16 +22,16 @@ import STARTIpca from "@/assets/start-ipca.png";
       >
         <source src="https://cdn.dribbble.com/userupload/12642457/file/original-100a4b8493117d721a001f2a0e3f5b89.mp4" type="video/mp4" />
       </video>
-      <div class="absolute top-0 left-0 w-full h-full bg-black/50 -z-10"></div>
+      <div class="absolute top-0 left-0 w-full h-full bg-black/60 -z-10"></div>
       <div class="container mx-auto px-4 md:px-6">
         <h1
-          class="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tighter text-white"
+          class="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tighter text-white"
         >
           A Plataforma de Operações com IA para <span class="text-primary"
             >Fabricantes</span
           >
         </h1>
-        <p class="max-w-3xl mx-auto mt-6 text-lg text-gray-300 md:text-xl">
+        <p class="max-w-3xl mx-auto mt-6 text-lg text-gray-200 md:text-xl">
           O Hestia é o ERP inteligente para fabricantes têxteis, automatizando a
           conformidade com a UE e o acompanhamento da produção.
         </p>
@@ -47,12 +47,14 @@ import STARTIpca from "@/assets/start-ipca.png";
     </section>
 
     <!-- Features Section -->
-    <FeatureShowcase
-      client:load
-      features={features}
-      title="O ERP Inteligente para Fabricantes Têxteis"
-      description="Automatizamos a conformidade com a UE e o acompanhamento da produção, substituindo sistemas legados dispendiosos e pouco fiáveis."
-    />
+    <div class="py-20 md:py-32">
+      <FeatureShowcase
+        client:load
+        features={features}
+        title="O ERP Inteligente para Fabricantes Têxteis"
+        description="Automatizamos a conformidade com a UE e o acompanhamento da produção, substituindo sistemas legados dispendiosos e pouco fiáveis."
+      />
+    </div>
 
     <!-- DPP Section -->
     <section id="dpp" class="py-20 md:py-32 bg-muted">
@@ -78,10 +80,12 @@ import STARTIpca from "@/assets/start-ipca.png";
     </section>
 
     <!-- Team Section -->
-    <TeamSection client:load />
+    <div class="py-20 md:py-32">
+      <TeamSection client:load />
+    </div>
 
     <!-- Partners Section -->
-    <section id="partners" class="py-20 md:py-32">
+    <section id="partners" class="py-20 md:py-32 bg-muted">
       <div class="container mx-auto">
         <h2
           class="text-4xl font-bold tracking-tighter sm:text-5xl text-foreground mb-12 text-center"

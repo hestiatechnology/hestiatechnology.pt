@@ -177,4 +177,7 @@ body {
   body {
     @apply bg-background text-foreground;
   }
+  .text-primary {
+    text-shadow: 0 0 15px oklch(0.8309 0.0838 271.8086 / 0.7);
+  }
 }
