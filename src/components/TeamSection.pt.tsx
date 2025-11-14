@@ -27,7 +27,7 @@ export default function TeamSection() {
   const teamId = useId();
   return (
     <section id={teamId} className="py-12 md:py-24">
-      <div className="container mx-auto px-4 md:px-6">
+      <div className="px-4 md:px-6">
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl text-foreground">
             A Nossa Equipa
@@ -40,23 +40,23 @@ export default function TeamSection() {
           {teamMembers.map((member) => (
             <Card
               key={member.name}
-              className="text-center hover:shadow-lg transition-shadow"
+              className="text-center border"
             >
               <CardContent className="p-6">
-                <Avatar className="w-24 h-24 mx-auto mb-4">
+                <Avatar className="w-24 h-24 mx-auto mb-4 rounded-none">
                   {member.image && (
                     <AvatarImage
                       src={member.image}
                       alt={member.name}
-                      className="object-cover"
+                      className="object-cover rounded-none"
                     />
                   )}
-                  <AvatarFallback className="text-2xl">
+                  <AvatarFallback className="text-2xl rounded-none">
                     {member.fallback}
                   </AvatarFallback>
                 </Avatar>
                 <h3 className="font-semibold text-xl mb-1">{member.name}</h3>
-                <Badge variant="secondary" className="mb-3">
+                <Badge variant="secondary" className="mb-3 border">
                   {member.role}
                 </Badge>
                 <p className="text-muted-foreground text-sm">

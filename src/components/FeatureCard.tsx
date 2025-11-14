@@ -11,14 +11,14 @@ export default function FeatureCard({ data }: FeatureCardProps) {
   return (
     <Card
       className={cn(
-        "border shadow-lg hover:shadow-xl transition-shadow z-50",
+        "border",
         data.disabled && "bg-muted",
       )}
     >
       <CardHeader>
         <div className="flex items-center justify-between">
           <div
-            className={`w-12 h-12 ${data.bgColor} rounded-lg flex items-center justify-center mb-4`}
+            className={`w-12 h-12 ${data.bgColor} flex items-center justify-center mb-4 border`}
           >
             <data.icon className={`h-6 w-6 ${data.iconColor}`} />
           </div>

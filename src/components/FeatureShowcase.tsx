@@ -22,7 +22,7 @@ const FeatureShowcase: React.FC<FeatureShowcaseProps> = ({
 }) => {
   return (
     <section className="py-12 md:py-24">
-      <div className="container mx-auto px-4 md:px-6">
+      <div className="px-4 md:px-6">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold tracking-tighter sm:text-5xl text-foreground">
             {title}
@@ -34,16 +34,13 @@ const FeatureShowcase: React.FC<FeatureShowcaseProps> = ({
         <div className="grid gap-16">
           {features.map((feature, index) => {
             const Icon = feature.icon;
-            const isReversed = index % 2 !== 0;
             return (
               <div
                 key={feature.title}
-                className={`grid md:grid-cols-2 gap-12 items-center ${
-                  isReversed ? "md:grid-flow-col-dense" : ""
-                }`}
+                className="grid md:grid-cols-2 gap-12 items-center"
               >
-                <div className={`space-y-4 ${isReversed ? "md:col-start-2" : ""}`}>
-                  <div className="inline-block bg-primary/10 p-3 rounded-lg">
+                <div className="space-y-4">
+                  <div className="inline-block border p-3">
                     <Icon className="w-8 h-8 text-primary" />
                   </div>
                   <h3 className="text-3xl font-bold">{feature.title}</h3>
@@ -51,16 +48,7 @@ const FeatureShowcase: React.FC<FeatureShowcaseProps> = ({
                     {feature.description}
                   </p>
                 </div>
-                <div className="aspect-video bg-muted rounded-lg overflow-hidden">
-                  <video
-                    autoplay
-                    loop
-                    muted
-                    playsinline
-                    className="w-full h-full object-cover"
-                  >
-                    <source src="https://cdn.dribbble.com/userupload/12642457/file/original-100a4b8493117d721a001f2a0e3f5b89.mp4" type="video/mp4" />
-                  </video>
+                <div className="aspect-video bg-muted border">
                 </div>
               </div>
             );

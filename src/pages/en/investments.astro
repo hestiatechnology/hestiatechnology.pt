@@ -15,13 +15,13 @@ import Layout from "@/layouts/Layout.astro";
 <Layout title="Investments">
   <section
     id="hero"
-    class="py-12 md:py-24 lg:py-32 bg-gradient-to-br from-background to-muted"
+    class="py-12 md:py-24 lg:py-32"
   >
-    <div class="container mx-auto px-4 md:px-6">
+    <div class="px-4 md:px-6">
       <div class="text-center mb-12">
         <Badge
           variant="outline"
-          className="mb-4 w-fit h-fit bg-primary text-primary-foreground"
+          className="mb-4 w-fit h-fit border"
         >
           🚀 Investment Opportunity
         </Badge>
@@ -44,7 +44,7 @@ import Layout from "@/layouts/Layout.astro";
   </section>
 
   <section class="py-12 md:py-24">
-    <div class="container mx-auto px-4 md:px-6">
+    <div class="px-4 md:px-6">
       <div class="text-center mb-8">
         <h2
           class="text-2xl font-bold tracking-tighter sm:text-4xl text-foreground mb-4"
@@ -57,14 +57,14 @@ import Layout from "@/layouts/Layout.astro";
       </div>
 
       <div class="max-w-4xl mx-auto">
-        <Card>
+        <Card className="border">
           <CardContent className="p-4">
             <iframe
               src="https://docs.google.com/presentation/d/e/2PACX-1vSc8ct3XoeALpqILbHoV3VKjl5yANi4-GpTRik1cQRZ-23l6UfixP0wmYZijEarFrde46B9QAhBfRJC/pubembed?start=false&loop=false&delayms=5000"
               width="100%"
               height="500"
               allowfullscreen="true"
-              class="rounded-lg"
+              class="border-0"
               title="Hestia ERP Pitch Deck"></iframe>
           </CardContent>
         </Card>
@@ -73,12 +73,12 @@ import Layout from "@/layouts/Layout.astro";
   </section>
 
   <!-- Investment Information -->
-  <section class="py-12 md:py-24 bg-muted/30">
-    <div class="container mx-auto px-4 md:px-6">
+  <section class="py-12 md:py-24">
+    <div class="px-4 md:px-6">
       <div class="max-w-3xl mx-auto text-center">
         <Badge
           variant="secondary"
-          className="mb-4 w-fit h-fit bg-primary text-primary-foreground"
+          className="mb-4 w-fit h-fit border"
         >
           💰 Investment Round
         </Badge>
@@ -92,7 +92,7 @@ import Layout from "@/layouts/Layout.astro";
           development and market expansion.
         </p>
 
-        <Card className="mb-8">
+        <Card className="mb-8 border">
           <CardHeader className="text-center">
             <CardTitle className="text-6xl font-bold text-primary mb-4"
               >€250K</CardTitle
@@ -140,7 +140,7 @@ import Layout from "@/layouts/Layout.astro";
 
   <!-- Key Milestones -->
   <section class="py-12 md:py-24">
-    <div class="container mx-auto px-4 md:px-6">
+    <div class="px-4 md:px-6">
       <div class="text-center mb-8">
         <h2
           class="text-2xl font-bold tracking-tighter sm:text-4xl text-foreground mb-4"
@@ -152,19 +152,19 @@ import Layout from "@/layouts/Layout.astro";
         </p>
       </div>
       <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-4 max-w-6xl mx-auto">
-        <Card className="hover:shadow-lg transition-shadow">
+        <Card className="border">
           <CardHeader>
             <CardTitle>Revenue</CardTitle>
             <CardDescription>Achieve €15,000 MRR</CardDescription>
           </CardHeader>
         </Card>
-        <Card className="hover:shadow-lg transition-shadow">
+        <Card className="border">
           <CardHeader>
             <CardTitle>Customers</CardTitle>
             <CardDescription>Onboard 25+ paying manufacturers</CardDescription>
           </CardHeader>
         </Card>
-        <Card className="hover:shadow-lg transition-shadow">
+        <Card className="border">
           <CardHeader>
             <CardTitle>Product</CardTitle>
             <CardDescription>
@@ -172,7 +172,7 @@ import Layout from "@/layouts/Layout.astro";
             </CardDescription>
           </CardHeader>
         </Card>
-        <Card className="hover:shadow-lg transition-shadow">
+        <Card className="border">
           <CardHeader>
             <CardTitle>Timeline</CardTitle>
             <CardDescription>Q1 2027</CardDescription>
@@ -184,12 +184,12 @@ import Layout from "@/layouts/Layout.astro";
 
   <!-- Additional Info Cards -->
   <section class="py-12 md:py-24">
-    <div class="container mx-auto px-4 md:px-6">
+    <div class="px-4 md:px-6">
       <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3 max-w-5xl mx-auto">
-        <Card className="hover:shadow-lg transition-shadow">
+        <Card className="border">
           <CardHeader>
             <div
-              class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-2"
+              class="w-12 h-12 border flex items-center justify-center mb-2"
             >
               <span class="text-2xl">🎯</span>
             </div>
@@ -200,10 +200,10 @@ import Layout from "@/layouts/Layout.astro";
           </CardHeader>
         </Card>
 
-        <Card className="hover:shadow-lg transition-shadow">
+        <Card className="border">
           <CardHeader>
             <div
-              class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-2"
+              class="w-12 h-12 border flex items-center justify-center mb-2"
             >
               <span class="text-2xl">⚡</span>
             </div>
@@ -214,10 +214,10 @@ import Layout from "@/layouts/Layout.astro";
           </CardHeader>
         </Card>
 
-        <Card className="hover:shadow-lg transition-shadow">
+        <Card className="border">
           <CardHeader>
             <div
-              class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-2"
+              class="w-12 h-12 border flex items-center justify-center mb-2"
             >
               <span class="text-2xl">🚀</span>
             </div>
@@ -233,15 +233,15 @@ import Layout from "@/layouts/Layout.astro";
 
   <!-- CTA Section -->
   <section class="py-12 md:py-24">
-    <div class="container mx-auto px-4 md:px-6">
-      <Card className="bg-gradient-to-r from-primary to-chart-2 border-0">
+    <div class="px-4 md:px-6">
+      <Card className="border">
         <CardContent className="p-8 md:p-12 text-center">
           <h2
-            class="text-2xl font-bold tracking-tighter sm:text-4xl text-primary-foreground mb-4"
+            class="text-2xl font-bold tracking-tighter sm:text-4xl text-foreground mb-4"
           >
             Ready to invest in the future?
           </h2>
-          <p class="max-w-[600px] mx-auto text-primary-foreground/90 mb-8">
+          <p class="max-w-[600px] mx-auto text-muted-foreground mb-8">
             Don't miss this unique opportunity. Join our investors and be part
             of the next great revolution.
           </p>
@@ -252,7 +252,7 @@ import Layout from "@/layouts/Layout.astro";
               >
             </Button>
           </div>
-          <p class="text-primary-foreground mt-2">
+          <p class="text-muted-foreground mt-2">
             investors [at] hestiatechnology.pt
           </p>
         </CardContent>

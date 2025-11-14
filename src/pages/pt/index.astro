@@ -12,26 +12,16 @@ import STARTIpca from "@/assets/start-ipca.png";
 <Layout title="Hestia ERP - A Plataforma de Operações para Fabricantes Têxteis">
   <div class="flex flex-col">
     <!-- Hero Section -->
-    <section class="min-h-screen flex items-center justify-center text-center relative overflow-hidden py-20 md:py-32">
-      <video
-        autoplay
-        loop
-        muted
-        playsinline
-        class="absolute top-0 left-0 w-full h-full object-cover -z-10"
-      >
-        <source src="https://cdn.dribbble.com/userupload/12642457/file/original-100a4b8493117d721a001f2a0e3f5b89.mp4" type="video/mp4" />
-      </video>
-      <div class="absolute top-0 left-0 w-full h-full bg-black/60 -z-10"></div>
+    <section class="min-h-screen flex items-center justify-center text-center bg-background py-20 md:py-32">
       <div class="container mx-auto px-4 md:px-6">
         <h1
-          class="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tighter text-white"
+          class="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tighter text-foreground"
         >
           A Plataforma de Operações com IA para <span class="text-primary"
             >Fabricantes</span
           >
         </h1>
-        <p class="max-w-3xl mx-auto mt-6 text-lg text-gray-200 md:text-xl">
+        <p class="max-w-3xl mx-auto mt-6 text-lg text-muted-foreground md:text-xl">
           O Hestia é o ERP inteligente para fabricantes têxteis, automatizando a
           conformidade com a UE e o acompanhamento da produção.
         </p>
@@ -57,7 +47,7 @@ import STARTIpca from "@/assets/start-ipca.png";
     </div>
 
     <!-- DPP Section -->
-    <section id="dpp" class="py-20 md:py-32 bg-muted">
+    <section id="dpp" class="py-20 md:py-32">
       <div class="container mx-auto px-4 md:px-6">
         <div class="text-center max-w-4xl mx-auto">
           <h2
@@ -85,7 +75,7 @@ import STARTIpca from "@/assets/start-ipca.png";
     </div>
 
     <!-- Partners Section -->
-    <section id="partners" class="py-20 md:py-32 bg-muted">
+    <section id="partners" class="py-20 md:py-32">
       <div class="container mx-auto">
         <h2
           class="text-4xl font-bold tracking-tighter sm:text-5xl text-foreground mb-12 text-center"
@@ -99,13 +89,13 @@ import STARTIpca from "@/assets/start-ipca.png";
             src={IPCALogo}
             height={100}
             alt="IPCA Logo"
-            class="grayscale hover:grayscale-0 transition-all"
+            class=""
           />
           <Image
             src={STARTIpca}
             height={100}
             alt="START IPCA Logo"
-            class="grayscale hover:grayscale-0 transition-all"
+            class=""
           />
         </div>
       </div>

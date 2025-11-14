@@ -12,9 +12,9 @@ export default function Footer({ locale }: FooterProps) {
   };
 
   return (
-    <footer className="bg-background text-foreground">
-      <div className="container mx-auto px-4 md:px-6">
-        <div className="border-t border-border py-6">
+    <footer className="bg-background text-foreground border-t">
+      <div className="px-4 md:px-6">
+        <div className="py-6">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-sm text-muted-foreground">
               {t("footer.copyright").replace(
