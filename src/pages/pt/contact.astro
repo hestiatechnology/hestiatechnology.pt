@@ -33,7 +33,7 @@ if (Astro.request.method === "POST") {
       captchaError = "Captcha failed. Please try again.";
     } else {
       const { data, error } = await Astro.callAction(actions.email, formData);
-      return Astro.redirect("/contact?submitted=true");
+      return Astro.redirect(`/${Astro.currentLocale}/contact?submitted=true`);
     }
   } catch (error) {
     if (error instanceof Error) {
@@ -81,4 +81,3 @@ const labels = {
     </div>
   </section>
 </Layout>
-
