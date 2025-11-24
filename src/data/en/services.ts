@@ -1,9 +1,4 @@
-import {
-  Briefcase,
-  DollarSign,
-  Users,
-  type LucideIcon,
-} from "lucide-react";
+import { Briefcase, DollarSign, Users, type LucideIcon } from "lucide-react";
 
 export interface ServiceType {
   title: string;
@@ -16,25 +11,25 @@ export interface ServiceType {
 
 export const ServicesList: ServiceType[] = [
   {
-    title: "Sale and maintenance of computer equipment",
+    title: "Industrial Infrastructure & IoT",
     description:
-      "Sale, installation, and maintenance of computers, servers, and other computer equipment.",
+      "Setup and maintenance of factory-floor hardware, servers, and IoT sensors for seamless ERP integration.",
     icon: Briefcase,
     bgColor: "bg-blue-100",
     iconColor: "text-blue-600",
   },
   {
-    title: "Custom Software",
+    title: "Custom Integrations",
     description:
-      "Development of custom software solutions for your business needs.",
+      "Tailored connectors and modules to integrate Hestia with your existing machinery and legacy software.",
     icon: DollarSign,
     bgColor: "bg-green-100",
     iconColor: "text-green-600",
   },
   {
-    title: "Consulting",
+    title: "Strategic Consulting",
     description:
-      "Specialized advice on technology, processes, and digital transformation.",
+      "Strategic guidance on Digital Product Passport (DPP) compliance and digital transformation.",
     icon: Users,
     bgColor: "bg-purple-100",
     iconColor: "text-purple-600",

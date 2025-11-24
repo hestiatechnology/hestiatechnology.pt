@@ -59,9 +59,6 @@ export default function Header({ locale }: HeaderProps) {
             <Button asChild variant="outline" size="sm" className="text-sm">
               <a href={`/${locale}/contact`}>{t("header.button.contact")}</a>
             </Button>
-            <Button asChild size="sm" className="text-sm">
-              <a href={`/${locale}/contact`}>{t("header.button.signin")}</a>
-            </Button>
           </div>
         </div>
       </div>

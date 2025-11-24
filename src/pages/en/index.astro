@@ -12,7 +12,7 @@ import STARTIpca from "@/assets/start-ipca.png";
 <Layout title="Hestia ERP - The Operations Platform for Textile Manufacturers">
   <div class="flex flex-col">
     <!-- Hero Section -->
-    <section class="min-h-screen flex items-center justify-center text-center bg-background py-20 md:py-32">
+    <section class="min-h-screen flex items-center justify-center text-center bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-primary/20 via-background to-background py-20 md:py-32">
       <div class="container mx-auto px-4 md:px-6">
         <h1
           class="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tighter text-foreground"
@@ -45,6 +45,70 @@ import STARTIpca from "@/assets/start-ipca.png";
         description="We automate EU compliance and production tracking, replacing costly and unreliable legacy systems."
       />
     </div>
+
+    <!-- Comparison Section -->
+    <section class="py-20 md:py-32 bg-muted/30">
+      <div class="container mx-auto px-4 md:px-6">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl font-bold tracking-tighter sm:text-5xl text-foreground">
+            Why Manufacturers Switch to Hestia
+          </h2>
+          <p class="max-w-2xl mx-auto mt-4 text-muted-foreground md:text-xl">
+            Stop struggling with outdated software. Upgrade to the future of manufacturing.
+          </p>
+        </div>
+        <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+          <!-- Legacy ERP Card -->
+          <div class="bg-card border rounded-xl p-8 opacity-70">
+            <h3 class="text-xl font-bold text-muted-foreground mb-6">Legacy ERPs</h3>
+            <ul class="space-y-4">
+              <li class="flex items-center gap-3 text-muted-foreground">
+                <span class="text-red-500 text-xl">✕</span>
+                Manual Data Entry & Errors
+              </li>
+              <li class="flex items-center gap-3 text-muted-foreground">
+                <span class="text-red-500 text-xl">✕</span>
+                Siloed Information
+              </li>
+              <li class="flex items-center gap-3 text-muted-foreground">
+                <span class="text-red-500 text-xl">✕</span>
+                Costly, Slow Updates
+              </li>
+              <li class="flex items-center gap-3 text-muted-foreground">
+                <span class="text-red-500 text-xl">✕</span>
+                No DPP Support
+              </li>
+            </ul>
+          </div>
+
+          <!-- Hestia ERP Card -->
+          <div class="bg-card border-2 border-primary rounded-xl p-8 shadow-lg relative overflow-hidden">
+            <div class="absolute top-0 right-0 bg-primary text-primary-foreground text-xs font-bold px-3 py-1 rounded-bl-lg">
+              RECOMMENDED
+            </div>
+            <h3 class="text-2xl font-bold text-foreground mb-6">Hestia ERP</h3>
+            <ul class="space-y-4">
+              <li class="flex items-center gap-3 font-medium">
+                <span class="text-green-500 text-xl">✓</span>
+                AI Automation
+              </li>
+              <li class="flex items-center gap-3 font-medium">
+                <span class="text-green-500 text-xl">✓</span>
+                Real-Time Visibility
+              </li>
+              <li class="flex items-center gap-3 font-medium">
+                <span class="text-green-500 text-xl">✓</span>
+                Instant SaaS Updates
+              </li>
+              <li class="flex items-center gap-3 font-medium">
+                <span class="text-green-500 text-xl">✓</span>
+                Native DPP Compliance
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <!-- DPP Section -->
     <section id="dpp" class="py-20 md:py-32">

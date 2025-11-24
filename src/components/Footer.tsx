@@ -1,3 +1,4 @@
+import { Linkedin } from "lucide-react";
 import { translations } from "@/lib/translations";
 
 interface FooterProps {
@@ -22,7 +23,7 @@ export default function Footer({ locale }: FooterProps) {
                 currentYear.toString(),
               )}
             </p>
-            <nav className="flex gap-4">
+            <nav className="flex items-center gap-4">
               <a
                 href={`/${locale}/privacy`}
                 className="text-sm text-muted-foreground hover:text-foreground transition-colors"
@@ -34,6 +35,15 @@ export default function Footer({ locale }: FooterProps) {
                 className="text-sm text-muted-foreground hover:text-foreground transition-colors"
               >
                 {t("footer.nav.terms")}
+              </a>
+              <a
+                href="https://www.linkedin.com/company/hestia-technology"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-muted-foreground hover:text-foreground transition-colors"
+              >
+                <Linkedin className="h-5 w-5" />
+                <span className="sr-only">LinkedIn</span>
               </a>
             </nav>
           </div>

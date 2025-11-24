@@ -1,11 +1,8 @@
 ---
-import { Input } from "@/components/ui/input";
 import Layout from "@/layouts/Layout.astro";
-import { Label } from "@/components/ui/label";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Textarea } from "@/components/ui/textarea";
-import { Button } from "@/components/ui/button";
 import { actions } from "astro:actions";
+import { ContactForm } from "@/components/ContactForm";
 
 export const prerender = false;
 
@@ -45,42 +42,43 @@ if (Astro.request.method === "POST") {
     }
   }
 }
+
+const labels = {
+  company: "Empresa",
+  email: "Email",
+  phone: "Telefone (Opcional)",
+  topic: "Assunto",
+  message: "Mensagem",
+  submit: "Enviar",
+  selectPlaceholder: "Selecione um assunto",
+  topics: {
+    sales: "Vendas",
+    support: "Suporte",
+    partnership: "Parceria",
+    other: "Outro",
+  },
+};
 ---
 
 <Layout title="Contactos">
   <section class="py-15 px-3 md:px-0">
-    <Card className="border">
-      <CardHeader>
-        <CardTitle className="text-3xl font-bold">Contacto</CardTitle>
-      </CardHeader>
-      <CardContent>
-        {captchaError && (
-          <div class="text-red-600 mb-2">{captchaError}</div>
-        )}
-        <form method="POST" class="flex flex-col gap-y-5">
-          <div class="flex flex-col gap-y-1">
-            <Label htmlFor="empresa">Empresa</Label>
-            <Input id="empresa" type="text" name="company" />
-          </div>
-          <div class="flex flex-col gap-y-1">
-            <Label htmlFor="email">Email</Label>
-            <Input id="email" type="email" name="email" />
-          </div>
-          <div class="flex flex-col gap-y-1">
-            <Label htmlFor="message">Mensagem</Label>
-            <Textarea id="message" name="message" />
-          </div>
-          <div
-            class="h-captcha"
-            data-sitekey="22ee0f18-378a-46ce-9246-473c5c64bd9a"
-          >
-          </div>
-          <Button>Submit</Button>
-        </form>
-      </CardContent>
-    </Card>
+    <div class="container mx-auto max-w-2xl">
+      <Card className="border">
+        <CardHeader>
+          <CardTitle className="text-3xl font-bold">Contacto</CardTitle>
+        </CardHeader>
+        <CardContent>
+          {captchaError && (
+            <div class="text-red-600 mb-2">{captchaError}</div>
+          )}
+          <ContactForm
+            client:load
+            labels={labels}
+            siteKey="22ee0f18-378a-46ce-9246-473c5c64bd9a"
+          />
+        </CardContent>
+      </Card>
+    </div>
   </section>
 </Layout>
-
-<script src="https://js.hcaptcha.com/1/api.js" async defer></script>
 

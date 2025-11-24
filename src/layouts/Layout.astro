@@ -93,7 +93,7 @@ const ptURL = new URL(`/pt${pathWithoutLocale}`, siteUrl).href;
       actionText={t("announcement.action")}
       actionHref=`/${Astro.currentLocale}/investments`
     />
-    <Header client:only="react" locale={locale} />
+    <Header client:load locale={locale} />
     <main class="flex-1">
       <slot />
     </main>
