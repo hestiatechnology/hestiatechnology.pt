@@ -37,7 +37,7 @@ export default function Footer({ locale }: FooterProps) {
                 {t("footer.nav.terms")}
               </a>
               <a
-                href="https://www.linkedin.com/company/hestia-technology"
+                href="https://www.linkedin.com/company/hestia-technology-pt"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-muted-foreground hover:text-foreground transition-colors"
