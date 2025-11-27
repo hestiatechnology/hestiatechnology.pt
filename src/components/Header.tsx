@@ -1,3 +1,4 @@
+import Logo from "@/assets/HestiaTechnology.svg";
 import LogoWhite from "@/assets/HestiaTechnologyWhite.svg";
 import { Button } from "@/components/ui/button";
 import {
@@ -28,14 +29,16 @@ export default function Header({ locale }: HeaderProps) {
     <header className="border-b bg-background sticky top-0 z-50 px-4 md:px-6">
       <div className="flex h-16 items-center justify-between gap-4">
         <div className="flex items-center gap-6">
-          <a
-            href={`/${locale}`}
-            className="text-primary hover:text-primary/90"
-          >
+          <a href={`/${locale}`} className="text-primary hover:text-primary/90">
+            <img
+              src={Logo.src}
+              alt="Hestia Logo"
+              className="h-10 w-auto dark:hidden"
+            />
             <img
               src={LogoWhite.src}
               alt="Hestia Logo"
-              className="h-10 w-auto"
+              className="h-10 w-auto hidden dark:block"
             />
           </a>
         </div>
