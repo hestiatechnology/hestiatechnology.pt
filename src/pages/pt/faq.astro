@@ -1,0 +1,52 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import { FAQ } from "@/components/FAQ";
+import { Button } from "@/components/ui/button";
+
+const faqs = [
+  {
+    question: "Quanto tempo demora a implementação?",
+    answer: "A maioria dos clientes começa a ver valor em 2-4 semanas. A nossa implementação assistida garante que os dados são migrados e a equipa é formada rapidamente."
+  },
+  {
+    question: "O Hestia ERP funciona com as minhas máquinas atuais?",
+    answer: "Sim, o Hestia é compatível com a maioria das máquinas industriais modernas via protocolos padrão (OPC UA, MQTT). Para máquinas mais antigas, temos parceiros de hardware IoT para retrofitting."
+  },
+  {
+    question: "Os meus dados estão seguros?",
+    answer: "Absolutamente. Utilizamos encriptação de nível bancário, backups diários automáticos e alojamento em servidores seguros na UE, em total conformidade com o RGPD."
+  },
+  {
+    question: "Posso exportar os meus dados se cancelar?",
+    answer: "Sim, os dados são seus. Pode exportar toda a sua base de dados em formatos padrão (CSV, JSON, Excel) a qualquer momento."
+  },
+  {
+    question: "O que está incluído no suporte?",
+    answer: "Todos os planos incluem suporte via email e chat. O plano Crescimento inclui suporte prioritário, e o plano Empresarial inclui um gestor de conta dedicado."
+  }
+];
+---
+
+<Layout title="FAQ - Hestia ERP">
+  <div class="min-h-screen bg-muted/30">
+    <div class="container mx-auto px-4 md:px-6 py-20 md:py-32 max-w-3xl">
+      <div class="text-center mb-12">
+        <h1 class="text-4xl md:text-5xl font-bold tracking-tight text-foreground mb-4">
+          Perguntas Frequentes
+        </h1>
+        <p class="text-muted-foreground text-lg">
+          Respostas às questões mais comuns sobre o Hestia ERP.
+        </p>
+      </div>
+
+      <FAQ client:load items={faqs} />
+
+      <div class="mt-12 text-center">
+        <p class="text-muted-foreground mb-4">Ainda tem dúvidas?</p>
+        <Button size="lg">
+            <a href={`/${Astro.currentLocale}/contact`}>Falar com a Equipa</a>
+        </Button>
+      </div>
+    </div>
+  </div>
+</Layout>

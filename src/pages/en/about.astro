@@ -12,7 +12,6 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Separator } from "@/components/ui/separator";
 import Layout from "@/layouts/Layout.astro";
 import IPCA from "@/assets/ipca_cor.png";
-import TeamSection from "@/components/TeamSection.en";
 ---
 
 <Layout title="About Us">
@@ -41,119 +40,90 @@ import TeamSection from "@/components/TeamSection.en";
   </section>
 
   <!-- Mission & Vision -->
-  <section class="py-12 md:py-24">
-    <div class="px-4 md:px-6">
-      <div class="grid gap-8 md:grid-cols-2 max-w-6xl mx-auto">
-        <Card className="border">
-          <CardHeader>
-            <div
-              class="w-16 h-16 border flex items-center justify-center mb-4"
-            >
-              <span class="text-3xl">🎯</span>
-            </div>
-            <CardTitle className="text-2xl">Our Mission</CardTitle>
-          </CardHeader>
-          <CardContent>
-            <CardDescription className="text-base leading-relaxed">
-              To automate EU compliance and production tracking for textile
-              manufacturers, replacing costly and unreliable legacy systems.
-            </CardDescription>
-          </CardContent>
-        </Card>
 
-        <Card className="border">
-          <CardHeader>
-            <div
-              class="w-16 h-16 border flex items-center justify-center mb-4"
-            >
-              <span class="text-3xl">🔮</span>
-            </div>
-            <CardTitle className="text-2xl">Our Vision</CardTitle>
-          </CardHeader>
-          <CardContent>
-            <CardDescription className="text-base leading-relaxed">
-              To become the standard for EU manufacturing, starting by
-              dominating the Portuguese textile market and then conquering EU
-              textiles.
-            </CardDescription>
-          </CardContent>
-        </Card>
-      </div>
-    </div>
-  </section>
+    <section class="py-12 md:py-24">
 
-  <!-- Company Story -->
-  <section class="py-12 md:py-24">
-    <div class="px-4 md:px-6">
-      <div class="max-w-4xl mx-auto">
-        <div class="text-center mb-12">
-          <h2
-            class="text-2xl font-bold tracking-tighter sm:text-4xl text-foreground mb-4"
-          >
-            Our Journey
-          </h2>
-          <p class="text-muted-foreground">
-            From idea to execution: our story of innovation in SaaS and ERP
-          </p>
-        </div>
+      <div class="px-4 md:px-6">
 
-        <div class="space-y-8">
-          <Card className="border">
-            <CardContent className="p-6">
-              <div class="flex items-start gap-4">
-                <Badge variant="secondary" className="mt-1 border">2025</Badge>
-                <div>
-                  <h3 class="font-semibold text-lg mb-2">Strong Market Demand</h3>
-                  <p class="text-muted-foreground">
-                    20 Manufacturers Ready to Adopt Hestia. €132k+ in Pipeline
-                    ARR.
-                  </p>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
+        <div class="grid gap-8 md:grid-cols-2 max-w-6xl mx-auto">
 
           <Card className="border">
-            <CardContent className="p-6">
-              <div class="flex items-start gap-4">
-                <Badge className="mt-1 border">2026</Badge>
-                <div>
-                  <h3 class="font-semibold text-lg mb-2">
-                    First Pilot Deployment
-                  </h3>
-                  <p class="text-muted-foreground">
-                    First Pilot deployment in Q1 2026.
-                  </p>
-                </div>
+
+            <CardHeader>
+
+              <div
+
+                class="w-16 h-16 border flex items-center justify-center mb-4"
+
+              >
+
+                <span class="text-3xl">🎯</span>
+
               </div>
+
+              <CardTitle className="text-2xl">Our Mission</CardTitle>
+
+            </CardHeader>
+
+            <CardContent>
+
+              <CardDescription className="text-base leading-relaxed">
+
+                To automate EU compliance and production tracking for textile
+
+                manufacturers, replacing costly and unreliable legacy systems.
+
+              </CardDescription>
+
             </CardContent>
+
           </Card>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Team Section -->
-  <section class="py-12 md:py-24">
-    <div class="px-4 md:px-6">
-      <div class="text-center mb-12">
-        <h2
-          class="text-2xl font-bold tracking-tighter sm:text-4xl text-foreground mb-4"
-        >
-          Our Team
-        </h2>
-        <p class="max-w-[700px] mx-auto text-muted-foreground">
-          Meet the experts in SaaS and ERP who are transforming business management.
-        </p>
-      </div>
-
-      <TeamSection client:load />
-    </div>
-  </section>
 
   
 
-  <!-- Values Section -->
+          <Card className="border">
+
+            <CardHeader>
+
+              <div
+
+                class="w-16 h-16 border flex items-center justify-center mb-4"
+
+              >
+
+                <span class="text-3xl">🔮</span>
+
+              </div>
+
+              <CardTitle className="text-2xl">Our Vision</CardTitle>
+
+            </CardHeader>
+
+            <CardContent>
+
+              <CardDescription className="text-base leading-relaxed">
+
+                To become the standard for EU manufacturing, starting by
+
+                dominating the Portuguese textile market and then conquering EU
+
+                textiles.
+
+              </CardDescription>
+
+            </CardContent>
+
+          </Card>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  
+
+    <!-- Values Section -->
   <section class="py-12 md:py-24">
     <div class="px-4 md:px-6">
       <div class="text-center mb-12">

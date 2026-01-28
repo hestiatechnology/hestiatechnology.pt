@@ -1,0 +1,62 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import { getCollection } from "astro:content";
+import { Card, CardContent, CardHeader, CardTitle, CardDescription, CardFooter } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { Calendar } from "lucide-react";
+
+const posts = await getCollection("blog", ({ id }) => {
+  return id.startsWith("pt/");
+});
+
+const sortedPosts = posts.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+---
+
+<Layout title="Blog - Hestia ERP">
+  <div class="min-h-screen bg-muted/30">
+    <section class="py-20 md:py-32 relative overflow-hidden bg-background border-b">
+      <div class="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_bottom,_var(--tw-gradient-stops))] from-primary/5 via-background to-background"></div>
+      <div class="container mx-auto px-4 md:px-6 text-center">
+        <Badge variant="secondary" class="mb-4">Insights da Indústria</Badge>
+        <h1 class="text-4xl md:text-5xl font-bold tracking-tight text-foreground mb-4">
+          Blog & Novidades
+        </h1>
+        <p class="text-muted-foreground text-lg max-w-2xl mx-auto">
+          As últimas tendências sobre DPP, Indústria 4.0 e gestão têxtil.
+        </p>
+      </div>
+    </section>
+
+    <div class="container mx-auto px-4 md:px-6 py-12">
+      <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+        {sortedPosts.map((post) => (
+          <a href={`/pt/blog/${post.slug.split("/")[1]}`} class="group">
+            <Card class="h-full border transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
+              <div class="aspect-video w-full bg-muted/50 relative overflow-hidden rounded-t-xl">
+                 <div class="absolute inset-0 flex items-center justify-center text-muted-foreground">
+                    {/* Placeholder for image if needed, or render the image if available */}
+                    <span class="text-4xl">📝</span>
+                 </div>
+              </div>
+              <CardHeader>
+                <div class="flex items-center gap-2 text-sm text-muted-foreground mb-2">
+                    <Calendar class="w-4 h-4" />
+                    {post.data.date.toLocaleDateString('pt-PT')}
+                </div>
+                <CardTitle class="group-hover:text-primary transition-colors">{post.data.title}</CardTitle>
+                <CardDescription class="line-clamp-3">{post.data.description}</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <div class="flex flex-wrap gap-2">
+                    {post.data.tags?.map(tag => (
+                        <Badge variant="outline" class="text-xs">{tag}</Badge>
+                    ))}
+                </div>
+              </CardContent>
+            </Card>
+          </a>
+        ))}
+      </div>
+    </div>
+  </div>
+</Layout>

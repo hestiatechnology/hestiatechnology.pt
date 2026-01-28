@@ -46,6 +46,24 @@ const ptURL = new URL(`/pt${pathWithoutLocale}`, siteUrl).href;
     <link rel="alternate" hreflang="pt" href={ptURL} />
     <link rel="alternate" hreflang="x-default" href={ptURL} />
 
+    <!-- Theme Initialization -->
+    <script is:inline>
+      const setDarkMode = () => {
+        if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+          document.documentElement.classList.add('dark');
+        } else {
+          document.documentElement.classList.remove('dark');
+        }
+      };
+      setDarkMode();
+      window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', setDarkMode);
+    </script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+
     <title>Hestia - {title}</title>
     <meta
       name="description"

@@ -43,26 +43,21 @@ export function AnnouncementBar({
   return (
     <div
       className={cn(
-        "border-b transition-all duration-300 ease-in-out z-0",
+        "relative border-b transition-all duration-300 ease-in-out z-40",
         typeStyles[type],
         className,
       )}
     >
-      {/* Animated background pattern 
-      <div className="absolute inset-0 opacity-10">
-        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent animate-pulse" />
-      </div>*/}
-
-      <div className="relative flex items-center justify-center px-4 py-3 sm:px-6">
+      <div className="relative flex items-center justify-center px-4 py-2 sm:px-6">
         <div className="flex items-center space-x-3">
           {/* Icon */}
-          <div className="flex-shrink-0 animate-bounce">
+          <div className="flex-shrink-0">
             {icon || typeIcons[type]}
           </div>
 
           {/* Message */}
           <div className="flex-1 min-w-0">
-            <p className="text-sm font-medium text-center sm:text-left">
+            <p className="text-sm font-medium text-center sm:text-left leading-tight">
               {message}
             </p>
           </div>
@@ -90,15 +85,6 @@ export function AnnouncementBar({
           )}
         </div>
       </div>
-
-      {/* Shimmer effect */}
-      <div
-        className="absolute inset-0 -skew-x-12 bg-gradient-to-r from-transparent via-white/10 to-transparent animate-shimmer"
-        style={{
-          animation: "shimmer 3s ease-in-out infinite",
-          transform: "translateX(-100%)",
-        }}
-      />
     </div>
   );
 }

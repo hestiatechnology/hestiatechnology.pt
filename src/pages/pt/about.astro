@@ -12,7 +12,6 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Separator } from "@/components/ui/separator";
 import Layout from "@/layouts/Layout.astro";
 import IPCA from "@/assets/ipca_cor.png";
-import TeamSection from "@/components/TeamSection.pt";
 ---
 
 <Layout title="Sobre Nós">
@@ -41,121 +40,90 @@ import TeamSection from "@/components/TeamSection.pt";
   </section>
 
 <!-- Mission & Vision -->
+
   <section class="py-12 md:py-24">
+
     <div class="px-4 md:px-6">
+
       <div class="grid gap-8 md:grid-cols-2 max-w-6xl mx-auto">
+
         <Card className="border">
+
           <CardHeader>
+
             <div
+
               class="w-16 h-16 border flex items-center justify-center mb-4"
+
             >
+
               <span class="text-3xl">🎯</span>
+
             </div>
+
             <CardTitle className="text-2xl">A Nossa Missão</CardTitle>
+
           </CardHeader>
+
           <CardContent>
+
             <CardDescription className="text-base leading-relaxed">
+
               Automatizar a conformidade com a UE e o acompanhamento da produção
+
               para os fabricantes têxteis, substituindo sistemas legados
+
               dispendiosos e pouco fiáveis.
+
             </CardDescription>
+
           </CardContent>
+
         </Card>
+
+
 
         <Card className="border">
+
           <CardHeader>
+
             <div
+
               class="w-16 h-16 border flex items-center justify-center mb-4"
+
             >
+
               <span class="text-3xl">🔮</span>
+
             </div>
+
             <CardTitle className="text-2xl">A Nossa Visão</CardTitle>
+
           </CardHeader>
+
           <CardContent>
+
             <CardDescription className="text-base leading-relaxed">
+
               Tornarmo-nos o padrão para a indústria transformadora da UE,
+
               começando por dominar o mercado têxtil português e depois
+
               conquistar os têxteis da UE.
+
             </CardDescription>
+
           </CardContent>
+
         </Card>
-      </div>
-    </div>
-  </section>
 
-  <!-- Company Story -->
-  <section class="py-12 md:py-24">
-    <div class="px-4 md:px-6">
-      <div class="max-w-4xl mx-auto">
-        <div class="text-center mb-12">
-          <h2
-            class="text-2xl font-bold tracking-tighter sm:text-4xl text-foreground mb-4"
-          >
-            A Nossa Jornada
-          </h2>
-          <p class="text-muted-foreground">
-            Da ideia à execução: a nossa história de inovação em SaaS e ERP
-          </p>
-        </div>
-
-        <div class="space-y-8">
-          <Card className="border">
-            <CardContent className="p-6">
-              <div class="flex items-start gap-4">
-                <Badge variant="secondary" className="mt-1 border">2025</Badge>
-                <div>
-                  <h3 class="font-semibold text-lg mb-2">
-                    Forte Procura de Mercado
-                  </h3>
-                  <p class="text-muted-foreground">
-                    20 Fabricantes Prontos para Adotar o Hestia. Mais de 132k€
-                    em Pipeline ARR.
-                  </p>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
-
-          <Card className="border">
-            <CardContent className="p-6">
-              <div class="flex items-start gap-4">
-                <Badge className="mt-1 border">2026</Badge>
-                <div>
-                  <h3 class="font-semibold text-lg mb-2">
-                    Primeira Implementação Piloto
-                  </h3>
-                  <p class="text-muted-foreground">
-                    Primeira implementação piloto no primeiro trimestre de 2026.
-                  </p>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Team Section -->
-  <section class="py-12 md:py-24">
-    <div class="px-4 md:px-6">
-      <div class="text-center mb-12">
-        <h2
-          class="text-2xl font-bold tracking-tighter sm:text-4xl text-foreground mb-4"
-        >
-          A Nossa Equipa
-        </h2>
-        <p class="max-w-[700px] mx-auto text-muted-foreground">
-          Conheça os especialistas em SaaS e ERP que estão a transformar a
-          gestão empresarial.
-        </p>
       </div>
 
-      <TeamSection client:load />
     </div>
+
   </section>
 
-  
+
 
   <!-- Values Section -->
   <section class="py-12 md:py-24">

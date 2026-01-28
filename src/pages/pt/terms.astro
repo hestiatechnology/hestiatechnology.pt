@@ -3,7 +3,7 @@ import { getEntry } from "astro:content";
 import Layout from "@/layouts/Layout.astro";
 import { Card, CardContent } from "@/components/ui/card";
 
-const entry = await getEntry("legal", "pt/privacy");
+const entry = await getEntry("legal", "pt/terms");
 const { Content } = await entry.render();
 ---
 
@@ -17,7 +17,7 @@ const { Content } = await entry.render();
           {entry.data.title}
         </h1>
         <p class="text-muted-foreground text-lg max-w-2xl mx-auto">
-          O seu compromisso com a privacidade e proteção de dados.
+          Termos e condições de utilização do serviço Hestia ERP.
         </p>
       </div>
     </section>
