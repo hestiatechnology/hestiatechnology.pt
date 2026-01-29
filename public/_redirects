@@ -1,6 +1,6 @@
 # Redirects for hestiatechnology.pt
 # Handle www to non-www (301 permanent redirect)
-https://www.hestiatechnology.pt/* https://hestiatechnology.pt/:splat 301!
+// ...existing code...
 https://www.hestiatechnology.pt/* /:splat 301!
 http://www.hestiatechnology.pt/* /:splat 301!
 # Force HTTPS
