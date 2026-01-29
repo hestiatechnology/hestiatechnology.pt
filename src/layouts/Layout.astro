@@ -1,6 +1,6 @@
 ---
 import "@/styles/global.css";
-import { AnnouncementBar } from "@/components/annoucement-bar";
+// import { AnnouncementBar } from "@/components/annoucement-bar";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import { translations } from "@/lib/translations";
@@ -105,12 +105,12 @@ const ptURL = new URL(`/pt${pathWithoutLocale}`, siteUrl).href;
     })} />
   </head>
   <body class="min-h-screen flex flex-col antialiased">
-    <AnnouncementBar
+    {/* <AnnouncementBar
       message={t("announcement.message")}
       type="promotion"
       actionText={t("announcement.action")}
       actionHref=`/${Astro.currentLocale}/investments`
-    />
+    /> */}
     <Header client:load locale={locale} />
     <main class="flex-1">
       <slot />

@@ -1,4 +1,72 @@
 ---
 // src/pages/index.astro
-return Astro.redirect("/pt");
+import "../styles/global.css";
+import HestiaLogo from "../assets/HestiaTechnology.svg";
+import HestiaLogoWhite from "../assets/HestiaTechnologyWhite.svg";
 ---
+
+<!doctype html>
+<html lang="pt">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hestia Technology</title>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <style>
+      /* Critical CSS for immediate theme toggling */
+      .logo-dark { display: none; }
+      .dark .logo-light { display: none; }
+      .dark .logo-dark { display: block; }
+    </style>
+    <script is:inline>
+      // Theme handling
+      const theme = (() => {
+        if (typeof localStorage !== "undefined" && localStorage.getItem("theme")) {
+          return localStorage.getItem("theme");
+        }
+        if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+          return "dark";
+        }
+        return "light";
+      })();
+
+      if (theme === "dark") {
+        document.documentElement.classList.add("dark");
+      } else {
+        document.documentElement.classList.remove("dark");
+      }
+
+      // Locale detection and redirection
+      const userLang = navigator.language || navigator.userLanguage || "pt";
+      const targetPath = userLang.startsWith("en") ? "/en" : "/pt";
+
+      // Small delay to ensure smooth transition and visibility of the branding
+      setTimeout(() => {
+        window.location.href = targetPath;
+      }, 500);
+    </script>
+    <noscript>
+      <meta http-equiv="refresh" content="0;url=/pt" />
+    </noscript>
+  </head>
+  <body class="bg-background text-foreground flex flex-col items-center justify-center min-h-screen overflow-hidden">
+    <div class="flex flex-col items-center gap-8 animate-fade-up">
+      <img
+        src={HestiaLogo.src}
+        alt="Hestia Technology"
+        class="h-16 w-auto logo-light"
+      />
+      <img
+        src={HestiaLogoWhite.src}
+        alt="Hestia Technology"
+        class="h-16 w-auto logo-dark"
+      />
+
+      <div class="relative w-10 h-10">
+            <div class="absolute inset-0 border-4 border-muted rounded-full"></div>
+            <div class="absolute inset-0 border-4 border-primary border-t-transparent rounded-full animate-spin"></div>
+          </div>
+        </div>
+      </body>
+    </html>
+    

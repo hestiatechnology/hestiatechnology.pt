@@ -55,7 +55,7 @@ const FeatureShowcase: React.FC<FeatureShowcaseProps> = ({
                     {feature.description}
                   </p>
                 </div>
-                <div className={`aspect-[4/3] rounded-2xl border bg-muted/30 relative overflow-hidden group-hover:border-primary/30 transition-all duration-500 shadow-sm ${index % 2 === 1 ? 'md:order-first' : ''}`}>
+                <div className={`aspect-square md:aspect-[4/3] rounded-2xl border bg-muted/30 relative overflow-hidden group-hover:border-primary/30 transition-all duration-500 shadow-sm ${index % 2 === 1 ? 'md:order-first' : ''}`}>
                   {feature.renderVisual ? (
                     <div className="w-full h-full">
                         {feature.renderVisual()}

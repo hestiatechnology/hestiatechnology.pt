@@ -49,7 +49,6 @@ export default function Footer({ locale }: FooterProps) {
             <ul className="space-y-2 text-sm text-muted-foreground">
               <li><a href={`/${locale}/about`} className="hover:text-foreground transition-colors">{t("footer.nav.about")}</a></li>
               <li><a href={`/${locale}/blog`} className="hover:text-foreground transition-colors">{t("footer.nav.blog")}</a></li>
-              <li><a href={`/${locale}/investments`} className="hover:text-foreground transition-colors">{t("footer.nav.investments")}</a></li>
               <li><a href={`/${locale}/contact`} className="hover:text-foreground transition-colors">{t("footer.nav.contact")}</a></li>
             </ul>
           </div>
