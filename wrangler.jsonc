@@ -1,6 +1,6 @@
 {
 	"main": "dist/_worker.js/index.js",
-	"name": "certain-cluster",
+	"name": "hestiatechnology-pt",
   "compatibility_date": "2026-01-29",
   "compatibility_flags": [
     "nodejs_compat",
