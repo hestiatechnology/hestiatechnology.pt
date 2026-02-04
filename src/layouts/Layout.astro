@@ -4,6 +4,8 @@ import "@/styles/global.css";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import { translations } from "@/lib/translations";
+import CustomCursor from "@/components/ui/custom-cursor";
+import { ClientRouter } from "astro:transitions";
 
 const { title } = Astro.props;
 const locale = Astro.currentLocale as keyof typeof translations;
@@ -58,6 +60,8 @@ const ptURL = new URL(`/pt${pathWithoutLocale}`, siteUrl).href;
       setDarkMode();
       window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', setDarkMode);
     </script>
+    
+    <ClientRouter />
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -116,5 +120,6 @@ const ptURL = new URL(`/pt${pathWithoutLocale}`, siteUrl).href;
       <slot />
     </main>
     <Footer client:only="react" locale={locale} />
+    <CustomCursor client:load />
   </body>
 </html>

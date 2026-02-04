@@ -6,6 +6,7 @@ import { HowItWorks } from "@/components/HowItWorks.en";
 import { Image } from "astro:assets";
 import IPCALogo from "@/assets/ipca_cor.png";
 import STARTIpca from "@/assets/start-ipca.png";
+import { TypewriterEffect } from "@/components/ui/typewriter-effect";
 ---
 
 <Layout title="Hestia ERP - The Operations Platform for Textile Manufacturers">
@@ -23,9 +24,11 @@ import STARTIpca from "@/assets/start-ipca.png";
           <h1
             class="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight text-foreground animate-fade-up"
           >
-            The AI-enabled Operations Platform for <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-blue-400"
-              >Manufacturers</span
-            >
+            The AI-enabled Operations Platform for <TypewriterEffect 
+              client:visible 
+              words={["Manufacturers", "Weavers", "Spinners", "Dyers"]} 
+              className="inline-block"
+            />
           </h1>
           <p class="max-w-2xl mx-auto text-xl text-muted-foreground animate-fade-up [animation-delay:200ms]">
             Hestia is the intelligent ERP for textile manufacturers, automating EU

@@ -1,24 +1,50 @@
 ---
 import Layout from "@/layouts/Layout.astro";
 import { Button } from "@/components/ui/button";
+import { FileQuestion, ArrowLeft } from "lucide-react";
 ---
 
 <Layout title="404 - Página Não Encontrada">
-  <div class="flex flex-col items-center justify-center min-h-[80vh] px-4 text-center">
-    <h1 class="text-9xl font-bold text-primary opacity-20">404</h1>
-    <h2 class="text-3xl md:text-4xl font-bold tracking-tight text-foreground mt-4">
-      Página Não Encontrada
-    </h2>
-    <p class="text-muted-foreground mt-4 text-lg max-w-md mx-auto">
-      Desculpe, não conseguimos encontrar a página que procura. Pode ter sido movida ou apagada.
-    </p>
-    <div class="mt-8 flex gap-4">
-      <Button asChild size="lg">
-        <a href="/">Voltar ao Início</a>
-      </Button>
-      <Button asChild variant="outline" size="lg">
-        <a href="/pt/contact">Contactar Suporte</a>
-      </Button>
+  <div class="relative flex flex-col items-center justify-center min-h-[85vh] px-4 text-center overflow-hidden">
+    
+    {/* Decorative background elements */}
+    <div class="absolute inset-0 -z-10 overflow-hidden">
+      <div class="absolute top-1/4 left-1/4 w-64 h-64 bg-primary/10 rounded-full blur-3xl animate-pulse"></div>
+      <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl animate-pulse [animation-delay:1s]"></div>
+    </div>
+
+    <div class="relative z-10 flex flex-col items-center gap-8 animate-fade-up">
+      <div class="relative">
+        <div class="absolute inset-0 bg-primary/20 blur-xl rounded-full"></div>
+        <FileQuestion className="h-32 w-32 text-primary relative z-10 animate-bounce" />
+      </div>
+      
+      <div class="space-y-4 max-w-lg">
+        <h1 class="text-7xl font-bold tracking-tighter text-transparent bg-clip-text bg-gradient-to-br from-foreground to-foreground/50">
+          404
+        </h1>
+        <h2 class="text-2xl md:text-3xl font-semibold tracking-tight text-foreground">
+          Ops! Perdemos o fio à meada.
+        </h2>
+        <p class="text-muted-foreground text-lg leading-relaxed">
+          A página que procura parece ter desaparecido ou nunca existiu. 
+          Talvez tenha havido um erro na tecelagem digital.
+        </p>
+      </div>
+
+      <div class="flex flex-col sm:flex-row gap-4 mt-4">
+        <Button asChild size="lg" className="gap-2 shadow-lg shadow-primary/20 hover:shadow-primary/40 transition-all duration-300">
+          <a href="/">
+            <ArrowLeft className="h-4 w-4" />
+            Voltar ao Início
+          </a>
+        </Button>
+        <Button asChild variant="outline" size="lg" className="gap-2">
+          <a href="/pt/contact">
+            Contactar Suporte
+          </a>
+        </Button>
+      </div>
     </div>
   </div>
 </Layout>
