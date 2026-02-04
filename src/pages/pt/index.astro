@@ -7,6 +7,7 @@ import { Image } from "astro:assets";
 import IPCALogo from "@/assets/ipca_cor.png";
 import STARTIpca from "@/assets/start-ipca.png";
 import { TypewriterEffect } from "@/components/ui/typewriter-effect";
+import { Magnetic } from "@/components/ui/magnetic";
 ---
 
 <Layout title="Hestia ERP - A Plataforma de Operações para Fabricantes Têxteis">
@@ -35,12 +36,16 @@ import { TypewriterEffect } from "@/components/ui/typewriter-effect";
             conformidade com a UE e o acompanhamento da produção.
           </p>
           <div class="flex flex-col sm:flex-row justify-center gap-4 animate-fade-up [animation-delay:400ms]">
-            <Button size="lg" className="rounded-full text-lg h-12 px-8 shadow-lg shadow-primary/25">
-              <a href={`/${Astro.currentLocale}/contact`}>Agendar uma Demonstração</a>
-            </Button>
-            <Button size="lg" variant="outline" className="rounded-full text-lg h-12 px-8">
-              <a href={`/${Astro.currentLocale}/prices`}>Ver Preços</a>
-            </Button>
+            <Magnetic client:load>
+              <Button size="lg" className="rounded-full text-lg h-12 px-8 shadow-lg shadow-primary/25">
+                <a href={`/${Astro.currentLocale}/contact`}>Agendar uma Demonstração</a>
+              </Button>
+            </Magnetic>
+            <Magnetic client:load>
+              <Button size="lg" variant="outline" className="rounded-full text-lg h-12 px-8">
+                <a href={`/${Astro.currentLocale}/prices`}>Ver Preços</a>
+              </Button>
+            </Magnetic>
           </div>
         </div>
       </div>
