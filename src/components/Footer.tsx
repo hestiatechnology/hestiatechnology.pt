@@ -1,4 +1,4 @@
-import { Linkedin } from "lucide-react";
+import { Linkedin, Instagram, Facebook } from "lucide-react";
 import { translations } from "@/lib/translations";
 
 interface FooterProps {
@@ -30,6 +30,24 @@ export default function Footer({ locale }: FooterProps) {
               >
                 <Linkedin className="h-5 w-5" />
                 <span className="sr-only">LinkedIn</span>
+              </a>
+              <a
+                href="https://www.instagram.com/hestiatechnology"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-muted-foreground hover:text-foreground transition-colors"
+              >
+                <Instagram className="h-5 w-5" />
+                <span className="sr-only">Instagram</span>
+              </a>
+              <a
+                href="https://www.facebook.com/hestiatechnology.pt"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-muted-foreground hover:text-foreground transition-colors"
+              >
+                <Facebook className="h-5 w-5" />
+                <span className="sr-only">Facebook</span>
               </a>
             </div>
           </div>
