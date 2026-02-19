@@ -1,6 +1,7 @@
 ---
 import Layout from "@/layouts/Layout.astro";
 import { Button } from "@/components/ui/button";
+import { GoogleCalendarButton } from "@/components/GoogleCalendarButton";
 ---
 
 <Layout title="Welcome to Hestia Technology">
@@ -27,10 +28,8 @@ import { Button } from "@/components/ui/button";
           Hestia is the only operations platform built from the ground up for textile manufacturers — with native EU DPP compliance, real-time IoT and integrated AI.
         </p>
 
-        <div class="flex flex-col sm:flex-row justify-center gap-4 pt-4">
-          <Button size="lg" className="rounded-full text-lg h-12 px-8 shadow-lg shadow-primary/25">
-            <a href="/en/contact">Schedule a Demo</a>
-          </Button>
+        <div class="flex flex-col sm:flex-row justify-center items-center gap-4 pt-4">
+          <GoogleCalendarButton client:load label="Schedule a Demo" />
           <Button size="lg" variant="outline" className="rounded-full text-lg h-12 px-8">
             <a href="/en/features">See Features</a>
           </Button>
@@ -86,9 +85,9 @@ import { Button } from "@/components/ui/button";
             <p class="text-muted-foreground text-lg">
               Talk to us. In 30 minutes we'll show you how Hestia replaces your current ERP — no stress, no painful migrations.
             </p>
-            <Button size="lg" className="rounded-full px-10 text-lg h-12 shadow-lg shadow-primary/25">
-              <a href="/en/contact">Book a Free Call</a>
-            </Button>
+            <div class="flex justify-center">
+              <GoogleCalendarButton client:load label="Book a Free Call" />
+            </div>
           </div>
         </div>
       </div>
