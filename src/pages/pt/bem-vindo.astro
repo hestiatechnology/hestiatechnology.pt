@@ -1,0 +1,97 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import { Button } from "@/components/ui/button";
+import { GoogleCalendarButton } from "@/components/GoogleCalendarButton";
+---
+
+<Layout title="Bem-vindo à Hestia Technology">
+  <div class="flex flex-col">
+
+    <!-- Hero -->
+    <section class="min-h-[75vh] flex flex-col items-center justify-center text-center relative overflow-hidden pt-32 pb-20 px-4">
+      <!-- Background -->
+      <div class="absolute inset-0 -z-10">
+        <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-primary/10 via-background to-background"></div>
+        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[500px] bg-primary/20 blur-[120px] rounded-full opacity-40"></div>
+      </div>
+
+      <div class="max-w-3xl mx-auto space-y-8">
+        <div class="inline-flex items-center gap-2 bg-primary/10 border border-primary/20 text-primary text-sm font-semibold px-4 py-2 rounded-full">
+          👋 Olá, bem-vindo(a)
+        </div>
+
+        <h1 class="text-4xl md:text-6xl font-bold tracking-tight text-foreground">
+          Deixe os ERPs legados<br/>no passado.
+        </h1>
+
+        <p class="text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+          A Hestia é a única plataforma de operações construída de raiz para fabricantes têxteis — com conformidade DPP nativa, IoT em tempo real e IA integrada.
+        </p>
+
+        <div class="flex flex-col sm:flex-row justify-center items-center gap-4 pt-4">
+          <GoogleCalendarButton client:load label="Agendar uma Demonstração" />
+          <Button size="lg" variant="outline" className="rounded-full text-lg h-12 px-8">
+            <a href="/pt/features">Ver Funcionalidades</a>
+          </Button>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3 pilares -->
+    <section class="py-20 px-4 bg-muted/30 border-y">
+      <div class="container mx-auto max-w-5xl">
+        <p class="text-center text-sm font-semibold text-muted-foreground uppercase tracking-widest mb-12">
+          O que nos diferencia
+        </p>
+        <div class="grid md:grid-cols-3 gap-8">
+
+          <div class="bg-card border rounded-2xl p-8 space-y-4 hover:border-primary/30 transition-colors">
+            <div class="text-3xl">🗂</div>
+            <h3 class="text-lg font-bold text-foreground">DPP Nativo</h3>
+            <p class="text-muted-foreground text-sm leading-relaxed">
+              Passaporte Digital de Produto em conformidade com a UE, sem integrações externas nem custos adicionais.
+            </p>
+          </div>
+
+          <div class="bg-card border rounded-2xl p-8 space-y-4 hover:border-primary/30 transition-colors">
+            <div class="text-3xl">📡</div>
+            <h3 class="text-lg font-bold text-foreground">IoT em Tempo Real</h3>
+            <p class="text-muted-foreground text-sm leading-relaxed">
+              Visibilidade total do chão de fábrica com sensores e dashboards ao vivo, sem papel nem delays.
+            </p>
+          </div>
+
+          <div class="bg-card border rounded-2xl p-8 space-y-4 hover:border-primary/30 transition-colors">
+            <div class="text-3xl">🤖</div>
+            <h3 class="text-lg font-bold text-foreground">IA & Automação</h3>
+            <p class="text-muted-foreground text-sm leading-relaxed">
+              Previsão de procura, otimização de stock e relatórios automáticos — sem intervenção manual.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA final -->
+    <section class="py-20 px-4">
+      <div class="container mx-auto max-w-3xl text-center space-y-8">
+        <div class="relative bg-primary/5 border border-primary/10 rounded-3xl p-10 md:p-16">
+          <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_var(--tw-gradient-stops))] from-primary/10 via-transparent to-transparent opacity-50 rounded-3xl"></div>
+          <div class="relative z-10 space-y-6">
+            <h2 class="text-3xl md:text-4xl font-bold text-foreground">
+              Pronto para modernizar a sua fábrica?
+            </h2>
+            <p class="text-muted-foreground text-lg">
+              Fale connosco. Em 30 minutos mostramos como o Hestia substitui o seu ERP atual — sem stress, sem migrações dolorosas.
+            </p>
+            <div class="flex justify-center">
+              <GoogleCalendarButton client:load label="Marcar Reunião Gratuita" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </div>
+</Layout>
