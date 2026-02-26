@@ -8,13 +8,13 @@ import {
 } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import Layout from "@/layouts/Layout.astro";
-import { Check, HelpCircle } from "lucide-react";
+import { Check, HelpCircle, Construction } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 
 const tiers = [
   {
     name: "Essencial",
-    price: "4.800€",
+    price: "XXXX€",
     period: "/ano",
     description: "Funcionalidades essenciais para pequenas fábricas iniciarem.",
     features: [
@@ -30,7 +30,7 @@ const tiers = [
   },
   {
     name: "Crescimento",
-    price: "12.000€",
+    price: "XXXX€",
     period: "/ano",
     description: "Ferramentas avançadas para operações em expansão.",
     features: [
@@ -47,7 +47,7 @@ const tiers = [
   },
   {
     name: "Empresarial",
-    price: "Sob Consulta",
+    price: "XXXX€",
     period: "",
     description: "Soluções personalizadas para operações industriais de grande escala.",
     features: [
@@ -82,9 +82,27 @@ const tiers = [
           </p>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl mx-auto">
-          {
-            tiers.map((tier) => (
+        <div class="relative">
+          <div class="absolute inset-0 z-20 flex items-center justify-center bg-background/60 backdrop-blur-[2px] rounded-3xl border-2 border-dashed border-primary/50">
+            <div class="bg-card p-8 rounded-2xl shadow-2xl border border-border flex flex-col items-center text-center max-w-md mx-4 transform rotate-1">
+              <div class="bg-primary/10 p-4 rounded-full mb-6">
+                <Construction className="w-12 h-12 text-primary animate-bounce" />
+              </div>
+              <h2 class="text-3xl font-bold mb-4">Preços em Breve</h2>
+              <p class="text-muted-foreground mb-6">
+                Estamos a finalizar a nossa estrutura de preços para oferecer o melhor valor para as suas necessidades industriais.
+              </p>
+              <Button asChild className="rounded-full">
+                <a href={`/${Astro.currentLocale}/contact`}>
+                  Solicitar Orçamento Personalizado
+                </a>
+              </Button>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl mx-auto opacity-40 pointer-events-none select-none">
+            {
+              tiers.map((tier) => (
               <Card className={`flex flex-col border-2 relative transition-all duration-300 hover:shadow-xl ${tier.popular ? 'border-primary shadow-lg scale-105 z-10' : 'border-border hover:border-primary/50'}`}>
                 {tier.popular && (
                     <div class="absolute top-0 right-0 -mt-3 -mr-3">
@@ -126,8 +144,9 @@ const tiers = [
             ))
           }
         </div>
+      </div>
 
-        <div class="mt-20 text-center">
+      <div class="mt-20 text-center">
             <p class="text-muted-foreground mb-4">Tem dúvidas sobre os preços?</p>
             <Button variant="link" asChild>
                 <a href={`/${Astro.currentLocale}/contact`} class="gap-2">
