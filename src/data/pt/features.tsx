@@ -36,7 +36,7 @@ export const features: Feature[] = [
   {
     title: "Passaporte Digital de Produto",
     description:
-      "Gere e gerencie Passaportes Digitais de Produto de forma integrada, garantindo transparência e rastreabilidade para cada item.",
+      "Faça a gestão de Passaportes Digitais de Produto de forma integrada, garantindo transparência e rastreabilidade para cada item.",
     icon: ShieldCheck,
     bgColor: "bg-orange-100 dark:bg-orange-900/20",
     iconColor: "text-orange-600 dark:text-orange-400",
