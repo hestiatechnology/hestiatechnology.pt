@@ -13,10 +13,11 @@ import HestiaLogoWhite from "../assets/HestiaTechnologyWhite.svg";
     <title>Hestia Technology</title>
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <style>
-      /* Critical CSS for immediate theme toggling */
       .logo-dark { display: none; }
-      .dark .logo-light { display: none; }
-      .dark .logo-dark { display: block; }
+      @media (prefers-color-scheme: dark) {
+        .logo-light { display: none; }
+        .logo-dark { display: block; }
+      }
     </style>
     <script is:inline>
       // Theme handling

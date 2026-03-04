@@ -69,7 +69,7 @@ export function GoogleCalendarButton({
       <Dialog open={open} onOpenChange={setOpen}>
         <DialogContent className="max-w-3xl lg:max-w-5xl xl:max-w-6xl w-full p-0 overflow-hidden">
           <DialogHeader className="px-6 pt-6 pb-4">
-            <DialogTitle>Agendar uma Demonstração</DialogTitle>
+            <DialogTitle>{label}</DialogTitle>
           </DialogHeader>
           <div className="w-full h-[500px] lg:h-[600px] xl:h-[650px]">
             <iframe

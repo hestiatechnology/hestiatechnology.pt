@@ -140,7 +140,7 @@ const FeatureShowcase: React.FC<FeatureShowcaseProps> = ({
             })}
 
             {/* Scroll Hint */}
-            <div className={`hidden md:flex items-center gap-3 text-muted-foreground/60 transition-all duration-700 fixed bottom-12 left-[calc(50%-12rem)] md:left-[8%] z-10 ${activeFeature > 0 ? 'opacity-0 translate-y-4 pointer-events-none' : 'opacity-100 animate-bounce'}`}>
+            <div className={`hidden md:flex items-center gap-3 text-muted-foreground/60 transition-all duration-700 ${activeFeature > 0 ? 'opacity-0 translate-y-4 pointer-events-none' : 'opacity-100 animate-bounce'}`}>
                 <div className="w-6 h-10 border-2 border-muted-foreground/30 rounded-full flex justify-center p-1">
                     <div className="w-1 h-2 bg-primary/60 rounded-full animate-scroll"></div>
                 </div>

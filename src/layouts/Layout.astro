@@ -81,14 +81,11 @@ const ptURL = new URL(`/pt${pathWithoutLocale}`, siteUrl).href;
       property="og:description"
       content={t("layout.og.description")}
     />
-
-    <link
-      href="https://calendar.google.com/calendar/scheduling-button-script.css"
-      rel="stylesheet"
-    />
-    <script
-      src="https://calendar.google.com/calendar/scheduling-button-script.js"
-      async></script>
+    <meta property="og:image" content="https://hestiatechnology.pt/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content="https://hestiatechnology.pt/og-image.png" />
 
     <!-- Structured Data for SEO -->
     <script type="application/ld+json" set:html={JSON.stringify({
