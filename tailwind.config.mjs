@@ -7,8 +7,8 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        sans: ["Plus Jakarta Sans", "sans-serif"],
-        heading: ["Outfit", "sans-serif"],
+        sans: ["DM Sans", "sans-serif"],
+        heading: ["Syne", "sans-serif"],
       },
       fontSize: {
         '7xl': '5rem',

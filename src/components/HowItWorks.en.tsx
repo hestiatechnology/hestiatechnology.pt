@@ -1,52 +1,75 @@
-import { ArrowRight, Box, BarChart, CheckCircle2 } from "lucide-react";
+import { Plug, ScanLine, ShieldCheck } from "lucide-react";
+
+const steps = [
+  {
+    number: "01",
+    icon: Plug,
+    title: "Connect Your Data",
+    description:
+      "We integrate with your existing machines and systems without disrupting production. Setup in hours, not weeks.",
+  },
+  {
+    number: "02",
+    icon: ScanLine,
+    title: "Analyze in Real-Time",
+    description:
+      "Our AI dashboard identifies inefficiencies and suggests optimizations instantly. Full shop floor visibility.",
+  },
+  {
+    number: "03",
+    icon: ShieldCheck,
+    title: "Scale with Compliance",
+    description:
+      "Generate Digital Passports automatically and expand into new markets. Automatic regulatory updates included.",
+  },
+];
 
 export function HowItWorks() {
   return (
-    <section className="py-24 bg-muted/20">
-      <div className="container mx-auto px-4">
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <h2 className="text-3xl font-bold tracking-tight sm:text-4xl mb-4">How It Works</h2>
-          <p className="text-lg text-muted-foreground">Simple implementation, immediate results. Transform your factory in 3 steps.</p>
-        </div>
-
-        <div className="grid md:grid-cols-3 gap-8 relative">
-          {/* Connector Line */}
-          <div className="hidden md:block absolute top-12 left-[16%] right-[16%] h-0.5 bg-gradient-to-r from-transparent via-primary/30 to-transparent z-0"></div>
-
-          {/* Step 1 */}
-          <div className="relative z-10 flex flex-col items-center text-center">
-            <div className="relative w-24 h-24 rounded-2xl bg-background border shadow-lg flex items-center justify-center mb-6 group hover:scale-105 transition-transform duration-300">
-                <Box className="w-10 h-10 text-primary group-hover:text-primary/80 transition-colors" />
-                <div className="absolute -top-3 -right-3 w-8 h-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold text-sm shadow-md">1</div>
-            </div>
-            <h3 className="text-xl font-bold mb-3">Connect Your Data</h3>
-            <p className="text-muted-foreground text-sm max-w-[250px]">
-              We integrate with your existing machines and systems without disrupting production.
+    <section className="py-24 md:py-32 bg-muted/30">
+      <div className="container mx-auto px-4 md:px-6 max-w-6xl">
+        <div className="grid lg:grid-cols-[1fr,2fr] gap-16 items-start">
+          {/* Left: heading */}
+          <div className="lg:sticky lg:top-32">
+            <p className="text-[11px] font-bold uppercase tracking-widest text-primary mb-4">
+              The Process
+            </p>
+            <h2 className="font-heading text-3xl md:text-4xl font-bold leading-tight mb-4">
+              How It Works
+            </h2>
+            <p className="text-muted-foreground leading-relaxed">
+              Simple implementation, immediate results. Transform your factory in 3 steps.
             </p>
           </div>
 
-          {/* Step 2 */}
-          <div className="relative z-10 flex flex-col items-center text-center">
-             <div className="relative w-24 h-24 rounded-2xl bg-background border shadow-lg flex items-center justify-center mb-6 group hover:scale-105 transition-transform duration-300">
-                <BarChart className="w-10 h-10 text-primary group-hover:text-primary/80 transition-colors" />
-                <div className="absolute -top-3 -right-3 w-8 h-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold text-sm shadow-md">2</div>
-            </div>
-            <h3 className="text-xl font-bold mb-3">Analyze in Real-Time</h3>
-            <p className="text-muted-foreground text-sm max-w-[250px]">
-              Our AI dashboard identifies inefficiencies and suggests optimizations instantly.
-            </p>
-          </div>
-
-          {/* Step 3 */}
-          <div className="relative z-10 flex flex-col items-center text-center">
-             <div className="relative w-24 h-24 rounded-2xl bg-background border shadow-lg flex items-center justify-center mb-6 group hover:scale-105 transition-transform duration-300">
-                <CheckCircle2 className="w-10 h-10 text-primary group-hover:text-primary/80 transition-colors" />
-                <div className="absolute -top-3 -right-3 w-8 h-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold text-sm shadow-md">3</div>
-            </div>
-            <h3 className="text-xl font-bold mb-3">Scale with Compliance</h3>
-            <p className="text-muted-foreground text-sm max-w-[250px]">
-              Generate Digital Passports automatically and expand into new markets.
-            </p>
+          {/* Right: steps */}
+          <div className="space-y-0">
+            {steps.map((step, i) => {
+              const Icon = step.icon;
+              return (
+                <div
+                  key={step.number}
+                  className={`flex gap-8 py-10 ${i < steps.length - 1 ? "border-b border-border/60" : ""}`}
+                >
+                  <div className="shrink-0 pt-1">
+                    <span className="font-heading text-4xl font-bold text-muted-foreground/20 tabular-nums leading-none">
+                      {step.number}
+                    </span>
+                  </div>
+                  <div className="space-y-3">
+                    <div className="flex items-center gap-3">
+                      <div className="w-9 h-9 rounded-xl bg-primary/10 flex items-center justify-center shrink-0">
+                        <Icon className="w-4.5 h-4.5 text-primary" />
+                      </div>
+                      <h3 className="font-heading text-xl font-bold">{step.title}</h3>
+                    </div>
+                    <p className="text-muted-foreground leading-relaxed text-sm max-w-md">
+                      {step.description}
+                    </p>
+                  </div>
+                </div>
+              );
+            })}
           </div>
         </div>
       </div>

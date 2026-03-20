@@ -1,52 +1,75 @@
-import { ArrowRight, Box, BarChart, CheckCircle2 } from "lucide-react";
+import { Plug, ScanLine, ShieldCheck } from "lucide-react";
+
+const steps = [
+  {
+    number: "01",
+    icon: Plug,
+    title: "Conecte os Dados",
+    description:
+      "Integramos com as suas máquinas e sistemas atuais sem interromper a produção. Configuração em horas, não semanas.",
+  },
+  {
+    number: "02",
+    icon: ScanLine,
+    title: "Analise em Tempo Real",
+    description:
+      "O nosso painel IA identifica ineficiências e sugere otimizações instantâneas. Visibilidade total do chão de fábrica.",
+  },
+  {
+    number: "03",
+    icon: ShieldCheck,
+    title: "Escale com Conformidade",
+    description:
+      "Gere Passaportes Digitais automaticamente e expanda para novos mercados. Atualizações regulatórias automáticas incluídas.",
+  },
+];
 
 export function HowItWorks() {
   return (
-    <section className="py-24 bg-muted/20">
-      <div className="container mx-auto px-4">
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <h2 className="text-3xl font-bold tracking-tight sm:text-4xl mb-4">Como Funciona</h2>
-          <p className="text-lg text-muted-foreground">Implementação simples, resultados imediatos. Transforme a sua fábrica em 3 passos.</p>
-        </div>
-
-        <div className="grid md:grid-cols-3 gap-8 relative">
-          {/* Connector Line */}
-          <div className="hidden md:block absolute top-12 left-[16%] right-[16%] h-0.5 bg-gradient-to-r from-transparent via-primary/30 to-transparent z-0"></div>
-
-          {/* Step 1 */}
-          <div className="relative z-10 flex flex-col items-center text-center">
-            <div className="relative w-24 h-24 rounded-2xl bg-background border shadow-lg flex items-center justify-center mb-6 group hover:scale-105 transition-transform duration-300">
-                <Box className="w-10 h-10 text-primary group-hover:text-primary/80 transition-colors" />
-                <div className="absolute -top-3 -right-3 w-8 h-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold text-sm shadow-md">1</div>
-            </div>
-            <h3 className="text-xl font-bold mb-3">Conecte os Dados</h3>
-            <p className="text-muted-foreground text-sm max-w-[250px]">
-              Integramos com as suas máquinas e sistemas atuais sem interromper a produção.
+    <section className="py-24 md:py-32 bg-muted/30">
+      <div className="container mx-auto px-4 md:px-6 max-w-6xl">
+        <div className="grid lg:grid-cols-[1fr,2fr] gap-16 items-start">
+          {/* Left: heading */}
+          <div className="lg:sticky lg:top-32">
+            <p className="text-[11px] font-bold uppercase tracking-widest text-primary mb-4">
+              O Processo
+            </p>
+            <h2 className="font-heading text-3xl md:text-4xl font-bold leading-tight mb-4">
+              Como Funciona
+            </h2>
+            <p className="text-muted-foreground leading-relaxed">
+              Implementação simples, resultados imediatos. Transforme a sua fábrica em 3 passos.
             </p>
           </div>
 
-          {/* Step 2 */}
-          <div className="relative z-10 flex flex-col items-center text-center">
-             <div className="relative w-24 h-24 rounded-2xl bg-background border shadow-lg flex items-center justify-center mb-6 group hover:scale-105 transition-transform duration-300">
-                <BarChart className="w-10 h-10 text-primary group-hover:text-primary/80 transition-colors" />
-                <div className="absolute -top-3 -right-3 w-8 h-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold text-sm shadow-md">2</div>
-            </div>
-            <h3 className="text-xl font-bold mb-3">Analise em Tempo Real</h3>
-            <p className="text-muted-foreground text-sm max-w-[250px]">
-              O nosso painel IA identifica ineficiências e sugere otimizações instantâneas.
-            </p>
-          </div>
-
-          {/* Step 3 */}
-          <div className="relative z-10 flex flex-col items-center text-center">
-             <div className="relative w-24 h-24 rounded-2xl bg-background border shadow-lg flex items-center justify-center mb-6 group hover:scale-105 transition-transform duration-300">
-                <CheckCircle2 className="w-10 h-10 text-primary group-hover:text-primary/80 transition-colors" />
-                <div className="absolute -top-3 -right-3 w-8 h-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold text-sm shadow-md">3</div>
-            </div>
-            <h3 className="text-xl font-bold mb-3">Escale com Conformidade</h3>
-            <p className="text-muted-foreground text-sm max-w-[250px]">
-              Gere Passaportes Digitais automaticamente e expanda para novos mercados.
-            </p>
+          {/* Right: steps */}
+          <div className="space-y-0">
+            {steps.map((step, i) => {
+              const Icon = step.icon;
+              return (
+                <div
+                  key={step.number}
+                  className={`flex gap-8 py-10 ${i < steps.length - 1 ? "border-b border-border/60" : ""}`}
+                >
+                  <div className="shrink-0 pt-1">
+                    <span className="font-heading text-4xl font-bold text-muted-foreground/20 tabular-nums leading-none">
+                      {step.number}
+                    </span>
+                  </div>
+                  <div className="space-y-3">
+                    <div className="flex items-center gap-3">
+                      <div className="w-9 h-9 rounded-xl bg-primary/10 flex items-center justify-center shrink-0">
+                        <Icon className="w-4.5 h-4.5 text-primary" />
+                      </div>
+                      <h3 className="font-heading text-xl font-bold">{step.title}</h3>
+                    </div>
+                    <p className="text-muted-foreground leading-relaxed text-sm max-w-md">
+                      {step.description}
+                    </p>
+                  </div>
+                </div>
+              );
+            })}
           </div>
         </div>
       </div>

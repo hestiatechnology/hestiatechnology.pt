@@ -1,130 +1,93 @@
 ---
 import Layout from "@/layouts/Layout.astro";
-import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import FeatureShowcase from "@/components/FeatureShowcase";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import {
-  Cpu,
-  BarChart4,
-  CloudCog,
-  Smartphone,
-  Shield,
-  Zap,
-  Layers,
-  Globe,
+  Cpu, BarChart4, CloudCog, Smartphone,
+  Shield, Zap, Layers, Globe,
 } from "lucide-react";
 
 const additionalFeatures = [
-  {
-    title: "IoT Integration",
-    description: "Connect your machines directly to the ERP for real-time data.",
-    icon: Cpu,
-  },
-  {
-    title: "Predictive Analytics",
-    description: "Anticipate failures and maintenance needs with AI.",
-    icon: BarChart4,
-  },
-  {
-    title: "Cloud Access",
-    description: "Access your data anywhere, anytime, securely.",
-    icon: CloudCog,
-  },
-  {
-    title: "Mobile App",
-    description: "Shop floor management via native iOS and Android app.",
-    icon: Smartphone,
-  },
-  {
-    title: "Data Security",
-    description: "End-to-end encryption and automatic backups.",
-    icon: Shield,
-  },
-  {
-    title: "Fast Implementation",
-    description: "Get started in weeks, not months, with assisted onboarding.",
-    icon: Zap,
-  },
-  {
-    title: "Inventory Management",
-    description: "Full inventory control, from yarn to final garment.",
-    icon: Layers,
-  },
-  {
-    title: "Multi-Language",
-    description: "Native support for multiple languages and currencies.",
-    icon: Globe,
-  },
+  { title: "IoT Integration", desc: "Connect your machines directly to the ERP for real-time data.", Icon: Cpu },
+  { title: "Predictive Analytics", desc: "Anticipate failures and maintenance needs with AI.", Icon: BarChart4 },
+  { title: "Cloud Access", desc: "Access your data anywhere, anytime, securely.", Icon: CloudCog },
+  { title: "Mobile App", desc: "Shop floor management via native iOS and Android app.", Icon: Smartphone },
+  { title: "Data Security", desc: "End-to-end encryption and automatic backups.", Icon: Shield },
+  { title: "Fast Implementation", desc: "Get started in weeks, not months, with assisted onboarding.", Icon: Zap },
+  { title: "Inventory Management", desc: "Full inventory control, from yarn to final garment.", Icon: Layers },
+  { title: "Multi-Language", desc: "Native support for multiple languages and currencies.", Icon: Globe },
 ];
 ---
 
 <Layout title="Features - Hestia ERP">
   <div class="flex flex-col min-h-screen">
-    <!-- Hero Section -->
-    <section class="py-20 md:py-32 relative overflow-hidden text-center">
-      <div class="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-primary/10 via-background to-background"></div>
-      <div class="container mx-auto px-4 md:px-6">
-        <Badge variant="outline" class="mb-6 border bg-background/50 backdrop-blur-sm">
-          Full Power
-        </Badge>
-        <h1 class="text-4xl md:text-5xl lg:text-7xl font-bold tracking-tight text-foreground mb-6">
-          All the Tools to <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-blue-400">Scale</span>
-        </h1>
-        <p class="max-w-3xl mx-auto text-muted-foreground md:text-xl leading-relaxed">
-          From the shop floor to executive management, Hestia ERP offers a complete suite of features designed specifically for the modern textile industry.
-        </p>
+
+    <!-- ── Hero ── -->
+    <section class="pt-20 pb-16 md:pt-28 md:pb-20 border-b border-border/60">
+      <div class="container mx-auto px-4 md:px-6 max-w-6xl">
+        <div class="max-w-2xl">
+          <p class="text-[11px] font-bold uppercase tracking-widest text-primary mb-4">Features</p>
+          <h1 class="font-heading text-5xl md:text-6xl font-bold tracking-tight leading-tight mb-5">
+            All the Tools to Scale
+          </h1>
+          <p class="text-lg text-muted-foreground leading-relaxed">
+            From the shop floor to executive management, Hestia ERP offers a complete suite of features designed specifically for the modern textile industry.
+          </p>
+        </div>
       </div>
     </section>
 
-    <!-- Main Features Showcase -->
-    <div class="py-12">
-        <FeatureShowcase
-            client:load
-            locale={Astro.currentLocale}
-            title="Core Features"
-            description="The core of our system, built for efficiency."
-        />
+    <!-- ── Main Features Showcase ── -->
+    <div class="py-16 md:py-24">
+      <FeatureShowcase
+        client:load
+        locale={Astro.currentLocale}
+        title="Core Features"
+        description="The core of our system, built for the efficiency of the textile industry."
+      />
     </div>
 
-    <!-- Additional Features Grid -->
-    <section class="py-20 bg-muted/30">
-        <div class="container mx-auto px-4 md:px-6">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl font-bold tracking-tight mb-4">More Than Just the Basics</h2>
-                <p class="text-muted-foreground text-lg">Details that make the difference in day-to-day operations.</p>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
-                {additionalFeatures.map((feature) => (
-                    <Card class="bg-background border hover:border-primary/50 transition-all hover:shadow-md">
-                        <CardHeader>
-                            <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4 text-primary">
-                                <feature.icon class="w-6 h-6" />
-                            </div>
-                            <CardTitle class="text-xl">{feature.title}</CardTitle>
-                        </CardHeader>
-                        <CardContent>
-                            <p class="text-muted-foreground text-sm">{feature.description}</p>
-                        </CardContent>
-                    </Card>
-                ))}
-            </div>
+    <!-- ── Additional features grid ── -->
+    <section class="py-16 md:py-20 bg-muted/20 border-t border-border/60">
+      <div class="container mx-auto px-4 md:px-6 max-w-6xl">
+        <div class="mb-12">
+          <p class="text-[11px] font-bold uppercase tracking-widest text-primary mb-4">More Features</p>
+          <h2 class="font-heading text-3xl font-bold leading-tight mb-3">More Than Just the Basics</h2>
+          <p class="text-muted-foreground text-sm max-w-lg">Details that make the difference in day-to-day operations.</p>
         </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+          {additionalFeatures.map(({ title, desc, Icon }) => (
+            <div className="border border-border rounded-2xl p-6 bg-card hover:border-primary/50 hover:shadow-sm transition-all group">
+              <div className="w-10 h-10 bg-primary/10 rounded-xl flex items-center justify-center mb-5 text-primary group-hover:bg-primary group-hover:text-white transition-all duration-200">
+                <Icon className="w-5 h-5" />
+              </div>
+              <h3 className="font-heading font-bold mb-2">{title}</h3>
+              <p className="text-sm text-muted-foreground leading-relaxed">{desc}</p>
+            </div>
+          ))}
+        </div>
+      </div>
     </section>
 
-    <!-- CTA -->
-    <section class="py-20 md:py-32 text-center">
-        <div class="container mx-auto px-4 md:px-6">
-            <h2 class="text-3xl md:text-4xl font-bold tracking-tight mb-6">Ready to Modernize Your Factory?</h2>
-            <div class="flex justify-center gap-4">
-                <Button size="lg" class="rounded-full px-8">
-                    <a href={`/${Astro.currentLocale}/contact`}>Schedule Demo</a>
-                </Button>
-                <Button variant="outline" size="lg" class="rounded-full px-8">
-                    <a href={`/${Astro.currentLocale}/prices`}>View Pricing</a>
-                </Button>
-            </div>
+    <!-- ── CTA ── -->
+    <section class="bg-[#0D1A3A] text-white py-20 md:py-24">
+      <div class="container mx-auto px-4 md:px-6 max-w-6xl text-center">
+        <h2 class="font-heading text-3xl md:text-4xl font-bold mb-4">
+          Ready to Modernize Your Factory?
+        </h2>
+        <p class="text-white/60 mb-8 max-w-md mx-auto">
+          Schedule a demo and see Hestia in action in your industry.
+        </p>
+        <div class="flex flex-col sm:flex-row justify-center gap-3">
+          <Button size="lg" className="rounded-lg bg-white text-[#0D1A3A] hover:bg-white/90 font-semibold" asChild>
+            <a href={`/${Astro.currentLocale}/contact`}>Schedule Demo</a>
+          </Button>
+          <Button size="lg" variant="outline" className="rounded-lg border-white/30 text-white hover:bg-white/10" asChild>
+            <a href={`/${Astro.currentLocale}/prices`}>View Pricing</a>
+          </Button>
         </div>
+      </div>
     </section>
+
   </div>
 </Layout>

@@ -2,12 +2,6 @@ import { useState, useEffect } from "react";
 import Logo from "@/assets/HestiaTechnology.svg";
 import LogoWhite from "@/assets/HestiaTechnologyWhite.svg";
 import { Button } from "@/components/ui/button";
-import {
-  NavigationMenu,
-  NavigationMenuItem,
-  NavigationMenuLink,
-  NavigationMenuList,
-} from "@/components/ui/navigation-menu";
 import { translations } from "@/lib/translations";
 import { Menu, X } from "lucide-react";
 
@@ -17,6 +11,7 @@ interface HeaderProps {
 
 export default function Header({ locale }: HeaderProps) {
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
 
   const t = (key: keyof (typeof translations)[typeof locale]) => {
     return translations[locale][key] || translations.en[key];
@@ -37,10 +32,8 @@ export default function Header({ locale }: HeaderProps) {
   const [isDark, setIsDark] = useState(false);
 
   useEffect(() => {
-    // Sync altUrl after mount to avoid SSR/client mismatch
     setAltUrl(window.location.pathname.replace(`/${locale}`, `/${altLocale}`));
 
-    // Read initial dark mode state and watch for changes
     const checkDark = () =>
       setIsDark(document.documentElement.classList.contains("dark"));
     checkDark();
@@ -49,117 +42,119 @@ export default function Header({ locale }: HeaderProps) {
       attributes: true,
       attributeFilter: ["class"],
     });
-    return () => observer.disconnect();
+
+    const onScroll = () => setScrolled(window.scrollY > 12);
+    window.addEventListener("scroll", onScroll, { passive: true });
+
+    return () => {
+      observer.disconnect();
+      window.removeEventListener("scroll", onScroll);
+    };
   }, []);
 
   return (
-    <div className="sticky top-4 z-50 w-full px-4 pointer-events-none pb-4">
+    <div className="sticky top-0 z-50 w-full">
       <header
-        className={`pointer-events-auto mx-auto max-w-5xl border bg-background/70 backdrop-blur-md shadow-sm transition-all duration-200 ${
-          mobileOpen ? "rounded-2xl" : "rounded-full"
-        } px-6`}
+        className={`w-full border-b transition-all duration-200 ${
+          scrolled
+            ? "bg-background/90 backdrop-blur-md border-border/60 shadow-sm"
+            : "bg-background/0 backdrop-blur-0 border-transparent"
+        }`}
       >
-        <div className="flex h-14 items-center justify-between gap-4">
-          {/* Logo */}
-          <div className="flex items-center gap-6">
+        <div className="container mx-auto px-4 md:px-6 max-w-6xl">
+          <div className="flex h-16 items-center justify-between gap-6">
+            {/* Logo */}
             <a
               href={`/${locale}`}
-              className="text-primary hover:text-primary/90 transition-colors"
+              className="flex items-center shrink-0 hover:opacity-80 transition-opacity"
             >
               <img
                 src={isDark ? LogoWhite.src : Logo.src}
-                alt="Hestia Logo"
-                className="h-8 w-auto"
+                alt="Hestia"
+                className="h-7 w-auto"
               />
             </a>
-          </div>
 
-          {/* Desktop Nav */}
-          <div className="flex items-center gap-2">
-            <NavigationMenu>
-              <NavigationMenuList className="gap-1 hidden md:flex">
-                {navigationLinks.map((link) => (
-                  <NavigationMenuItem key={link.href}>
-                    <NavigationMenuLink
-                      href={link.href}
-                      className="text-muted-foreground/80 hover:text-foreground hover:bg-muted/50 transition-all rounded-full py-1.5 px-4 text-sm font-medium"
-                    >
-                      {link.label}
-                    </NavigationMenuLink>
-                  </NavigationMenuItem>
-                ))}
-              </NavigationMenuList>
-            </NavigationMenu>
+            {/* Desktop Nav */}
+            <nav className="hidden md:flex items-center gap-0.5 flex-1 justify-center">
+              {navigationLinks.map((link) => (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  className="px-4 py-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors rounded-lg hover:bg-muted/50"
+                >
+                  {link.label}
+                </a>
+              ))}
+            </nav>
 
-            <div className="flex items-center gap-2">
-              {/* Language Switcher — Desktop */}
+            {/* Right actions */}
+            <div className="hidden md:flex items-center gap-2 shrink-0">
               <a
                 href={altUrl}
-                className="hidden md:inline-flex items-center justify-center h-9 w-10 rounded-full text-xs font-semibold text-muted-foreground hover:text-foreground hover:bg-muted/50 transition-all"
+                className="inline-flex items-center justify-center h-8 w-9 rounded-lg text-xs font-semibold text-muted-foreground hover:text-foreground hover:bg-muted/50 transition-all"
                 aria-label={`Switch to ${altLocale === "en" ? "English" : "Português"}`}
               >
                 {altLangLabel}
               </a>
-
               <Button
                 asChild
                 variant="default"
                 size="sm"
-                className="hidden md:inline-flex rounded-full px-5 h-9 font-medium shadow-none"
+                className="rounded-lg px-4 h-8 font-medium text-sm shadow-none"
               >
                 <a href={`/${locale}/contact`}>{t("header.button.contact")}</a>
               </Button>
-
-              {/* Mobile Hamburger */}
-              <button
-                className="md:hidden flex items-center justify-center h-9 w-9 rounded-full hover:bg-muted/50 transition-colors"
-                onClick={() => setMobileOpen((v) => !v)}
-                aria-label={t("header.mobile_nav_toggle")}
-                aria-expanded={mobileOpen}
-              >
-                {mobileOpen ? (
-                  <X className="h-5 w-5" />
-                ) : (
-                  <Menu className="h-5 w-5" />
-                )}
-              </button>
             </div>
+
+            {/* Mobile hamburger */}
+            <button
+              className="md:hidden flex items-center justify-center h-9 w-9 rounded-lg hover:bg-muted/50 transition-colors"
+              onClick={() => setMobileOpen((v) => !v)}
+              aria-label={t("header.mobile_nav_toggle")}
+              aria-expanded={mobileOpen}
+            >
+              {mobileOpen ? (
+                <X className="h-5 w-5" />
+              ) : (
+                <Menu className="h-5 w-5" />
+              )}
+            </button>
           </div>
         </div>
 
-        {/* Mobile Nav Dropdown */}
+        {/* Mobile menu */}
         {mobileOpen && (
-          <nav className="md:hidden border-t pt-4 pb-4">
-            <ul className="flex flex-col gap-1">
+          <div className="md:hidden border-t border-border/60 bg-background">
+            <div className="container mx-auto px-4 py-4 space-y-1">
               {navigationLinks.map((link) => (
-                <li key={link.href}>
-                  <a
-                    href={link.href}
-                    className="block rounded-xl px-4 py-2.5 text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-muted/50 transition-colors"
-                    onClick={() => setMobileOpen(false)}
-                  >
-                    {link.label}
-                  </a>
-                </li>
+                <a
+                  key={link.href}
+                  href={link.href}
+                  className="flex items-center px-3 py-2.5 text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-muted/50 rounded-lg transition-colors"
+                  onClick={() => setMobileOpen(false)}
+                >
+                  {link.label}
+                </a>
               ))}
-            </ul>
-            <div className="mt-3 pt-3 border-t flex items-center gap-2 px-1">
-              <Button
-                asChild
-                variant="default"
-                size="sm"
-                className="flex-1 rounded-full font-medium"
-              >
-                <a href={`/${locale}/contact`}>{t("header.button.contact")}</a>
-              </Button>
-              <a
-                href={altUrl}
-                className="inline-flex items-center justify-center h-9 px-4 rounded-full text-xs font-semibold border text-muted-foreground hover:text-foreground hover:bg-muted/50 transition-all"
-              >
-                {altLangLabel}
-              </a>
+              <div className="pt-3 border-t border-border/60 flex items-center gap-2 mt-2">
+                <Button
+                  asChild
+                  variant="default"
+                  size="sm"
+                  className="flex-1 rounded-lg font-medium"
+                >
+                  <a href={`/${locale}/contact`}>{t("header.button.contact")}</a>
+                </Button>
+                <a
+                  href={altUrl}
+                  className="inline-flex items-center justify-center h-9 px-4 rounded-lg text-xs font-semibold border border-border text-muted-foreground hover:text-foreground hover:bg-muted/50 transition-all"
+                >
+                  {altLangLabel}
+                </a>
+              </div>
             </div>
-          </nav>
+          </div>
         )}
       </header>
     </div>
