@@ -29,25 +29,14 @@ export default function Header({ locale }: HeaderProps) {
   const altLangLabel = locale === "en" ? "PT" : "EN";
 
   const [altUrl, setAltUrl] = useState(`/${altLocale}`);
-  const [isDark, setIsDark] = useState(false);
 
   useEffect(() => {
     setAltUrl(window.location.pathname.replace(`/${locale}`, `/${altLocale}`));
-
-    const checkDark = () =>
-      setIsDark(document.documentElement.classList.contains("dark"));
-    checkDark();
-    const observer = new MutationObserver(checkDark);
-    observer.observe(document.documentElement, {
-      attributes: true,
-      attributeFilter: ["class"],
-    });
 
     const onScroll = () => setScrolled(window.scrollY > 12);
     window.addEventListener("scroll", onScroll, { passive: true });
 
     return () => {
-      observer.disconnect();
       window.removeEventListener("scroll", onScroll);
     };
   }, []);
@@ -69,9 +58,14 @@ export default function Header({ locale }: HeaderProps) {
               className="flex items-center shrink-0 hover:opacity-80 transition-opacity"
             >
               <img
-                src={isDark ? LogoWhite.src : Logo.src}
+                src={Logo.src}
                 alt="Hestia"
-                className="h-7 w-auto"
+                className="h-7 w-auto block dark:hidden"
+              />
+              <img
+                src={LogoWhite.src}
+                alt="Hestia"
+                className="h-7 w-auto hidden dark:block"
               />
             </a>
 
