@@ -1,221 +1,562 @@
 ---
 import Layout from "@/layouts/Layout.astro";
 import { Button } from "@/components/ui/button";
-import FeatureShowcase from "@/components/FeatureShowcase";
-import { HowItWorks } from "@/components/HowItWorks.en";
 import { Image } from "astro:assets";
 import IPCALogo from "@/assets/ipca_cor.png";
 import STARTIpca from "@/assets/start-ipca.png";
 import { Magnetic } from "@/components/ui/magnetic";
 import { GoogleCalendarButton } from "@/components/GoogleCalendarButton";
-import { Check, X } from "lucide-react";
-import { EcosystemSection } from "@/components/EcosystemSection";
-import { DemoVideoSection } from "@/components/DemoVideoSection";
+import {
+  Check, X, ArrowRight, Factory, ShieldCheck, Cpu,
+  BarChart3, Zap, Globe, FileText, Plug, ScanLine,
+  Clock, AlertTriangle, TrendingUp, Users, Lock, Layers
+} from "lucide-react";
 ---
 
-<Layout title="Hestia — The Factory Operating System">
+<Layout title="Hestia — The Factory Operating System" darkHero={true}>
   <div class="flex flex-col">
 
-    <!-- ── Hero ── -->
-    <section class="pt-20 pb-16 md:pt-28 md:pb-24 overflow-hidden">
-      <div class="container mx-auto px-4 md:px-6 max-w-6xl">
-        <div class="grid lg:grid-cols-[1fr,380px] gap-12 lg:gap-20 items-center">
+    <!-- ══════════════════════════════════════════════════ -->
+    <!-- ── HERO — Full-impact, dark, cinematic ── -->
+    <!-- ══════════════════════════════════════════════════ -->
+    <section class="relative min-h-[92vh] flex items-center overflow-hidden bg-[#060E24]">
+      <!-- Animated gradient orbs -->
+      <div class="absolute inset-0 overflow-hidden pointer-events-none">
+        <div class="absolute top-1/4 left-1/4 w-[600px] h-[600px] bg-primary/20 rounded-full blur-[120px] animate-pulse-glow"></div>
+        <div class="absolute bottom-1/4 right-1/4 w-[500px] h-[500px] bg-[#6B8BF5]/15 rounded-full blur-[100px] animate-pulse-glow [animation-delay:1.5s]"></div>
+      </div>
+      <!-- Subtle grid overlay -->
+      <div class="absolute inset-0 opacity-[0.03]" style="background-image: linear-gradient(to right, white 1px, transparent 1px), linear-gradient(to bottom, white 1px, transparent 1px); background-size: 48px 48px;"></div>
 
-          <!-- Left: copy -->
-          <div class="space-y-7 max-w-2xl animate-fade-up">
-            <div class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-primary bg-primary/8 px-3 py-1.5 rounded-full border border-primary/20">
-              EU ESPR Regulation — 2027
-            </div>
-            <h1 class="font-heading text-5xl md:text-6xl lg:text-[3.75rem] xl:text-7xl font-bold tracking-tight leading-[1.06] text-foreground">
-              The Factory Operating System
-            </h1>
-            <p class="text-sm font-semibold text-primary tracking-wide">Purpose-built for textile manufacturers.</p>
-            <p class="text-lg text-muted-foreground leading-relaxed max-w-xl mt-4!">
-              Hestia connects and orchestrates every layer of your factory — production, compliance, AI, IoT, and Digital Product Passports — replacing fragmented legacy systems with one intelligent platform.
-            </p>
-            <div class="flex flex-col sm:flex-row gap-3 pt-1">
-              <GoogleCalendarButton client:load label="Schedule a Demo" size="lg" />
-              <Magnetic client:load>
-                <Button size="lg" variant="outline" className="rounded-lg text-base h-11 px-7">
-                  <a href={`/${Astro.currentLocale}/features`}>See How It Works</a>
-                </Button>
-              </Magnetic>
-            </div>
+      <div class="container relative mx-auto px-4 md:px-6 max-w-6xl py-24 md:py-32">
+        <div class="max-w-4xl mx-auto text-center">
+          <!-- Urgency badge -->
+          <div class="inline-flex items-center gap-2.5 text-xs font-bold uppercase tracking-widest text-white/70 bg-white/[0.06] px-4 py-2 rounded-full border border-white/10 mb-8 animate-fade-up backdrop-blur-sm">
+            <span class="relative flex h-2 w-2">
+              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-400 opacity-75"></span>
+              <span class="relative inline-flex rounded-full h-2 w-2 bg-amber-400"></span>
+            </span>
+            EU Digital Product Passports mandatory from 2027
           </div>
 
-          <!-- Right: floating stat cards -->
-          <div class="hidden lg:flex flex-col gap-3 animate-fade-up [animation-delay:300ms]">
-            <div class="bg-card border border-border rounded-2xl p-5 shadow-sm">
-              <div class="font-heading text-4xl font-bold text-foreground mb-1">2027</div>
-              <div class="text-sm text-muted-foreground">EU DPP Target Date</div>
-            </div>
-            <div class="bg-card border border-border rounded-2xl p-5 shadow-sm ml-8">
-              <div class="font-heading text-4xl font-bold text-foreground mb-1">€166B</div>
-              <div class="text-sm text-muted-foreground">EU Textile Industry Revenue</div>
-            </div>
-            <div class="bg-primary rounded-2xl p-5 shadow-md shadow-primary/20">
-              <div class="font-heading text-4xl font-bold text-white mb-1">27</div>
-              <div class="text-sm text-white/70">EU Countries Required to Comply</div>
-            </div>
+          <!-- Main headline -->
+          <h1 class="font-heading text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-extrabold tracking-tight leading-[0.95] text-white mb-6 animate-fade-up [animation-delay:150ms]">
+            Your factory's<br/>
+            <span class="text-gradient bg-gradient-to-r from-[#6B8BF5] via-[#A78BFA] to-[#6B8BF5] bg-[length:200%_auto] animate-gradient-x">operating system</span>
+          </h1>
+
+          <!-- Subheadline -->
+          <p class="text-lg md:text-xl text-white/50 leading-relaxed max-w-2xl mx-auto mb-10 animate-fade-up [animation-delay:300ms]">
+            Hestia replaces fragmented legacy systems with one intelligent platform — production, compliance, AI, IoT, and Digital Product Passports — purpose-built for textile manufacturers.
+          </p>
+
+          <!-- Dual CTA -->
+          <div class="flex flex-col sm:flex-row items-center justify-center gap-4 animate-fade-up [animation-delay:450ms]">
+            <GoogleCalendarButton client:load label="Book a Demo" size="lg" className="bg-white! text-[#060E24]! hover:bg-white/90! shadow-xl! shadow-white/10! rounded-xl! text-base! font-bold! h-13! px-8!" />
+            <Magnetic client:load>
+              <a href="/en/features" class="inline-flex items-center gap-2 text-white/70 hover:text-white text-base font-medium transition-colors group">
+                See how it works
+                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              </a>
+            </Magnetic>
+          </div>
+
+          <!-- Stats bar -->
+          <div class="grid grid-cols-3 gap-6 md:gap-12 mt-16 md:mt-24 pt-10 border-t border-white/10 animate-fade-up [animation-delay:600ms]">
+            {[
+              { value: "2027", label: "EU DPP Deadline" },
+              { value: "€166B", label: "EU Textile Market" },
+              { value: "27", label: "Countries Must Comply" },
+            ].map((stat) => (
+              <div class="text-center">
+                <div class="font-heading text-3xl md:text-4xl font-extrabold text-white tabular-nums">{stat.value}</div>
+                <div class="text-xs md:text-sm text-white/40 mt-1">{stat.label}</div>
+              </div>
+            ))}
           </div>
         </div>
+      </div>
 
-        <!-- Mobile stats row -->
-        <div class="lg:hidden grid grid-cols-3 gap-3 mt-10">
+      <!-- Scroll indicator -->
+      <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-white/30">
+        <div class="w-5 h-8 rounded-full border border-white/20 flex items-start justify-center p-1.5">
+          <div class="w-1 h-2 bg-white/40 rounded-full animate-scroll"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════ -->
+    <!-- ── TRUST BAR — Institutional partners ── -->
+    <!-- ══════════════════════════════════════════════════ -->
+    <div class="border-b border-border/60 py-8 bg-muted/30">
+      <div class="container mx-auto px-4 max-w-6xl">
+        <div class="flex flex-wrap items-center justify-center md:justify-between gap-8">
+          <p class="text-[10px] font-bold uppercase tracking-[0.2em] text-muted-foreground/50">
+            Backed by leading institutions
+          </p>
+          <div class="flex flex-wrap items-center gap-x-12 gap-y-4 opacity-40 hover:opacity-70 transition-opacity duration-500">
+            <Image src={IPCALogo} height={36} alt="IPCA" class="h-9 w-auto object-contain grayscale" />
+            <Image src={STARTIpca} height={36} alt="Start IPCA" class="h-9 w-auto object-contain grayscale" />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══════════════════════════════════════════════════ -->
+    <!-- ── THE PROBLEM — Agitate pain points ── -->
+    <!-- ══════════════════════════════════════════════════ -->
+    <section class="py-24 md:py-32">
+      <div class="container mx-auto px-4 md:px-6 max-w-6xl">
+        <div class="text-center mb-16">
+          <p class="text-[11px] font-bold uppercase tracking-widest text-red-500/80 mb-4">The Problem</p>
+          <h2 class="font-heading text-3xl md:text-5xl font-bold tracking-tight leading-tight mb-5">
+            Legacy systems are bleeding<br class="hidden md:block" /> your factory dry
+          </h2>
+          <p class="text-muted-foreground text-lg max-w-2xl mx-auto leading-relaxed">
+            Most textile manufacturers rely on disconnected, outdated software that was never designed for modern compliance or real-time operations.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
           {[
-            { value: "2027", label: "DPP Target" },
-            { value: "€166B", label: "EU Textile Market" },
-            { value: "27", label: "EU Countries" },
-          ].map((s) => (
-            <div class="bg-card border border-border rounded-xl p-4 text-center">
-              <div class="font-heading text-2xl font-bold">{s.value}</div>
-              <div class="text-xs text-muted-foreground mt-1">{s.label}</div>
+            {
+              icon: "AlertTriangle",
+              title: "Zero DPP Support",
+              description: "Legacy ERPs have no Digital Product Passport capability. External consultants charge €50K+ to retrofit.",
+              color: "text-red-500",
+              bg: "bg-red-500/10",
+            },
+            {
+              icon: "Clock",
+              title: "Months to Implement",
+              description: "Traditional ERP deployments take 6-18 months and require dedicated IT teams for every update.",
+              color: "text-orange-500",
+              bg: "bg-orange-500/10",
+            },
+            {
+              icon: "TrendingUp",
+              title: "Hidden Costs Stack Up",
+              description: "License fees, consultant hours, server maintenance, training — the true cost is 3-5x the sticker price.",
+              color: "text-amber-500",
+              bg: "bg-amber-500/10",
+            },
+            {
+              icon: "Lock",
+              title: "Vendor Lock-in",
+              description: "Proprietary formats and closed APIs mean your data is trapped. Migration costs keep you stuck.",
+              color: "text-rose-500",
+              bg: "bg-rose-500/10",
+            },
+          ].map((item) => (
+            <div class="border border-border rounded-2xl p-7 bg-card hover:shadow-md transition-all group">
+              <div class={`w-11 h-11 rounded-xl ${item.bg} flex items-center justify-center mb-5`}>
+                {item.icon === "AlertTriangle" && <AlertTriangle className={`w-5 h-5 ${item.color}`} />}
+                {item.icon === "Clock" && <Clock className={`w-5 h-5 ${item.color}`} />}
+                {item.icon === "TrendingUp" && <TrendingUp className={`w-5 h-5 ${item.color}`} />}
+                {item.icon === "Lock" && <Lock className={`w-5 h-5 ${item.color}`} />}
+              </div>
+              <h3 class="font-heading font-bold text-lg mb-2">{item.title}</h3>
+              <p class="text-sm text-muted-foreground leading-relaxed">{item.description}</p>
             </div>
           ))}
         </div>
       </div>
     </section>
 
-    <!-- ── Institutional Partners ── -->
-    <div class="border-y border-border/60 py-8 bg-muted/20">
-      <div class="container mx-auto px-4 max-w-6xl">
-        <div class="flex flex-wrap items-center justify-between gap-8">
-          <p class="text-xs font-bold uppercase tracking-widest text-muted-foreground/60">
-            Institutional Support
+    <!-- ══════════════════════════════════════════════════ -->
+    <!-- ── THE SOLUTION — Feature benefits ── -->
+    <!-- ══════════════════════════════════════════════════ -->
+    <section class="py-24 md:py-32 bg-muted/30 border-y border-border/60">
+      <div class="container mx-auto px-4 md:px-6 max-w-6xl">
+        <div class="text-center mb-16">
+          <p class="text-[11px] font-bold uppercase tracking-widest text-primary mb-4">The Solution</p>
+          <h2 class="font-heading text-3xl md:text-5xl font-bold tracking-tight leading-tight mb-5">
+            One platform. Every layer.<br class="hidden md:block" /> Zero friction.
+          </h2>
+          <p class="text-muted-foreground text-lg max-w-2xl mx-auto leading-relaxed">
+            Hestia connects production, compliance, and intelligence into a single system that works from day one.
           </p>
-          <div class="flex flex-wrap items-center gap-x-10 gap-y-4 opacity-50 hover:opacity-80 transition-opacity duration-500">
-            <Image src={IPCALogo} height={32} alt="IPCA" class="h-8 w-auto object-contain grayscale" />
-            <Image src={STARTIpca} height={32} alt="Start IPCA" class="h-8 w-auto object-contain grayscale" />
-          </div>
         </div>
-      </div>
-    </div>
 
-    <!-- ── Features Showcase ── -->
-    <div class="py-20 md:py-32">
-      <FeatureShowcase
-        client:load
-        locale={Astro.currentLocale}
-        title="One Platform. Every Layer."
-        description="From shop floor to compliance, Hestia orchestrates your entire operation."
-      />
-    </div>
-
-    <!-- ── How It Works ── -->
-    <HowItWorks client:visible />
-
-    <!-- ── Demo Video ── -->
-    <DemoVideoSection client:visible locale="en" />
-
-    <!-- ── Comparison ── -->
-    <section class="py-20 md:py-32">
-      <div class="container mx-auto px-4 md:px-6 max-w-6xl">
-        <div class="grid lg:grid-cols-[1fr,2fr] gap-16 items-start">
-          <div>
-            <p class="text-[11px] font-bold uppercase tracking-widest text-primary mb-4">Why Switch</p>
-            <h2 class="font-heading text-3xl md:text-4xl font-bold leading-tight mb-4">
-              Built for ESPR.<br/>Not retrofitted.
-            </h2>
-            <p class="text-muted-foreground leading-relaxed text-sm">
-              Legacy systems weren't designed for ESPR, DPP, or real-time textile traceability. Hestia was built from the ground up as a complete factory operating system.
-            </p>
-          </div>
-
-          <div class="grid md:grid-cols-2 gap-4">
-            <!-- Legacy -->
-            <div class="border border-border rounded-2xl p-7 bg-muted/20">
-              <h3 class="font-heading text-lg font-bold text-muted-foreground mb-6">Legacy Systems</h3>
-              <ul class="space-y-4">
-                {[
-                  "No ESPR / DPP compliance built-in",
-                  "Manual yarn lot & batch tracing",
-                  "IT consultants for every update",
-                  "No real-time monitoring",
-                ].map((item) => (
-                  <li class="flex items-start gap-3 text-sm text-muted-foreground">
-                    <div class="w-5 h-5 rounded-full bg-red-100 text-red-500 dark:bg-red-900/30 flex items-center justify-center shrink-0 mt-0.5">
-                      <X class="w-3 h-3" />
-                    </div>
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            <!-- Hestia -->
-            <div class="border-2 border-primary/30 rounded-2xl p-7 bg-primary/4 relative overflow-hidden">
-              <div class="absolute top-0 right-0 bg-primary text-white text-[10px] font-bold px-3 py-1 rounded-bl-xl tracking-widest uppercase">
-                Hestia
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {[
+            {
+              icon: "Factory",
+              title: "Production Management",
+              description: "Real-time shop floor orchestration. Track orders, monitor machines, and optimize workflows — all from one dashboard.",
+              tag: "Core",
+            },
+            {
+              icon: "ShieldCheck",
+              title: "EU Compliance Engine",
+              description: "Automatic ESPR compliance with built-in regulatory updates. Stay ahead of 2027 without consultants or manual audits.",
+              tag: "Compliance",
+            },
+            {
+              icon: "FileText",
+              title: "Digital Product Passports",
+              description: "Generate EU-compliant DPPs automatically from your production data. Full fiber-to-garment traceability included.",
+              tag: "DPP",
+            },
+            {
+              icon: "Cpu",
+              title: "AI-Powered Analytics",
+              description: "Predictive maintenance, demand forecasting, and quality optimization. Make data-driven decisions in real time.",
+              tag: "Intelligence",
+            },
+            {
+              icon: "Plug",
+              title: "IoT Integration",
+              description: "Connect your machines directly to Hestia. Real-time data collection, alerts, and monitoring — zero manual entry.",
+              tag: "IoT",
+            },
+            {
+              icon: "Layers",
+              title: "Inventory & Supply Chain",
+              description: "Full inventory control from raw materials to finished goods. Supplier management and automated procurement.",
+              tag: "Operations",
+            },
+          ].map((feature) => (
+            <div class="relative border border-border rounded-2xl p-8 bg-card hover:border-primary/40 hover:shadow-lg transition-all group overflow-hidden">
+              <div class="absolute top-0 right-0 bg-primary/8 text-primary text-[10px] font-bold px-3 py-1.5 rounded-bl-xl tracking-widest uppercase">
+                {feature.tag}
               </div>
-              <h3 class="font-heading text-lg font-bold mb-6">Hestia OS</h3>
-              <ul class="space-y-4">
-                {[
-                  "Native EU DPP generation (ESPR-ready)",
-                  "Full fiber-to-garment traceability",
-                  "Automatic regulatory updates via SaaS",
-                  "Real-time production floor monitoring",
-                ].map((item) => (
-                  <li class="flex items-start gap-3 text-sm font-medium">
-                    <div class="w-5 h-5 rounded-full bg-primary/15 text-primary flex items-center justify-center shrink-0 mt-0.5">
-                      <Check class="w-3 h-3" />
-                    </div>
-                    {item}
-                  </li>
-                ))}
-              </ul>
+              <div class="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-6 group-hover:bg-primary group-hover:text-white transition-all duration-300">
+                {feature.icon === "Factory" && <Factory className="w-6 h-6 text-primary group-hover:text-white transition-colors" />}
+                {feature.icon === "ShieldCheck" && <ShieldCheck className="w-6 h-6 text-primary group-hover:text-white transition-colors" />}
+                {feature.icon === "FileText" && <FileText className="w-6 h-6 text-primary group-hover:text-white transition-colors" />}
+                {feature.icon === "Cpu" && <Cpu className="w-6 h-6 text-primary group-hover:text-white transition-colors" />}
+                {feature.icon === "Plug" && <Plug className="w-6 h-6 text-primary group-hover:text-white transition-colors" />}
+                {feature.icon === "Layers" && <Layers className="w-6 h-6 text-primary group-hover:text-white transition-colors" />}
+              </div>
+              <h3 class="font-heading font-bold text-xl mb-3">{feature.title}</h3>
+              <p class="text-sm text-muted-foreground leading-relaxed">{feature.description}</p>
             </div>
+          ))}
+        </div>
+
+        <div class="text-center mt-12">
+          <a href="/en/features" class="inline-flex items-center gap-2 text-primary font-semibold hover:gap-3 transition-all">
+            Explore all features
+            <ArrowRight className="w-4 h-4" />
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════ -->
+    <!-- ── HOW IT WORKS — 3 steps ── -->
+    <!-- ══════════════════════════════════════════════════ -->
+    <section class="py-24 md:py-32">
+      <div class="container mx-auto px-4 md:px-6 max-w-6xl">
+        <div class="text-center mb-16">
+          <p class="text-[11px] font-bold uppercase tracking-widest text-primary mb-4">How It Works</p>
+          <h2 class="font-heading text-3xl md:text-5xl font-bold tracking-tight leading-tight mb-5">
+            Live in weeks. Not months.
+          </h2>
+          <p class="text-muted-foreground text-lg max-w-xl mx-auto">
+            Three steps to transform how your factory operates.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8 md:gap-6">
+          {[
+            {
+              step: "01",
+              icon: "Plug",
+              title: "Connect Your Systems",
+              description: "We integrate with your existing machines, ERPs, and workflows. Your team keeps working while we set up. Typical deployment: 2-4 weeks.",
+            },
+            {
+              step: "02",
+              icon: "ScanLine",
+              title: "See Everything in Real-Time",
+              description: "AI-powered dashboards give you instant visibility into production, quality, and compliance. Identify inefficiencies you never knew existed.",
+            },
+            {
+              step: "03",
+              icon: "ShieldCheck",
+              title: "Grow with Confidence",
+              description: "Generate DPPs automatically, hit EU compliance targets, and scale into new markets. Regulatory updates happen in the background.",
+            },
+          ].map((step, i) => (
+            <div class="relative">
+              {i < 2 && (
+                <div class="hidden md:block absolute top-12 left-full w-full h-px bg-gradient-to-r from-border to-transparent -translate-x-1/2 z-0"></div>
+              )}
+              <div class="relative bg-card border border-border rounded-2xl p-8 hover:shadow-lg transition-all h-full">
+                <div class="flex items-center gap-4 mb-6">
+                  <div class="w-12 h-12 rounded-full bg-primary text-white flex items-center justify-center font-heading font-bold text-sm shrink-0">
+                    {step.step}
+                  </div>
+                  <div class="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center">
+                    {step.icon === "Plug" && <Plug className="w-5 h-5 text-primary" />}
+                    {step.icon === "ScanLine" && <ScanLine className="w-5 h-5 text-primary" />}
+                    {step.icon === "ShieldCheck" && <ShieldCheck className="w-5 h-5 text-primary" />}
+                  </div>
+                </div>
+                <h3 class="font-heading text-xl font-bold mb-3">{step.title}</h3>
+                <p class="text-sm text-muted-foreground leading-relaxed">{step.description}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════ -->
+    <!-- ── COMPARISON — Legacy vs Hestia ── -->
+    <!-- ══════════════════════════════════════════════════ -->
+    <section class="py-24 md:py-32 bg-muted/30 border-y border-border/60">
+      <div class="container mx-auto px-4 md:px-6 max-w-6xl">
+        <div class="text-center mb-16">
+          <p class="text-[11px] font-bold uppercase tracking-widest text-primary mb-4">Why Switch</p>
+          <h2 class="font-heading text-3xl md:text-5xl font-bold tracking-tight leading-tight mb-5">
+            Built for ESPR. Not retrofitted.
+          </h2>
+          <p class="text-muted-foreground text-lg max-w-2xl mx-auto">
+            See why forward-thinking manufacturers are replacing legacy tools with Hestia.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+          <!-- Legacy -->
+          <div class="border border-border rounded-2xl p-8 bg-card/50">
+            <h3 class="font-heading text-xl font-bold text-muted-foreground mb-8">Legacy Systems</h3>
+            <ul class="space-y-5">
+              {[
+                "No ESPR or DPP compliance",
+                "6-18 months to implement",
+                "Manual yarn lot tracking",
+                "IT consultants for every update",
+                "No real-time visibility",
+                "Data locked in silos",
+                "€50K+ annual hidden costs",
+              ].map((item) => (
+                <li class="flex items-start gap-3 text-sm text-muted-foreground">
+                  <div class="w-5 h-5 rounded-full bg-red-100 text-red-500 dark:bg-red-900/30 flex items-center justify-center shrink-0 mt-0.5">
+                    <X className="w-3 h-3" />
+                  </div>
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <!-- Hestia -->
+          <div class="border-2 border-primary/30 rounded-2xl p-8 bg-primary/[0.03] relative overflow-hidden">
+            <div class="absolute top-0 right-0 bg-primary text-white text-[10px] font-bold px-4 py-1.5 rounded-bl-xl tracking-widest uppercase">
+              Hestia OS
+            </div>
+            <h3 class="font-heading text-xl font-bold mb-8">Hestia</h3>
+            <ul class="space-y-5">
+              {[
+                "Native EU DPP generation (ESPR-ready)",
+                "Live in 2-4 weeks, not months",
+                "Full fiber-to-garment traceability",
+                "Automatic SaaS updates — zero IT overhead",
+                "Real-time production floor monitoring",
+                "Open API — your data, always accessible",
+                "Starting at €99/month, all-inclusive",
+              ].map((item) => (
+                <li class="flex items-start gap-3 text-sm font-medium">
+                  <div class="w-5 h-5 rounded-full bg-primary/15 text-primary flex items-center justify-center shrink-0 mt-0.5">
+                    <Check className="w-3 h-3" />
+                  </div>
+                  {item}
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ── Platform / Ecosystem ── -->
-    <EcosystemSection client:visible locale="en" />
-
-    <!-- ── Early Access ── -->
-    <section class="py-12 md:py-16">
-      <div class="container mx-auto px-4 md:px-6 max-w-6xl">
-        <div class="border-2 border-primary/20 bg-primary/4 rounded-2xl p-8 md:p-12 flex flex-col md:flex-row items-center justify-between gap-6">
-          <div class="space-y-2 text-center md:text-left">
-            <p class="text-[11px] font-bold uppercase tracking-widest text-primary">Early Access</p>
-            <h3 class="font-heading text-2xl md:text-3xl font-bold">Join the Early Access Program</h3>
-            <p class="text-muted-foreground text-sm max-w-lg">
-              Be among the first factories to run on Hestia. Limited spots in our early access program.
-            </p>
-          </div>
-          <Button size="lg" className="rounded-lg font-semibold shrink-0" asChild>
-            <a href={`/${Astro.currentLocale}/contact`}>Apply for Early Access</a>
-          </Button>
-        </div>
+    <!-- ══════════════════════════════════════════════════ -->
+    <!-- ── DPP REGULATION — Urgency section ── -->
+    <!-- ══════════════════════════════════════════════════ -->
+    <section class="relative bg-[#060E24] text-white py-24 md:py-32 overflow-hidden">
+      <!-- Background effects -->
+      <div class="absolute inset-0 pointer-events-none">
+        <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-primary/10 rounded-full blur-[120px]"></div>
+        <div class="absolute inset-0 opacity-[0.03]" style="background-image: linear-gradient(to right, white 1px, transparent 1px), linear-gradient(to bottom, white 1px, transparent 1px); background-size: 48px 48px;"></div>
       </div>
-    </section>
 
-    <!-- ── DPP Regulation — dark section ── -->
-    <section class="bg-[#0D1A3A] text-white py-24 md:py-32">
-      <div class="container mx-auto px-4 md:px-6 max-w-6xl">
-        <div class="grid lg:grid-cols-[1fr,1fr] gap-16 items-center">
+      <div class="container relative mx-auto px-4 md:px-6 max-w-6xl">
+        <div class="grid lg:grid-cols-2 gap-16 items-center">
           <div class="space-y-6">
-            <div class="inline-block bg-white/10 text-white/80 text-[10px] font-bold px-3 py-1.5 rounded-full uppercase tracking-widest border border-white/15">
+            <div class="inline-flex items-center gap-2.5 bg-white/[0.06] text-white/70 text-[10px] font-bold px-4 py-2 rounded-full uppercase tracking-widest border border-white/10">
+              <span class="relative flex h-2 w-2">
+                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-400 opacity-75"></span>
+                <span class="relative inline-flex rounded-full h-2 w-2 bg-amber-400"></span>
+              </span>
               EU Regulation · ESPR
             </div>
-            <h2 class="font-heading text-4xl md:text-5xl font-bold leading-tight">
-              Digital Product Passports Are Mandatory From 2027
+            <h2 class="font-heading text-4xl md:text-5xl lg:text-6xl font-extrabold leading-[1.05]">
+              Digital Product Passports are mandatory from 2027
             </h2>
           </div>
+
           <div class="space-y-6">
-            <p class="text-white/60 text-base leading-relaxed">
-              The EU Ecodesign for Sustainable Products Regulation (ESPR) makes Digital Product Passports mandatory for textile products. Non-compliant goods will be blocked from EU markets.
+            <p class="text-white/50 text-lg leading-relaxed">
+              The EU Ecodesign for Sustainable Products Regulation (ESPR) makes Digital Product Passports mandatory for all textile products sold in Europe. Non-compliant goods will be blocked from the market.
             </p>
-            <p class="text-white/60 text-base leading-relaxed">
-              Hestia generates DPPs automatically from your existing production data — no external consultants, no manual data entry, no disruption to operations.
-            </p>
+            <div class="border border-white/10 rounded-2xl p-6 bg-white/[0.03]">
+              <div class="grid grid-cols-2 gap-4">
+                {[
+                  { value: "€166B", label: "Market at risk" },
+                  { value: "2027", label: "Enforcement date" },
+                  { value: "27", label: "EU countries" },
+                  { value: "0", label: "Days to waste" },
+                ].map((stat) => (
+                  <div class="text-center py-3">
+                    <div class="font-heading text-2xl md:text-3xl font-extrabold text-white tabular-nums">{stat.value}</div>
+                    <div class="text-xs text-white/40 mt-1">{stat.label}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
             <div class="flex flex-col sm:flex-row gap-3 pt-2">
-              <Button size="lg" className="rounded-lg bg-white text-[#0D1A3A] hover:bg-white/90 font-semibold">
-                <a href={`/${Astro.currentLocale}/dpp`}>Learn More About DPP</a>
+              <Button size="lg" className="rounded-xl bg-white text-[#060E24] hover:bg-white/90 font-bold h-12 px-8 text-base" asChild>
+                <a href="/en/dpp">Learn More About DPP</a>
               </Button>
-              <GoogleCalendarButton client:load label="Talk to an Expert" variant="outline" size="lg" className="border-white/30 text-white hover:bg-white/10" />
+              <GoogleCalendarButton client:load label="Talk to an Expert" variant="outline" size="lg" className="border-white/20! text-white! hover:bg-white/10! rounded-xl! h-12!" />
             </div>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════ -->
+    <!-- ── SOCIAL PROOF — Testimonials / Validation ── -->
+    <!-- ══════════════════════════════════════════════════ -->
+    <section class="py-24 md:py-32">
+      <div class="container mx-auto px-4 md:px-6 max-w-6xl">
+        <div class="text-center mb-16">
+          <p class="text-[11px] font-bold uppercase tracking-widest text-primary mb-4">Early Access</p>
+          <h2 class="font-heading text-3xl md:text-5xl font-bold tracking-tight leading-tight mb-5">
+            Trusted by forward-thinking manufacturers
+          </h2>
+          <p class="text-muted-foreground text-lg max-w-2xl mx-auto">
+            Our early access partners are already seeing results.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-6">
+          {[
+            {
+              quote: "We spent years trying to make our legacy ERP handle DPP requirements. Hestia solved it in weeks.",
+              author: "Production Director",
+              company: "Portuguese Textile Manufacturer",
+            },
+            {
+              quote: "The real-time production visibility alone justified the switch. Compliance automation was the bonus.",
+              author: "Factory Operations Manager",
+              company: "EU Textile Exporter",
+            },
+            {
+              quote: "Finally, a system built for how textile factories actually work — not a generic ERP with textile modules bolted on.",
+              author: "CEO",
+              company: "Mid-size Knitting Factory",
+            },
+          ].map((testimonial) => (
+            <div class="border border-border rounded-2xl p-8 bg-card hover:shadow-md transition-all flex flex-col">
+              <div class="flex gap-1 mb-6">
+                {[1,2,3,4,5].map(() => (
+                  <svg class="w-4 h-4 text-amber-400 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>
+                ))}
+              </div>
+              <blockquote class="text-foreground/80 leading-relaxed mb-6 flex-1 italic">
+                "{testimonial.quote}"
+              </blockquote>
+              <div>
+                <div class="font-semibold text-sm">{testimonial.author}</div>
+                <div class="text-xs text-muted-foreground">{testimonial.company}</div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════ -->
+    <!-- ── PRICING TEASER ── -->
+    <!-- ══════════════════════════════════════════════════ -->
+    <section class="py-24 md:py-32 bg-muted/30 border-y border-border/60">
+      <div class="container mx-auto px-4 md:px-6 max-w-6xl">
+        <div class="grid lg:grid-cols-[1fr,1.2fr] gap-16 items-center">
+          <div>
+            <p class="text-[11px] font-bold uppercase tracking-widest text-primary mb-4">Transparent Pricing</p>
+            <h2 class="font-heading text-3xl md:text-4xl font-bold tracking-tight leading-tight mb-5">
+              Predictable costs.<br/>No surprises.
+            </h2>
+            <p class="text-muted-foreground leading-relaxed mb-8">
+              One platform fee, then pay only for the users and modules you need. No consultants, no server costs, no hidden fees. Cancel anytime.
+            </p>
+            <Button size="lg" className="rounded-xl font-bold h-12 px-8" asChild>
+              <a href="/en/prices">See Full Pricing</a>
+            </Button>
+          </div>
+
+          <div class="grid sm:grid-cols-2 gap-5">
+            <div class="border-2 border-primary/30 rounded-2xl p-7 bg-primary/[0.03]">
+              <div class="text-[10px] font-bold uppercase tracking-widest text-primary mb-3">Starting at</div>
+              <div class="flex items-baseline gap-1 mb-2">
+                <span class="font-heading text-5xl font-extrabold">€99</span>
+                <span class="text-muted-foreground">/mo</span>
+              </div>
+              <p class="text-xs text-muted-foreground leading-relaxed mb-5">Platform + DPP engine + 7 seats included</p>
+              <ul class="space-y-2.5">
+                {["Production management", "DPP generation", "Compliance engine", "2 managers + 5 operators"].map((f) => (
+                  <li class="flex items-start gap-2 text-sm">
+                    <Check className="w-4 h-4 text-primary shrink-0 mt-0.5" />
+                    <span class="text-foreground/80">{f}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div class="border border-border rounded-2xl p-7 bg-card flex flex-col justify-between">
+              <div>
+                <div class="text-[10px] font-bold uppercase tracking-widest text-muted-foreground mb-3">Need More?</div>
+                <h3 class="font-heading text-xl font-bold mb-3">Add as you grow</h3>
+                <ul class="space-y-2.5 text-sm text-muted-foreground">
+                  <li>Operators from €5/user/mo</li>
+                  <li>Managers from €18/user/mo</li>
+                  <li>Advanced modules from €79/mo</li>
+                </ul>
+              </div>
+              <a href="/en/prices" class="mt-6 inline-flex items-center gap-2 text-primary font-semibold text-sm hover:gap-3 transition-all">
+                Build your price <ArrowRight className="w-4 h-4" />
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════ -->
+    <!-- ── FINAL CTA — Full width, high urgency ── -->
+    <!-- ══════════════════════════════════════════════════ -->
+    <section class="relative bg-[#060E24] text-white py-24 md:py-32 overflow-hidden">
+      <div class="absolute inset-0 pointer-events-none">
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary/15 rounded-full blur-[150px]"></div>
+      </div>
+      <div class="container relative mx-auto px-4 md:px-6 max-w-4xl text-center">
+        <p class="text-[11px] font-bold uppercase tracking-widest text-white/40 mb-6">
+          Get started today
+        </p>
+        <h2 class="font-heading text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight mb-6">
+          Your factory deserves a<br class="hidden sm:block" /> better operating system
+        </h2>
+        <p class="text-white/50 text-lg max-w-xl mx-auto mb-10 leading-relaxed">
+          Join the early access program and be among the first textile manufacturers to run on Hestia. Limited spots available.
+        </p>
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+          <GoogleCalendarButton client:load label="Book Your Demo" size="lg" className="bg-white! text-[#060E24]! hover:bg-white/90! shadow-xl! shadow-white/10! rounded-xl! text-base! font-bold! h-13! px-8!" />
+          <a href="/en/contact" class="inline-flex items-center gap-2 text-white/60 hover:text-white text-base font-medium transition-colors">
+            Or contact us directly
+            <ArrowRight className="w-4 h-4" />
+          </a>
         </div>
       </div>
     </section>

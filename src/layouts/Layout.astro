@@ -7,7 +7,7 @@ import { translations } from "@/lib/translations";
 import CustomCursor from "@/components/ui/custom-cursor";
 import { ClientRouter } from "astro:transitions";
 
-const { title } = Astro.props;
+const { title, darkHero = false } = Astro.props;
 const locale = Astro.currentLocale as keyof typeof translations;
 
 const t = (key: keyof (typeof translations)[typeof locale]) => {
@@ -112,7 +112,7 @@ const ptURL = new URL(`/pt${pathWithoutLocale}`, siteUrl).href;
       actionText={t("announcement.action")}
       actionHref=`/${Astro.currentLocale}/investments`
     /> */}
-    <Header client:load locale={locale} />
+    <Header client:load locale={locale} darkHero={darkHero} />
     <main class="flex-1">
       <slot />
     </main>

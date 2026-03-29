@@ -1,91 +1,337 @@
 ---
 import Layout from "@/layouts/Layout.astro";
 import { Button } from "@/components/ui/button";
-import FeatureShowcase from "@/components/FeatureShowcase";
+import { GoogleCalendarButton } from "@/components/GoogleCalendarButton";
 import {
-  Cpu, BarChart4, CloudCog, Smartphone,
-  Shield, Zap, Layers, Globe,
+  Check, ArrowRight, Factory, ShieldCheck, Cpu,
+  BarChart3, Zap, Globe, FileText, Plug, ScanLine,
+  Layers, Smartphone, CloudCog, Lock, Users, Eye, Workflow
 } from "lucide-react";
+
+const coreFeatures = [
+  {
+    Icon: Factory,
+    title: "Gestão de Produção",
+    desc: "Visibilidade de ponta a ponta, desde a entrada de matéria-prima até à peça acabada. Acompanhe cada encomenda, cada máquina, cada operador — em tempo real.",
+    highlights: ["Rastreio de encomendas", "Monitorização de máquinas", "Desempenho de operadores"],
+  },
+  {
+    Icon: ShieldCheck,
+    title: "Motor de Conformidade UE",
+    desc: "Mantenha-se à frente do ESPR, CSRD e das regulamentações têxteis da UE em constante evolução. Trilhos de auditoria automatizados e relatórios de conformidade, sempre atualizados.",
+    highlights: ["Preparado para ESPR", "Auditorias automatizadas", "Atualizações regulamentares"],
+  },
+  {
+    Icon: FileText,
+    title: "Passaportes Digitais de Produto",
+    desc: "Gere DPPs para cada produto automaticamente. Rastreabilidade total de materiais, dados de sustentabilidade e acesso por QR code para consumidores.",
+    highlights: ["Geração automática", "Rastreabilidade total", "Acesso por QR"],
+  },
+  {
+    Icon: BarChart3,
+    title: "Análise com IA",
+    desc: "Insights preditivos que reduzem desperdício, otimizam o planeamento e detetam problemas antes que se tornem críticos. A sua fábrica, mas mais inteligente.",
+    highlights: ["Redução de desperdício", "Planeamento inteligente", "Deteção de anomalias"],
+  },
+  {
+    Icon: Plug,
+    title: "Integração IoT",
+    desc: "Ligue teares, máquinas de corte e sensores diretamente à Hestia. Dados em tempo real de cada canto do seu chão de fábrica.",
+    highlights: ["Conectividade de máquinas", "Dados de sensores", "Feeds em tempo real"],
+  },
+  {
+    Icon: Layers,
+    title: "Inventário e Cadeia de Abastecimento",
+    desc: "Desde cones de fio até paletes acabadas — controlo total de inventário com gestão de fornecedores, reposição automática e alertas de stock.",
+    highlights: ["Rastreio de stock", "Gestão de fornecedores", "Reposição automática"],
+  },
+];
 
 const additionalFeatures = [
   { title: "Integração IoT", desc: "Conecte as suas máquinas diretamente à Hestia para dados em tempo real.", Icon: Cpu },
-  { title: "Análise Preditiva", desc: "Antecipe falhas e necessidades de manutenção com IA.", Icon: BarChart4 },
+  { title: "Análise Preditiva", desc: "Antecipe falhas e necessidades de manutenção com IA.", Icon: BarChart3 },
   { title: "Acesso na Nuvem", desc: "Aceda aos seus dados em qualquer lugar, a qualquer hora, com segurança.", Icon: CloudCog },
   { title: "App Móvel", desc: "Gestão no chão de fábrica através de aplicação nativa iOS e Android.", Icon: Smartphone },
-  { title: "Segurança de Dados", desc: "Encriptação de ponta a ponta e backups automáticos.", Icon: Shield },
+  { title: "Segurança de Dados", desc: "Encriptação de ponta a ponta e backups automáticos.", Icon: Lock },
   { title: "Implementação Rápida", desc: "Comece a usar em semanas, não meses, com onboarding assistido.", Icon: Zap },
-  { title: "Gestão de Stock", desc: "Controlo total de inventário, desde o fio até à peça final.", Icon: Layers },
+  { title: "Gestão de Inventário", desc: "Controlo total de inventário, desde o fio até à peça final.", Icon: Layers },
   { title: "Multi-Idioma", desc: "Suporte nativo para múltiplos idiomas e moedas.", Icon: Globe },
+];
+
+const stats = [
+  { value: "2–4", unit: "semanas", label: "Tempo médio de implementação" },
+  { value: "99.9", unit: "%", label: "SLA de disponibilidade" },
+  { value: "27", unit: "países UE", label: "Cobertura de conformidade" },
+  { value: "€99", unit: "/mês", label: "Preço inicial" },
+];
+
+const architectureLayers = [
+  {
+    label: "Camada de Inteligência",
+    color: "from-[#6B8BF5] to-[#A78BFA]",
+    items: ["Análise com IA", "Manutenção Preditiva", "Previsão de Procura", "Deteção de Anomalias"],
+  },
+  {
+    label: "Capacidades Integradas",
+    color: "from-primary to-[#6B8BF5]",
+    items: ["Passaportes Digitais de Produto", "Motor de Conformidade UE", "Conectividade IoT", "Cadeia de Abastecimento"],
+  },
+  {
+    label: "Hestia Core",
+    color: "from-[#1a2744] to-[#0D1A3A]",
+    items: ["Gestão de Produção", "Inventário", "Rastreio de Encomendas", "Controlo de Acessos"],
+  },
 ];
 ---
 
-<Layout title="Funcionalidades — Hestia">
+<Layout title="Funcionalidades — Hestia" darkHero={true}>
   <div class="flex flex-col min-h-screen">
 
-    <!-- ── Hero ── -->
-    <section class="pt-20 pb-16 md:pt-28 md:pb-20 border-b border-border/60">
-      <div class="container mx-auto px-4 md:px-6 max-w-6xl">
-        <div class="max-w-2xl">
-          <p class="text-[11px] font-bold uppercase tracking-widest text-primary mb-4">Funcionalidades</p>
-          <h1 class="font-heading text-5xl md:text-6xl font-bold tracking-tight leading-tight mb-5">
-            Todas as Camadas que a Sua Fábrica Precisa
+    <!-- ══════════════════════════════════════════════════ -->
+    <!-- ── HERO — Cinematic dark section ── -->
+    <!-- ══════════════════════════════════════════════════ -->
+    <section class="relative min-h-[70vh] flex items-center overflow-hidden bg-[#060E24]">
+      <!-- Animated gradient orbs -->
+      <div class="absolute inset-0 overflow-hidden pointer-events-none">
+        <div class="absolute top-1/3 left-1/5 w-[500px] h-[500px] bg-primary/20 rounded-full blur-[120px] animate-pulse-glow"></div>
+        <div class="absolute bottom-1/4 right-1/5 w-[400px] h-[400px] bg-[#6B8BF5]/15 rounded-full blur-[100px] animate-pulse-glow [animation-delay:2s]"></div>
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] bg-[#A78BFA]/10 rounded-full blur-[80px] animate-pulse-glow [animation-delay:3.5s]"></div>
+      </div>
+      <!-- Grid overlay -->
+      <div class="absolute inset-0 opacity-[0.03]" style="background-image: linear-gradient(to right, white 1px, transparent 1px), linear-gradient(to bottom, white 1px, transparent 1px); background-size: 48px 48px;"></div>
+
+      <div class="container relative mx-auto px-4 md:px-6 max-w-6xl py-24 md:py-32">
+        <div class="max-w-3xl">
+          <!-- Badge -->
+          <div class="inline-flex items-center gap-2.5 text-xs font-bold uppercase tracking-widest text-white/70 bg-white/[0.06] px-4 py-2 rounded-full border border-white/10 mb-8 animate-fade-up backdrop-blur-sm">
+            <span class="relative flex h-2 w-2">
+              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
+              <span class="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
+            </span>
+            Capacidades da Plataforma
+          </div>
+
+          <h1 class="font-heading text-5xl sm:text-6xl md:text-7xl font-extrabold tracking-tight leading-[0.95] text-white mb-6 animate-fade-up [animation-delay:150ms]">
+            Todas as camadas que a<br/>
+            <span class="text-gradient bg-gradient-to-r from-[#6B8BF5] via-[#A78BFA] to-[#6B8BF5] bg-[length:200%_auto] animate-gradient-x">sua fábrica precisa</span>
           </h1>
-          <p class="text-lg text-muted-foreground leading-relaxed">
-            Do chão de fábrica à conformidade, a Hestia oferece um conjunto completo de funcionalidades desenhadas especificamente para a indústria têxtil moderna.
+
+          <p class="text-lg md:text-xl text-white/50 leading-relaxed max-w-2xl mb-10 animate-fade-up [animation-delay:300ms]">
+            Do chão de fábrica à conformidade UE — a Hestia disponibiliza um sistema operativo completo, desenhado especificamente para fabricantes têxteis modernos.
           </p>
+
+          <div class="flex flex-col sm:flex-row gap-3 animate-fade-up [animation-delay:450ms]">
+            <Button size="lg" className="rounded-lg bg-white text-[#060E24] hover:bg-white/90 font-semibold gap-2 text-base px-7" asChild>
+              <a href={`/${Astro.currentLocale}/contact`}>
+                Agendar Demonstração <ArrowRight className="w-4 h-4" />
+              </a>
+            </Button>
+            <Button size="lg" variant="outline" className="rounded-lg border-white/20 text-white hover:bg-white/10 font-semibold text-base px-7" asChild>
+              <a href={`/${Astro.currentLocale}/prices`}>Ver Preços</a>
+            </Button>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- ── Main Features Showcase ── -->
-    <div class="py-16 md:py-24">
-      <FeatureShowcase
-        client:load
-        locale={Astro.currentLocale}
-        title="Funcionalidades Principais"
-        description="O núcleo do nosso sistema, construído para a eficiência da indústria têxtil."
-      />
-    </div>
-
-    <!-- ── Additional features grid ── -->
-    <section class="py-16 md:py-20 bg-muted/20 border-t border-border/60">
+    <!-- ══════════════════════════════════════════════════ -->
+    <!-- ── CORE CAPABILITIES — 6 feature cards ── -->
+    <!-- ══════════════════════════════════════════════════ -->
+    <section class="py-20 md:py-28 border-b border-border/60">
       <div class="container mx-auto px-4 md:px-6 max-w-6xl">
-        <div class="mb-12">
-          <p class="text-[11px] font-bold uppercase tracking-widest text-primary mb-4">Mais Funcionalidades</p>
-          <h2 class="font-heading text-3xl font-bold leading-tight mb-3">Mais do que Apenas o Básico</h2>
-          <p class="text-muted-foreground text-sm max-w-lg">Detalhes que fazem a diferença no dia-a-dia.</p>
+        <div class="mb-16 max-w-2xl">
+          <p class="text-[11px] font-bold uppercase tracking-widest text-primary mb-4">Capacidades Principais</p>
+          <h2 class="font-heading text-4xl md:text-5xl font-bold tracking-tight leading-tight mb-5">
+            Feito para têxtil. Feito para conformidade.
+          </h2>
+          <p class="text-lg text-muted-foreground leading-relaxed">
+            Seis pilares que cobrem cada função crítica da sua fábrica — desde as linhas de produção às regulamentações da UE.
+          </p>
         </div>
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-          {additionalFeatures.map(({ title, desc, Icon }) => (
-            <div className="border border-border rounded-2xl p-6 bg-card hover:border-primary/50 hover:shadow-sm transition-all group">
-              <div className="w-10 h-10 bg-primary/10 rounded-xl flex items-center justify-center mb-5 text-primary group-hover:bg-primary group-hover:text-white transition-all duration-200">
-                <Icon className="w-5 h-5" />
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {coreFeatures.map(({ Icon, title, desc, highlights }) => (
+            <div class="group relative border border-border rounded-2xl p-8 bg-card hover:border-primary/50 hover:shadow-lg transition-all duration-300">
+              <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-6 text-primary group-hover:bg-primary group-hover:text-white transition-all duration-300">
+                <Icon className="w-6 h-6" />
               </div>
-              <h3 className="font-heading font-bold mb-2">{title}</h3>
-              <p className="text-sm text-muted-foreground leading-relaxed">{desc}</p>
+              <h3 class="font-heading text-xl font-bold mb-3">{title}</h3>
+              <p class="text-muted-foreground text-sm leading-relaxed mb-5">{desc}</p>
+              <div class="flex flex-wrap gap-2">
+                {highlights.map((h: string) => (
+                  <span class="inline-flex items-center gap-1.5 text-xs font-medium text-primary bg-primary/8 px-2.5 py-1 rounded-full">
+                    <Check className="w-3 h-3" /> {h}
+                  </span>
+                ))}
+              </div>
             </div>
           ))}
         </div>
       </div>
     </section>
 
-    <!-- ── CTA ── -->
-    <section class="bg-[#0D1A3A] text-white py-20 md:py-24">
-      <div class="container mx-auto px-4 md:px-6 max-w-6xl text-center">
-        <h2 class="font-heading text-3xl md:text-4xl font-bold mb-4">
-          Pronto para Modernizar a Sua Fábrica?
+    <!-- ══════════════════════════════════════════════════ -->
+    <!-- ── PLATFORM ARCHITECTURE ── -->
+    <!-- ══════════════════════════════════════════════════ -->
+    <section class="py-20 md:py-28 bg-muted/30 border-b border-border/60">
+      <div class="container mx-auto px-4 md:px-6 max-w-6xl">
+        <div class="text-center mb-16 max-w-2xl mx-auto">
+          <p class="text-[11px] font-bold uppercase tracking-widest text-primary mb-4">Arquitetura da Plataforma</p>
+          <h2 class="font-heading text-4xl md:text-5xl font-bold tracking-tight leading-tight mb-5">
+            Três camadas. Uma plataforma.
+          </h2>
+          <p class="text-lg text-muted-foreground leading-relaxed">
+            A arquitetura da Hestia empilha inteligência sobre capacidades integradas, tudo a funcionar sobre um núcleo sólido como rocha.
+          </p>
+        </div>
+
+        <div class="max-w-3xl mx-auto space-y-4">
+          <!-- Intelligence Layer -->
+          <div class="relative rounded-2xl border border-[#6B8BF5]/30 bg-gradient-to-r from-[#6B8BF5]/10 to-[#A78BFA]/10 p-8 backdrop-blur-sm">
+            <div class="flex items-center gap-3 mb-4">
+              <div class="w-3 h-3 rounded-full bg-gradient-to-r from-[#6B8BF5] to-[#A78BFA]"></div>
+              <span class="text-xs font-bold uppercase tracking-widest text-[#6B8BF5]">Camada de Inteligência</span>
+            </div>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+              {architectureLayers[0].items.map((item: string) => (
+                <div class="text-sm font-medium text-foreground/80 bg-white/60 dark:bg-white/5 rounded-lg px-3 py-2 text-center border border-[#6B8BF5]/15">
+                  {item}
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <!-- Arrow -->
+          <div class="flex justify-center">
+            <div class="w-px h-6 bg-border"></div>
+          </div>
+
+          <!-- Built-in Capabilities -->
+          <div class="relative rounded-2xl border border-primary/30 bg-gradient-to-r from-primary/10 to-[#6B8BF5]/10 p-8">
+            <div class="flex items-center gap-3 mb-4">
+              <div class="w-3 h-3 rounded-full bg-gradient-to-r from-primary to-[#6B8BF5]"></div>
+              <span class="text-xs font-bold uppercase tracking-widest text-primary">Capacidades Integradas</span>
+            </div>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+              {architectureLayers[1].items.map((item: string) => (
+                <div class="text-sm font-medium text-foreground/80 bg-white/60 dark:bg-white/5 rounded-lg px-3 py-2 text-center border border-primary/15">
+                  {item}
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <!-- Arrow -->
+          <div class="flex justify-center">
+            <div class="w-px h-6 bg-border"></div>
+          </div>
+
+          <!-- Hestia Core -->
+          <div class="relative rounded-2xl border border-border bg-[#060E24] p-8 text-white">
+            <div class="flex items-center gap-3 mb-4">
+              <div class="w-3 h-3 rounded-full bg-white/40"></div>
+              <span class="text-xs font-bold uppercase tracking-widest text-white/60">Hestia Core</span>
+            </div>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+              {architectureLayers[2].items.map((item: string) => (
+                <div class="text-sm font-medium text-white/80 bg-white/8 rounded-lg px-3 py-2 text-center border border-white/10">
+                  {item}
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════ -->
+    <!-- ── ADDITIONAL FEATURES — 8-item grid ── -->
+    <!-- ══════════════════════════════════════════════════ -->
+    <section class="py-20 md:py-28 border-b border-border/60">
+      <div class="container mx-auto px-4 md:px-6 max-w-6xl">
+        <div class="mb-14">
+          <p class="text-[11px] font-bold uppercase tracking-widest text-primary mb-4">Funcionalidades Adicionais</p>
+          <h2 class="font-heading text-3xl md:text-4xl font-bold leading-tight mb-3">Mais do que apenas o básico</h2>
+          <p class="text-muted-foreground text-sm max-w-lg">Detalhes que fazem a diferença no dia-a-dia das operações.</p>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+          {additionalFeatures.map(({ title, desc, Icon }) => (
+            <div class="border border-border rounded-2xl p-6 bg-card hover:border-primary/50 hover:shadow-sm transition-all group">
+              <div class="w-10 h-10 bg-primary/10 rounded-xl flex items-center justify-center mb-5 text-primary group-hover:bg-primary group-hover:text-white transition-all duration-200">
+                <Icon className="w-5 h-5" />
+              </div>
+              <h3 class="font-heading font-bold mb-2">{title}</h3>
+              <p class="text-sm text-muted-foreground leading-relaxed">{desc}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════ -->
+    <!-- ── NUMBERS THAT MATTER ── -->
+    <!-- ══════════════════════════════════════════════════ -->
+    <section class="py-20 md:py-28 bg-muted/30 border-b border-border/60">
+      <div class="container mx-auto px-4 md:px-6 max-w-6xl">
+        <div class="text-center mb-16">
+          <p class="text-[11px] font-bold uppercase tracking-widest text-primary mb-4">Números que Importam</p>
+          <h2 class="font-heading text-4xl md:text-5xl font-bold tracking-tight leading-tight">
+            Construído para funcionar em escala
+          </h2>
+        </div>
+
+        <div class="grid grid-cols-2 lg:grid-cols-4 gap-6">
+          {stats.map(({ value, unit, label }) => (
+            <div class="text-center p-8 rounded-2xl border border-border bg-card">
+              <div class="font-heading text-5xl md:text-6xl font-extrabold tracking-tight text-foreground mb-1">
+                {value}<span class="text-primary text-3xl md:text-4xl">{unit}</span>
+              </div>
+              <p class="text-sm text-muted-foreground font-medium mt-2">{label}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════════════════ -->
+    <!-- ── CTA — Dark urgency section ── -->
+    <!-- ══════════════════════════════════════════════════ -->
+    <section class="relative overflow-hidden bg-[#060E24] text-white py-24 md:py-32">
+      <!-- Background orbs -->
+      <div class="absolute inset-0 overflow-hidden pointer-events-none">
+        <div class="absolute top-1/2 left-1/3 w-[400px] h-[400px] bg-primary/15 rounded-full blur-[100px] animate-pulse-glow"></div>
+        <div class="absolute bottom-1/3 right-1/4 w-[300px] h-[300px] bg-[#A78BFA]/10 rounded-full blur-[80px] animate-pulse-glow [animation-delay:2s]"></div>
+      </div>
+
+      <div class="container relative mx-auto px-4 md:px-6 max-w-6xl text-center">
+        <!-- Urgency badge -->
+        <div class="inline-flex items-center gap-2.5 text-xs font-bold uppercase tracking-widest text-white/70 bg-white/[0.06] px-4 py-2 rounded-full border border-white/10 mb-8 backdrop-blur-sm">
+          <span class="relative flex h-2 w-2">
+            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-400 opacity-75"></span>
+            <span class="relative inline-flex rounded-full h-2 w-2 bg-amber-400"></span>
+          </span>
+          Prazo ESPR: 2027
+        </div>
+
+        <h2 class="font-heading text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight leading-[1] mb-6 max-w-3xl mx-auto">
+          O prazo está definido.<br/>
+          <span class="text-gradient bg-gradient-to-r from-[#6B8BF5] via-[#A78BFA] to-[#6B8BF5] bg-[length:200%_auto] animate-gradient-x">A sua fábrica está pronta?</span>
         </h2>
-        <p class="text-white/60 mb-8 max-w-md mx-auto">
-          2027 está mais perto do que pensa. Prepare a sua fábrica para o ESPR.
+
+        <p class="text-lg text-white/50 leading-relaxed max-w-xl mx-auto mb-10">
+          Os Passaportes Digitais de Produto tornam-se obrigatórios em 2027. As fábricas que começarem agora vão liderar. As que esperarem vão lutar para acompanhar. A escolha é sua.
         </p>
-        <div class="flex flex-col sm:flex-row justify-center gap-3">
-          <Button size="lg" className="rounded-lg bg-white text-[#0D1A3A] hover:bg-white/90 font-semibold" asChild>
-            <a href={`/${Astro.currentLocale}/contact`}>Agendar Demonstração</a>
-          </Button>
-          <Button size="lg" variant="outline" className="rounded-lg border-white/30 text-white hover:bg-white/10" asChild>
-            <a href={`/${Astro.currentLocale}/prices`}>Ver Planos</a>
+
+        <div class="flex flex-col sm:flex-row justify-center gap-4">
+          <GoogleCalendarButton client:load size="lg" className="rounded-lg bg-white text-[#060E24] hover:bg-white/90 font-semibold gap-2 text-base px-8 h-12" />
+          <Button size="lg" variant="outline" className="rounded-lg border-white/20 text-white hover:bg-white/10 font-semibold text-base px-8 h-12" asChild>
+            <a href={`/${Astro.currentLocale}/prices`}>
+              Ver Preços <ArrowRight className="w-4 h-4 ml-2" />
+            </a>
           </Button>
         </div>
+
+        <p class="text-xs text-white/30 mt-6">Sem cartão de crédito. Onboarding gratuito incluído.</p>
       </div>
     </section>
 

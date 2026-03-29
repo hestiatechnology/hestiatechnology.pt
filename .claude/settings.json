@@ -2,7 +2,25 @@
   "permissions": {
     "allow": [
       "Bash(pnpm dev:*)",
-      "Bash(npx astro:*)"
+      "Bash(npx astro:*)",
+      "WebFetch(domain:raw.githubusercontent.com)",
+      "Bash(curl -sL https://raw.githubusercontent.com/Shubhamsaboo/awesome-llm-apps/refs/heads/main/awesome_agent_skills/content-creator/SKILL.md)",
+      "Bash(ls /home/danielpereira/Documents/hestiatechnology.pt/.claude/skills*)",
+      "Read(//home/danielpereira/.claude/**)",
+      "Bash(grep -E \"\\\\.tsx$\")",
+      "Bash(sed -i 's/className=\"\"!bg-white !text-\\\\[#060E24\\\\] hover:!bg-white\\\\/90 !shadow-xl !shadow-white\\\\/10 !rounded-xl !text-base !font-bold !h-13 !px-8\"\"/className=\"\"bg-white! text-[#060E24]! hover:bg-white\\\\/90! shadow-xl! shadow-white\\\\/10! rounded-xl! text-base! font-bold! h-13! px-8!\"\"/g' src/pages/en/index.astro)",
+      "Bash(sed -i 's/className=\"\"!border-white\\\\/20 !text-white hover:!bg-white\\\\/10 !rounded-xl !h-12\"\"/className=\"\"border-white\\\\/20! text-white! hover:bg-white\\\\/10! rounded-xl! h-12!\"\"/g' src/pages/en/index.astro)",
+      "Bash(pnpm build:*)",
+      "Bash(for f:*)",
+      "Bash(do echo:*)",
+      "Read(//home/danielpereira/Documents/hestiatechnology.pt/**)",
+      "Bash(done)",
+      "Bash(do)",
+      "Bash(echo \"=== $f ===\")"
+    ],
+    "additionalDirectories": [
+      "/home/danielpereira/Documents/hestiatechnology.pt/.claude",
+      "/home/danielpereira/Documents/hestiatechnology.pt/s/<Layout title=\"About Us\">"
     ]
   },
   "enabledPlugins": {

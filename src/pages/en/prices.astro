@@ -1,44 +1,56 @@
 ---
 import { Button } from "@/components/ui/button";
 import Layout from "@/layouts/Layout.astro";
-import { Check } from "lucide-react";
+import { Check, ArrowRight } from "lucide-react";
 import PricingSimulator from "@/components/PricingSimulator";
 import { CompetitorComparison } from "@/components/CompetitorComparison";
+import { GoogleCalendarButton } from "@/components/GoogleCalendarButton";
 ---
 
-<Layout title="Pricing — Hestia">
+<Layout title="Pricing — Hestia Technology" darkHero={true}>
   <div class="flex flex-col min-h-screen">
 
     <!-- ── Hero ── -->
-    <section class="pt-20 pb-16 md:pt-28 md:pb-20 border-b border-border/60">
-      <div class="container mx-auto px-4 md:px-6 max-w-6xl">
-        <div class="max-w-2xl">
-          <p class="text-[11px] font-bold uppercase tracking-widest text-primary mb-4">Pricing</p>
-          <h1 class="font-heading text-5xl md:text-6xl font-bold tracking-tight leading-tight mb-5">
-            Pay for What You Use
+    <section class="relative bg-[#060E24] text-white pt-24 pb-20 md:pt-36 md:pb-28 overflow-hidden">
+      <div class="absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_-20%,rgba(99,102,241,0.15),transparent)]"></div>
+      <div class="container mx-auto px-4 md:px-6 max-w-6xl relative z-10">
+        <div class="max-w-3xl mx-auto text-center">
+          <p class="text-[11px] font-bold uppercase tracking-widest text-indigo-400 mb-6">Pricing</p>
+          <h1 class="font-heading text-5xl md:text-7xl font-bold tracking-tight leading-[1.05] mb-6">
+            <span class="bg-linear-to-r from-white via-white to-indigo-300 bg-clip-text text-transparent">Pay for What You Use</span>
           </h1>
-          <p class="text-lg text-muted-foreground leading-relaxed">
-            A flat platform fee, then add users and modules as your factory grows. No surprises, no upfront costs.
+          <p class="text-lg md:text-xl text-white/60 leading-relaxed max-w-2xl mx-auto mb-10">
+            A flat platform fee. Add users as you hire. Activate modules when you are ready. No surprises, no upfront costs, no long-term lock-in.
           </p>
+          <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <Button size="lg" className="rounded-lg bg-white text-[#060E24] hover:bg-white/90 font-semibold text-base px-8" asChild>
+              <a href="/en/contact">Get Started <ArrowRight className="w-4 h-4 ml-1" /></a>
+            </Button>
+            <GoogleCalendarButton client:load label="Book a Demo" variant="outline" size="lg" />
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- ── How pricing works ── -->
-    <section class="py-16 md:py-20 bg-muted/20 border-b border-border/60">
+    <!-- ── How Pricing Works ── -->
+    <section class="py-16 md:py-24 bg-muted/20 border-b border-border/60">
       <div class="container mx-auto px-4 md:px-6 max-w-6xl">
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="text-center mb-14">
+          <p class="text-[11px] font-bold uppercase tracking-widest text-primary mb-4">How It Works</p>
+          <h2 class="font-heading text-3xl md:text-4xl font-bold leading-tight">Three Simple Steps to Your Price</h2>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
           {[
-            { n: "1", title: "Platform Base", desc: "One fixed monthly fee covers your Hestia Core platform and DPP compliance engine." },
-            { n: "2", title: "Add Your Users", desc: "Pay only for the seats you need — Operators and Managers at different rates." },
-            { n: "3", title: "Choose Modules", desc: "Unlock advanced features only when your factory is ready for them." },
+            { n: "1", title: "Platform Base", desc: "One fixed monthly fee covers your Hestia Core platform, DPP compliance engine, and standard support. No hidden costs." },
+            { n: "2", title: "Add Users", desc: "Pay only for the seats you need. Operators and Managers are priced differently so you never overpay." },
+            { n: "3", title: "Choose Modules", desc: "Activate advanced features like AI document validation or real-time analytics only when your factory is ready." },
           ].map((step) => (
             <div class="flex gap-5">
-              <div class="w-8 h-8 rounded-full bg-primary text-white flex items-center justify-center font-heading font-bold text-sm shrink-0 mt-0.5">
+              <div class="w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center font-heading font-bold text-base shrink-0 mt-0.5">
                 {step.n}
               </div>
               <div>
-                <h3 class="font-heading font-bold mb-2">{step.title}</h3>
+                <h3 class="font-heading text-lg font-bold mb-2">{step.title}</h3>
                 <p class="text-sm text-muted-foreground leading-relaxed">{step.desc}</p>
               </div>
             </div>
@@ -47,99 +59,105 @@ import { CompetitorComparison } from "@/components/CompetitorComparison";
       </div>
     </section>
 
-    <!-- ── Base platform card ── -->
-    <section class="py-16 md:py-20">
+    <!-- ── Base Platform Card ── -->
+    <section class="py-16 md:py-24">
       <div class="container mx-auto px-4 md:px-6 max-w-6xl">
         <div class="grid lg:grid-cols-[1fr,2fr] gap-12 items-start">
           <div>
             <p class="text-[11px] font-bold uppercase tracking-widest text-primary mb-4">Base Plan</p>
-            <h2 class="font-heading text-3xl font-bold leading-tight mb-4">
+            <h2 class="font-heading text-3xl md:text-4xl font-bold leading-tight mb-4">
               Everything you need to get started
             </h2>
             <p class="text-sm text-muted-foreground leading-relaxed">
-              One fee covers the core platform, DPP generation, and automatic regulatory compliance.
+              One fee covers the core platform, EU Digital Product Passport generation, and automatic regulatory compliance updates. Start operating in days, not months.
             </p>
           </div>
 
-          <div class="border-2 border-primary/30 rounded-2xl p-8 bg-primary/4">
-            <div class="flex items-start justify-between mb-6">
+          <div class="border-2 border-primary/30 rounded-2xl p-8 md:p-10 bg-primary/4">
+            <div class="flex items-start justify-between mb-8">
               <div>
                 <div class="flex items-baseline gap-1">
-                  <span class="font-heading text-5xl font-bold">€99</span>
-                  <span class="text-muted-foreground">/month</span>
+                  <span class="font-heading text-6xl font-bold">€99</span>
+                  <span class="text-muted-foreground text-lg">/month</span>
                 </div>
-                <p class="text-xs text-muted-foreground mt-1">or ~€1,015/year with 15% discount</p>
+                <p class="text-sm text-muted-foreground mt-2">or ~€1,015/year with 15% annual discount</p>
               </div>
-              <div class="bg-primary text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-widest">
+              <div class="bg-primary text-white text-[10px] font-bold px-3 py-1.5 rounded-full uppercase tracking-widest">
                 Included
               </div>
             </div>
-            <ul class="grid sm:grid-cols-2 gap-3 mb-8">
+            <ul class="grid sm:grid-cols-2 gap-3.5 mb-10">
               {[
                 "Hestia Core (production, inventory, suppliers)",
                 "EU Digital Product Passport generation",
                 "Automatic regulatory updates",
                 "2 Manager seats included",
                 "5 Operator seats included",
-                "Standard support",
+                "Standard support & onboarding",
               ].map((f) => (
                 <li class="flex items-start gap-3 text-sm">
                   <div class="mt-0.5 bg-primary/15 p-1 rounded-full shrink-0">
-                    <Check class="w-3 h-3 text-primary" />
+                    <Check className="w-3.5 h-3.5 text-primary" />
                   </div>
                   <span class="text-foreground/80">{f}</span>
                 </li>
               ))}
             </ul>
-            <Button size="lg" className="rounded-lg font-semibold w-full sm:w-auto" asChild>
-              <a href={`/${Astro.currentLocale}/contact`}>Get Started</a>
-            </Button>
+            <div class="flex flex-col sm:flex-row gap-3">
+              <Button size="lg" className="rounded-lg font-semibold" asChild>
+                <a href="/en/contact">Get Started <ArrowRight className="w-4 h-4 ml-1" /></a>
+              </Button>
+              <GoogleCalendarButton client:load label="Book a Demo" variant="outline" />
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ── User seats ── -->
-    <section class="py-16 md:py-20 bg-muted/20 border-y border-border/60">
+    <!-- ── User Seats ── -->
+    <section class="py-16 md:py-24 bg-muted/20 border-y border-border/60">
       <div class="container mx-auto px-4 md:px-6 max-w-6xl">
         <div class="grid lg:grid-cols-[1fr,2fr] gap-12 items-start">
           <div>
             <p class="text-[11px] font-bold uppercase tracking-widest text-primary mb-4">Users</p>
-            <h2 class="font-heading text-3xl font-bold leading-tight mb-4">
+            <h2 class="font-heading text-3xl md:text-4xl font-bold leading-tight mb-4">
               User Seats
             </h2>
             <p class="text-sm text-muted-foreground leading-relaxed">
-              Add seats beyond the ones included in the platform base.
+              Need more than the included seats? Add Operators and Managers at transparent per-user rates. Scale up or down any time.
             </p>
           </div>
 
-          <div class="grid sm:grid-cols-2 gap-5">
+          <div class="grid sm:grid-cols-2 gap-6">
             {[
               {
                 role: "Operator",
                 price: "€5",
                 period: "/user/month",
+                desc: "For factory floor staff",
                 features: ["Log production runs", "Scan and trace items", "View assigned tasks", "Basic data input"],
               },
               {
                 role: "Manager",
                 price: "€18",
                 period: "/user/month",
+                desc: "For team leads and supervisors",
                 features: ["Everything Operators can do", "Approve workflows", "Inventory management", "Reporting & analytics access"],
               },
             ].map((seat) => (
-              <div class="border border-border rounded-2xl p-6 bg-card">
-                <div class="mb-5">
-                  <h3 class="font-heading text-xl font-bold mb-2">{seat.role}</h3>
+              <div class="border border-border rounded-2xl p-7 bg-card hover:shadow-lg transition-shadow">
+                <div class="mb-6">
+                  <p class="text-xs text-muted-foreground mb-1">{seat.desc}</p>
+                  <h3 class="font-heading text-xl font-bold mb-3">{seat.role}</h3>
                   <div class="flex items-baseline gap-1">
-                    <span class="font-heading text-3xl font-bold">{seat.price}</span>
+                    <span class="font-heading text-4xl font-bold">{seat.price}</span>
                     <span class="text-sm text-muted-foreground">{seat.period}</span>
                   </div>
                 </div>
-                <ul class="space-y-2.5">
+                <ul class="space-y-3">
                   {seat.features.map((f) => (
                     <li class="flex items-start gap-2.5 text-sm text-foreground/75">
-                      <Check class="w-4 h-4 text-primary shrink-0 mt-0.5" />
+                      <Check className="w-4 h-4 text-primary shrink-0 mt-0.5" />
                       {f}
                     </li>
                   ))}
@@ -151,27 +169,27 @@ import { CompetitorComparison } from "@/components/CompetitorComparison";
       </div>
     </section>
 
-    <!-- ── Add-on modules ── -->
-    <section class="py-16 md:py-20">
+    <!-- ── Add-on Modules ── -->
+    <section class="py-16 md:py-24">
       <div class="container mx-auto px-4 md:px-6 max-w-6xl">
-        <div class="mb-10">
+        <div class="mb-12">
           <p class="text-[11px] font-bold uppercase tracking-widest text-primary mb-4">Modules</p>
-          <h2 class="font-heading text-3xl font-bold leading-tight mb-3">Add-on Modules</h2>
+          <h2 class="font-heading text-3xl md:text-4xl font-bold leading-tight mb-3">Add-on Modules</h2>
           <p class="text-muted-foreground text-sm max-w-xl">
-            Unlock advanced capabilities when your factory is ready. Each module adds on top of the base plan.
+            Unlock advanced capabilities when your factory is ready. Each module adds on top of the base plan — activate or deactivate at any time.
           </p>
         </div>
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {[
-            { name: "AI Document Validation", desc: "Automatically validate supplier documents and certifications.", price: "€129", period: "/month" },
-            { name: "Advanced Integrations", desc: "Connect with Smartex and other manufacturing platforms.", price: "€99", period: "/month per integration" },
-            { name: "Real-time Analytics", desc: "Live production dashboards and performance reports.", price: "€99", period: "/month" },
-            { name: "Advanced DPP", desc: "Multi-product DPP management and export capabilities.", price: "€79", period: "/month" },
+            { name: "AI Document Validation", desc: "Automatically validate supplier documents, certifications, and compliance records with AI-powered extraction.", price: "€129", period: "/month" },
+            { name: "Advanced Integrations", desc: "Connect with Smartex, ERP systems, and other manufacturing platforms through pre-built connectors.", price: "€99", period: "/month per integration" },
+            { name: "Real-time Analytics", desc: "Live production dashboards, performance reports, and bottleneck detection across your entire operation.", price: "€99", period: "/month" },
+            { name: "Advanced DPP", desc: "Multi-product Digital Product Passport management, bulk export, and advanced compliance reporting.", price: "€79", period: "/month" },
           ].map((mod) => (
-            <div class="border border-border rounded-2xl p-6 bg-card hover:border-primary/50 transition-colors group">
-              <h3 class="font-heading font-bold text-sm leading-snug mb-2 group-hover:text-primary transition-colors">{mod.name}</h3>
-              <div class="flex items-baseline gap-1 mb-3">
-                <span class="font-heading text-2xl font-bold">{mod.price}</span>
+            <div class="border border-border rounded-2xl p-7 bg-card hover:border-primary/50 hover:shadow-lg transition-all group">
+              <h3 class="font-heading font-bold text-base leading-snug mb-3 group-hover:text-primary transition-colors">{mod.name}</h3>
+              <div class="flex items-baseline gap-1 mb-4">
+                <span class="font-heading text-3xl font-bold">{mod.price}</span>
                 <span class="text-xs text-muted-foreground">{mod.period}</span>
               </div>
               <p class="text-xs text-muted-foreground leading-relaxed">{mod.desc}</p>
@@ -181,14 +199,15 @@ import { CompetitorComparison } from "@/components/CompetitorComparison";
       </div>
     </section>
 
-    <!-- ── Examples ── -->
-    <section class="py-16 md:py-20 bg-muted/20 border-y border-border/60">
+    <!-- ── Real-world Examples ── -->
+    <section class="py-16 md:py-24 bg-muted/20 border-y border-border/60">
       <div class="container mx-auto px-4 md:px-6 max-w-6xl">
-        <div class="mb-10">
-          <p class="text-[11px] font-bold uppercase tracking-widest text-primary mb-4">Examples</p>
-          <h2 class="font-heading text-3xl font-bold leading-tight">What Does It Cost in Practice?</h2>
+        <div class="mb-12">
+          <p class="text-[11px] font-bold uppercase tracking-widest text-primary mb-4">Real-World Examples</p>
+          <h2 class="font-heading text-3xl md:text-4xl font-bold leading-tight">What Does It Actually Cost?</h2>
+          <p class="text-muted-foreground text-sm mt-3 max-w-lg">See exactly what factories like yours pay each month. No hidden fees, no surprises.</p>
         </div>
-        <div class="grid md:grid-cols-2 gap-6 max-w-3xl">
+        <div class="grid md:grid-cols-2 gap-8 max-w-4xl">
           {[
             {
               label: "Small Factory",
@@ -200,6 +219,7 @@ import { CompetitorComparison } from "@/components/CompetitorComparison";
               ],
               total: "€149/month",
               note: "~€1,790/year · No upfront cost",
+              highlight: false,
             },
             {
               label: "Mid-size Factory",
@@ -212,19 +232,20 @@ import { CompetitorComparison } from "@/components/CompetitorComparison";
               ],
               total: "€490/month",
               note: "~€5,880/year · Includes two premium modules",
+              highlight: true,
             },
           ].map((ex) => (
-            <div class="border border-border rounded-2xl p-7 bg-card">
+            <div class:list={["border rounded-2xl p-8 bg-card", ex.highlight ? "border-primary/40 shadow-lg ring-1 ring-primary/10" : "border-border"]}>
               <div class="text-[10px] font-bold uppercase tracking-widest text-muted-foreground mb-1">{ex.label}</div>
-              <h3 class="font-heading font-bold text-lg mb-6">{ex.title}</h3>
-              <div class="space-y-2.5 text-sm mb-5">
+              <h3 class="font-heading font-bold text-xl mb-7">{ex.title}</h3>
+              <div class="space-y-3 text-sm mb-6">
                 {ex.items.map((item) => (
                   <div class="flex justify-between">
                     <span class="text-muted-foreground">{item.desc}</span>
                     <span class={item.muted ? "text-muted-foreground" : "font-medium"}>{item.amount}</span>
                   </div>
                 ))}
-                <div class="border-t border-border/60 pt-3 flex justify-between font-bold">
+                <div class="border-t border-border/60 pt-4 flex justify-between font-bold text-base">
                   <span>Total</span>
                   <span class="text-primary">{ex.total}</span>
                 </div>
@@ -237,59 +258,67 @@ import { CompetitorComparison } from "@/components/CompetitorComparison";
     </section>
 
     <!-- ── Cost Comparison ── -->
-    <section class="py-16 md:py-20">
+    <section class="py-16 md:py-24">
       <div class="container mx-auto px-4 md:px-6 max-w-6xl">
-        <div class="mb-10">
+        <div class="mb-12">
           <p class="text-[11px] font-bold uppercase tracking-widest text-primary mb-4">Compare</p>
-          <h2 class="font-heading text-3xl font-bold leading-tight mb-3">How Hestia Compares</h2>
-          <p class="text-muted-foreground text-sm max-w-lg">Choose a competitor and factory size to see a real cost comparison.</p>
+          <h2 class="font-heading text-3xl md:text-4xl font-bold leading-tight mb-3">How Hestia Compares</h2>
+          <p class="text-muted-foreground text-sm max-w-lg">Choose a competitor and factory size to see a real cost comparison. Hestia is built for textile manufacturers — not retrofitted from generic ERP.</p>
         </div>
         <CompetitorComparison client:load locale="en" />
       </div>
     </section>
 
-    <!-- ── Simulator ── -->
-    <section class="py-16 md:py-24">
+    <!-- ── Price Simulator ── -->
+    <section class="py-16 md:py-24 bg-muted/20 border-y border-border/60">
       <div class="container mx-auto px-4 md:px-6 max-w-6xl">
-        <div class="mb-10">
+        <div class="mb-12">
           <p class="text-[11px] font-bold uppercase tracking-widest text-primary mb-4">Simulator</p>
-          <h2 class="font-heading text-3xl font-bold leading-tight mb-3">Try the Price Simulator</h2>
-          <p class="text-muted-foreground text-sm">Adjust users and modules to see your exact monthly cost.</p>
+          <h2 class="font-heading text-3xl md:text-4xl font-bold leading-tight mb-3">Build Your Price</h2>
+          <p class="text-muted-foreground text-sm max-w-md">Adjust users and modules to see your exact monthly cost. What you see is what you pay.</p>
         </div>
-        <PricingSimulator locale="en" contactHref={`/${Astro.currentLocale}/contact`} client:load />
+        <PricingSimulator locale="en" contactHref="/en/contact" client:load />
       </div>
     </section>
 
-    <!-- ── Early Access ── -->
-    <section class="py-12 md:py-16">
+    <!-- ── Early Access Banner ── -->
+    <section class="py-14 md:py-20">
       <div class="container mx-auto px-4 md:px-6 max-w-6xl">
-        <div class="border-2 border-primary/20 bg-primary/4 rounded-2xl p-8 md:p-12 flex flex-col md:flex-row items-center justify-between gap-6">
-          <div class="space-y-2 text-center md:text-left">
+        <div class="border-2 border-primary/20 bg-primary/4 rounded-2xl p-8 md:p-14 flex flex-col md:flex-row items-center justify-between gap-8">
+          <div class="space-y-3 text-center md:text-left">
             <p class="text-[11px] font-bold uppercase tracking-widest text-primary">Early Access</p>
             <h3 class="font-heading text-2xl md:text-3xl font-bold">Join the Early Access Program</h3>
-            <p class="text-muted-foreground text-sm max-w-lg">
-              Be among the first factories to run on Hestia. Limited spots in our early access program.
+            <p class="text-muted-foreground text-sm max-w-lg leading-relaxed">
+              Be among the first factories to run on Hestia. Early access members get priority onboarding, direct input on the roadmap, and preferential pricing locked in for 12 months.
             </p>
           </div>
-          <Button size="lg" className="rounded-lg font-semibold shrink-0" asChild>
-            <a href={`/${Astro.currentLocale}/contact`}>Apply for Early Access</a>
-          </Button>
+          <div class="flex flex-col gap-3 shrink-0">
+            <Button size="lg" className="rounded-lg font-semibold" asChild>
+              <a href="/en/contact">Apply for Early Access <ArrowRight className="w-4 h-4 ml-1" /></a>
+            </Button>
+            <p class="text-xs text-muted-foreground text-center">Limited spots available</p>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- ── CTA ── -->
-    <section class="bg-[#0D1A3A] text-white py-20">
-      <div class="container mx-auto px-4 md:px-6 max-w-6xl text-center">
-        <h2 class="font-heading text-3xl md:text-4xl font-bold mb-4">
+    <!-- ── Final Dark CTA ── -->
+    <section class="bg-[#060E24] text-white py-24 md:py-32 relative overflow-hidden">
+      <div class="absolute inset-0 bg-[radial-gradient(ellipse_60%_50%_at_50%_110%,rgba(99,102,241,0.12),transparent)]"></div>
+      <div class="container mx-auto px-4 md:px-6 max-w-6xl text-center relative z-10">
+        <p class="text-[11px] font-bold uppercase tracking-widest text-indigo-400 mb-6">Let's Talk</p>
+        <h2 class="font-heading text-3xl md:text-5xl font-bold mb-5 leading-tight">
           Not sure which setup fits your factory?
         </h2>
-        <p class="text-white/60 mb-8 max-w-md mx-auto">
-          Our team helps you find the right plan for your factory's size and needs. ESPR compliance takes months to implement — start now to be ready for 2027.
+        <p class="text-white/50 mb-10 max-w-lg mx-auto leading-relaxed">
+          Our team helps you find the right configuration for your factory's size and needs. ESPR compliance takes months to implement — start now to be ready by 2027.
         </p>
-        <Button size="lg" className="rounded-lg bg-white text-[#0D1A3A] hover:bg-white/90 font-semibold" asChild>
-          <a href={`/${Astro.currentLocale}/contact`}>Talk to Our Team</a>
-        </Button>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <Button size="lg" className="rounded-lg bg-white text-[#060E24] hover:bg-white/90 font-semibold text-base px-8" asChild>
+            <a href="/en/contact">Talk to Our Team</a>
+          </Button>
+          <GoogleCalendarButton client:load label="Schedule a Call" variant="outline" size="lg" />
+        </div>
       </div>
     </section>
 
