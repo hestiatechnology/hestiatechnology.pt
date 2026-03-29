@@ -9,9 +9,11 @@ import STARTIpca from "@/assets/start-ipca.png";
 import { Magnetic } from "@/components/ui/magnetic";
 import { GoogleCalendarButton } from "@/components/GoogleCalendarButton";
 import { Check, X } from "lucide-react";
+import { EcosystemSection } from "@/components/EcosystemSection";
+import { DemoVideoSection } from "@/components/DemoVideoSection";
 ---
 
-<Layout title="Hestia ERP - A Plataforma de Operações para Fabricantes Têxteis">
+<Layout title="Hestia — O Sistema Operativo da Fábrica">
   <div class="flex flex-col">
 
     <!-- ── Hero ── -->
@@ -25,10 +27,11 @@ import { Check, X } from "lucide-react";
               Regulamento ESPR da UE — 2027
             </div>
             <h1 class="font-heading text-5xl md:text-6xl lg:text-[3.75rem] xl:text-7xl font-bold tracking-tight leading-[1.06] text-foreground">
-              O ERP com IA para Fabricantes Têxteis
+              O Sistema Operativo da Fábrica
             </h1>
-            <p class="text-lg text-muted-foreground leading-relaxed max-w-xl">
-              Hestia automatiza a conformidade com a UE, o acompanhamento da produção e os Passaportes Digitais de Produto — substituindo sistemas legados dispendiosos e pouco fiáveis.
+            <p class="text-sm font-semibold text-primary tracking-wide">Construído de raiz para fabricantes têxteis.</p>
+            <p class="text-lg text-muted-foreground leading-relaxed max-w-xl mt-4!">
+              A Hestia conecta e orquestra todas as camadas da sua fábrica — produção, conformidade, IA, IoT e Passaportes Digitais de Produto — substituindo sistemas legados fragmentados por uma única plataforma inteligente.
             </p>
             <div class="flex flex-col sm:flex-row gap-3 pt-1">
               <GoogleCalendarButton client:load label="Agendar uma Demonstração" size="lg" />
@@ -60,9 +63,9 @@ import { Check, X } from "lucide-react";
         <!-- Mobile stats row -->
         <div class="lg:hidden grid grid-cols-3 gap-3 mt-10">
           {[
-            { value: "2027", label: "DPP Target" },
-            { value: "€166B", label: "EU Textile Market" },
-            { value: "27", label: "EU Countries" },
+            { value: "2027", label: "Data-Alvo DPP" },
+            { value: "€166B", label: "Mercado Têxtil UE" },
+            { value: "27", label: "Países da UE" },
           ].map((s) => (
             <div class="bg-card border border-border rounded-xl p-4 text-center">
               <div class="font-heading text-2xl font-bold">{s.value}</div>
@@ -93,13 +96,16 @@ import { Check, X } from "lucide-react";
       <FeatureShowcase
         client:load
         locale={Astro.currentLocale}
-        title="O ERP Inteligente para Fabricantes Têxteis"
-        description="Automatizamos a conformidade com a UE e o acompanhamento da produção, substituindo sistemas legados dispendiosos e pouco fiáveis."
+        title="Uma Plataforma. Todas as Camadas."
+        description="Do chão de fábrica à conformidade, a Hestia orquestra toda a sua operação."
       />
     </div>
 
     <!-- ── How It Works ── -->
     <HowItWorks client:visible />
+
+    <!-- ── Demo Video ── -->
+    <DemoVideoSection client:visible locale="pt" />
 
     <!-- ── Comparison ── -->
     <section class="py-20 md:py-32">
@@ -111,14 +117,14 @@ import { Check, X } from "lucide-react";
               Feito para o ESPR.<br/>Não adaptado.
             </h2>
             <p class="text-muted-foreground leading-relaxed text-sm">
-              Os ERPs legados não foram criados para o ESPR, DPP ou rastreabilidade têxtil em tempo real. O Hestia foi.
+              Os sistemas legados não foram concebidos para o ESPR, DPP ou rastreabilidade têxtil em tempo real. A Hestia foi construída de raiz como um sistema operativo de fábrica completo.
             </p>
           </div>
 
           <div class="grid md:grid-cols-2 gap-4">
             <!-- Legacy -->
             <div class="border border-border rounded-2xl p-7 bg-muted/20">
-              <h3 class="font-heading text-lg font-bold text-muted-foreground mb-6">ERPs Legados</h3>
+              <h3 class="font-heading text-lg font-bold text-muted-foreground mb-6">Sistemas Legados</h3>
               <ul class="space-y-4">
                 {[
                   "Sem conformidade ESPR / DPP integrada",
@@ -141,7 +147,7 @@ import { Check, X } from "lucide-react";
               <div class="absolute top-0 right-0 bg-primary text-white text-[10px] font-bold px-3 py-1 rounded-bl-xl tracking-widest uppercase">
                 Hestia
               </div>
-              <h3 class="font-heading text-lg font-bold mb-6">Hestia ERP</h3>
+              <h3 class="font-heading text-lg font-bold mb-6">Hestia OS</h3>
               <ul class="space-y-4">
                 {[
                   "Geração nativa de DPP (pronto para ESPR)",
@@ -163,46 +169,23 @@ import { Check, X } from "lucide-react";
       </div>
     </section>
 
-    <!-- ── Testimonials ── -->
-    <section class="py-20 md:py-28 bg-muted/20 border-y border-border/60">
+    <!-- ── Platform / Ecosystem ── -->
+    <EcosystemSection client:visible locale="pt" />
+
+    <!-- ── Early Access ── -->
+    <section class="py-12 md:py-16">
       <div class="container mx-auto px-4 md:px-6 max-w-6xl">
-        <div class="grid lg:grid-cols-[1fr,2fr] gap-16 items-start">
-          <div>
-            <p class="text-[11px] font-bold uppercase tracking-widest text-primary mb-4">
-              Testemunhos
+        <div class="border-2 border-primary/20 bg-primary/4 rounded-2xl p-8 md:p-12 flex flex-col md:flex-row items-center justify-between gap-6">
+          <div class="space-y-2 text-center md:text-left">
+            <p class="text-[11px] font-bold uppercase tracking-widest text-primary">Acesso Antecipado</p>
+            <h3 class="font-heading text-2xl md:text-3xl font-bold">Junte-se ao Programa de Acesso Antecipado</h3>
+            <p class="text-muted-foreground text-sm max-w-lg">
+              Esteja entre as primeiras fábricas a operar com a Hestia. Lugares limitados no nosso programa de acesso antecipado.
             </p>
-            <h2 class="font-heading text-3xl font-bold leading-tight">
-              O Que Dizem os Fabricantes
-            </h2>
           </div>
-          <div class="grid sm:grid-cols-1 gap-6">
-            {[
-              {
-                quote: "Passávamos semanas por trimestre a preparar documentos de conformidade manualmente. O Hestia reduziu isso para minutos. Só a geração de DPP justifica toda a plataforma.",
-                name: "Responsável de Produção",
-                company: "Fabricante Têxtil, Norte de Portugal",
-              },
-              {
-                quote: "O nosso ERP legado precisava de um consultor de TI sempre que as regulamentações mudavam. Com o Hestia atualiza automaticamente. É um modelo completamente diferente.",
-                name: "Diretor de Operações",
-                company: "Empresa de Tecelagem, Braga",
-              },
-              {
-                quote: "O painel em tempo real mostrou-nos exatamente onde estavam os nossos estrangulamentos. Melhorámos o rendimento sem adicionar recursos humanos. O ROI foi visível no primeiro mês.",
-                name: "Proprietário de Fábrica",
-                company: "Fiação, Guimarães",
-              },
-            ].map((t) => (
-              <div class="bg-card border border-border/60 rounded-2xl p-7 space-y-5">
-                <div class="flex gap-0.5 text-primary text-sm">★★★★★</div>
-                <p class="text-foreground/80 text-sm leading-relaxed">"{t.quote}"</p>
-                <div class="pt-2 border-t border-border/60">
-                  <div class="font-semibold text-sm">{t.name}</div>
-                  <div class="text-xs text-muted-foreground mt-0.5">{t.company}</div>
-                </div>
-              </div>
-            ))}
-          </div>
+          <Button size="lg" className="rounded-lg font-semibold shrink-0" asChild>
+            <a href={`/${Astro.currentLocale}/contact`}>Candidatar-se ao Acesso Antecipado</a>
+          </Button>
         </div>
       </div>
     </section>

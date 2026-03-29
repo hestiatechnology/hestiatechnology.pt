@@ -1,7 +1,7 @@
 export const translations = {
   en: {
     "layout.meta.description":
-      "Increase efficiency and control. Hestia's ERP integrates your essential processes for fluid operations.",
+      "The factory operating system for textile manufacturers. AI-native production, EU compliance, DPP, and IoT — all in one platform.",
     "layout.og.description": "Welcome to Hestia Technology Lda",
     "announcement.message": "🎉 We are looking for investors!",
     "announcement.action": "Learn More",
@@ -15,7 +15,7 @@ export const translations = {
     'header.button.signin': 'Sign In',
     'header.mobile_nav_toggle': 'Toggle mobile navigation',
     'header.lang.switch': 'PT',
-    'footer.description': 'The Operations Platform for Textile Manufacturers.',
+    'footer.description': 'The Factory Operating System for Textile Manufacturers.',
     "footer.links.product": "Product",
     "footer.links.company": "Company",
     "footer.links.legal": "Legal",
@@ -60,7 +60,7 @@ export const translations = {
   },
   pt: {
     "layout.meta.description":
-      "Aumente a eficiência e o controlo. O ERP da Hestia integra os seus processos essenciais para operações fluidas.",
+      "O sistema operativo de fábrica para fabricantes têxteis. Produção com IA nativa, conformidade UE, DPP e IoT — tudo numa única plataforma.",
     "layout.og.description": "Bem vindo à Hestia Technology Lda",
     "announcement.message": "🎉 Estamos à procura de investidores!",
     "announcement.action": "Saiba Mais",
@@ -74,7 +74,7 @@ export const translations = {
     'header.button.signin': 'Entrar',
     'header.mobile_nav_toggle': 'Alternar navegação móvel',
     'header.lang.switch': 'EN',
-    'footer.description': 'A Plataforma de Operações para Fabricantes Têxteis.',
+    'footer.description': 'O Sistema Operativo de Fábrica para Fabricantes Têxteis.',
     "footer.links.product": "Produto",
     "footer.links.company": "Empresa",
     "footer.links.legal": "Legal",

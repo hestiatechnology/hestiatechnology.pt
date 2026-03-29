@@ -33,7 +33,7 @@ export default function TeamSection() {
             Our Team
           </h2>
           <p className="max-w-2xl mx-auto mt-4 text-muted-foreground md:text-lg">
-            Meet the minds behind Hestia ERP.
+            Meet the minds behind Hestia.
           </p>
         </div>
         <div className="grid gap-8 md:grid-cols-2 max-w-4xl mx-auto">

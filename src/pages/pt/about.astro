@@ -12,6 +12,7 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Separator } from "@/components/ui/separator";
 import Layout from "@/layouts/Layout.astro";
 import IPCA from "@/assets/ipca_cor.png";
+import TeamSection from "@/components/TeamSection.pt";
 ---
 
 <Layout title="Sobre Nós">
@@ -29,10 +30,10 @@ import IPCA from "@/assets/ipca_cor.png";
         <h1
           class="text-3xl font-bold tracking-tighter sm:text-5xl text-foreground mb-4"
         >
-          A Substituir os ERPs Legados para Fabricantes Têxteis
+          A Construir o Sistema Operativo da Fábrica
         </h1>
         <p class="max-w-[900px] mx-auto text-muted-foreground md:text-xl">
-          Os ERPs legados estão a custar aos fabricantes têxteis os seus lucros
+          Os sistemas legados estão a custar aos fabricantes têxteis os seus lucros
           e o seu futuro. Estamos aqui para mudar isso.
         </p>
       </div>
@@ -69,9 +70,9 @@ import IPCA from "@/assets/ipca_cor.png";
 
             <CardDescription className="text-base leading-relaxed">
 
-              Automatizar a conformidade com a UE e o acompanhamento da produção
+              Construir o sistema operativo de fábrica que automatiza a conformidade
 
-              para os fabricantes têxteis, substituindo sistemas legados
+              com a UE e o acompanhamento da produção, substituindo sistemas legados
 
               dispendiosos e pouco fiáveis.
 
@@ -105,11 +106,11 @@ import IPCA from "@/assets/ipca_cor.png";
 
             <CardDescription className="text-base leading-relaxed">
 
-              Tornarmo-nos o padrão para a indústria transformadora da UE,
+              Tornarmo-nos o sistema operativo padrão para a indústria
 
-              começando por dominar o mercado têxtil português e depois
+              transformadora da UE, começando pelo mercado têxtil português
 
-              conquistar os têxteis da UE.
+              e expandindo pela indústria europeia.
 
             </CardDescription>
 
@@ -208,6 +209,24 @@ import IPCA from "@/assets/ipca_cor.png";
       </div>
     </div>
   </section>
+
+  <!-- Founder Story -->
+  <section class="py-12 md:py-24 bg-muted/20 border-y border-border/60">
+    <div class="px-4 md:px-6">
+      <div class="max-w-3xl mx-auto text-center space-y-6">
+        <p class="text-[11px] font-bold uppercase tracking-widest text-primary">A Nossa História</p>
+        <h2 class="text-2xl font-bold tracking-tighter sm:text-4xl text-foreground">
+          Nascida da Frustração com Sistemas Legados
+        </h2>
+        <p class="text-muted-foreground md:text-lg leading-relaxed">
+          Vimos fabricantes têxteis a debaterem-se com sistemas legados que não acompanhavam as regulamentações da UE. Consultores caros para cada atualização. Sem visibilidade em tempo real. Zero suporte DPP. Por isso construímos o que realmente precisam — um sistema operativo de fábrica.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Team Section -->
+  <TeamSection client:load />
 
   <!-- CTA Section -->
   <section class="py-12 md:py-24">

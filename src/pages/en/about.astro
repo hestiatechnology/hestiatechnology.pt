@@ -12,6 +12,7 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Separator } from "@/components/ui/separator";
 import Layout from "@/layouts/Layout.astro";
 import IPCA from "@/assets/ipca_cor.png";
+import TeamSection from "@/components/TeamSection.en";
 ---
 
 <Layout title="About Us">
@@ -29,10 +30,10 @@ import IPCA from "@/assets/ipca_cor.png";
         <h1
           class="text-3xl font-bold tracking-tighter sm:text-5xl text-foreground mb-4"
         >
-          Replacing Legacy ERPs for Textile Manufacturers
+          Building the Factory Operating System
         </h1>
         <p class="max-w-[900px] mx-auto text-muted-foreground md:text-xl">
-          Legacy ERPs are costing textile manufacturers their profits and their
+          Legacy systems are costing textile manufacturers their profits and their
           future. We are here to change that.
         </p>
       </div>
@@ -69,9 +70,9 @@ import IPCA from "@/assets/ipca_cor.png";
 
               <CardDescription className="text-base leading-relaxed">
 
-                To automate EU compliance and production tracking for textile
+                To build the factory operating system that automates EU compliance
 
-                manufacturers, replacing costly and unreliable legacy systems.
+                and production tracking, replacing costly and unreliable legacy systems.
 
               </CardDescription>
 
@@ -103,11 +104,11 @@ import IPCA from "@/assets/ipca_cor.png";
 
               <CardDescription className="text-base leading-relaxed">
 
-                To become the standard for EU manufacturing, starting by
+                To become the standard operating system for EU manufacturing,
 
-                dominating the Portuguese textile market and then conquering EU
+                starting with the Portuguese textile market and expanding across
 
-                textiles.
+                European industry.
 
               </CardDescription>
 
@@ -204,6 +205,24 @@ import IPCA from "@/assets/ipca_cor.png";
       </div>
     </div>
   </section>
+
+  <!-- Founder Story -->
+  <section class="py-12 md:py-24 bg-muted/20 border-y border-border/60">
+    <div class="px-4 md:px-6">
+      <div class="max-w-3xl mx-auto text-center space-y-6">
+        <p class="text-[11px] font-bold uppercase tracking-widest text-primary">Our Story</p>
+        <h2 class="text-2xl font-bold tracking-tighter sm:text-4xl text-foreground">
+          Born from Frustration with Legacy Systems
+        </h2>
+        <p class="text-muted-foreground md:text-lg leading-relaxed">
+          We saw textile manufacturers struggling with legacy systems that couldn't keep up with EU regulations. Expensive consultants for every update. No real-time visibility. Zero DPP support. So we built what they actually need — a factory operating system.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Team Section -->
+  <TeamSection client:load />
 
   <!-- CTA Section -->
   <section class="py-12 md:py-24">

@@ -17,8 +17,8 @@ The DPP is a digital record that accompanies a product throughout its lifecycle.
 
 The EU has set ambitious goals for the circular economy and waste reduction. The DPP is an essential tool for achieving these goals, allowing consumers to make more informed choices and businesses to optimize their processes.
 
-## How does Hestia ERP help?
+## How does Hestia help?
 
-Hestia ERP is designed to facilitate compliance with the DPP. Our platform automatically collects the necessary data at each stage of production, creating a complete and auditable digital record.
+Hestia is designed to facilitate compliance with the DPP. Our platform automatically collects the necessary data at each stage of production, creating a complete and auditable digital record.
 
-Prepare your company for the future. Contact us to learn more about how Hestia ERP can help in your transition to the DPP.
+Prepare your company for the future. Contact us to learn more about how Hestia can help in your transition to the DPP.

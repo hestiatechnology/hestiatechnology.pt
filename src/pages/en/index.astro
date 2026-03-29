@@ -9,9 +9,11 @@ import STARTIpca from "@/assets/start-ipca.png";
 import { Magnetic } from "@/components/ui/magnetic";
 import { GoogleCalendarButton } from "@/components/GoogleCalendarButton";
 import { Check, X } from "lucide-react";
+import { EcosystemSection } from "@/components/EcosystemSection";
+import { DemoVideoSection } from "@/components/DemoVideoSection";
 ---
 
-<Layout title="Hestia ERP - The Operations Platform for Textile Manufacturers">
+<Layout title="Hestia — The Factory Operating System">
   <div class="flex flex-col">
 
     <!-- ── Hero ── -->
@@ -25,10 +27,11 @@ import { Check, X } from "lucide-react";
               EU ESPR Regulation — 2027
             </div>
             <h1 class="font-heading text-5xl md:text-6xl lg:text-[3.75rem] xl:text-7xl font-bold tracking-tight leading-[1.06] text-foreground">
-              The AI-enabled ERP for Textile Manufacturers
+              The Factory Operating System
             </h1>
-            <p class="text-lg text-muted-foreground leading-relaxed max-w-xl">
-              Hestia automates EU compliance, production tracking, and Digital Product Passports — replacing costly and unreliable legacy systems.
+            <p class="text-sm font-semibold text-primary tracking-wide">Purpose-built for textile manufacturers.</p>
+            <p class="text-lg text-muted-foreground leading-relaxed max-w-xl mt-4!">
+              Hestia connects and orchestrates every layer of your factory — production, compliance, AI, IoT, and Digital Product Passports — replacing fragmented legacy systems with one intelligent platform.
             </p>
             <div class="flex flex-col sm:flex-row gap-3 pt-1">
               <GoogleCalendarButton client:load label="Schedule a Demo" size="lg" />
@@ -93,13 +96,16 @@ import { Check, X } from "lucide-react";
       <FeatureShowcase
         client:load
         locale={Astro.currentLocale}
-        title="The Intelligent ERP for Textile Manufacturers"
-        description="We automate EU compliance and production tracking, replacing costly and unreliable legacy systems."
+        title="One Platform. Every Layer."
+        description="From shop floor to compliance, Hestia orchestrates your entire operation."
       />
     </div>
 
     <!-- ── How It Works ── -->
     <HowItWorks client:visible />
+
+    <!-- ── Demo Video ── -->
+    <DemoVideoSection client:visible locale="en" />
 
     <!-- ── Comparison ── -->
     <section class="py-20 md:py-32">
@@ -111,14 +117,14 @@ import { Check, X } from "lucide-react";
               Built for ESPR.<br/>Not retrofitted.
             </h2>
             <p class="text-muted-foreground leading-relaxed text-sm">
-              Legacy ERPs weren't built for ESPR, DPP, or real-time textile traceability. Hestia was.
+              Legacy systems weren't designed for ESPR, DPP, or real-time textile traceability. Hestia was built from the ground up as a complete factory operating system.
             </p>
           </div>
 
           <div class="grid md:grid-cols-2 gap-4">
             <!-- Legacy -->
             <div class="border border-border rounded-2xl p-7 bg-muted/20">
-              <h3 class="font-heading text-lg font-bold text-muted-foreground mb-6">Legacy ERPs</h3>
+              <h3 class="font-heading text-lg font-bold text-muted-foreground mb-6">Legacy Systems</h3>
               <ul class="space-y-4">
                 {[
                   "No ESPR / DPP compliance built-in",
@@ -141,7 +147,7 @@ import { Check, X } from "lucide-react";
               <div class="absolute top-0 right-0 bg-primary text-white text-[10px] font-bold px-3 py-1 rounded-bl-xl tracking-widest uppercase">
                 Hestia
               </div>
-              <h3 class="font-heading text-lg font-bold mb-6">Hestia ERP</h3>
+              <h3 class="font-heading text-lg font-bold mb-6">Hestia OS</h3>
               <ul class="space-y-4">
                 {[
                   "Native EU DPP generation (ESPR-ready)",
@@ -163,46 +169,23 @@ import { Check, X } from "lucide-react";
       </div>
     </section>
 
-    <!-- ── Testimonials ── -->
-    <section class="py-20 md:py-28 bg-muted/20 border-y border-border/60">
+    <!-- ── Platform / Ecosystem ── -->
+    <EcosystemSection client:visible locale="en" />
+
+    <!-- ── Early Access ── -->
+    <section class="py-12 md:py-16">
       <div class="container mx-auto px-4 md:px-6 max-w-6xl">
-        <div class="grid lg:grid-cols-[1fr,2fr] gap-16 items-start">
-          <div>
-            <p class="text-[11px] font-bold uppercase tracking-widest text-primary mb-4">
-              Testimonials
+        <div class="border-2 border-primary/20 bg-primary/4 rounded-2xl p-8 md:p-12 flex flex-col md:flex-row items-center justify-between gap-6">
+          <div class="space-y-2 text-center md:text-left">
+            <p class="text-[11px] font-bold uppercase tracking-widest text-primary">Early Access</p>
+            <h3 class="font-heading text-2xl md:text-3xl font-bold">Join the Early Access Program</h3>
+            <p class="text-muted-foreground text-sm max-w-lg">
+              Be among the first factories to run on Hestia. Limited spots in our early access program.
             </p>
-            <h2 class="font-heading text-3xl font-bold leading-tight">
-              What Manufacturers Are Saying
-            </h2>
           </div>
-          <div class="grid sm:grid-cols-1 gap-6">
-            {[
-              {
-                quote: "We were spending weeks every quarter manually preparing compliance documents. Hestia cut that down to minutes. The DPP generation alone justifies the entire platform.",
-                name: "Production Manager",
-                company: "Textile Manufacturer, Northern Portugal",
-              },
-              {
-                quote: "Our legacy ERP required an IT consultant every time regulations changed. With Hestia it just updates. It's a completely different model and our team loves it.",
-                name: "Operations Director",
-                company: "Weaving Company, Braga",
-              },
-              {
-                quote: "The real-time dashboard showed us exactly where our bottlenecks were. We improved throughput without adding headcount. The ROI was visible within the first month.",
-                name: "Factory Owner",
-                company: "Spinning Mill, Guimarães",
-              },
-            ].map((t) => (
-              <div class="bg-card border border-border/60 rounded-2xl p-7 space-y-5">
-                <div class="flex gap-0.5 text-primary text-sm">★★★★★</div>
-                <p class="text-foreground/80 text-sm leading-relaxed">"{t.quote}"</p>
-                <div class="pt-2 border-t border-border/60">
-                  <div class="font-semibold text-sm">{t.name}</div>
-                  <div class="text-xs text-muted-foreground mt-0.5">{t.company}</div>
-                </div>
-              </div>
-            ))}
-          </div>
+          <Button size="lg" className="rounded-lg font-semibold shrink-0" asChild>
+            <a href={`/${Astro.currentLocale}/contact`}>Apply for Early Access</a>
+          </Button>
         </div>
       </div>
     </section>

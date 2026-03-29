@@ -3,9 +3,10 @@ import { Button } from "@/components/ui/button";
 import Layout from "@/layouts/Layout.astro";
 import { Check } from "lucide-react";
 import PricingSimulator from "@/components/PricingSimulator";
+import { CompetitorComparison } from "@/components/CompetitorComparison";
 ---
 
-<Layout title="Preços - Hestia ERP">
+<Layout title="Preços — Hestia">
   <div class="flex flex-col min-h-screen">
 
     <!-- ── Hero ── -->
@@ -28,7 +29,7 @@ import PricingSimulator from "@/components/PricingSimulator";
       <div class="container mx-auto px-4 md:px-6 max-w-6xl">
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
           {[
-            { n: "1", title: "Base da Plataforma", desc: "Uma taxa mensal fixa que cobre o ERP principal e o motor de conformidade DPP." },
+            { n: "1", title: "Base da Plataforma", desc: "Uma taxa mensal fixa que cobre a plataforma Hestia Core e o motor de conformidade DPP." },
             { n: "2", title: "Adicione Utilizadores", desc: "Pague apenas pelos lugares que precisa — Operadores e Gestores a preços diferentes." },
             { n: "3", title: "Escolha Módulos", desc: "Ative funcionalidades avançadas apenas quando a sua fábrica estiver pronta para elas." },
           ].map((step) => (
@@ -56,7 +57,7 @@ import PricingSimulator from "@/components/PricingSimulator";
               Tudo o que precisa para começar
             </h2>
             <p class="text-sm text-muted-foreground leading-relaxed">
-              Uma taxa única cobre o ERP principal, geração de DPP e conformidade regulatória automática.
+              Uma taxa única cobre a plataforma principal, geração de DPP e conformidade regulatória automática.
             </p>
           </div>
 
@@ -75,7 +76,7 @@ import PricingSimulator from "@/components/PricingSimulator";
             </div>
             <ul class="grid sm:grid-cols-2 gap-3 mb-8">
               {[
-                "ERP Principal (produção, inventário, fornecedores)",
+                "Hestia Core (produção, inventário, fornecedores)",
                 "Geração de Passaporte Digital de Produto da UE",
                 "Atualizações regulatórias automáticas",
                 "2 lugares de Gestor incluídos",
@@ -235,6 +236,18 @@ import PricingSimulator from "@/components/PricingSimulator";
       </div>
     </section>
 
+    <!-- ── Cost Comparison ── -->
+    <section class="py-16 md:py-20">
+      <div class="container mx-auto px-4 md:px-6 max-w-6xl">
+        <div class="mb-10">
+          <p class="text-[11px] font-bold uppercase tracking-widest text-primary mb-4">Comparação</p>
+          <h2 class="font-heading text-3xl font-bold leading-tight mb-3">Como a Hestia Se Compara</h2>
+          <p class="text-muted-foreground text-sm max-w-lg">Escolha um concorrente e tamanho de fábrica para ver uma comparação real de custos.</p>
+        </div>
+        <CompetitorComparison client:load locale="pt" />
+      </div>
+    </section>
+
     <!-- ── Simulator ── -->
     <section class="py-16 md:py-24">
       <div class="container mx-auto px-4 md:px-6 max-w-6xl">
@@ -247,6 +260,24 @@ import PricingSimulator from "@/components/PricingSimulator";
       </div>
     </section>
 
+    <!-- ── Early Access ── -->
+    <section class="py-12 md:py-16">
+      <div class="container mx-auto px-4 md:px-6 max-w-6xl">
+        <div class="border-2 border-primary/20 bg-primary/4 rounded-2xl p-8 md:p-12 flex flex-col md:flex-row items-center justify-between gap-6">
+          <div class="space-y-2 text-center md:text-left">
+            <p class="text-[11px] font-bold uppercase tracking-widest text-primary">Acesso Antecipado</p>
+            <h3 class="font-heading text-2xl md:text-3xl font-bold">Junte-se ao Programa de Acesso Antecipado</h3>
+            <p class="text-muted-foreground text-sm max-w-lg">
+              Esteja entre as primeiras fábricas a operar com a Hestia. Lugares limitados no nosso programa de acesso antecipado.
+            </p>
+          </div>
+          <Button size="lg" className="rounded-lg font-semibold shrink-0" asChild>
+            <a href={`/${Astro.currentLocale}/contact`}>Candidatar-se ao Acesso Antecipado</a>
+          </Button>
+        </div>
+      </div>
+    </section>
+
     <!-- ── CTA ── -->
     <section class="bg-[#0D1A3A] text-white py-20">
       <div class="container mx-auto px-4 md:px-6 max-w-6xl text-center">
@@ -254,7 +285,7 @@ import PricingSimulator from "@/components/PricingSimulator";
           Não tem a certeza de qual a configuração ideal?
         </h2>
         <p class="text-white/60 mb-8 max-w-md mx-auto">
-          A nossa equipa ajuda-o a encontrar o plano certo para a dimensão e necessidades da sua fábrica.
+          A nossa equipa ajuda-o a encontrar o plano certo para a dimensão e necessidades da sua fábrica. A conformidade ESPR demora meses a implementar — comece agora para estar preparado em 2027.
         </p>
         <Button size="lg" className="rounded-lg bg-white text-[#0D1A3A] hover:bg-white/90 font-semibold" asChild>
           <a href={`/${Astro.currentLocale}/contact`}>Falar com a Nossa Equipa</a>

@@ -3,6 +3,7 @@ import Layout from "@/layouts/Layout.astro";
 import { actions } from "astro:actions";
 import { ContactForm } from "@/components/ContactForm";
 import { Mail, Phone, MapPin } from "lucide-react";
+import { GoogleCalendarButton } from "@/components/GoogleCalendarButton";
 
 export const prerender = false;
 
@@ -60,7 +61,7 @@ const labels = {
 };
 ---
 
-<Layout title="Contact - Hestia ERP">
+<Layout title="Contact — Hestia">
   <div class="flex flex-col min-h-screen">
 
     <!-- ── Hero ── -->
@@ -93,47 +94,52 @@ const labels = {
             </div>
 
             <div class="space-y-6">
-              {[
-                {
-                  Icon: Mail,
-                  title: "Email",
-                  sub: "General inquiries and support",
-                  value: "info@hestiatechnology.pt",
-                  href: "mailto:info@hestiatechnology.pt",
-                },
-                {
-                  Icon: Phone,
-                  title: "Phone",
-                  sub: "Mon-Fri, 9am to 6pm",
-                  value: "+351 928 251 008",
-                  href: "tel:+351928251008",
-                },
-                {
-                  Icon: MapPin,
-                  title: "Office",
-                  sub: "Incubadora IPCA, Campus do IPCA\nLugar do Aldão, 4750-810 Barcelos\nPortugal",
-                  value: null,
-                  href: null,
-                },
-              ].map(({ Icon, title, sub, value, href }) => (
-                <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 bg-primary/10 rounded-xl flex items-center justify-center shrink-0 text-primary">
-                    <Icon className="w-5 h-5" />
-                  </div>
-                  <div>
-                    <h3 className="font-heading font-bold text-sm mb-0.5">{title}</h3>
-                    <p className="text-xs text-muted-foreground whitespace-pre-line leading-relaxed">{sub}</p>
-                    {value && href && (
-                      <a
-                        href={href}
-                        className="text-sm font-medium text-foreground hover:text-primary transition-colors mt-1 inline-block"
-                      >
-                        {value}
-                      </a>
-                    )}
-                  </div>
+              <div class="flex items-start gap-4">
+                <div class="w-10 h-10 bg-primary/10 rounded-xl flex items-center justify-center shrink-0 text-primary">
+                  <Mail class="w-5 h-5" />
                 </div>
-              ))}
+                <div>
+                  <h3 class="font-heading font-bold text-sm mb-0.5">Email</h3>
+                  <p class="text-xs text-muted-foreground leading-relaxed">General inquiries and support</p>
+                  <a href="mailto:info@hestiatechnology.pt" class="text-sm font-medium text-foreground hover:text-primary transition-colors mt-1 inline-block">
+                    info@hestiatechnology.pt
+                  </a>
+                </div>
+              </div>
+
+              <div class="flex items-start gap-4">
+                <div class="w-10 h-10 bg-primary/10 rounded-xl flex items-center justify-center shrink-0 text-primary">
+                  <Phone class="w-5 h-5" />
+                </div>
+                <div>
+                  <h3 class="font-heading font-bold text-sm mb-0.5">Phone</h3>
+                  <p class="text-xs text-muted-foreground leading-relaxed">Mon-Fri, 9am to 6pm</p>
+                  <a href="tel:+351928251008" class="text-sm font-medium text-foreground hover:text-primary transition-colors mt-1 inline-block">
+                    +351 928 251 008
+                  </a>
+                </div>
+              </div>
+
+              <div class="flex items-start gap-4">
+                <div class="w-10 h-10 bg-primary/10 rounded-xl flex items-center justify-center shrink-0 text-primary">
+                  <MapPin class="w-5 h-5" />
+                </div>
+                <div>
+                  <h3 class="font-heading font-bold text-sm mb-0.5">Office</h3>
+                  <p class="text-xs text-muted-foreground leading-relaxed whitespace-pre-line">Incubadora IPCA, Campus do IPCA
+Lugar do Aldão, 4750-810 Barcelos
+Portugal</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Schedule a call -->
+            <div class="border border-border rounded-2xl p-6 bg-muted/20 space-y-3">
+              <h3 class="font-heading font-bold text-sm">Prefer a call?</h3>
+              <p class="text-xs text-muted-foreground leading-relaxed">
+                Schedule a free 30-minute demo with our team.
+              </p>
+              <GoogleCalendarButton client:load label="Schedule a Demo" size="default" />
             </div>
           </div>
 

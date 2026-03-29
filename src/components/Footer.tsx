@@ -15,12 +15,12 @@ export default function Footer({ locale }: FooterProps) {
 
   const ctaTitle =
     locale === "pt"
-      ? "Pronto para modernizar a sua fábrica?"
-      : "Ready to modernize your factory?";
+      ? "Pronto para atualizar o sistema operativo da sua fábrica?"
+      : "Ready to upgrade your factory's operating system?";
   const ctaSubtitle =
     locale === "pt"
-      ? "Junte-se aos fabricantes que estão a preparar as suas operações para o futuro. Sem complicações, sem contratos longos."
-      : "Join manufacturers who are future-proofing their operations. No complexity, no long-term lock-in.";
+      ? "Junte-se aos fabricantes que já operam com a Hestia. Sem complicações, sem contratos longos."
+      : "Join manufacturers already running on Hestia. No complexity, no long-term lock-in.";
   const ctaButton =
     locale === "pt" ? "Agendar uma Demonstração" : "Schedule a Demo";
 
