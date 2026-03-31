@@ -42,16 +42,20 @@ export default function Header({ locale, darkHero = false }: HeaderProps) {
     };
   }, []);
 
-  // When on a dark hero and not scrolled, use light colors
-  const isTransparentDark = darkHero && !scrolled;
+  // Dark hero pages always use the dark/light-on-dark style
+  const isTransparentDark = darkHero;
 
   return (
     <div className="sticky top-0 z-50 w-full">
       <header
         className={`w-full border-b transition-all duration-300 ${
-          scrolled
-            ? "bg-background/80 backdrop-blur-xl border-border/60 shadow-sm"
-            : "bg-transparent border-transparent"
+          darkHero
+            ? scrolled
+              ? "bg-[#060E24]/95 backdrop-blur-xl border-white/10 shadow-sm"
+              : "bg-[#060E24]/80 backdrop-blur-sm border-white/5"
+            : scrolled
+              ? "bg-background/80 backdrop-blur-xl border-border/60 shadow-sm"
+              : "bg-transparent border-transparent"
         }`}
       >
         <div className="container mx-auto px-4 md:px-6 max-w-6xl">
@@ -64,12 +68,12 @@ export default function Header({ locale, darkHero = false }: HeaderProps) {
               <img
                 src={Logo.src}
                 alt="Hestia"
-                className={`h-7 w-auto ${isTransparentDark ? "hidden" : "block dark:hidden"}`}
+                className={`h-7 w-auto ${darkHero ? "hidden" : "block dark:hidden"}`}
               />
               <img
                 src={LogoWhite.src}
                 alt="Hestia"
-                className={`h-7 w-auto ${isTransparentDark ? "block" : "hidden dark:block"}`}
+                className={`h-7 w-auto ${darkHero ? "block" : "hidden dark:block"}`}
               />
             </a>
 

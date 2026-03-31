@@ -8,8 +8,8 @@ import { Magnetic } from "@/components/ui/magnetic";
 import { GoogleCalendarButton } from "@/components/GoogleCalendarButton";
 import {
   Check, X, ArrowRight, Factory, ShieldCheck, Cpu,
-  BarChart3, Zap, Globe, FileText, Plug, ScanLine,
-  Clock, AlertTriangle, TrendingUp, Users, Lock, Layers
+  FileText, Plug, ScanLine,
+  Clock, AlertTriangle, TrendingUp, Lock, Layers
 } from "lucide-react";
 ---
 
@@ -384,7 +384,7 @@ import {
 
       <div class="container relative mx-auto px-4 md:px-6 max-w-6xl">
         <div class="grid lg:grid-cols-2 gap-16 items-center">
-          <div class="space-y-6">
+          <div class="space-y-6 min-w-0">
             <div class="inline-flex items-center gap-2.5 bg-white/[0.06] text-white/70 text-[10px] font-bold px-4 py-2 rounded-full uppercase tracking-widest border border-white/10">
               <span class="relative flex h-2 w-2">
                 <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-400 opacity-75"></span>
@@ -392,7 +392,7 @@ import {
               </span>
               Regulamento UE · ESPR
             </div>
-            <h2 class="font-heading text-4xl md:text-5xl lg:text-6xl font-extrabold leading-[1.05]">
+            <h2 class="font-heading text-4xl md:text-5xl lg:text-5xl font-extrabold leading-[1.05]">
               Passaportes Digitais de Produto são obrigatórios a partir de 2027
             </h2>
           </div>
@@ -416,11 +416,11 @@ import {
                 ))}
               </div>
             </div>
-            <div class="flex flex-col sm:flex-row gap-3 pt-2">
+            <div class="flex flex-col sm:flex-row items-center gap-3 pt-2">
               <Button size="lg" className="rounded-xl bg-white text-[#060E24] hover:bg-white/90 font-bold h-12 px-8 text-base" asChild>
                 <a href="/pt/dpp">Saber Mais Sobre DPP</a>
               </Button>
-              <GoogleCalendarButton client:load label="Falar com um Especialista" variant="outline" size="lg" className="border-white/20! text-white! hover:bg-white/10! rounded-xl! h-12!" />
+              <GoogleCalendarButton client:load label="Falar com um Especialista" variant="outline" size="lg" className="bg-transparent! border-white/20! text-white! hover:bg-white/10! rounded-xl! h-12!" />
             </div>
           </div>
         </div>

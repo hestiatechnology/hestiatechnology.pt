@@ -16,7 +16,8 @@
       "Read(//home/danielpereira/Documents/hestiatechnology.pt/**)",
       "Bash(done)",
       "Bash(do)",
-      "Bash(echo \"=== $f ===\")"
+      "Bash(echo \"=== $f ===\")",
+      "Bash(grep -v \"^ui$\\\\|^email$\\\\|^visuals$\\\\|^magicui$\")"
     ],
     "additionalDirectories": [
       "/home/danielpereira/Documents/hestiatechnology.pt/.claude",

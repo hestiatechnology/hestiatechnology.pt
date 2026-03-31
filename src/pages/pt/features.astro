@@ -120,15 +120,13 @@ const architectureLayers = [
             Do chão de fábrica à conformidade UE — a Hestia disponibiliza um sistema operativo completo, desenhado especificamente para fabricantes têxteis modernos.
           </p>
 
-          <div class="flex flex-col sm:flex-row gap-3 animate-fade-up [animation-delay:450ms]">
-            <Button size="lg" className="rounded-lg bg-white text-[#060E24] hover:bg-white/90 font-semibold gap-2 text-base px-7" asChild>
-              <a href={`/${Astro.currentLocale}/contact`}>
-                Agendar Demonstração <ArrowRight className="w-4 h-4" />
-              </a>
-            </Button>
-            <Button size="lg" variant="outline" className="rounded-lg border-white/20 text-white hover:bg-white/10 font-semibold text-base px-7" asChild>
-              <a href={`/${Astro.currentLocale}/prices`}>Ver Preços</a>
-            </Button>
+          <div class="flex flex-col sm:flex-row items-center gap-3 animate-fade-up [animation-delay:450ms]">
+            <a href={`/${Astro.currentLocale}/contact`} class="inline-flex items-center gap-2 rounded-lg bg-white text-[#060E24] hover:bg-white/90 font-semibold text-base px-7 h-11 transition-colors">
+              Agendar Demonstração <ArrowRight className="w-4 h-4" />
+            </a>
+            <a href={`/${Astro.currentLocale}/prices`} class="inline-flex items-center rounded-lg border border-white/20 text-white hover:bg-white/10 font-semibold text-base px-7 h-11 transition-colors">
+              Ver Preços
+            </a>
           </div>
         </div>
       </div>
@@ -194,7 +192,7 @@ const architectureLayers = [
             </div>
             <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
               {architectureLayers[0].items.map((item: string) => (
-                <div class="text-sm font-medium text-foreground/80 bg-white/60 dark:bg-white/5 rounded-lg px-3 py-2 text-center border border-[#6B8BF5]/15">
+                <div class="text-sm font-semibold text-[#4B6BE8] dark:text-white bg-[#6B8BF5]/15 dark:bg-[#6B8BF5]/30 rounded-lg px-3 py-2.5 text-center border border-[#6B8BF5]/30 dark:border-[#6B8BF5]/40">
                   {item}
                 </div>
               ))}
@@ -214,7 +212,7 @@ const architectureLayers = [
             </div>
             <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
               {architectureLayers[1].items.map((item: string) => (
-                <div class="text-sm font-medium text-foreground/80 bg-white/60 dark:bg-white/5 rounded-lg px-3 py-2 text-center border border-primary/15">
+                <div class="text-sm font-semibold text-primary dark:text-white bg-primary/10 dark:bg-primary/30 rounded-lg px-3 py-2.5 text-center border border-primary/25 dark:border-primary/50">
                   {item}
                 </div>
               ))}
@@ -234,7 +232,7 @@ const architectureLayers = [
             </div>
             <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
               {architectureLayers[2].items.map((item: string) => (
-                <div class="text-sm font-medium text-white/80 bg-white/8 rounded-lg px-3 py-2 text-center border border-white/10">
+                <div class="text-sm font-semibold text-white/80 bg-white/10 rounded-lg px-3 py-2.5 text-center border border-white/15">
                   {item}
                 </div>
               ))}
@@ -283,7 +281,7 @@ const architectureLayers = [
         <div class="grid grid-cols-2 lg:grid-cols-4 gap-6">
           {stats.map(({ value, unit, label }) => (
             <div class="text-center p-8 rounded-2xl border border-border bg-card">
-              <div class="font-heading text-5xl md:text-6xl font-extrabold tracking-tight text-foreground mb-1">
+              <div class="font-heading text-5xl md:text-6xl font-extrabold tracking-tight text-foreground mb-1 whitespace-nowrap">
                 {value}<span class="text-primary text-3xl md:text-4xl">{unit}</span>
               </div>
               <p class="text-sm text-muted-foreground font-medium mt-2">{label}</p>
@@ -322,13 +320,11 @@ const architectureLayers = [
           Os Passaportes Digitais de Produto tornam-se obrigatórios em 2027. As fábricas que começarem agora vão liderar. As que esperarem vão lutar para acompanhar. A escolha é sua.
         </p>
 
-        <div class="flex flex-col sm:flex-row justify-center gap-4">
-          <GoogleCalendarButton client:load size="lg" className="rounded-lg bg-white text-[#060E24] hover:bg-white/90 font-semibold gap-2 text-base px-8 h-12" />
-          <Button size="lg" variant="outline" className="rounded-lg border-white/20 text-white hover:bg-white/10 font-semibold text-base px-8 h-12" asChild>
-            <a href={`/${Astro.currentLocale}/prices`}>
-              Ver Preços <ArrowRight className="w-4 h-4 ml-2" />
-            </a>
-          </Button>
+        <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
+          <GoogleCalendarButton client:load size="lg" className="rounded-lg! bg-white! text-[#060E24]! hover:bg-white/90! font-semibold gap-2 text-base px-8 h-12" />
+          <a href={`/${Astro.currentLocale}/prices`} class="inline-flex items-center gap-2 rounded-lg border border-white/20 text-white hover:bg-white/10 font-semibold text-base px-8 h-12 transition-colors">
+            Ver Preços <ArrowRight className="w-4 h-4" />
+          </a>
         </div>
 
         <p class="text-xs text-white/30 mt-6">Sem cartão de crédito. Onboarding gratuito incluído.</p>
