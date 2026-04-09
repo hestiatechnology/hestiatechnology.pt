@@ -31,6 +31,7 @@ export const translations = {
     "footer.nav.blog": "Blog",
     "footer.nav.integrations": "Integrations",
     "footer.nav.faq": "FAQ",
+    "footer.nav.migration": "Migration",
     "footer.links.quick": "Quick Links",
     "footer.links.contact": "Contact",
     "footer.copyright":
@@ -91,6 +92,7 @@ export const translations = {
     "footer.nav.blog": "Blog",
     "footer.nav.integrations": "Integrações",
     "footer.nav.faq": "FAQ",
+    "footer.nav.migration": "Migração",
     "footer.links.quick": "Links Rápidos",
     "footer.copyright":
       "© {currentYear} Hestia Technology, Lda. Todos os direitos reservados.",

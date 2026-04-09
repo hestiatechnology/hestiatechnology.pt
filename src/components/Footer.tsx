@@ -107,6 +107,7 @@ export default function Footer({ locale }: FooterProps) {
                     label: t("footer.nav.integrations"),
                   },
                   { href: `/${locale}/dpp`, label: "DPP" },
+                  { href: `/${locale}/migration`, label: t("footer.nav.migration") },
                 ].map((link) => (
                   <li key={link.href}>
                     <a

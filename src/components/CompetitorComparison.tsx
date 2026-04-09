@@ -318,18 +318,11 @@ export function CompetitorComparison({ locale }: CompetitorComparisonProps) {
       )}
 
       {/* Disclaimer */}
-      <div className="text-xs text-muted-foreground text-center leading-relaxed space-y-1">
-        <p>
-          {locale === "pt"
-            ? "* Os preços dos concorrentes são estimativas baseadas em informação pública e podem não estar atualizados. Contacte cada fornecedor para valores exatos."
-            : "* Competitor pricing shown is estimated based on publicly available information and may not be up to date. Contact each vendor for exact pricing."}
-        </p>
-        <p className="italic">
-          {locale === "pt"
-            ? "Alguns fornecedores pediram-nos para não os nomear. Nós respeitamos. Os preços, esses não mudam."
-            : "Some vendors asked us not to name them. We obliged. The prices, however, didn't change."}
-        </p>
-      </div>
+      <p className="text-xs text-muted-foreground text-center leading-relaxed">
+        {locale === "pt"
+          ? "* Os preços dos concorrentes são estimativas baseadas em informação pública e podem não estar atualizados. Contacte cada fornecedor para valores exatos."
+          : "* Competitor pricing shown is estimated based on publicly available information and may not be up to date. Contact each vendor for exact pricing."}
+      </p>
     </div>
   );
 }
