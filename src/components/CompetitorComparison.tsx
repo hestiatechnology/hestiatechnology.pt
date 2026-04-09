@@ -25,8 +25,8 @@ interface Competitor {
 
 const competitors: Competitor[] = [
   {
-    id: "protextil",
-    name: "Protextil",
+    id: "software1",
+    name: "Software 1",
     perUser: 327.25,
     moduleCosts: 0,
     maintenanceRate: 0.15,
@@ -37,10 +37,10 @@ const competitors: Competitor[] = [
     model: "perpetual",
   },
   {
-    id: "macwin",
-    name: "MacWin",
+    id: "software2",
+    name: "Software 2",
     perUser: 400,
-    moduleCosts: 5950, // Gestão Comercial (1450) + Gestão Confeção (4500)
+    moduleCosts: 5950,
     maintenanceRate: 0.16,
     implementation: "2–4 months",
     hasDpp: false,
@@ -49,8 +49,8 @@ const competitors: Competitor[] = [
     model: "perpetual",
   },
   {
-    id: "primavera",
-    name: "Primavera",
+    id: "software3",
+    name: "Software 3",
     perUser: 500,
     moduleCosts: 3000,
     maintenanceRate: 0.2,
@@ -61,8 +61,8 @@ const competitors: Competitor[] = [
     model: "perpetual",
   },
   {
-    id: "phc",
-    name: "PHC Software",
+    id: "software4",
+    name: "Software 4",
     perUser: 350,
     moduleCosts: 2500,
     maintenanceRate: 0.18,
@@ -73,8 +73,8 @@ const competitors: Competitor[] = [
     model: "perpetual",
   },
   {
-    id: "sap",
-    name: "SAP Business One",
+    id: "software5",
+    name: "Software 5",
     perUser: 1200,
     moduleCosts: 15000,
     maintenanceRate: 0.22,
@@ -318,11 +318,18 @@ export function CompetitorComparison({ locale }: CompetitorComparisonProps) {
       )}
 
       {/* Disclaimer */}
-      <p className="text-xs text-muted-foreground text-center leading-relaxed">
-        {locale === "pt"
-          ? "* Os preços dos concorrentes são estimativas baseadas em informação pública e podem não estar atualizados. Contacte cada fornecedor para valores exatos."
-          : "* Competitor pricing shown is estimated based on publicly available information and may not be up to date. Contact each vendor for exact pricing."}
-      </p>
+      <div className="text-xs text-muted-foreground text-center leading-relaxed space-y-1">
+        <p>
+          {locale === "pt"
+            ? "* Os preços dos concorrentes são estimativas baseadas em informação pública e podem não estar atualizados. Contacte cada fornecedor para valores exatos."
+            : "* Competitor pricing shown is estimated based on publicly available information and may not be up to date. Contact each vendor for exact pricing."}
+        </p>
+        <p className="italic">
+          {locale === "pt"
+            ? "Alguns fornecedores pediram-nos para não os nomear. Nós respeitamos. Os preços, esses não mudam."
+            : "Some vendors asked us not to name them. We obliged. The prices, however, didn't change."}
+        </p>
+      </div>
     </div>
   );
 }

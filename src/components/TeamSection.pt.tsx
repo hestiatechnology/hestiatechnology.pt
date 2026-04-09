@@ -17,7 +17,7 @@ const teamMembers = [
     name: "Álvaro Fernandes",
     role: "CTO & Co-Fundador",
     description:
-      "Conhecimento interno da Protextil (concorrente legado). Experiência moderna em SaaS como engenheiro full-stack na 8x8 (uma empresa pública de SaaS). Profundo conhecimento das necessidades da indústria têxtil.",
+      "Conhecimento interno de um concorrente legado no sector do ERP têxtil. Experiência moderna em SaaS como engenheiro full-stack na 8x8 (uma empresa pública de SaaS). Profundo conhecimento das necessidades da indústria têxtil.",
     image: null,
     fallback: "AF",
   },
