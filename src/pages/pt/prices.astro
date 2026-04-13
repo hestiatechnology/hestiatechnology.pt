@@ -181,10 +181,10 @@ import { GoogleCalendarButton } from "@/components/GoogleCalendarButton";
         </div>
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {[
-            { name: "Validação de Documentos com IA", desc: "Valide automaticamente documentos de fornecedores, certificações e registos de conformidade com extração baseada em IA.", price: "€129", period: "/mês" },
+            { name: "Validação de Documentos com IA", desc: "Valide automaticamente documentos de fornecedores, certificações e registos de conformidade com extração baseada em IA.", price: "€20", period: "/mês*" },
             { name: "Integrações Avançadas", desc: "Ligue-se à Smartex, sistemas ERP e outras plataformas de produção através de conectores pré-construídos.", price: "€99", period: "/mês por integração" },
-            { name: "Análise em Tempo Real", desc: "Dashboards de produção em direto, relatórios de desempenho e deteção de estrangulamentos em toda a sua operação.", price: "€99", period: "/mês" },
-            { name: "DPP Avançado", desc: "Gestão de Passaporte Digital de Produto para múltiplos produtos, exportação em massa e relatórios avançados de conformidade.", price: "€79", period: "/mês" },
+            { name: "Análise em Tempo Real", desc: "Dashboards de produção em direto, relatórios de desempenho e deteção de estrangulamentos em toda a sua operação.", price: "€29", period: "/mês" },
+            { name: "DPP Avançado", desc: "Gestão de Passaporte Digital de Produto para múltiplos produtos, exportação em massa e relatórios avançados de conformidade.", price: "€69", period: "/mês" },
           ].map((mod) => (
             <div class="border border-border rounded-2xl p-7 bg-card hover:border-primary/50 hover:shadow-lg transition-all group">
               <h3 class="font-heading font-bold text-base leading-snug mb-3 group-hover:text-primary transition-colors">{mod.name}</h3>
@@ -196,6 +196,7 @@ import { GoogleCalendarButton } from "@/components/GoogleCalendarButton";
             </div>
           ))}
         </div>
+        <p class="text-xs text-muted-foreground mt-6">* Validação de Documentos com IA começa em €20/mês — o custo escala com o volume de documentos processados.</p>
       </div>
     </section>
 
@@ -228,10 +229,10 @@ import { GoogleCalendarButton } from "@/components/GoogleCalendarButton";
                 { desc: "Base da plataforma", amount: "€99" },
                 { desc: "1 gestor extra × €18", amount: "€18" },
                 { desc: "35 operadores extra × €5", amount: "€175" },
-                { desc: "Análise + 1 integração", amount: "€198" },
+                { desc: "Análise em tempo real + 1 integração", amount: "€128" },
               ],
-              total: "€490/mês",
-              note: "~€5.880/ano · Inclui dois módulos premium",
+              total: "€420/mês",
+              note: "~€4.284/ano · Inclui dois módulos",
               highlight: true,
             },
           ].map((ex) => (

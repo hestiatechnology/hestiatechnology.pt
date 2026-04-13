@@ -12,10 +12,10 @@ const OPERATOR_PRICE = 5;
 const ANNUAL_DISCOUNT = 0.15;
 
 const MODULES = [
-  { key: "ai",           price: 129, Icon: Brain,     accent: "#8B5CF6", bg: "rgba(139,92,246,0.12)" },
+  { key: "ai",           price: 20,  Icon: Brain,     accent: "#8B5CF6", bg: "rgba(139,92,246,0.12)" },
   { key: "integrations", price: 99,  Icon: Link2,     accent: "#10B981", bg: "rgba(16,185,129,0.12)" },
-  { key: "analytics",    price: 99,  Icon: BarChart3, accent: "#F59E0B", bg: "rgba(245,158,11,0.12)" },
-  { key: "dpp",          price: 79,  Icon: Package,   accent: "#3B82F6", bg: "rgba(59,130,246,0.12)" },
+  { key: "analytics",    price: 29,  Icon: BarChart3, accent: "#F59E0B", bg: "rgba(245,158,11,0.12)" },
+  { key: "dpp",          price: 69,  Icon: Package,   accent: "#3B82F6", bg: "rgba(59,130,246,0.12)" },
 ];
 
 const copy = {

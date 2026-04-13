@@ -181,10 +181,10 @@ import { GoogleCalendarButton } from "@/components/GoogleCalendarButton";
         </div>
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {[
-            { name: "AI Document Validation", desc: "Automatically validate supplier documents, certifications, and compliance records with AI-powered extraction.", price: "€129", period: "/month" },
+            { name: "AI Document Validation", desc: "Automatically validate supplier documents, certifications, and compliance records with AI-powered extraction.", price: "€20", period: "/month*" },
             { name: "Advanced Integrations", desc: "Connect with Smartex, ERP systems, and other manufacturing platforms through pre-built connectors.", price: "€99", period: "/month per integration" },
-            { name: "Real-time Analytics", desc: "Live production dashboards, performance reports, and bottleneck detection across your entire operation.", price: "€99", period: "/month" },
-            { name: "Advanced DPP", desc: "Multi-product Digital Product Passport management, bulk export, and advanced compliance reporting.", price: "€79", period: "/month" },
+            { name: "Real-time Analytics", desc: "Live production dashboards, performance reports, and bottleneck detection across your entire operation.", price: "€29", period: "/month" },
+            { name: "Advanced DPP", desc: "Multi-product Digital Product Passport management, bulk export, and advanced compliance reporting.", price: "€69", period: "/month" },
           ].map((mod) => (
             <div class="border border-border rounded-2xl p-7 bg-card hover:border-primary/50 hover:shadow-lg transition-all group">
               <h3 class="font-heading font-bold text-base leading-snug mb-3 group-hover:text-primary transition-colors">{mod.name}</h3>
@@ -196,6 +196,7 @@ import { GoogleCalendarButton } from "@/components/GoogleCalendarButton";
             </div>
           ))}
         </div>
+        <p class="text-xs text-muted-foreground mt-6">* AI Document Validation starts at €20/month — cost scales with document volume processed.</p>
       </div>
     </section>
 
@@ -228,10 +229,10 @@ import { GoogleCalendarButton } from "@/components/GoogleCalendarButton";
                 { desc: "Platform base", amount: "€99" },
                 { desc: "1 extra manager × €18", amount: "€18" },
                 { desc: "35 extra operators × €5", amount: "€175" },
-                { desc: "Analytics + 1 integration", amount: "€198" },
+                { desc: "Analytics + 1 integration", amount: "€128" },
               ],
-              total: "€490/month",
-              note: "~€5,880/year · Includes two premium modules",
+              total: "€420/month",
+              note: "~€4,284/year · Includes two modules",
               highlight: true,
             },
           ].map((ex) => (
