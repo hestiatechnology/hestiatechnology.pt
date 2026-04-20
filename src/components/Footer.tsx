@@ -26,7 +26,7 @@ export default function Footer({ locale }: FooterProps) {
 
   return (
     <footer className="bg-background text-foreground">
-      {/* Pre-footer CTA — dark, high-impact */}
+      {/* Pre-footer CTA - dark, high-impact */}
       <div className="relative bg-[#060E24] text-white overflow-hidden">
         {/* Background glow */}
         <div className="absolute inset-0 pointer-events-none">

@@ -22,7 +22,7 @@ body {
   --popover: light-dark(oklch(1 0 0), oklch(0.11 0.018 255));
   --popover-foreground: light-dark(oklch(0.1 0.01 255), oklch(0.96 0.005 255));
 
-  /* Deep cobalt — richer, more distinctive than generic blue-600 */
+  /* Deep cobalt - richer, more distinctive than generic blue-600 */
   --primary: light-dark(#1B44CF, #6B8BF5);
   --primary-foreground: #ffffff;
 

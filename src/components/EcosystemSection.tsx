@@ -15,7 +15,7 @@ const content = {
     label: "Platform",
     heading: "An Extensible Platform, Not a Closed Tool",
     description:
-      "Hestia is built API-first with an open architecture designed for an ecosystem of integrations and modules. Today it powers your factory — tomorrow it connects your entire supply chain.",
+      "Hestia is built API-first with an open architecture designed for an ecosystem of integrations and modules. Today it powers your factory - tomorrow it connects your entire supply chain.",
     topLabel: "Intelligence",
     topItems: [
       { label: "AI Analytics", icon: Brain },
@@ -36,7 +36,7 @@ const content = {
     label: "Plataforma",
     heading: "Uma Plataforma Extensível, Não Uma Ferramenta Fechada",
     description:
-      "A Hestia é construída API-first com uma arquitetura aberta pensada para um ecossistema de integrações e módulos. Hoje opera a sua fábrica — amanhã conecta toda a sua cadeia de abastecimento.",
+      "A Hestia é construída API-first com uma arquitetura aberta pensada para um ecossistema de integrações e módulos. Hoje opera a sua fábrica - amanhã conecta toda a sua cadeia de abastecimento.",
     topLabel: "Inteligência",
     topItems: [
       { label: "Análise IA", icon: Brain },
@@ -86,7 +86,7 @@ export function EcosystemSection({ locale }: EcosystemSectionProps) {
 
           {/* Right: layered architecture */}
           <div className="flex flex-col gap-3">
-            {/* Top layer — Intelligence */}
+            {/* Top layer - Intelligence */}
             <div className="relative">
               <div className="border border-primary/25 bg-primary/[0.04] rounded-2xl p-5">
                 <div className="flex items-center gap-2 mb-4">
@@ -121,7 +121,7 @@ export function EcosystemSection({ locale }: EcosystemSectionProps) {
               <div className="w-px h-4 bg-border" />
             </div>
 
-            {/* Middle layer — Built-in Capabilities */}
+            {/* Middle layer - Built-in Capabilities */}
             <div className="border border-border rounded-2xl p-5 bg-card">
               <div className="flex items-center gap-2 mb-4">
                 <div className="w-1.5 h-1.5 rounded-full bg-foreground/30" />
@@ -154,7 +154,7 @@ export function EcosystemSection({ locale }: EcosystemSectionProps) {
               <div className="w-px h-4 bg-border" />
             </div>
 
-            {/* Bottom layer — Hestia Core */}
+            {/* Bottom layer - Hestia Core */}
             <div className="relative border-2 border-primary/20 rounded-2xl p-5 bg-gradient-to-b from-primary/[0.06] to-primary/[0.02] overflow-hidden">
               {/* Subtle grid pattern */}
               <div
