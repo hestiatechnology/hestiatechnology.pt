@@ -18,10 +18,10 @@ const sortedPosts = posts.sort((a, b) => b.data.date.valueOf() - a.data.date.val
       <div class="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_bottom,_var(--tw-gradient-stops))] from-primary/5 via-background to-background"></div>
       <div class="container mx-auto px-4 md:px-6 text-center">
         <Badge variant="secondary" class="mb-4">Industry Insights</Badge>
-        <h1 class="text-4xl md:text-5xl font-bold tracking-tight text-foreground mb-4">
+        <h1 class="text-4xl md:text-5xl font-bold tracking-tight text-black dark:text-white mb-4">
           Blog & News
         </h1>
-        <p class="text-muted-foreground text-lg max-w-2xl mx-auto">
+        <p class="text-black dark:text-white text-lg max-w-2xl mx-auto">
           Latest trends on DPP, Industry 4.0, and textile management.
         </p>
       </div>
@@ -38,12 +38,12 @@ const sortedPosts = posts.sort((a, b) => b.data.date.valueOf() - a.data.date.val
                  </div>
               </div>
               <CardHeader>
-                <div class="flex items-center gap-2 text-sm text-muted-foreground mb-2">
+                <div class="flex items-center gap-2 text-sm text-black dark:text-white mb-2">
                     <Calendar class="w-4 h-4" />
                     {post.data.date.toLocaleDateString('en-US')}
                 </div>
-                <CardTitle class="group-hover:text-primary transition-colors">{post.data.title}</CardTitle>
-                <CardDescription class="line-clamp-3">{post.data.description}</CardDescription>
+                <CardTitle class="text-black dark:text-white group-hover:text-primary transition-colors">{post.data.title}</CardTitle>
+                <CardDescription class="line-clamp-3 text-black dark:text-white">{post.data.description}</CardDescription>
               </CardHeader>
               <CardContent>
                 <div class="flex flex-wrap gap-2">

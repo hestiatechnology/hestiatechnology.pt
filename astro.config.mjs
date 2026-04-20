@@ -11,6 +11,8 @@ import sitemap from "@astrojs/sitemap";
 
 import cloudflare from "@astrojs/cloudflare";
 
+import mdx from "@astrojs/mdx";
+
 // https://astro.build/config
 export default defineConfig({
   site: "https://hestiatechnology.pt",
@@ -19,15 +21,12 @@ export default defineConfig({
     defaultLocale: "pt",
     locales: ["en", "pt"],
   },
-  integrations: [
-    react(),
-    sitemap({
-      filter: (page) => {
-        // Exclude URLs with query parameters
-        return !page.includes("?");
-      },
-    }),
-  ],
+  integrations: [react(), sitemap({
+    filter: (page) => {
+      // Exclude URLs with query parameters
+      return !page.includes("?");
+    },
+  }), mdx()],
 
   vite: {
     plugins: [tailwindcss()],
@@ -37,4 +36,3 @@ export default defineConfig({
     imageService: "compile"
   }),
 });
-
