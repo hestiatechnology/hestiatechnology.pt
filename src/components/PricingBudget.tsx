@@ -44,7 +44,7 @@ export default function PricingBudget({ locale }: PricingBudgetProps) {
     <div className="max-w-4xl mx-auto p-6 space-y-6">
       {/* Header */}
       <div className="text-center space-y-2">
-        <h1 className="text-3xl font-bold text-foreground">
+        <h1 className="text-3xl text-foreground">
           {t("budget.title")}
         </h1>
         <p className="text-muted-foreground">{t("budget.description")}</p>
@@ -73,7 +73,7 @@ export default function PricingBudget({ locale }: PricingBudgetProps) {
                   </div>
                   <Badge
                     variant="secondary"
-                    className="text-lg font-semibold px-3 py-1"
+                    className="text-lg px-3 py-1"
                   >
                     €{moduleTotal.toFixed(2)}
                   </Badge>
@@ -171,7 +171,7 @@ export default function PricingBudget({ locale }: PricingBudgetProps) {
         <CardContent className="p-6">
           <div className="flex items-center justify-between">
             <div>
-              <h3 className="text-xl font-bold text-foreground">
+              <h3 className="text-xl text-foreground">
                 {t("budget.total_budget")}
               </h3>
               <p className="text-sm text-muted-foreground mt-1">
@@ -183,7 +183,7 @@ export default function PricingBudget({ locale }: PricingBudgetProps) {
               </p>
             </div>
             <div className="text-right">
-              <div className="text-3xl font-bold text-primary">
+              <div className="text-3xl text-primary">
                 €{grandTotal.toFixed(2)}
               </div>
               <p className="text-sm text-primary">{t("budget.per_year")}</p>
@@ -194,7 +194,7 @@ export default function PricingBudget({ locale }: PricingBudgetProps) {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-center">
             <div>
-              <div className="text-2xl font-bold text-foreground">
+              <div className="text-2xl text-foreground">
                 {selectedModules.length}
               </div>
               <div className="text-sm text-muted-foreground">
@@ -202,7 +202,7 @@ export default function PricingBudget({ locale }: PricingBudgetProps) {
               </div>
             </div>
             <div>
-              <div className="text-2xl font-bold text-foreground">
+              <div className="text-2xl text-foreground">
                 {selectedModules.reduce(
                   (sum, m) =>
                     sum + (m.includedUsers || 0) + (m.extraUsers || 0),
@@ -214,7 +214,7 @@ export default function PricingBudget({ locale }: PricingBudgetProps) {
               </div>
             </div>
             <div>
-              <div className="text-2xl font-bold text-primary">
+              <div className="text-2xl text-primary">
                 €{grandTotal.toFixed(2)}
               </div>
               <div className="text-sm text-primary">{t("budget.annual")}</div>

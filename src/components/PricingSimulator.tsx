@@ -146,7 +146,7 @@ function SeatCounter({
             <Icon className="w-4 h-4 text-muted-foreground" />
           </div>
           <div className="min-w-0">
-            <p className="text-sm font-semibold leading-tight">{label}</p>
+            <p className="text-sm leading-tight">{label}</p>
             <p className="text-xs text-muted-foreground mt-0.5">
               {included} included
               {extra > 0 && (
@@ -165,7 +165,7 @@ function SeatCounter({
           >
             <Minus className="w-3 h-3" />
           </button>
-          <span className="w-9 text-center font-bold text-base tabular-nums">{value}</span>
+          <span className="w-9 text-center text-base tabular-nums">{value}</span>
           <button
             onClick={() => onChange(Math.min(max, value + 1))}
             disabled={value >= max}
@@ -259,7 +259,7 @@ export default function PricingSimulator({ locale, contactHref }: Props) {
         <div className="p-6 md:p-8 border-b lg:border-b-0 lg:border-r border-border space-y-7">
 
           <div>
-            <p className="text-[11px] font-bold uppercase tracking-widest text-muted-foreground mb-5">
+            <p className="text-[11px] uppercase tracking-widest text-muted-foreground mb-5">
               {t.seats_title}
             </p>
             <div className="space-y-5">
@@ -289,7 +289,7 @@ export default function PricingSimulator({ locale, contactHref }: Props) {
           <Separator />
 
           <div>
-            <p className="text-[11px] font-bold uppercase tracking-widest text-muted-foreground mb-4">
+            <p className="text-[11px] uppercase tracking-widest text-muted-foreground mb-4">
               {t.modules_title}
             </p>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
@@ -315,7 +315,7 @@ export default function PricingSimulator({ locale, contactHref }: Props) {
                       <Icon className={cn("w-3.5 h-3.5", !active && "text-muted-foreground")} />
                     </div>
                     <div className="flex-1 min-w-0">
-                      <p className={cn("text-xs font-semibold leading-snug", !active && "text-foreground/65")}>
+                      <p className={cn("text-xs leading-snug", !active && "text-foreground/65")}>
                         {t.modules[i]}
                       </p>
                       <p
@@ -349,7 +349,7 @@ export default function PricingSimulator({ locale, contactHref }: Props) {
             <button
               onClick={() => setAnnual(false)}
               className={cn(
-                "px-3.5 py-1.5 rounded-full text-xs font-semibold transition-all duration-200",
+                "px-3.5 py-1.5 rounded-full text-xs transition-all duration-200",
                 !annual
                   ? "bg-primary text-primary-foreground shadow-sm"
                   : "text-muted-foreground hover:text-foreground"
@@ -360,7 +360,7 @@ export default function PricingSimulator({ locale, contactHref }: Props) {
             <button
               onClick={() => setAnnual(true)}
               className={cn(
-                "px-3.5 py-1.5 rounded-full text-xs font-semibold transition-all duration-200 flex items-center gap-1.5",
+                "px-3.5 py-1.5 rounded-full text-xs transition-all duration-200 flex items-center gap-1.5",
                 annual
                   ? "bg-primary text-primary-foreground shadow-sm"
                   : "text-muted-foreground hover:text-foreground"
@@ -369,7 +369,7 @@ export default function PricingSimulator({ locale, contactHref }: Props) {
               {t.annual_label}
               <span
                 className={cn(
-                  "text-[9px] font-bold px-1 py-0.5 rounded-sm leading-tight",
+                  "text-[9px] px-1 py-0.5 rounded-sm leading-tight",
                   annual
                     ? "bg-white/20 text-white"
                     : "bg-primary/10 text-primary"
@@ -383,8 +383,8 @@ export default function PricingSimulator({ locale, contactHref }: Props) {
           {/* Price */}
           <div className="text-center">
             <div className="flex items-start justify-center gap-0.5">
-              <span className="text-xl font-semibold text-muted-foreground mt-3">€</span>
-              <span className="text-[4rem] font-bold tracking-tight tabular-nums leading-none">
+              <span className="text-xl text-muted-foreground mt-3">€</span>
+              <span className="text-[4rem] tracking-tight tabular-nums leading-none">
                 <AnimatedNumber value={displayMonthly} />
               </span>
               <span className="text-sm text-muted-foreground self-end mb-1.5">{t.per_month}</span>
@@ -395,7 +395,7 @@ export default function PricingSimulator({ locale, contactHref }: Props) {
               </p>
             )}
             {annual && annualSavings > 0 && (
-              <div className="inline-flex items-center gap-1 mt-2 px-2.5 py-1 rounded-full bg-primary/10 text-primary text-[11px] font-semibold">
+              <div className="inline-flex items-center gap-1 mt-2 px-2.5 py-1 rounded-full bg-primary/10 text-primary text-[11px]">
                 <Sparkles className="w-3 h-3" />
                 {t.annual_note(annualSavings)}
               </div>
@@ -432,14 +432,14 @@ export default function PricingSimulator({ locale, contactHref }: Props) {
 
           {/* Breakdown */}
           <div className="space-y-2">
-            <p className="text-[10px] font-bold uppercase tracking-widest text-muted-foreground">
+            <p className="text-[10px] uppercase tracking-widest text-muted-foreground">
               {t.breakdown_title}
             </p>
             <div className="space-y-1.5">
               {breakdownItems.map((item, i) => (
                 <div key={i} className="flex justify-between items-baseline gap-2">
                   <span className="text-xs text-muted-foreground truncate">{item.label}</span>
-                  <span className="text-xs font-semibold tabular-nums shrink-0">€{item.amount}</span>
+                  <span className="text-xs tabular-nums shrink-0">€{item.amount}</span>
                 </div>
               ))}
             </div>
@@ -449,11 +449,11 @@ export default function PricingSimulator({ locale, contactHref }: Props) {
 
           <div className="space-y-3 mt-auto">
             <div className="flex justify-between items-baseline">
-              <span className="text-sm font-semibold">{t.total_monthly}</span>
-              <span className="text-primary font-bold text-base tabular-nums">€{totalMonthly}</span>
+              <span className="text-sm">{t.total_monthly}</span>
+              <span className="text-primary text-base tabular-nums">€{totalMonthly}</span>
             </div>
 
-            <Button className="w-full rounded-xl font-semibold gap-2 group" asChild>
+            <Button className="w-full rounded-xl gap-2 group" asChild>
               <a
                 href={buildContactUrl(
                   contactHref,

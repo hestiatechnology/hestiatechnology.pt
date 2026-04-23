@@ -97,7 +97,7 @@ const FeatureShowcase: React.FC<FeatureShowcaseProps> = ({
     <section className="py-12 md:py-24" ref={containerRef}>
       <div className="container px-4 md:px-6 mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold tracking-tighter sm:text-5xl text-foreground">
+          <h2 className="text-4xl tracking-tighter sm:text-5xl text-foreground">
             {title}
           </h2>
           <p className="max-w-3xl mx-auto mt-4 text-muted-foreground md:text-lg">
@@ -123,7 +123,7 @@ const FeatureShowcase: React.FC<FeatureShowcaseProps> = ({
                     <div className="inline-flex items-center justify-center p-3 rounded-2xl bg-primary/10 text-primary ring-1 ring-primary/20 shadow-sm">
                       <Icon className="w-8 h-8" />
                     </div>
-                    <h3 className="text-3xl md:text-4xl font-bold tracking-tight">
+                    <h3 className="text-3xl md:text-4xl tracking-tight">
                       {feature.title}
                     </h3>
                     <p className="text-muted-foreground text-lg leading-relaxed">

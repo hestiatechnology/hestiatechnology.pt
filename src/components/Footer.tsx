@@ -33,16 +33,16 @@ export default function Footer({ locale }: FooterProps) {
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-150 h-150 bg-primary/15 rounded-full blur-[120px]" />
         </div>
         <div className="container relative mx-auto px-4 md:px-6 py-24 text-center">
-          <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-white/30 mb-5">
+          <p className="text-[10px] uppercase tracking-[0.2em] text-white/30 mb-5">
             {locale === "pt" ? "Dê o próximo passo" : "Take the next step"}
           </p>
-          <h2 className="font-heading text-3xl md:text-5xl font-extrabold text-white mb-5 max-w-2xl mx-auto leading-tight">
+          <h2 className="font-heading text-3xl md:text-5xl text-white mb-5 max-w-2xl mx-auto leading-tight">
             {ctaTitle}
           </h2>
           <p className="text-white/45 max-w-lg mx-auto mb-10 text-lg leading-relaxed">
             {ctaSubtitle}
           </p>
-          <GoogleCalendarButton label={ctaButton} size="lg" className="bg-white! text-[#060E24]! hover:bg-white/90! rounded-xl! font-bold! h-13! px-8! text-base! shadow-xl! shadow-white/10!" />
+          <GoogleCalendarButton label={ctaButton} size="lg" className="bg-white! text-[#060E24]! hover:bg-white/90! rounded-xl!! h-13! px-8! text-base! shadow-xl! shadow-white/10!" />
         </div>
       </div>
 
@@ -51,7 +51,7 @@ export default function Footer({ locale }: FooterProps) {
         <div className="container mx-auto px-4 md:px-6 py-16">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-10">
             <div className="col-span-2 md:col-span-1 space-y-5">
-              <h3 className="font-heading font-bold text-base">
+              <h3 className="font-heading text-base">
                 Hestia Technology
               </h3>
               <p className="text-sm text-muted-foreground leading-relaxed">
@@ -89,7 +89,7 @@ export default function Footer({ locale }: FooterProps) {
             </div>
 
             <div>
-              <h3 className="text-xs font-bold uppercase tracking-widest text-muted-foreground/70 mb-5">
+              <h3 className="text-xs uppercase tracking-widest text-muted-foreground/70 mb-5">
                 {t("footer.links.product")}
               </h3>
               <ul className="space-y-3 text-sm">
@@ -122,7 +122,7 @@ export default function Footer({ locale }: FooterProps) {
             </div>
 
             <div>
-              <h3 className="text-xs font-bold uppercase tracking-widest text-muted-foreground/70 mb-5">
+              <h3 className="text-xs uppercase tracking-widest text-muted-foreground/70 mb-5">
                 {t("footer.links.company")}
               </h3>
               <ul className="space-y-3 text-sm">
@@ -153,7 +153,7 @@ export default function Footer({ locale }: FooterProps) {
             </div>
 
             <div>
-              <h3 className="text-xs font-bold uppercase tracking-widest text-muted-foreground/70 mb-5">
+              <h3 className="text-xs uppercase tracking-widest text-muted-foreground/70 mb-5">
                 {t("footer.links.legal")}
               </h3>
               <ul className="space-y-3 text-sm">

@@ -31,10 +31,10 @@ export function HowItWorks() {
         <div className="grid lg:grid-cols-[1fr,2fr] gap-16 items-start">
           {/* Left: heading */}
           <div className="lg:sticky lg:top-32">
-            <p className="text-[11px] font-bold uppercase tracking-widest text-primary mb-4">
+            <p className="text-[11px] uppercase tracking-widest text-primary mb-4">
               O Processo
             </p>
-            <h2 className="font-heading text-3xl md:text-4xl font-bold leading-tight mb-4">
+            <h2 className="font-heading text-3xl md:text-4xl leading-tight mb-4">
               Como Funciona
             </h2>
             <p className="text-muted-foreground leading-relaxed">
@@ -52,7 +52,7 @@ export function HowItWorks() {
                   className={`flex gap-8 py-10 ${i < steps.length - 1 ? "border-b border-border/60" : ""}`}
                 >
                   <div className="shrink-0 pt-1">
-                    <span className="font-heading text-4xl font-bold text-muted-foreground/20 tabular-nums leading-none">
+                    <span className="font-heading text-4xl text-muted-foreground/20 tabular-nums leading-none">
                       {step.number}
                     </span>
                   </div>
@@ -61,7 +61,7 @@ export function HowItWorks() {
                       <div className="w-9 h-9 rounded-xl bg-primary/10 flex items-center justify-center shrink-0">
                         <Icon className="w-4.5 h-4.5 text-primary" />
                       </div>
-                      <h3 className="font-heading text-xl font-bold">{step.title}</h3>
+                      <h3 className="font-heading text-xl">{step.title}</h3>
                     </div>
                     <p className="text-muted-foreground leading-relaxed text-sm max-w-md">
                       {step.description}

@@ -15,8 +15,8 @@ import { GoogleCalendarButton } from "@/components/GoogleCalendarButton";
       <div class="absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_-20%,rgba(99,102,241,0.15),transparent)]"></div>
       <div class="container mx-auto px-4 md:px-6 max-w-6xl relative z-10">
         <div class="max-w-3xl mx-auto text-center">
-          <p class="text-[11px] font-bold uppercase tracking-widest text-indigo-400 mb-6">Pricing</p>
-          <h1 class="font-heading text-5xl md:text-7xl font-bold tracking-tight leading-[1.05] mb-6">
+          <p class="text-[11px] uppercase tracking-widest text-indigo-400 mb-6">Pricing</p>
+          <h1 class="font-heading text-5xl md:text-7xl tracking-tight leading-[1.05] mb-6">
             <span class="bg-linear-to-r from-white via-white to-indigo-300 bg-clip-text text-transparent">Pay for What You Use</span>
           </h1>
           <p class="text-lg md:text-xl text-white/60 leading-relaxed max-w-2xl mx-auto mb-10">
@@ -24,7 +24,7 @@ import { GoogleCalendarButton } from "@/components/GoogleCalendarButton";
           </p>
           <div class="flex flex-col sm:flex-row gap-4 justify-center">
             <GoogleCalendarButton client:load label="Book a Demo" variant="outline" size="lg" />
-            <Button size="lg" className="rounded-lg bg-white text-[#060E24] hover:bg-white/90 font-semibold text-base px-8" asChild>
+            <Button size="lg" className="rounded-lg bg-white text-[#060E24] hover:bg-white/90 text-base px-8" asChild>
               <a href="/en/contact">Get Started <ArrowRight className="w-4 h-4 ml-1" /></a>
             </Button>
           </div>
@@ -36,8 +36,8 @@ import { GoogleCalendarButton } from "@/components/GoogleCalendarButton";
     <section class="py-16 md:py-24 bg-muted/20 border-b border-border/60">
       <div class="container mx-auto px-4 md:px-6 max-w-6xl">
         <div class="text-center mb-14">
-          <p class="text-[11px] font-bold uppercase tracking-widest text-primary mb-4">How It Works</p>
-          <h2 class="font-heading text-3xl md:text-4xl font-bold leading-tight">Three Simple Steps to Your Price</h2>
+          <p class="text-[11px] uppercase tracking-widest text-primary mb-4">How It Works</p>
+          <h2 class="font-heading text-3xl md:text-4xl leading-tight">Three Simple Steps to Your Price</h2>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
           {[
@@ -46,11 +46,11 @@ import { GoogleCalendarButton } from "@/components/GoogleCalendarButton";
             { n: "3", title: "Choose Modules", desc: "Activate advanced features like AI document validation or real-time analytics only when your factory is ready." },
           ].map((step) => (
             <div class="flex gap-5">
-              <div class="w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center font-heading font-bold text-base shrink-0 mt-0.5">
+              <div class="w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center font-heading text-base shrink-0 mt-0.5">
                 {step.n}
               </div>
               <div>
-                <h3 class="font-heading text-lg font-bold mb-2">{step.title}</h3>
+                <h3 class="font-heading text-lg mb-2">{step.title}</h3>
                 <p class="text-sm text-muted-foreground leading-relaxed">{step.desc}</p>
               </div>
             </div>
@@ -64,8 +64,8 @@ import { GoogleCalendarButton } from "@/components/GoogleCalendarButton";
       <div class="container mx-auto px-4 md:px-6 max-w-6xl">
         <div class="grid lg:grid-cols-[1fr,2fr] gap-12 items-start">
           <div>
-            <p class="text-[11px] font-bold uppercase tracking-widest text-primary mb-4">Base Plan</p>
-            <h2 class="font-heading text-3xl md:text-4xl font-bold leading-tight mb-4">
+            <p class="text-[11px] uppercase tracking-widest text-primary mb-4">Base Plan</p>
+            <h2 class="font-heading text-3xl md:text-4xl leading-tight mb-4">
               Everything you need to get started
             </h2>
             <p class="text-sm text-muted-foreground leading-relaxed">
@@ -77,12 +77,12 @@ import { GoogleCalendarButton } from "@/components/GoogleCalendarButton";
             <div class="flex items-start justify-between mb-8">
               <div>
                 <div class="flex items-baseline gap-1">
-                  <span class="font-heading text-6xl font-bold">€99</span>
+                  <span class="font-heading text-6xl">€99</span>
                   <span class="text-muted-foreground text-lg">/month</span>
                 </div>
                 <p class="text-sm text-muted-foreground mt-2">or ~€1,015/year with 15% annual discount</p>
               </div>
-              <div class="bg-primary text-white text-[10px] font-bold px-3 py-1.5 rounded-full uppercase tracking-widest">
+              <div class="bg-primary text-white text-[10px] px-3 py-1.5 rounded-full uppercase tracking-widest">
                 Included
               </div>
             </div>
@@ -105,7 +105,7 @@ import { GoogleCalendarButton } from "@/components/GoogleCalendarButton";
             </ul>
             <div class="flex flex-col sm:flex-row gap-3">
               <GoogleCalendarButton client:load label="Book a Demo" variant="outline" />
-              <Button size="lg" className="rounded-lg font-semibold" asChild>
+              <Button size="lg" className="rounded-lg" asChild>
                 <a href="/en/contact">Get Started <ArrowRight className="w-4 h-4 ml-1" /></a>
               </Button>
             </div>
@@ -119,8 +119,8 @@ import { GoogleCalendarButton } from "@/components/GoogleCalendarButton";
       <div class="container mx-auto px-4 md:px-6 max-w-6xl">
         <div class="grid lg:grid-cols-[1fr,2fr] gap-12 items-start">
           <div>
-            <p class="text-[11px] font-bold uppercase tracking-widest text-primary mb-4">Users</p>
-            <h2 class="font-heading text-3xl md:text-4xl font-bold leading-tight mb-4">
+            <p class="text-[11px] uppercase tracking-widest text-primary mb-4">Users</p>
+            <h2 class="font-heading text-3xl md:text-4xl leading-tight mb-4">
               User Seats
             </h2>
             <p class="text-sm text-muted-foreground leading-relaxed">
@@ -148,9 +148,9 @@ import { GoogleCalendarButton } from "@/components/GoogleCalendarButton";
               <div class="border border-border rounded-2xl p-7 bg-card hover:shadow-lg transition-shadow">
                 <div class="mb-6">
                   <p class="text-xs text-muted-foreground mb-1">{seat.desc}</p>
-                  <h3 class="font-heading text-xl font-bold mb-3">{seat.role}</h3>
+                  <h3 class="font-heading text-xl mb-3">{seat.role}</h3>
                   <div class="flex items-baseline gap-1">
-                    <span class="font-heading text-4xl font-bold">{seat.price}</span>
+                    <span class="font-heading text-4xl">{seat.price}</span>
                     <span class="text-sm text-muted-foreground">{seat.period}</span>
                   </div>
                 </div>
@@ -173,8 +173,8 @@ import { GoogleCalendarButton } from "@/components/GoogleCalendarButton";
     <section class="py-16 md:py-24">
       <div class="container mx-auto px-4 md:px-6 max-w-6xl">
         <div class="mb-12">
-          <p class="text-[11px] font-bold uppercase tracking-widest text-primary mb-4">Modules</p>
-          <h2 class="font-heading text-3xl md:text-4xl font-bold leading-tight mb-3">Add-on Modules</h2>
+          <p class="text-[11px] uppercase tracking-widest text-primary mb-4">Modules</p>
+          <h2 class="font-heading text-3xl md:text-4xl leading-tight mb-3">Add-on Modules</h2>
           <p class="text-muted-foreground text-sm max-w-xl">
             Unlock advanced capabilities when your factory is ready. Each module adds on top of the base plan - activate or deactivate at any time.
           </p>
@@ -187,9 +187,9 @@ import { GoogleCalendarButton } from "@/components/GoogleCalendarButton";
             { name: "Advanced DPP", desc: "Multi-product Digital Product Passport management, bulk export, and advanced compliance reporting.", price: "€69", period: "/month" },
           ].map((mod) => (
             <div class="border border-border rounded-2xl p-7 bg-card hover:border-primary/50 hover:shadow-lg transition-all group">
-              <h3 class="font-heading font-bold text-base leading-snug mb-3 group-hover:text-primary transition-colors">{mod.name}</h3>
+              <h3 class="font-heading text-base leading-snug mb-3 group-hover:text-primary transition-colors">{mod.name}</h3>
               <div class="flex items-baseline gap-1 mb-4">
-                <span class="font-heading text-3xl font-bold">{mod.price}</span>
+                <span class="font-heading text-3xl">{mod.price}</span>
                 <span class="text-xs text-muted-foreground">{mod.period}</span>
               </div>
               <p class="text-xs text-muted-foreground leading-relaxed">{mod.desc}</p>
@@ -204,8 +204,8 @@ import { GoogleCalendarButton } from "@/components/GoogleCalendarButton";
     <section class="py-16 md:py-24 bg-muted/20 border-y border-border/60">
       <div class="container mx-auto px-4 md:px-6 max-w-6xl">
         <div class="mb-12">
-          <p class="text-[11px] font-bold uppercase tracking-widest text-primary mb-4">Real-World Examples</p>
-          <h2 class="font-heading text-3xl md:text-4xl font-bold leading-tight">What Does It Actually Cost?</h2>
+          <p class="text-[11px] uppercase tracking-widest text-primary mb-4">Real-World Examples</p>
+          <h2 class="font-heading text-3xl md:text-4xl leading-tight">What Does It Actually Cost?</h2>
           <p class="text-muted-foreground text-sm mt-3 max-w-lg">See exactly what factories like yours pay each month. No hidden fees, no surprises.</p>
         </div>
         <div class="grid md:grid-cols-2 gap-8 max-w-4xl">
@@ -237,8 +237,8 @@ import { GoogleCalendarButton } from "@/components/GoogleCalendarButton";
             },
           ].map((ex) => (
             <div class:list={["border rounded-2xl p-8 bg-card", ex.highlight ? "border-primary/40 shadow-lg ring-1 ring-primary/10" : "border-border"]}>
-              <div class="text-[10px] font-bold uppercase tracking-widest text-muted-foreground mb-1">{ex.label}</div>
-              <h3 class="font-heading font-bold text-xl mb-7">{ex.title}</h3>
+              <div class="text-[10px] uppercase tracking-widest text-muted-foreground mb-1">{ex.label}</div>
+              <h3 class="font-heading text-xl mb-7">{ex.title}</h3>
               <div class="space-y-3 text-sm mb-6">
                 {ex.items.map((item) => (
                   <div class="flex justify-between">
@@ -246,7 +246,7 @@ import { GoogleCalendarButton } from "@/components/GoogleCalendarButton";
                     <span class={item.muted ? "text-muted-foreground" : "font-medium"}>{item.amount}</span>
                   </div>
                 ))}
-                <div class="border-t border-border/60 pt-4 flex justify-between font-bold text-base">
+                <div class="border-t border-border/60 pt-4 flex justify-between text-base">
                   <span>Total</span>
                   <span class="text-primary">{ex.total}</span>
                 </div>
@@ -262,14 +262,14 @@ import { GoogleCalendarButton } from "@/components/GoogleCalendarButton";
     <section class="py-16 md:py-24">
       <div class="container mx-auto px-4 md:px-6 max-w-6xl">
         <div class="mb-12">
-          <p class="text-[11px] font-bold uppercase tracking-widest text-primary mb-4">Compare</p>
-          <h2 class="font-heading text-3xl md:text-4xl font-bold leading-tight mb-3">How Hestia Compares</h2>
+          <p class="text-[11px] uppercase tracking-widest text-primary mb-4">Compare</p>
+          <h2 class="font-heading text-3xl md:text-4xl leading-tight mb-3">How Hestia Compares</h2>
           <p class="text-muted-foreground text-sm max-w-lg">Choose a competitor and factory size to see a real cost comparison. Hestia is built for textile manufacturers - not retrofitted from generic ERP.</p>
         </div>
         <CompetitorComparison client:load locale="en" />
         <div class="mt-8 text-center">
           <p class="text-sm text-muted-foreground">
-            Thinking about switching? <a href="/en/migration" class="text-primary font-semibold hover:underline">See how migration works →</a>
+            Thinking about switching? <a href="/en/migration" class="text-primary hover:underline">See how migration works →</a>
           </p>
         </div>
       </div>
@@ -279,8 +279,8 @@ import { GoogleCalendarButton } from "@/components/GoogleCalendarButton";
     <section class="py-16 md:py-24 bg-muted/20 border-y border-border/60">
       <div class="container mx-auto px-4 md:px-6 max-w-6xl">
         <div class="mb-12">
-          <p class="text-[11px] font-bold uppercase tracking-widest text-primary mb-4">Simulator</p>
-          <h2 class="font-heading text-3xl md:text-4xl font-bold leading-tight mb-3">Build Your Price</h2>
+          <p class="text-[11px] uppercase tracking-widest text-primary mb-4">Simulator</p>
+          <h2 class="font-heading text-3xl md:text-4xl leading-tight mb-3">Build Your Price</h2>
           <p class="text-muted-foreground text-sm max-w-md">Adjust users and modules to see your exact monthly cost. What you see is what you pay.</p>
         </div>
         <PricingSimulator locale="en" contactHref="/en/contact" client:load />
@@ -292,14 +292,14 @@ import { GoogleCalendarButton } from "@/components/GoogleCalendarButton";
       <div class="container mx-auto px-4 md:px-6 max-w-6xl">
         <div class="border-2 border-primary/20 bg-primary/4 rounded-2xl p-8 md:p-14 flex flex-col md:flex-row items-center justify-between gap-8">
           <div class="space-y-3 text-center md:text-left">
-            <p class="text-[11px] font-bold uppercase tracking-widest text-primary">Early Access</p>
-            <h3 class="font-heading text-2xl md:text-3xl font-bold">Join the Early Access Program</h3>
+            <p class="text-[11px] uppercase tracking-widest text-primary">Early Access</p>
+            <h3 class="font-heading text-2xl md:text-3xl">Join the Early Access Program</h3>
             <p class="text-muted-foreground text-sm max-w-lg leading-relaxed">
               Be among the first factories to run on Hestia. Early access members get priority onboarding, direct input on the roadmap, and preferential pricing locked in for 12 months.
             </p>
           </div>
           <div class="flex flex-col gap-3 shrink-0">
-            <Button size="lg" className="rounded-lg font-semibold" asChild>
+            <Button size="lg" className="rounded-lg" asChild>
               <a href="/en/contact">Apply for Early Access <ArrowRight className="w-4 h-4 ml-1" /></a>
             </Button>
             <p class="text-xs text-muted-foreground text-center">Limited spots available</p>
@@ -312,8 +312,8 @@ import { GoogleCalendarButton } from "@/components/GoogleCalendarButton";
     <section class="bg-[#060E24] text-white py-24 md:py-32 relative overflow-hidden">
       <div class="absolute inset-0 bg-[radial-gradient(ellipse_60%_50%_at_50%_110%,rgba(99,102,241,0.12),transparent)]"></div>
       <div class="container mx-auto px-4 md:px-6 max-w-6xl text-center relative z-10">
-        <p class="text-[11px] font-bold uppercase tracking-widest text-indigo-400 mb-6">Let's Talk</p>
-        <h2 class="font-heading text-3xl md:text-5xl font-bold mb-5 leading-tight">
+        <p class="text-[11px] uppercase tracking-widest text-indigo-400 mb-6">Let's Talk</p>
+        <h2 class="font-heading text-3xl md:text-5xl mb-5 leading-tight">
           Not sure which setup fits your factory?
         </h2>
         <p class="text-white/50 mb-10 max-w-lg mx-auto leading-relaxed">
@@ -321,7 +321,7 @@ import { GoogleCalendarButton } from "@/components/GoogleCalendarButton";
         </p>
         <div class="flex flex-col sm:flex-row gap-4 justify-center">
           <GoogleCalendarButton client:load label="Schedule a Call" variant="outline" size="lg" />
-          <Button size="lg" className="rounded-lg bg-white text-[#060E24] hover:bg-white/90 font-semibold text-base px-8" asChild>
+          <Button size="lg" className="rounded-lg bg-white text-[#060E24] hover:bg-white/90 text-base px-8" asChild>
             <a href="/en/contact">Talk to Our Team</a>
           </Button>
         </div>

@@ -84,7 +84,7 @@ export default function FeatureCardSelect({
 
           {showInfo && (
             <div className="flex items-center gap-x-3">
-              <p className="text-xl font-semibold">
+              <p className="text-xl">
                 {data.price}
                 <span className="text-sm text-foreground">
                   {t("pricing.per_year")}
@@ -108,7 +108,7 @@ export default function FeatureCardSelect({
                 <HoverCardContent className="w-80">
                   <div className="flex justify-between gap-4">
                     <div className="space-y-1">
-                      <h1 className="text-md font-semibold">
+                      <h1 className="text-md">
                         {data.information?.title}
                       </h1>
                       <ul>

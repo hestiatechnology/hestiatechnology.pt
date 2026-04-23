@@ -201,13 +201,13 @@ export function CompetitorComparison({ locale }: CompetitorComparisonProps) {
       <div className="flex flex-col sm:flex-row gap-4">
         {/* Competitor selector */}
         <div className="relative flex-1">
-          <label className="text-[10px] font-bold uppercase tracking-widest text-muted-foreground mb-2 block">
+          <label className="text-[10px] uppercase tracking-widest text-muted-foreground mb-2 block">
             {t.competitor}
           </label>
           <button
             type="button"
             onClick={() => setDropdownOpen(!dropdownOpen)}
-            className="w-full flex items-center justify-between gap-2 border border-border rounded-xl px-4 py-3 bg-card text-sm font-semibold hover:border-primary/40 transition-colors"
+            className="w-full flex items-center justify-between gap-2 border border-border rounded-xl px-4 py-3 bg-card text-sm hover:border-primary/40 transition-colors"
           >
             {comp.name}
             <ChevronDown className={cn("w-4 h-4 text-muted-foreground transition-transform", dropdownOpen && "rotate-180")} />
@@ -221,7 +221,7 @@ export function CompetitorComparison({ locale }: CompetitorComparisonProps) {
                   onClick={() => { setSelectedId(c.id); setDropdownOpen(false); }}
                   className={cn(
                     "w-full text-left px-4 py-2.5 text-sm hover:bg-muted/50 transition-colors",
-                    c.id === selectedId && "bg-primary/5 text-primary font-semibold"
+                    c.id === selectedId && "bg-primary/5 text-primary"
                   )}
                 >
                   {c.name}
@@ -233,7 +233,7 @@ export function CompetitorComparison({ locale }: CompetitorComparisonProps) {
 
         {/* Factory size toggle */}
         <div className="flex-1">
-          <label className="text-[10px] font-bold uppercase tracking-widest text-muted-foreground mb-2 block">
+          <label className="text-[10px] uppercase tracking-widest text-muted-foreground mb-2 block">
             {t.factorySize}
           </label>
           <div className="flex border border-border rounded-xl overflow-hidden">
@@ -263,7 +263,7 @@ export function CompetitorComparison({ locale }: CompetitorComparisonProps) {
       <div className="grid md:grid-cols-2 gap-4">
         {/* Competitor card */}
         <div className="border border-border rounded-2xl p-6 bg-muted/20">
-          <h3 className="font-heading font-bold text-lg text-muted-foreground mb-5">{comp.name}</h3>
+          <h3 className="font-heading text-lg text-muted-foreground mb-5">{comp.name}</h3>
           <div className="space-y-3 text-sm">
             <Row label={t.upfront} value={formatEur(licenseCost)} muted />
             <Row label={t.annual} value={`${formatEur(annualMaintenance)}/${locale === "pt" ? "ano" : "year"}`} muted />
@@ -280,10 +280,10 @@ export function CompetitorComparison({ locale }: CompetitorComparisonProps) {
 
         {/* Hestia card */}
         <div className="border-2 border-primary/30 rounded-2xl p-6 bg-primary/4 relative overflow-hidden">
-          <div className="absolute top-0 right-0 bg-primary text-white text-[10px] font-bold px-3 py-1 rounded-bl-xl tracking-widest uppercase">
+          <div className="absolute top-0 right-0 bg-primary text-white text-[10px] px-3 py-1 rounded-bl-xl tracking-widest uppercase">
             Hestia
           </div>
-          <h3 className="font-heading font-bold text-lg mb-5">Hestia OS</h3>
+          <h3 className="font-heading text-lg mb-5">Hestia OS</h3>
           <div className="space-y-3 text-sm">
             <Row label={t.upfront} value={t.noUpfront} primary />
             <Row label={t.monthly} value={`${formatEur(hestiaMonthly)}${t.hestiaMonthly}`} primary />
@@ -305,12 +305,12 @@ export function CompetitorComparison({ locale }: CompetitorComparisonProps) {
           <p className="text-sm text-muted-foreground mb-1">{t.savings}</p>
           <div className="flex items-center justify-center gap-6">
             <div>
-              <span className="font-heading text-2xl md:text-3xl font-bold text-primary">{formatEur(savingsYear1)}</span>
+              <span className="font-heading text-2xl md:text-3xl text-primary">{formatEur(savingsYear1)}</span>
               <span className="text-xs text-muted-foreground ml-1">{locale === "pt" ? "no 1.º ano" : "in year 1"}</span>
             </div>
             <div className="w-px h-10 bg-border" />
             <div>
-              <span className="font-heading text-2xl md:text-3xl font-bold text-primary">{formatEur(savingsYear3)}</span>
+              <span className="font-heading text-2xl md:text-3xl text-primary">{formatEur(savingsYear3)}</span>
               <span className="text-xs text-muted-foreground ml-1">{locale === "pt" ? "em 3 anos" : "over 3 years"}</span>
             </div>
           </div>
@@ -332,8 +332,8 @@ function Row({ label, value, muted, primary, bold }: { label: string; value: str
     <div className="flex justify-between items-center py-1">
       <span className="text-muted-foreground">{label}</span>
       <span className={cn(
-        bold && "font-bold",
-        primary && "text-primary font-semibold",
+        bold && "",
+        primary && "text-primary",
         muted && !bold && "text-foreground/60",
       )}>
         {value}

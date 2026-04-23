@@ -33,21 +33,21 @@ export function DashboardPreview() {
                     <span>Total Production</span>
                     <BarChart3 className="w-4 h-4" />
                 </div>
-                <div className="text-2xl font-bold">12,450 <span className="text-xs text-green-500 font-normal ml-1">+12%</span></div>
+                <div className="text-2xl">12,450 <span className="text-xs text-green-500 font-normal ml-1">+12%</span></div>
             </div>
             <div className="p-4 rounded-xl border bg-card/50 space-y-2">
                 <div className="flex items-center justify-between text-muted-foreground text-xs">
                     <span>Efficiency</span>
                     <Zap className="w-4 h-4" />
                 </div>
-                <div className="text-2xl font-bold">94.2% <span className="text-xs text-green-500 font-normal ml-1">+2.4%</span></div>
+                <div className="text-2xl">94.2% <span className="text-xs text-green-500 font-normal ml-1">+2.4%</span></div>
             </div>
             <div className="p-4 rounded-xl border bg-card/50 space-y-2 hidden md:block">
                 <div className="flex items-center justify-between text-muted-foreground text-xs">
                     <span>Active Orders</span>
                     <Users className="w-4 h-4" />
                 </div>
-                <div className="text-2xl font-bold">48 <span className="text-xs text-muted-foreground font-normal ml-1">Active</span></div>
+                <div className="text-2xl">48 <span className="text-xs text-muted-foreground font-normal ml-1">Active</span></div>
             </div>
         </div>
 

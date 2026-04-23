@@ -31,7 +31,7 @@ import {
       <div class="container relative mx-auto px-4 md:px-6 max-w-6xl py-24 md:py-32">
         <div class="max-w-4xl mx-auto text-center">
           <!-- Urgency badge -->
-          <div class="inline-flex items-center gap-2.5 text-xs font-bold uppercase tracking-widest text-white/70 bg-white/[0.06] px-4 py-2 rounded-full border border-white/10 mb-8 animate-fade-up backdrop-blur-sm">
+          <div class="inline-flex items-center gap-2.5 text-xs uppercase tracking-widest text-white/70 bg-white/[0.06] px-4 py-2 rounded-full border border-white/10 mb-8 animate-fade-up backdrop-blur-sm">
             <span class="relative flex h-2 w-2">
               <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-400 opacity-75"></span>
               <span class="relative inline-flex rounded-full h-2 w-2 bg-amber-400"></span>
@@ -40,7 +40,7 @@ import {
           </div>
 
           <!-- Main headline -->
-          <h1 class="font-heading text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-extrabold tracking-tight leading-[0.95] text-white mb-6 animate-fade-up [animation-delay:150ms]">
+          <h1 class="font-heading text-5xl sm:text-6xl md:text-7xl lg:text-8xl tracking-tight leading-[0.95] text-white mb-6 animate-fade-up [animation-delay:150ms]">
             Your factory's<br/>
             <span class="text-gradient bg-gradient-to-r from-[#6B8BF5] via-[#A78BFA] to-[#6B8BF5] bg-[length:200%_auto] animate-gradient-x">operating system</span>
           </h1>
@@ -52,7 +52,7 @@ import {
 
           <!-- Dual CTA -->
           <div class="flex flex-col sm:flex-row items-center justify-center gap-4 animate-fade-up [animation-delay:450ms]">
-            <GoogleCalendarButton client:load label="Book a Demo" size="lg" className="bg-white! text-[#060E24]! hover:bg-white/90! shadow-xl! shadow-white/10! rounded-xl! text-base! font-bold! h-13! px-8!" />
+            <GoogleCalendarButton client:load label="Book a Demo" size="lg" className="bg-white! text-[#060E24]! hover:bg-white/90! shadow-xl! shadow-white/10! rounded-xl! text-base!! h-13! px-8!" />
             <Magnetic client:load>
               <a href="/en/features" class="inline-flex items-center gap-2 text-white/70 hover:text-white text-base font-medium transition-colors group">
                 See how it works
@@ -69,7 +69,7 @@ import {
               { value: "27", label: "Countries Must Comply" },
             ].map((stat) => (
               <div class="text-center">
-                <div class="font-heading text-3xl md:text-4xl font-extrabold text-white tabular-nums">{stat.value}</div>
+                <div class="font-heading text-3xl md:text-4xl text-white tabular-nums">{stat.value}</div>
                 <div class="text-xs md:text-sm text-white/40 mt-1">{stat.label}</div>
               </div>
             ))}
@@ -91,7 +91,7 @@ import {
     <div class="border-b border-border/60 py-8 bg-muted/30">
       <div class="container mx-auto px-4 max-w-6xl">
         <div class="flex flex-wrap items-center justify-center md:justify-between gap-8">
-          <p class="text-[10px] font-bold uppercase tracking-[0.2em] text-muted-foreground/50">
+          <p class="text-[10px] uppercase tracking-[0.2em] text-muted-foreground/50">
             Backed by leading institutions
           </p>
           <div class="flex flex-wrap items-center gap-x-12 gap-y-4 opacity-40 hover:opacity-70 transition-opacity duration-500">
@@ -108,8 +108,8 @@ import {
     <section class="py-24 md:py-32">
       <div class="container mx-auto px-4 md:px-6 max-w-6xl">
         <div class="text-center mb-16">
-          <p class="text-[11px] font-bold uppercase tracking-widest text-red-500/80 mb-4">The Problem</p>
-          <h2 class="font-heading text-3xl md:text-5xl font-bold tracking-tight leading-tight mb-5">
+          <p class="text-[11px] uppercase tracking-widest text-red-500/80 mb-4">The Problem</p>
+          <h2 class="font-heading text-3xl md:text-5xl tracking-tight leading-tight mb-5">
             Legacy systems are bleeding<br class="hidden md:block" /> your factory dry
           </h2>
           <p class="text-muted-foreground text-lg max-w-2xl mx-auto leading-relaxed">
@@ -155,7 +155,7 @@ import {
                 {item.icon === "TrendingUp" && <TrendingUp className={`w-5 h-5 ${item.color}`} />}
                 {item.icon === "Lock" && <Lock className={`w-5 h-5 ${item.color}`} />}
               </div>
-              <h3 class="font-heading font-bold text-lg mb-2">{item.title}</h3>
+              <h3 class="font-heading text-lg mb-2">{item.title}</h3>
               <p class="text-sm text-muted-foreground leading-relaxed">{item.description}</p>
             </div>
           ))}
@@ -169,8 +169,8 @@ import {
     <section class="py-24 md:py-32 bg-muted/30 border-y border-border/60">
       <div class="container mx-auto px-4 md:px-6 max-w-6xl">
         <div class="text-center mb-16">
-          <p class="text-[11px] font-bold uppercase tracking-widest text-primary mb-4">The Solution</p>
-          <h2 class="font-heading text-3xl md:text-5xl font-bold tracking-tight leading-tight mb-5">
+          <p class="text-[11px] uppercase tracking-widest text-primary mb-4">The Solution</p>
+          <h2 class="font-heading text-3xl md:text-5xl tracking-tight leading-tight mb-5">
             One platform. Every layer.<br class="hidden md:block" /> Zero friction.
           </h2>
           <p class="text-muted-foreground text-lg max-w-2xl mx-auto leading-relaxed">
@@ -218,7 +218,7 @@ import {
             },
           ].map((feature) => (
             <div class="relative border border-border rounded-2xl p-8 bg-card hover:border-primary/40 hover:shadow-lg transition-all group overflow-hidden">
-              <div class="absolute top-0 right-0 bg-primary/8 text-primary text-[10px] font-bold px-3 py-1.5 rounded-bl-xl tracking-widest uppercase">
+              <div class="absolute top-0 right-0 bg-primary/8 text-primary text-[10px] px-3 py-1.5 rounded-bl-xl tracking-widest uppercase">
                 {feature.tag}
               </div>
               <div class="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-6 group-hover:bg-primary group-hover:text-white transition-all duration-300">
@@ -229,14 +229,14 @@ import {
                 {feature.icon === "Plug" && <Plug className="w-6 h-6 text-primary group-hover:text-white transition-colors" />}
                 {feature.icon === "Layers" && <Layers className="w-6 h-6 text-primary group-hover:text-white transition-colors" />}
               </div>
-              <h3 class="font-heading font-bold text-xl mb-3">{feature.title}</h3>
+              <h3 class="font-heading text-xl mb-3">{feature.title}</h3>
               <p class="text-sm text-muted-foreground leading-relaxed">{feature.description}</p>
             </div>
           ))}
         </div>
 
         <div class="text-center mt-12">
-          <a href="/en/features" class="inline-flex items-center gap-2 text-primary font-semibold hover:gap-3 transition-all">
+          <a href="/en/features" class="inline-flex items-center gap-2 text-primary hover:gap-3 transition-all">
             Explore all features
             <ArrowRight className="w-4 h-4" />
           </a>
@@ -250,8 +250,8 @@ import {
     <section class="py-24 md:py-32">
       <div class="container mx-auto px-4 md:px-6 max-w-6xl">
         <div class="text-center mb-16">
-          <p class="text-[11px] font-bold uppercase tracking-widest text-primary mb-4">How It Works</p>
-          <h2 class="font-heading text-3xl md:text-5xl font-bold tracking-tight leading-tight mb-5">
+          <p class="text-[11px] uppercase tracking-widest text-primary mb-4">How It Works</p>
+          <h2 class="font-heading text-3xl md:text-5xl tracking-tight leading-tight mb-5">
             Live in weeks. Not months.
           </h2>
           <p class="text-muted-foreground text-lg max-w-xl mx-auto">
@@ -286,7 +286,7 @@ import {
               )}
               <div class="relative bg-card border border-border rounded-2xl p-8 hover:shadow-lg transition-all h-full">
                 <div class="flex items-center gap-4 mb-6">
-                  <div class="w-12 h-12 rounded-full bg-primary text-white flex items-center justify-center font-heading font-bold text-sm shrink-0">
+                  <div class="w-12 h-12 rounded-full bg-primary text-white flex items-center justify-center font-heading text-sm shrink-0">
                     {step.step}
                   </div>
                   <div class="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center">
@@ -295,7 +295,7 @@ import {
                     {step.icon === "ShieldCheck" && <ShieldCheck className="w-5 h-5 text-primary" />}
                   </div>
                 </div>
-                <h3 class="font-heading text-xl font-bold mb-3">{step.title}</h3>
+                <h3 class="font-heading text-xl mb-3">{step.title}</h3>
                 <p class="text-sm text-muted-foreground leading-relaxed">{step.description}</p>
               </div>
             </div>
@@ -310,8 +310,8 @@ import {
     <section class="py-24 md:py-32 bg-muted/30 border-y border-border/60">
       <div class="container mx-auto px-4 md:px-6 max-w-6xl">
         <div class="text-center mb-16">
-          <p class="text-[11px] font-bold uppercase tracking-widest text-primary mb-4">Why Switch</p>
-          <h2 class="font-heading text-3xl md:text-5xl font-bold tracking-tight leading-tight mb-5">
+          <p class="text-[11px] uppercase tracking-widest text-primary mb-4">Why Switch</p>
+          <h2 class="font-heading text-3xl md:text-5xl tracking-tight leading-tight mb-5">
             Built for ESPR. Not retrofitted.
           </h2>
           <p class="text-muted-foreground text-lg max-w-2xl mx-auto">
@@ -322,7 +322,7 @@ import {
         <div class="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
           <!-- Legacy -->
           <div class="border border-border rounded-2xl p-8 bg-card/50">
-            <h3 class="font-heading text-xl font-bold text-muted-foreground mb-8">Legacy Systems</h3>
+            <h3 class="font-heading text-xl text-muted-foreground mb-8">Legacy Systems</h3>
             <ul class="space-y-5">
               {[
                 "No ESPR or DPP compliance",
@@ -345,10 +345,10 @@ import {
 
           <!-- Hestia -->
           <div class="border-2 border-primary/30 rounded-2xl p-8 bg-primary/[0.03] relative overflow-hidden">
-            <div class="absolute top-0 right-0 bg-primary text-white text-[10px] font-bold px-4 py-1.5 rounded-bl-xl tracking-widest uppercase">
+            <div class="absolute top-0 right-0 bg-primary text-white text-[10px] px-4 py-1.5 rounded-bl-xl tracking-widest uppercase">
               Hestia OS
             </div>
-            <h3 class="font-heading text-xl font-bold mb-8">Hestia</h3>
+            <h3 class="font-heading text-xl mb-8">Hestia</h3>
             <ul class="space-y-5">
               {[
                 "Native EU DPP generation (ESPR-ready)",
@@ -385,14 +385,14 @@ import {
       <div class="container relative mx-auto px-4 md:px-6 max-w-6xl">
         <div class="grid lg:grid-cols-2 gap-16 items-center">
           <div class="space-y-6">
-            <div class="inline-flex items-center gap-2.5 bg-white/[0.06] text-white/70 text-[10px] font-bold px-4 py-2 rounded-full uppercase tracking-widest border border-white/10">
+            <div class="inline-flex items-center gap-2.5 bg-white/[0.06] text-white/70 text-[10px] px-4 py-2 rounded-full uppercase tracking-widest border border-white/10">
               <span class="relative flex h-2 w-2">
                 <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-400 opacity-75"></span>
                 <span class="relative inline-flex rounded-full h-2 w-2 bg-amber-400"></span>
               </span>
               EU Regulation · ESPR
             </div>
-            <h2 class="font-heading text-4xl md:text-5xl lg:text-6xl font-extrabold leading-[1.05]">
+            <h2 class="font-heading text-4xl md:text-5xl lg:text-6xl leading-[1.05]">
               Digital Product Passports are mandatory from 2027
             </h2>
           </div>
@@ -410,14 +410,14 @@ import {
                   { value: "0", label: "Days to waste" },
                 ].map((stat) => (
                   <div class="text-center py-3">
-                    <div class="font-heading text-2xl md:text-3xl font-extrabold text-white tabular-nums">{stat.value}</div>
+                    <div class="font-heading text-2xl md:text-3xl text-white tabular-nums">{stat.value}</div>
                     <div class="text-xs text-white/40 mt-1">{stat.label}</div>
                   </div>
                 ))}
               </div>
             </div>
             <div class="flex flex-col sm:flex-row gap-3 pt-2">
-              <Button size="lg" className="rounded-xl bg-white text-[#060E24] hover:bg-white/90 font-bold h-12 px-8 text-base" asChild>
+              <Button size="lg" className="rounded-xl bg-white text-[#060E24] hover:bg-white/90 h-12 px-8 text-base" asChild>
                 <a href="/en/dpp">Learn More About DPP</a>
               </Button>
               <GoogleCalendarButton client:load label="Talk to an Expert" variant="outline" size="lg" className="border-white/20! text-white! hover:bg-white/10! rounded-xl! h-12!" />
@@ -433,8 +433,8 @@ import {
     <section class="py-24 md:py-32">
       <div class="container mx-auto px-4 md:px-6 max-w-6xl">
         <div class="text-center mb-16">
-          <p class="text-[11px] font-bold uppercase tracking-widest text-primary mb-4">Early Access</p>
-          <h2 class="font-heading text-3xl md:text-5xl font-bold tracking-tight leading-tight mb-5">
+          <p class="text-[11px] uppercase tracking-widest text-primary mb-4">Early Access</p>
+          <h2 class="font-heading text-3xl md:text-5xl tracking-tight leading-tight mb-5">
             Trusted by forward-thinking manufacturers
           </h2>
           <p class="text-muted-foreground text-lg max-w-2xl mx-auto">
@@ -470,7 +470,7 @@ import {
                 "{testimonial.quote}"
               </blockquote>
               <div>
-                <div class="font-semibold text-sm">{testimonial.author}</div>
+                <div class=" text-sm">{testimonial.author}</div>
                 <div class="text-xs text-muted-foreground">{testimonial.company}</div>
               </div>
             </div>
@@ -486,23 +486,23 @@ import {
       <div class="container mx-auto px-4 md:px-6 max-w-6xl">
         <div class="grid lg:grid-cols-[1fr,1.2fr] gap-16 items-center">
           <div>
-            <p class="text-[11px] font-bold uppercase tracking-widest text-primary mb-4">Transparent Pricing</p>
-            <h2 class="font-heading text-3xl md:text-4xl font-bold tracking-tight leading-tight mb-5">
+            <p class="text-[11px] uppercase tracking-widest text-primary mb-4">Transparent Pricing</p>
+            <h2 class="font-heading text-3xl md:text-4xl tracking-tight leading-tight mb-5">
               Predictable costs.<br/>No surprises.
             </h2>
             <p class="text-muted-foreground leading-relaxed mb-8">
               One platform fee, then pay only for the users and modules you need. No consultants, no server costs, no hidden fees. Cancel anytime.
             </p>
-            <Button size="lg" className="rounded-xl font-bold h-12 px-8" asChild>
+            <Button size="lg" className="rounded-xl h-12 px-8" asChild>
               <a href="/en/prices">See Full Pricing</a>
             </Button>
           </div>
 
           <div class="grid sm:grid-cols-2 gap-5">
             <div class="border-2 border-primary/30 rounded-2xl p-7 bg-primary/[0.03]">
-              <div class="text-[10px] font-bold uppercase tracking-widest text-primary mb-3">Starting at</div>
+              <div class="text-[10px] uppercase tracking-widest text-primary mb-3">Starting at</div>
               <div class="flex items-baseline gap-1 mb-2">
-                <span class="font-heading text-5xl font-extrabold">€99</span>
+                <span class="font-heading text-5xl">€99</span>
                 <span class="text-muted-foreground">/mo</span>
               </div>
               <p class="text-xs text-muted-foreground leading-relaxed mb-5">Platform + DPP engine + 7 seats included</p>
@@ -517,15 +517,15 @@ import {
             </div>
             <div class="border border-border rounded-2xl p-7 bg-card flex flex-col justify-between">
               <div>
-                <div class="text-[10px] font-bold uppercase tracking-widest text-muted-foreground mb-3">Need More?</div>
-                <h3 class="font-heading text-xl font-bold mb-3">Add as you grow</h3>
+                <div class="text-[10px] uppercase tracking-widest text-muted-foreground mb-3">Need More?</div>
+                <h3 class="font-heading text-xl mb-3">Add as you grow</h3>
                 <ul class="space-y-2.5 text-sm text-muted-foreground">
                   <li>Operators from €5/user/mo</li>
                   <li>Managers from €18/user/mo</li>
                   <li>Advanced modules from €79/mo</li>
                 </ul>
               </div>
-              <a href="/en/prices" class="mt-6 inline-flex items-center gap-2 text-primary font-semibold text-sm hover:gap-3 transition-all">
+              <a href="/en/prices" class="mt-6 inline-flex items-center gap-2 text-primary text-sm hover:gap-3 transition-all">
                 Build your price <ArrowRight className="w-4 h-4" />
               </a>
             </div>
@@ -542,17 +542,17 @@ import {
         <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary/15 rounded-full blur-[150px]"></div>
       </div>
       <div class="container relative mx-auto px-4 md:px-6 max-w-4xl text-center">
-        <p class="text-[11px] font-bold uppercase tracking-widest text-white/40 mb-6">
+        <p class="text-[11px] uppercase tracking-widest text-white/40 mb-6">
           Get started today
         </p>
-        <h2 class="font-heading text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight mb-6">
+        <h2 class="font-heading text-4xl md:text-5xl lg:text-6xl leading-tight mb-6">
           Your factory deserves a<br class="hidden sm:block" /> better operating system
         </h2>
         <p class="text-white/50 text-lg max-w-xl mx-auto mb-10 leading-relaxed">
           Join the early access program and be among the first textile manufacturers to run on Hestia. Limited spots available.
         </p>
         <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-          <GoogleCalendarButton client:load label="Book Your Demo" size="lg" className="bg-white! text-[#060E24]! hover:bg-white/90! shadow-xl! shadow-white/10! rounded-xl! text-base! font-bold! h-13! px-8!" />
+          <GoogleCalendarButton client:load label="Book Your Demo" size="lg" className="bg-white! text-[#060E24]! hover:bg-white/90! shadow-xl! shadow-white/10! rounded-xl! text-base!! h-13! px-8!" />
           <a href="/en/contact" class="inline-flex items-center gap-2 text-white/60 hover:text-white text-base font-medium transition-colors">
             Or contact us directly
             <ArrowRight className="w-4 h-4" />

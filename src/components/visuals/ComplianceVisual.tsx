@@ -9,7 +9,7 @@ export function ComplianceVisual() {
         <div className="p-3 md:p-4 border-b flex items-center justify-between flex-wrap gap-y-2">
             <div className="flex items-center gap-2">
                 <ShieldCheck className="w-5 h-5 text-green-500 shrink-0" />
-                <span className="font-semibold text-sm">Compliance Status</span>
+                <span className=" text-sm">Compliance Status</span>
             </div>
             <Badge variant="outline" className="bg-green-500/10 text-green-600 border-green-200">Verified</Badge>
         </div>

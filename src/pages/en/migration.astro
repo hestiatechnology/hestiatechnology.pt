@@ -14,15 +14,15 @@ import { GoogleCalendarButton } from "@/components/GoogleCalendarButton";
       <div class="absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_-20%,rgba(99,102,241,0.15),transparent)]"></div>
       <div class="container mx-auto px-4 md:px-6 max-w-6xl relative z-10">
         <div class="max-w-3xl mx-auto text-center">
-          <p class="text-[11px] font-bold uppercase tracking-widest text-indigo-400 mb-6">Migration</p>
-          <h1 class="font-heading text-5xl md:text-7xl font-bold tracking-tight leading-[1.05] mb-6">
+          <p class="text-[11px] uppercase tracking-widest text-indigo-400 mb-6">Migration</p>
+          <h1 class="font-heading text-5xl md:text-7xl tracking-tight leading-[1.05] mb-6">
             <span class="bg-linear-to-r from-white via-white to-indigo-300 bg-clip-text text-transparent">Switch in Weeks,<br/>Not Months</span>
           </h1>
           <p class="text-lg md:text-xl text-white/60 leading-relaxed max-w-2xl mx-auto mb-10">
             We handle the full migration from your legacy ERP - data extraction, cleaning, and import. Your team keeps producing while we do the heavy lifting. If you're on Protextil, we can do it in under a day.
           </p>
           <div class="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="rounded-lg bg-white text-[#060E24] hover:bg-white/90 font-semibold text-base px-8" asChild>
+            <Button size="lg" className="rounded-lg bg-white text-[#060E24] hover:bg-white/90 text-base px-8" asChild>
               <a href="/en/contact">Start Your Migration <ArrowRight className="w-4 h-4 ml-1" /></a>
             </Button>
             <GoogleCalendarButton client:load label="Book a Migration Call" variant="outline" size="lg" />
@@ -35,8 +35,8 @@ import { GoogleCalendarButton } from "@/components/GoogleCalendarButton";
     <section class="py-16 md:py-24 bg-muted/20 border-b border-border/60">
       <div class="container mx-auto px-4 md:px-6 max-w-6xl">
         <div class="text-center mb-14">
-          <p class="text-[11px] font-bold uppercase tracking-widest text-primary mb-4">The Real Cost of Staying</p>
-          <h2 class="font-heading text-3xl md:text-4xl font-bold leading-tight mb-4">What you leave behind when you migrate</h2>
+          <p class="text-[11px] uppercase tracking-widest text-primary mb-4">The Real Cost of Staying</p>
+          <h2 class="font-heading text-3xl md:text-4xl leading-tight mb-4">What you leave behind when you migrate</h2>
           <p class="text-muted-foreground text-sm max-w-xl mx-auto">Legacy ERP software wasn't built for today's compliance demands. Every year you stay is a year of hidden costs.</p>
         </div>
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -48,7 +48,7 @@ import { GoogleCalendarButton } from "@/components/GoogleCalendarButton";
           ].map((item) => (
             <div class="border border-border rounded-2xl p-7 bg-card">
               <div class="text-2xl mb-4">{item.icon}</div>
-              <h3 class="font-heading font-bold text-base mb-2">{item.title}</h3>
+              <h3 class="font-heading text-base mb-2">{item.title}</h3>
               <p class="text-xs text-muted-foreground leading-relaxed">{item.desc}</p>
             </div>
           ))}
@@ -62,14 +62,14 @@ import { GoogleCalendarButton } from "@/components/GoogleCalendarButton";
         <div class="border-2 border-primary/30 bg-primary/4 rounded-2xl p-8 md:p-10 flex flex-col md:flex-row items-center gap-8">
           <div class="text-4xl shrink-0">⚡</div>
           <div class="flex-1 text-center md:text-left">
-            <p class="text-[11px] font-bold uppercase tracking-widest text-primary mb-2">Protextil Users</p>
-            <h3 class="font-heading text-xl md:text-2xl font-bold mb-2">We built a direct migration tool for Protextil</h3>
+            <p class="text-[11px] uppercase tracking-widest text-primary mb-2">Protextil Users</p>
+            <h3 class="font-heading text-xl md:text-2xl mb-2">We built a direct migration tool for Protextil</h3>
             <p class="text-sm text-muted-foreground leading-relaxed">
               We know Protextil's data model inside out. Our custom migration tool reads your export directly - no manual mapping, no weeks of cleanup. Full data migration in <strong class="text-foreground">under one business day</strong>, with no production downtime.
             </p>
           </div>
           <div class="shrink-0">
-            <Button size="lg" className="rounded-lg font-semibold whitespace-nowrap" asChild>
+            <Button size="lg" className="rounded-lg whitespace-nowrap" asChild>
               <a href="/en/contact">Migrate from Protextil <ArrowRight className="w-4 h-4 ml-1" /></a>
             </Button>
           </div>
@@ -82,8 +82,8 @@ import { GoogleCalendarButton } from "@/components/GoogleCalendarButton";
       <div class="container mx-auto px-4 md:px-6 max-w-6xl">
         <div class="grid lg:grid-cols-[1fr,2fr] gap-12 items-start">
           <div>
-            <p class="text-[11px] font-bold uppercase tracking-widest text-primary mb-4">The Process</p>
-            <h2 class="font-heading text-3xl md:text-4xl font-bold leading-tight mb-4">
+            <p class="text-[11px] uppercase tracking-widest text-primary mb-4">The Process</p>
+            <h2 class="font-heading text-3xl md:text-4xl leading-tight mb-4">
               How migration works
             </h2>
             <p class="text-sm text-muted-foreground leading-relaxed mb-6">
@@ -92,7 +92,7 @@ import { GoogleCalendarButton } from "@/components/GoogleCalendarButton";
             <div class="flex items-center gap-3 bg-primary/5 border border-primary/20 rounded-xl px-5 py-4">
               <Clock className="w-5 h-5 text-primary shrink-0" />
               <div>
-                <p class="text-sm font-semibold">Typical timeline: 3–4 weeks</p>
+                <p class="text-sm">Typical timeline: 3–4 weeks</p>
                 <p class="text-xs text-muted-foreground">For small to mid-size factories</p>
               </div>
             </div>
@@ -128,14 +128,14 @@ import { GoogleCalendarButton } from "@/components/GoogleCalendarButton";
             ].map((step, i) => (
               <div class="flex gap-5 border border-border rounded-2xl p-6 bg-card hover:border-primary/30 transition-colors">
                 <div class="flex flex-col items-center">
-                  <div class="w-8 h-8 rounded-full bg-primary text-white flex items-center justify-center font-heading font-bold text-sm shrink-0">
+                  <div class="w-8 h-8 rounded-full bg-primary text-white flex items-center justify-center font-heading text-sm shrink-0">
                     {i + 1}
                   </div>
                   {i < 4 && <div class="w-px flex-1 bg-border/60 mt-2" />}
                 </div>
                 <div class="pb-1">
-                  <p class="text-[10px] font-bold uppercase tracking-widest text-primary mb-1">{step.week}</p>
-                  <h3 class="font-heading font-bold text-base mb-1.5">{step.title}</h3>
+                  <p class="text-[10px] uppercase tracking-widest text-primary mb-1">{step.week}</p>
+                  <h3 class="font-heading text-base mb-1.5">{step.title}</h3>
                   <p class="text-sm text-muted-foreground leading-relaxed">{step.desc}</p>
                 </div>
               </div>
@@ -149,8 +149,8 @@ import { GoogleCalendarButton } from "@/components/GoogleCalendarButton";
     <section class="py-16 md:py-24 bg-muted/20 border-y border-border/60">
       <div class="container mx-auto px-4 md:px-6 max-w-6xl">
         <div class="text-center mb-14">
-          <p class="text-[11px] font-bold uppercase tracking-widest text-primary mb-4">Data Migration</p>
-          <h2 class="font-heading text-3xl md:text-4xl font-bold leading-tight mb-4">Everything comes with you</h2>
+          <p class="text-[11px] uppercase tracking-widest text-primary mb-4">Data Migration</p>
+          <h2 class="font-heading text-3xl md:text-4xl leading-tight mb-4">Everything comes with you</h2>
           <p class="text-muted-foreground text-sm max-w-lg mx-auto">We don't ask you to start from scratch. Your history, your suppliers, your processes - all of it transfers.</p>
         </div>
         <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 max-w-4xl mx-auto">
@@ -183,8 +183,8 @@ import { GoogleCalendarButton } from "@/components/GoogleCalendarButton";
     <section class="py-16 md:py-24">
       <div class="container mx-auto px-4 md:px-6 max-w-6xl">
         <div class="mb-12">
-          <p class="text-[11px] font-bold uppercase tracking-widest text-primary mb-4">Compare</p>
-          <h2 class="font-heading text-3xl md:text-4xl font-bold leading-tight mb-3">The cost of staying vs. switching</h2>
+          <p class="text-[11px] uppercase tracking-widest text-primary mb-4">Compare</p>
+          <h2 class="font-heading text-3xl md:text-4xl leading-tight mb-3">The cost of staying vs. switching</h2>
           <p class="text-muted-foreground text-sm max-w-lg">
             See what factories like yours are paying today - and what they'd pay on Hestia. Pricing based on publicly available information and quotes reported by customers.
           </p>
@@ -198,8 +198,8 @@ import { GoogleCalendarButton } from "@/components/GoogleCalendarButton";
       <div class="container mx-auto px-4 md:px-6 max-w-6xl">
         <div class="grid lg:grid-cols-[1fr,2fr] gap-12">
           <div>
-            <p class="text-[11px] font-bold uppercase tracking-widest text-primary mb-4">FAQ</p>
-            <h2 class="font-heading text-3xl md:text-4xl font-bold leading-tight">
+            <p class="text-[11px] uppercase tracking-widest text-primary mb-4">FAQ</p>
+            <h2 class="font-heading text-3xl md:text-4xl leading-tight">
               Migration concerns, answered
             </h2>
           </div>
@@ -230,7 +230,7 @@ import { GoogleCalendarButton } from "@/components/GoogleCalendarButton";
                 <div class="flex gap-3 items-start">
                   <AlertCircle className="w-4 h-4 text-primary shrink-0 mt-0.5" />
                   <div>
-                    <h3 class="font-heading font-bold text-base mb-2">{item.q}</h3>
+                    <h3 class="font-heading text-base mb-2">{item.q}</h3>
                     <p class="text-sm text-muted-foreground leading-relaxed">{item.a}</p>
                   </div>
                 </div>
@@ -245,15 +245,15 @@ import { GoogleCalendarButton } from "@/components/GoogleCalendarButton";
     <section class="bg-[#060E24] text-white py-24 md:py-32 relative overflow-hidden">
       <div class="absolute inset-0 bg-[radial-gradient(ellipse_60%_50%_at_50%_110%,rgba(99,102,241,0.12),transparent)]"></div>
       <div class="container mx-auto px-4 md:px-6 max-w-6xl text-center relative z-10">
-        <p class="text-[11px] font-bold uppercase tracking-widest text-indigo-400 mb-6">Ready to Switch?</p>
-        <h2 class="font-heading text-3xl md:text-5xl font-bold mb-5 leading-tight">
+        <p class="text-[11px] uppercase tracking-widest text-indigo-400 mb-6">Ready to Switch?</p>
+        <h2 class="font-heading text-3xl md:text-5xl mb-5 leading-tight">
           Your migration starts with one call.
         </h2>
         <p class="text-white/50 mb-10 max-w-lg mx-auto leading-relaxed">
           We'll map your current setup, estimate the timeline, and tell you exactly what carries over. No commitment required.
         </p>
         <div class="flex flex-col sm:flex-row gap-4 justify-center">
-          <Button size="lg" className="rounded-lg bg-white text-[#060E24] hover:bg-white/90 font-semibold text-base px-8" asChild>
+          <Button size="lg" className="rounded-lg bg-white text-[#060E24] hover:bg-white/90 text-base px-8" asChild>
             <a href="/en/contact">Talk to Our Team</a>
           </Button>
           <GoogleCalendarButton client:load label="Book a Migration Call" variant="outline" size="lg" />

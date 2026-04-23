@@ -103,7 +103,7 @@ const architectureLayers = [
       <div class="container relative mx-auto px-4 md:px-6 max-w-6xl py-24 md:py-32">
         <div class="max-w-3xl">
           <!-- Badge -->
-          <div class="inline-flex items-center gap-2.5 text-xs font-bold uppercase tracking-widest text-white/70 bg-white/[0.06] px-4 py-2 rounded-full border border-white/10 mb-8 animate-fade-up backdrop-blur-sm">
+          <div class="inline-flex items-center gap-2.5 text-xs uppercase tracking-widest text-white/70 bg-white/[0.06] px-4 py-2 rounded-full border border-white/10 mb-8 animate-fade-up backdrop-blur-sm">
             <span class="relative flex h-2 w-2">
               <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
               <span class="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
@@ -111,7 +111,7 @@ const architectureLayers = [
             Capacidades da Plataforma
           </div>
 
-          <h1 class="font-heading text-5xl sm:text-6xl md:text-7xl font-extrabold tracking-tight leading-[0.95] text-white mb-6 animate-fade-up [animation-delay:150ms]">
+          <h1 class="font-heading text-5xl sm:text-6xl md:text-7xl tracking-tight leading-[0.95] text-white mb-6 animate-fade-up [animation-delay:150ms]">
             Todas as camadas que a<br/>
             <span class="text-gradient bg-gradient-to-r from-[#6B8BF5] via-[#A78BFA] to-[#6B8BF5] bg-[length:200%_auto] animate-gradient-x">sua empresa têxtil precisa</span>
           </h1>
@@ -121,10 +121,10 @@ const architectureLayers = [
           </p>
 
           <div class="flex flex-col sm:flex-row items-center gap-3 animate-fade-up [animation-delay:450ms]">
-            <a href={`/${Astro.currentLocale}/contact`} class="inline-flex items-center gap-2 rounded-lg bg-white text-[#060E24] hover:bg-white/90 font-semibold text-base px-7 h-11 transition-colors">
+            <a href={`/${Astro.currentLocale}/contact`} class="inline-flex items-center gap-2 rounded-lg bg-white text-[#060E24] hover:bg-white/90 text-base px-7 h-11 transition-colors">
               Agendar Demonstração <ArrowRight className="w-4 h-4" />
             </a>
-            <a href={`/${Astro.currentLocale}/prices`} class="inline-flex items-center rounded-lg border border-white/20 text-white hover:bg-white/10 font-semibold text-base px-7 h-11 transition-colors">
+            <a href={`/${Astro.currentLocale}/prices`} class="inline-flex items-center rounded-lg border border-white/20 text-white hover:bg-white/10 text-base px-7 h-11 transition-colors">
               Ver Preços
             </a>
           </div>
@@ -138,8 +138,8 @@ const architectureLayers = [
     <section class="py-20 md:py-28 border-b border-border/60">
       <div class="container mx-auto px-4 md:px-6 max-w-6xl">
         <div class="mb-16 max-w-2xl">
-          <p class="text-[11px] font-bold uppercase tracking-widest text-primary mb-4">Capacidades Principais</p>
-          <h2 class="font-heading text-4xl md:text-5xl font-bold tracking-tight leading-tight mb-5">
+          <p class="text-[11px] uppercase tracking-widest text-primary mb-4">Capacidades Principais</p>
+          <h2 class="font-heading text-4xl md:text-5xl tracking-tight leading-tight mb-5">
             Feito para têxtil. Feito para conformidade.
           </h2>
           <p class="text-lg text-muted-foreground leading-relaxed">
@@ -153,7 +153,7 @@ const architectureLayers = [
               <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-6 text-primary group-hover:bg-primary group-hover:text-white transition-all duration-300">
                 <Icon className="w-6 h-6" />
               </div>
-              <h3 class="font-heading text-xl font-bold mb-3">{title}</h3>
+              <h3 class="font-heading text-xl mb-3">{title}</h3>
               <p class="text-muted-foreground text-sm leading-relaxed mb-5">{desc}</p>
               <div class="flex flex-wrap gap-2">
                 {highlights.map((h: string) => (
@@ -174,8 +174,8 @@ const architectureLayers = [
     <section class="py-20 md:py-28 bg-muted/30 border-b border-border/60">
       <div class="container mx-auto px-4 md:px-6 max-w-6xl">
         <div class="text-center mb-16 max-w-2xl mx-auto">
-          <p class="text-[11px] font-bold uppercase tracking-widest text-primary mb-4">Arquitetura da Plataforma</p>
-          <h2 class="font-heading text-4xl md:text-5xl font-bold tracking-tight leading-tight mb-5">
+          <p class="text-[11px] uppercase tracking-widest text-primary mb-4">Arquitetura da Plataforma</p>
+          <h2 class="font-heading text-4xl md:text-5xl tracking-tight leading-tight mb-5">
             Três camadas. Uma plataforma.
           </h2>
           <p class="text-lg text-muted-foreground leading-relaxed">
@@ -188,11 +188,11 @@ const architectureLayers = [
           <div class="relative rounded-2xl border border-[#6B8BF5]/30 bg-gradient-to-r from-[#6B8BF5]/10 to-[#A78BFA]/10 p-8 backdrop-blur-sm">
             <div class="flex items-center gap-3 mb-4">
               <div class="w-3 h-3 rounded-full bg-gradient-to-r from-[#6B8BF5] to-[#A78BFA]"></div>
-              <span class="text-xs font-bold uppercase tracking-widest text-[#6B8BF5]">Camada de Inteligência</span>
+              <span class="text-xs uppercase tracking-widest text-[#6B8BF5]">Camada de Inteligência</span>
             </div>
             <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
               {architectureLayers[0].items.map((item: string) => (
-                <div class="text-sm font-semibold text-[#4B6BE8] dark:text-white bg-[#6B8BF5]/15 dark:bg-[#6B8BF5]/30 rounded-lg px-3 py-2.5 text-center border border-[#6B8BF5]/30 dark:border-[#6B8BF5]/40">
+                <div class="text-sm text-[#4B6BE8] dark:text-white bg-[#6B8BF5]/15 dark:bg-[#6B8BF5]/30 rounded-lg px-3 py-2.5 text-center border border-[#6B8BF5]/30 dark:border-[#6B8BF5]/40">
                   {item}
                 </div>
               ))}
@@ -208,11 +208,11 @@ const architectureLayers = [
           <div class="relative rounded-2xl border border-primary/30 bg-gradient-to-r from-primary/10 to-[#6B8BF5]/10 p-8">
             <div class="flex items-center gap-3 mb-4">
               <div class="w-3 h-3 rounded-full bg-gradient-to-r from-primary to-[#6B8BF5]"></div>
-              <span class="text-xs font-bold uppercase tracking-widest text-primary">Capacidades Integradas</span>
+              <span class="text-xs uppercase tracking-widest text-primary">Capacidades Integradas</span>
             </div>
             <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
               {architectureLayers[1].items.map((item: string) => (
-                <div class="text-sm font-semibold text-primary dark:text-white bg-primary/10 dark:bg-primary/30 rounded-lg px-3 py-2.5 text-center border border-primary/25 dark:border-primary/50">
+                <div class="text-sm text-primary dark:text-white bg-primary/10 dark:bg-primary/30 rounded-lg px-3 py-2.5 text-center border border-primary/25 dark:border-primary/50">
                   {item}
                 </div>
               ))}
@@ -228,11 +228,11 @@ const architectureLayers = [
           <div class="relative rounded-2xl border border-border bg-[#060E24] p-8 text-white">
             <div class="flex items-center gap-3 mb-4">
               <div class="w-3 h-3 rounded-full bg-white/40"></div>
-              <span class="text-xs font-bold uppercase tracking-widest text-white/60">Hestia Core</span>
+              <span class="text-xs uppercase tracking-widest text-white/60">Hestia Core</span>
             </div>
             <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
               {architectureLayers[2].items.map((item: string) => (
-                <div class="text-sm font-semibold text-white/80 bg-white/10 rounded-lg px-3 py-2.5 text-center border border-white/15">
+                <div class="text-sm text-white/80 bg-white/10 rounded-lg px-3 py-2.5 text-center border border-white/15">
                   {item}
                 </div>
               ))}
@@ -248,8 +248,8 @@ const architectureLayers = [
     <section class="py-20 md:py-28 border-b border-border/60">
       <div class="container mx-auto px-4 md:px-6 max-w-6xl">
         <div class="mb-14">
-          <p class="text-[11px] font-bold uppercase tracking-widest text-primary mb-4">Funcionalidades Adicionais</p>
-          <h2 class="font-heading text-3xl md:text-4xl font-bold leading-tight mb-3">Mais do que apenas o básico</h2>
+          <p class="text-[11px] uppercase tracking-widest text-primary mb-4">Funcionalidades Adicionais</p>
+          <h2 class="font-heading text-3xl md:text-4xl leading-tight mb-3">Mais do que apenas o básico</h2>
           <p class="text-muted-foreground text-sm max-w-lg">Detalhes que fazem a diferença no dia-a-dia das operações.</p>
         </div>
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
@@ -258,7 +258,7 @@ const architectureLayers = [
               <div class="w-10 h-10 bg-primary/10 rounded-xl flex items-center justify-center mb-5 text-primary group-hover:bg-primary group-hover:text-white transition-all duration-200">
                 <Icon className="w-5 h-5" />
               </div>
-              <h3 class="font-heading font-bold mb-2">{title}</h3>
+              <h3 class="font-heading mb-2">{title}</h3>
               <p class="text-sm text-muted-foreground leading-relaxed">{desc}</p>
             </div>
           ))}
@@ -272,8 +272,8 @@ const architectureLayers = [
     <section class="py-20 md:py-28 bg-muted/30 border-b border-border/60">
       <div class="container mx-auto px-4 md:px-6 max-w-6xl">
         <div class="text-center mb-16">
-          <p class="text-[11px] font-bold uppercase tracking-widest text-primary mb-4">Números que Importam</p>
-          <h2 class="font-heading text-4xl md:text-5xl font-bold tracking-tight leading-tight">
+          <p class="text-[11px] uppercase tracking-widest text-primary mb-4">Números que Importam</p>
+          <h2 class="font-heading text-4xl md:text-5xl tracking-tight leading-tight">
             Construído para funcionar em escala
           </h2>
         </div>
@@ -281,7 +281,7 @@ const architectureLayers = [
         <div class="grid grid-cols-2 lg:grid-cols-4 gap-6">
           {stats.map(({ value, unit, label }) => (
             <div class="text-center p-8 rounded-2xl border border-border bg-card">
-              <div class="font-heading text-5xl md:text-6xl font-extrabold tracking-tight text-foreground mb-1 whitespace-nowrap">
+              <div class="font-heading text-5xl md:text-6xl tracking-tight text-foreground mb-1 whitespace-nowrap">
                 {value}<span class="text-primary text-3xl md:text-4xl">{unit}</span>
               </div>
               <p class="text-sm text-muted-foreground font-medium mt-2">{label}</p>
@@ -303,7 +303,7 @@ const architectureLayers = [
 
       <div class="container relative mx-auto px-4 md:px-6 max-w-6xl text-center">
         <!-- Urgency badge -->
-        <div class="inline-flex items-center gap-2.5 text-xs font-bold uppercase tracking-widest text-white/70 bg-white/[0.06] px-4 py-2 rounded-full border border-white/10 mb-8 backdrop-blur-sm">
+        <div class="inline-flex items-center gap-2.5 text-xs uppercase tracking-widest text-white/70 bg-white/[0.06] px-4 py-2 rounded-full border border-white/10 mb-8 backdrop-blur-sm">
           <span class="relative flex h-2 w-2">
             <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-400 opacity-75"></span>
             <span class="relative inline-flex rounded-full h-2 w-2 bg-amber-400"></span>
@@ -311,7 +311,7 @@ const architectureLayers = [
           Prazo ESPR: 2027
         </div>
 
-        <h2 class="font-heading text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight leading-[1] mb-6 max-w-3xl mx-auto">
+        <h2 class="font-heading text-4xl md:text-5xl lg:text-6xl tracking-tight leading-[1] mb-6 max-w-3xl mx-auto">
           O prazo está definido.<br/>
           <span class="text-gradient bg-gradient-to-r from-[#6B8BF5] via-[#A78BFA] to-[#6B8BF5] bg-[length:200%_auto] animate-gradient-x">A sua empresa têxtil está pronta?</span>
         </h2>
@@ -321,8 +321,8 @@ const architectureLayers = [
         </p>
 
         <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
-          <GoogleCalendarButton client:load size="lg" className="rounded-lg! bg-white! text-[#060E24]! hover:bg-white/90! font-semibold gap-2 text-base px-8 h-12" />
-          <a href={`/${Astro.currentLocale}/prices`} class="inline-flex items-center gap-2 rounded-lg border border-white/20 text-white hover:bg-white/10 font-semibold text-base px-8 h-12 transition-colors">
+          <GoogleCalendarButton client:load size="lg" className="rounded-lg! bg-white! text-[#060E24]! hover:bg-white/90! gap-2 text-base px-8 h-12" />
+          <a href={`/${Astro.currentLocale}/prices`} class="inline-flex items-center gap-2 rounded-lg border border-white/20 text-white hover:bg-white/10 text-base px-8 h-12 transition-colors">
             Ver Preços <ArrowRight className="w-4 h-4" />
           </a>
         </div>

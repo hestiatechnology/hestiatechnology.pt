@@ -29,7 +29,7 @@ export default function TeamSection() {
     <section id={teamId} className="py-12 md:py-24">
       <div className="px-4 md:px-6">
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl text-foreground">
+          <h2 className="text-3xl tracking-tighter sm:text-4xl text-foreground">
             Our Team
           </h2>
           <p className="max-w-2xl mx-auto mt-4 text-muted-foreground md:text-lg">
@@ -55,7 +55,7 @@ export default function TeamSection() {
                     {member.fallback}
                   </AvatarFallback>
                 </Avatar>
-                <h3 className="font-semibold text-xl mb-1">{member.name}</h3>
+                <h3 className=" text-xl mb-1">{member.name}</h3>
                 <Badge variant="secondary" className="mb-3 border">
                   {member.role}
                 </Badge>

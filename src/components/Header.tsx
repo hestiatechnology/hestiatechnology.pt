@@ -98,7 +98,7 @@ export default function Header({ locale, darkHero = false }: HeaderProps) {
             <div className="hidden md:flex items-center gap-3 shrink-0">
               <a
                 href={altUrl}
-                className={`inline-flex items-center justify-center h-8 w-9 rounded-lg text-xs font-semibold transition-all ${
+                className={`inline-flex items-center justify-center h-8 w-9 rounded-lg text-xs transition-all ${
                   isTransparentDark
                     ? "text-white/50 hover:text-white hover:bg-white/10"
                     : "text-muted-foreground hover:text-foreground hover:bg-muted/50"
@@ -111,7 +111,7 @@ export default function Header({ locale, darkHero = false }: HeaderProps) {
                 asChild
                 variant={isTransparentDark ? "outline" : "default"}
                 size="sm"
-                className={`rounded-lg px-5 h-9 font-semibold text-sm shadow-sm group ${
+                className={`rounded-lg px-5 h-9 text-sm shadow-sm group ${
                   isTransparentDark
                     ? "border-white/20 text-white hover:bg-white/10 bg-white/5"
                     : ""
@@ -163,13 +163,13 @@ export default function Header({ locale, darkHero = false }: HeaderProps) {
                   asChild
                   variant="default"
                   size="sm"
-                  className="flex-1 rounded-lg font-semibold"
+                  className="flex-1 rounded-lg"
                 >
                   <a href={`/${locale}/contact`}>{t("header.button.contact")}</a>
                 </Button>
                 <a
                   href={altUrl}
-                  className="inline-flex items-center justify-center h-9 px-4 rounded-lg text-xs font-semibold border border-border text-muted-foreground hover:text-foreground hover:bg-muted/50 transition-all"
+                  className="inline-flex items-center justify-center h-9 px-4 rounded-lg text-xs border border-border text-muted-foreground hover:text-foreground hover:bg-muted/50 transition-all"
                 >
                   {altLangLabel}
                 </a>

@@ -10,14 +10,14 @@ export function RealTimeVisual() {
                     <Activity className="w-4 h-4 text-primary" />
                     <span className="text-[10px] text-green-500 bg-green-500/10 px-1.5 py-0.5 rounded-full">Live</span>
                 </div>
-                <div className="text-xl font-bold">1,204</div>
+                <div className="text-xl">1,204</div>
                 <div className="text-xs text-muted-foreground">Units/Hour</div>
             </div>
             <div className="bg-background border rounded-xl p-4 shadow-sm hover:shadow-md transition-shadow">
                 <div className="flex justify-between items-start mb-2">
                     <Clock className="w-4 h-4 text-orange-500" />
                 </div>
-                <div className="text-xl font-bold">98%</div>
+                <div className="text-xl">98%</div>
                 <div className="text-xs text-muted-foreground">Uptime</div>
             </div>
             <div className="col-span-2 bg-background border rounded-xl p-4 shadow-sm flex items-center justify-between">
@@ -26,7 +26,7 @@ export function RealTimeVisual() {
                         <Zap className="w-4 h-4" />
                     </div>
                     <div>
-                        <div className="text-sm font-semibold">Production Line A</div>
+                        <div className="text-sm">Production Line A</div>
                         <div className="text-xs text-muted-foreground">Running smoothly</div>
                     </div>
                 </div>

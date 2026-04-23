@@ -26,7 +26,7 @@ export function GoogleCalendarButton({
     "https://calendar.google.com/calendar/appointments/schedules/AcZssZ1onooq6xYX4tyZd6GpAqcXGL8nSUDHUSGfE4ac2_ciKo5gD_5-BrR1vS1W79qFSmR-A3_YYAcS?gv=true";
 
   const base =
-    "inline-flex items-center justify-center gap-2 font-semibold rounded-full transition-all duration-200 cursor-pointer select-none focus:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 active:scale-[0.98]";
+    "inline-flex items-center justify-center gap-2 rounded-full transition-all duration-200 cursor-pointer select-none focus:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 active:scale-[0.98]";
 
   const sizes = {
     default: "h-10 px-6 text-base",

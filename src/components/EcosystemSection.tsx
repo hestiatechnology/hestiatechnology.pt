@@ -73,10 +73,10 @@ export function EcosystemSection({ locale }: EcosystemSectionProps) {
         <div className="grid lg:grid-cols-[1fr,1.4fr] gap-16 items-start">
           {/* Left: copy */}
           <div className="lg:sticky lg:top-32">
-            <p className="text-[11px] font-bold uppercase tracking-widest text-primary mb-4">
+            <p className="text-[11px] uppercase tracking-widest text-primary mb-4">
               {t.label}
             </p>
-            <h2 className="font-heading text-3xl md:text-4xl font-bold leading-tight mb-4">
+            <h2 className="font-heading text-3xl md:text-4xl leading-tight mb-4">
               {t.heading}
             </h2>
             <p className="text-muted-foreground leading-relaxed text-sm">
@@ -91,7 +91,7 @@ export function EcosystemSection({ locale }: EcosystemSectionProps) {
               <div className="border border-primary/25 bg-primary/[0.04] rounded-2xl p-5">
                 <div className="flex items-center gap-2 mb-4">
                   <div className="w-1.5 h-1.5 rounded-full bg-primary" />
-                  <span className="text-[10px] font-bold uppercase tracking-widest text-primary">
+                  <span className="text-[10px] uppercase tracking-widest text-primary">
                     {t.topLabel}
                   </span>
                 </div>
@@ -106,7 +106,7 @@ export function EcosystemSection({ locale }: EcosystemSectionProps) {
                         <div className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center">
                           <Icon className="w-4 h-4 text-primary" />
                         </div>
-                        <span className="text-xs font-semibold text-foreground/80 text-center leading-tight">
+                        <span className="text-xs text-foreground/80 text-center leading-tight">
                           {item.label}
                         </span>
                       </div>
@@ -125,7 +125,7 @@ export function EcosystemSection({ locale }: EcosystemSectionProps) {
             <div className="border border-border rounded-2xl p-5 bg-card">
               <div className="flex items-center gap-2 mb-4">
                 <div className="w-1.5 h-1.5 rounded-full bg-foreground/30" />
-                <span className="text-[10px] font-bold uppercase tracking-widest text-muted-foreground">
+                <span className="text-[10px] uppercase tracking-widest text-muted-foreground">
                   {t.midLabel}
                 </span>
               </div>
@@ -140,7 +140,7 @@ export function EcosystemSection({ locale }: EcosystemSectionProps) {
                       <div className="w-9 h-9 rounded-xl bg-primary/10 flex items-center justify-center">
                         <Icon className="w-4.5 h-4.5 text-primary" />
                       </div>
-                      <span className="text-xs font-semibold text-foreground/80 text-center">
+                      <span className="text-xs text-foreground/80 text-center">
                         {item.label}
                       </span>
                     </div>
@@ -168,7 +168,7 @@ export function EcosystemSection({ locale }: EcosystemSectionProps) {
               <div className="relative">
                 <div className="flex items-center gap-2 mb-4">
                   <Layers className="w-3.5 h-3.5 text-primary" />
-                  <span className="text-[10px] font-bold uppercase tracking-widest text-primary">
+                  <span className="text-[10px] uppercase tracking-widest text-primary">
                     {t.botLabel}
                   </span>
                 </div>

@@ -68,7 +68,7 @@ export function AnnouncementBar({
               {actionHref ? (
                 <a
                   href={actionHref}
-                  className="inline-flex items-center px-3 py-1 text-xs font-semibold bg-white/20 hover:bg-white/30 rounded-full transition-colors duration-200 backdrop-blur-sm"
+                  className="inline-flex items-center px-3 py-1 text-xs bg-white/20 hover:bg-white/30 rounded-full transition-colors duration-200 backdrop-blur-sm"
                 >
                   {actionText}
                 </a>
@@ -76,7 +76,7 @@ export function AnnouncementBar({
                 <Button
                   variant="ghost"
                   size="sm"
-                  className="text-xs font-semibold bg-white/20 hover:bg-white/30 text-white border-0 h-7"
+                  className="text-xs bg-white/20 hover:bg-white/30 text-white border-0 h-7"
                 >
                   {actionText}
                 </Button>

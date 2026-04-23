@@ -24,7 +24,7 @@ const { Content } = await post.render();
         <div class="flex justify-center gap-2 mb-4">
             {post.data.tags?.map(tag => <Badge variant="secondary">{tag}</Badge>)}
         </div>
-        <h1 class="text-4xl md:text-5xl font-bold tracking-tight text-black dark:text-white mb-6 leading-tight">
+        <h1 class="text-4xl md:text-5xl tracking-tight text-black dark:text-white mb-6 leading-tight">
             {post.data.title}
         </h1>
         <div class="flex items-center justify-center gap-6 text-black dark:text-white text-sm">

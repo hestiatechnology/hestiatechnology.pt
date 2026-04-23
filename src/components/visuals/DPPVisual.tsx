@@ -11,7 +11,7 @@ export function DPPVisual() {
             <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center text-primary">
                 <QrCode className="w-4 h-4" />
             </div>
-            <span className="font-semibold text-sm">Passport</span>
+            <span className=" text-sm">Passport</span>
         </div>
         <Badge variant="outline" className="text-[10px] bg-green-500/10 text-green-600 border-green-200 gap-1">
             <CheckCircle2 className="w-3 h-3" /> Verified
@@ -29,7 +29,7 @@ export function DPPVisual() {
                      <PackageCheck className="w-12 h-12 text-muted-foreground/40" />
                 </div>
                 <div>
-                    <h2 className="text-xl font-bold tracking-tight">Premium Cotton Tee</h2>
+                    <h2 className="text-xl tracking-tight">Premium Cotton Tee</h2>
                     <p className="text-xs text-muted-foreground">ID: #8849-2291-EU</p>
                 </div>
             </div>
@@ -41,7 +41,7 @@ export function DPPVisual() {
                     <Leaf className="w-4 h-4 text-green-500" />
                 </div>
                 <div className="flex items-end gap-2">
-                    <span className="text-3xl font-bold text-green-600">A</span>
+                    <span className="text-3xl text-green-600">A</span>
                     <div className="flex-1 h-2 bg-muted rounded-full mb-2 overflow-hidden">
                         <div className="h-full w-[95%] bg-green-500 rounded-full"></div>
                     </div>
@@ -58,23 +58,23 @@ export function DPPVisual() {
 
             {/* Supply Chain Timeline */}
             <div className="space-y-4">
-                <h3 className="text-sm font-semibold flex items-center gap-2">
+                <h3 className="text-sm flex items-center gap-2">
                     <Factory className="w-4 h-4 text-primary" /> Supply Chain
                 </h3>
                 <div className="relative pl-4 border-l-2 border-muted space-y-6">
                     <div className="relative">
                         <div className="absolute -left-[21px] top-0 w-3 h-3 rounded-full bg-primary ring-4 ring-background"></div>
-                        <div className="text-xs font-semibold">Manufacturing</div>
+                        <div className="text-xs">Manufacturing</div>
                         <div className="text-[10px] text-muted-foreground">Guimarães, Portugal • Feb 14</div>
                     </div>
                     <div className="relative">
                         <div className="absolute -left-[21px] top-0 w-3 h-3 rounded-full bg-muted-foreground/30 ring-4 ring-background"></div>
-                        <div className="text-xs font-semibold">Spinning</div>
+                        <div className="text-xs">Spinning</div>
                         <div className="text-[10px] text-muted-foreground">Braga, Portugal • Jan 28</div>
                     </div>
                     <div className="relative">
                         <div className="absolute -left-[21px] top-0 w-3 h-3 rounded-full bg-muted-foreground/30 ring-4 ring-background"></div>
-                        <div className="text-xs font-semibold">Raw Material</div>
+                        <div className="text-xs">Raw Material</div>
                         <div className="text-[10px] text-muted-foreground">Organic Farms, India • Jan 10</div>
                     </div>
                 </div>
@@ -82,7 +82,7 @@ export function DPPVisual() {
             
             {/* Composition */}
              <div className="space-y-2">
-                <h3 className="text-sm font-semibold">Material Composition</h3>
+                <h3 className="text-sm">Material Composition</h3>
                 <div className="text-xs space-y-1">
                     <div className="flex justify-between p-2 rounded-lg bg-muted/20">
                         <span>Organic Cotton</span>
@@ -101,7 +101,7 @@ export function DPPVisual() {
       {/* Scroll Hint (Phone) */}
       <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-background via-background/80 to-transparent pointer-events-none z-20 flex flex-col items-center justify-end pb-6">
           <div className="flex flex-col items-center gap-1 animate-bounce opacity-100">
-              <span className="text-[10px] uppercase font-bold text-primary tracking-widest">Scroll to explore</span>
+              <span className="text-[10px] uppercase text-primary tracking-widest">Scroll to explore</span>
               <ChevronDown className="w-5 h-5 text-primary" />
           </div>
       </div>

@@ -8,7 +8,7 @@ export default {
     extend: {
       fontFamily: {
         sans: ["DM Sans", "sans-serif"],
-        heading: ["Inter", "sans-serif"],
+        heading: ["Syne", "sans-serif"],
       },
       fontSize: {
         '7xl': '5rem',
