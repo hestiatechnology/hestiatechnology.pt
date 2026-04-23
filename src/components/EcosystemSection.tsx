@@ -36,7 +36,7 @@ const content = {
     label: "Plataforma",
     heading: "Uma Plataforma Extensível, Não Uma Ferramenta Fechada",
     description:
-      "A Hestia é construída API-first com uma arquitetura aberta pensada para um ecossistema de integrações e módulos. Hoje opera a sua fábrica - amanhã conecta toda a sua cadeia de abastecimento.",
+      "A Hestia é construída API-first com uma arquitetura aberta pensada para um ecossistema de integrações e módulos. Hoje opera a sua empresa têxtil - amanhã conecta toda a sua cadeia de abastecimento.",
     topLabel: "Inteligência",
     topItems: [
       { label: "Análise IA", icon: Brain },

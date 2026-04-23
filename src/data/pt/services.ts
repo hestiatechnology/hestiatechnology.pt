@@ -18,7 +18,7 @@ export const ServicesList: ServiceType[] = [
   {
     title: "Infraestrutura Industrial e IoT",
     description:
-      "Instalação e manutenção de hardware de chão de fábrica, servidores e sensores IoT para integração perfeita com a plataforma.",
+      "Instalação e manutenção de hardware para operações têxteis, servidores e sensores IoT para integração perfeita com a plataforma.",
     icon: Briefcase,
     bgColor: "bg-blue-100",
     iconColor: "text-blue-600",

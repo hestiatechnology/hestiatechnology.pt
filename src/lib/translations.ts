@@ -61,7 +61,7 @@ export const translations = {
   },
   pt: {
     "layout.meta.description":
-      "O sistema operativo de fábrica para fabricantes têxteis. Produção com IA nativa, conformidade UE, DPP e IoT - tudo numa única plataforma.",
+      "O sistema operativo para empresas têxteis. Produção com IA nativa, conformidade UE, DPP e IoT - tudo numa única plataforma.",
     "layout.og.description": "Bem vindo à Hestia Technology Lda",
     "announcement.message": "🎉 Estamos à procura de investidores!",
     "announcement.action": "Saiba Mais",
@@ -75,7 +75,7 @@ export const translations = {
     'header.button.signin': 'Entrar',
     'header.mobile_nav_toggle': 'Alternar navegação móvel',
     'header.lang.switch': 'EN',
-    'footer.description': 'O Sistema Operativo de Fábrica para Fabricantes Têxteis.',
+    'footer.description': 'O Sistema Operativo para Empresas Têxteis.',
     "footer.links.product": "Produto",
     "footer.links.company": "Empresa",
     "footer.links.legal": "Legal",

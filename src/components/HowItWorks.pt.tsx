@@ -13,7 +13,7 @@ const steps = [
     icon: ScanLine,
     title: "Analise em Tempo Real",
     description:
-      "O nosso painel IA identifica ineficiências e sugere otimizações instantâneas. Visibilidade total do chão de fábrica.",
+      "O nosso painel IA identifica ineficiências e sugere otimizações instantâneas. Visibilidade total das operações têxteis.",
   },
   {
     number: "03",
@@ -38,7 +38,7 @@ export function HowItWorks() {
               Como Funciona
             </h2>
             <p className="text-muted-foreground leading-relaxed">
-              Implementação simples, resultados imediatos. Transforme a sua fábrica em 3 passos.
+              Implementação simples, resultados imediatos. Transforme a sua empresa têxtil em 3 passos.
             </p>
           </div>
 

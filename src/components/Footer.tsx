@@ -15,7 +15,7 @@ export default function Footer({ locale }: FooterProps) {
 
   const ctaTitle =
     locale === "pt"
-      ? "Pronto para transformar a sua fábrica?"
+      ? "Pronto para transformar a sua empresa têxtil?"
       : "Ready to transform your factory?";
   const ctaSubtitle =
     locale === "pt"

@@ -44,7 +44,7 @@ import { GoogleCalendarButton } from "@/components/GoogleCalendarButton";
             { icon: "€", title: "Taxas de manutenção anuais", desc: "15–22% do custo da licença, todos os anos, só para manter o sistema a funcionar." },
             { icon: "📋", title: "Sem conformidade DPP", desc: "Os Passaportes Digitais de Produto são obrigatórios a partir de 2027. Os sistemas legados não chegarão lá." },
             { icon: "🔧", title: "Atualizações dependentes de TI", desc: "Cada mudança regulatória exige um consultor, um orçamento e semanas de espera." },
-            { icon: "🕐", title: "Implementações que demoram meses", desc: "Os projetos ERP tradicionais demoram 3–12 meses. A maioria das fábricas não pode suportar essa disrupção." },
+            { icon: "🕐", title: "Implementações que demoram meses", desc: "Os projetos ERP tradicionais demoram 3–12 meses. A maioria das empresas têxteis não pode suportar essa disrupção." },
           ].map((item) => (
             <div class="border border-border rounded-2xl p-7 bg-card">
               <div class="text-2xl mb-4">{item.icon}</div>
@@ -87,13 +87,13 @@ import { GoogleCalendarButton } from "@/components/GoogleCalendarButton";
               Como funciona a migração
             </h2>
             <p class="text-sm text-muted-foreground leading-relaxed mb-6">
-              Um processo estruturado e de baixa disrupção. A sua fábrica continua a funcionar enquanto tratamos da transição em segundo plano.
+              Um processo estruturado e de baixa disrupção. A sua empresa têxtil continua a funcionar enquanto tratamos da transição em segundo plano.
             </p>
             <div class="flex items-center gap-3 bg-primary/5 border border-primary/20 rounded-xl px-5 py-4">
               <Clock className="w-5 h-5 text-primary shrink-0" />
               <div>
                 <p class="text-sm font-semibold">Prazo típico: 3–4 semanas</p>
-                <p class="text-xs text-muted-foreground">Para fábricas de pequena e média dimensão</p>
+                <p class="text-xs text-muted-foreground">Para empresas têxteis de pequena e média dimensão</p>
               </div>
             </div>
           </div>
@@ -186,7 +186,7 @@ import { GoogleCalendarButton } from "@/components/GoogleCalendarButton";
           <p class="text-[11px] font-bold uppercase tracking-widest text-primary mb-4">Comparação</p>
           <h2 class="font-heading text-3xl md:text-4xl font-bold leading-tight mb-3">O custo de ficar vs. mudar</h2>
           <p class="text-muted-foreground text-sm max-w-lg">
-            Veja o que fábricas como a sua pagam hoje - e o que pagariam na Hestia. Preços baseados em informação pública e valores reportados por clientes que migraram.
+            Veja o que empresas têxteis como a sua pagam hoje - e o que pagariam na Hestia. Preços baseados em informação pública e valores reportados por clientes que migraram.
           </p>
         </div>
         <CompetitorComparison client:load locale="pt" />
@@ -215,7 +215,7 @@ import { GoogleCalendarButton } from "@/components/GoogleCalendarButton";
               },
               {
                 q: "Estamos a meio de uma implementação de ERP - ainda podemos mudar?",
-                a: "Sim. Já ajudámos fábricas a sair de implementações que ficaram paradas. Se ainda não entrou em produção, mudar para a Hestia será quase certamente mais rápido.",
+                a: "Sim. Já ajudámos empresas têxteis a sair de implementações que ficaram paradas. Se ainda não entrou em produção, mudar para a Hestia será quase certamente mais rápido.",
               },
               {
                 q: "O que acontece ao sistema antigo depois de arrancar?",
@@ -223,7 +223,7 @@ import { GoogleCalendarButton } from "@/components/GoogleCalendarButton";
               },
               {
                 q: "A migração está incluída no preço da Hestia?",
-                a: "A migração de dados standard está incluída para fábricas com menos de 50 utilizadores. Migrações maiores ou mais complexas têm orçamento separado - sempre de forma transparente e antecipada.",
+                a: "A migração de dados standard está incluída para empresas têxteis com menos de 50 utilizadores. Migrações maiores ou mais complexas têm orçamento separado - sempre de forma transparente e antecipada.",
               },
             ].map((item) => (
               <div class="border border-border rounded-2xl p-6 bg-card">

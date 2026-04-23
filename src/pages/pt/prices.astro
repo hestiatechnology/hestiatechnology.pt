@@ -43,7 +43,7 @@ import { GoogleCalendarButton } from "@/components/GoogleCalendarButton";
           {[
             { n: "1", title: "Base da Plataforma", desc: "Uma taxa mensal fixa cobre a plataforma Hestia Core, o motor de conformidade DPP e suporte padrão. Sem custos ocultos." },
             { n: "2", title: "Adicione os Seus Utilizadores", desc: "Pague apenas pelos lugares que precisa. Operadores e Gestores têm preços diferentes para que nunca pague a mais." },
-            { n: "3", title: "Escolha Módulos", desc: "Ative funcionalidades avançadas como validação de documentos com IA ou análise em tempo real apenas quando a sua fábrica estiver pronta." },
+            { n: "3", title: "Escolha Módulos", desc: "Ative funcionalidades avançadas como validação de documentos com IA ou análise em tempo real apenas quando a sua empresa têxtil estiver pronta." },
           ].map((step) => (
             <div class="flex gap-5">
               <div class="w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center font-heading font-bold text-base shrink-0 mt-0.5">
@@ -134,7 +134,7 @@ import { GoogleCalendarButton } from "@/components/GoogleCalendarButton";
                 role: "Operador",
                 price: "€5",
                 period: "/utilizador/mês",
-                desc: "Para pessoal de chão de fábrica",
+                desc: "Para pessoal de operações têxteis",
                 features: ["Registar runs de produção", "Digitalizar e rastrear artigos", "Consultar tarefas atribuídas", "Introdução de dados básica"],
               },
               {
@@ -176,7 +176,7 @@ import { GoogleCalendarButton } from "@/components/GoogleCalendarButton";
           <p class="text-[11px] font-bold uppercase tracking-widest text-primary mb-4">Módulos</p>
           <h2 class="font-heading text-3xl md:text-4xl font-bold leading-tight mb-3">Módulos Adicionais</h2>
           <p class="text-muted-foreground text-sm max-w-xl">
-            Desbloqueie capacidades avançadas quando a sua fábrica estiver pronta. Cada módulo adiciona-se ao plano base - ative ou desative a qualquer momento.
+            Desbloqueie capacidades avançadas quando a sua empresa têxtil estiver pronta. Cada módulo adiciona-se ao plano base - ative ou desative a qualquer momento.
           </p>
         </div>
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -206,12 +206,12 @@ import { GoogleCalendarButton } from "@/components/GoogleCalendarButton";
         <div class="mb-12">
           <p class="text-[11px] font-bold uppercase tracking-widest text-primary mb-4">Exemplos Reais</p>
           <h2 class="font-heading text-3xl md:text-4xl font-bold leading-tight">Quanto Custa na Prática?</h2>
-          <p class="text-muted-foreground text-sm mt-3 max-w-lg">Veja exatamente o que fábricas como a sua pagam por mês. Sem taxas ocultas, sem surpresas.</p>
+          <p class="text-muted-foreground text-sm mt-3 max-w-lg">Veja exatamente o que empresas têxteis como a sua pagam por mês. Sem taxas ocultas, sem surpresas.</p>
         </div>
         <div class="grid md:grid-cols-2 gap-8 max-w-4xl">
           {[
             {
-              label: "Fábrica Pequena",
+              label: "Empresa Têxtil Pequena",
               title: "1 Gestor · 15 Operadores",
               items: [
                 { desc: "Base da plataforma", amount: "€99" },
@@ -223,7 +223,7 @@ import { GoogleCalendarButton } from "@/components/GoogleCalendarButton";
               highlight: false,
             },
             {
-              label: "Fábrica Média",
+              label: "Empresa Têxtil Média",
               title: "3 Gestores · 40 Operadores",
               items: [
                 { desc: "Base da plataforma", amount: "€99" },
@@ -264,7 +264,7 @@ import { GoogleCalendarButton } from "@/components/GoogleCalendarButton";
         <div class="mb-12">
           <p class="text-[11px] font-bold uppercase tracking-widest text-primary mb-4">Comparação</p>
           <h2 class="font-heading text-3xl md:text-4xl font-bold leading-tight mb-3">Como a Hestia Se Compara</h2>
-          <p class="text-muted-foreground text-sm max-w-lg">Escolha um concorrente e tamanho de fábrica para ver uma comparação real de custos. A Hestia foi concebida para fabricantes têxteis - não adaptada a partir de ERP genérico.</p>
+          <p class="text-muted-foreground text-sm max-w-lg">Escolha um concorrente e tamanho de empresa têxtil para ver uma comparação real de custos. A Hestia foi concebida para empresas têxteis - não adaptada a partir de ERP genérico.</p>
         </div>
         <CompetitorComparison client:load locale="pt" />
         <div class="mt-8 text-center">
@@ -295,7 +295,7 @@ import { GoogleCalendarButton } from "@/components/GoogleCalendarButton";
             <p class="text-[11px] font-bold uppercase tracking-widest text-primary">Acesso Antecipado</p>
             <h3 class="font-heading text-2xl md:text-3xl font-bold">Junte-se ao Programa de Acesso Antecipado</h3>
             <p class="text-muted-foreground text-sm max-w-lg leading-relaxed">
-              Esteja entre as primeiras fábricas a operar com a Hestia. Os membros de acesso antecipado recebem onboarding prioritário, contribuição direta no roadmap e preços preferenciais garantidos por 12 meses.
+              Esteja entre as primeiras empresas têxteis a operar com a Hestia. Os membros de acesso antecipado recebem onboarding prioritário, contribuição direta no roadmap e preços preferenciais garantidos por 12 meses.
             </p>
           </div>
           <div class="flex flex-col gap-3 shrink-0">
@@ -314,10 +314,10 @@ import { GoogleCalendarButton } from "@/components/GoogleCalendarButton";
       <div class="container mx-auto px-4 md:px-6 max-w-6xl text-center relative z-10">
         <p class="text-[11px] font-bold uppercase tracking-widest text-indigo-400 mb-6">Vamos Conversar</p>
         <h2 class="font-heading text-3xl md:text-5xl font-bold mb-5 leading-tight">
-          Não tem a certeza de qual a configuração ideal para a sua fábrica?
+          Não tem a certeza de qual a configuração ideal para a sua empresa têxtil?
         </h2>
         <p class="text-white/50 mb-10 max-w-lg mx-auto leading-relaxed">
-          A nossa equipa ajuda-o a encontrar a configuração certa para a dimensão e necessidades da sua fábrica. A conformidade ESPR demora meses a implementar - comece agora para estar preparado em 2027.
+          A nossa equipa ajuda-o a encontrar a configuração certa para a dimensão e necessidades da sua empresa têxtil. A conformidade ESPR demora meses a implementar - comece agora para estar preparado em 2027.
         </p>
         <div class="flex flex-col sm:flex-row gap-4 justify-center">
           <GoogleCalendarButton client:load label="Agendar uma Chamada" variant="outline" size="lg" />
