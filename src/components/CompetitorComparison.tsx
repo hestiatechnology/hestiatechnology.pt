@@ -174,7 +174,7 @@ interface CompetitorComparisonProps {
   locale: "en" | "pt";
 }
 
-export function CompetitorComparison({ locale }: CompetitorComparisonProps) {
+export default function CompetitorComparison({ locale }: CompetitorComparisonProps) {
   const t = copy[locale];
   const [selectedId, setSelectedId] = useState(competitors[0].id);
   const [size, setSize] = useState<FactorySize>("small");

@@ -1,9 +1,6 @@
 ---
 import { getCollection } from "astro:content";
 import Layout from "@/layouts/Layout.astro";
-import { Badge } from "@/components/ui/badge";
-import { Card, CardContent } from "@/components/ui/card";
-import { Calendar, User } from "lucide-react";
 
 export async function getStaticPaths() {
   const posts = await getCollection("blog", ({ id }) => id.startsWith("pt/"));
@@ -15,37 +12,30 @@ export async function getStaticPaths() {
 
 const { post } = Astro.props;
 const { Content } = await post.render();
+const date = post.data.date.toLocaleDateString("pt-PT", { day: "2-digit", month: "long", year: "numeric" });
 ---
 
-<Layout title={post.data.title}>
-  <div class="min-h-screen bg-muted/30">
-    <div class="container mx-auto px-4 md:px-6 py-12 md:py-20 max-w-4xl">
-      <div class="mb-8 text-center">
-        <div class="flex justify-center gap-2 mb-4">
-            {post.data.tags?.map(tag => <Badge variant="secondary">{tag}</Badge>)}
-        </div>
-        <h1 class="text-4xl md:text-5xl tracking-tight text-black dark:text-white mb-6 leading-tight">
-            {post.data.title}
-        </h1>
-        <div class="flex items-center justify-center gap-6 text-black dark:text-white text-sm">
-            <div class="flex items-center gap-2">
-                <Calendar class="w-4 h-4" />
-                {post.data.date.toLocaleDateString('pt-PT')}
-            </div>
-            <div class="flex items-center gap-2">
-                <User class="w-4 h-4" />
-                {post.data.author}
-            </div>
-        </div>
-      </div>
+<Layout title={`${post.data.title} — Hestia Technology`}>
+  <div style="max-width: 1200px; margin: 0 auto; padding: 0 24px;">
 
-      <Card class="border shadow-lg overflow-hidden">
-        <CardContent class="p-8 md:p-12">
-            <div class="prose prose-lg max-w-none text-black dark:text-white prose-headings:text-black dark:prose-headings:text-white prose-p:text-black dark:prose-p:text-white prose-strong:text-black dark:prose-strong:text-white prose-li:text-black dark:prose-li:text-white prose-a:text-black dark:prose-a:text-white hover:prose-a:text-black/80 dark:hover:prose-a:text-white/80 transition-colors">
-                <Content />
-            </div>
-        </CardContent>
-      </Card>
+    <header class="article-hero">
+      <div class="eyebrow-row">
+        <a href="/pt/blog" class="eyebrow" style="text-decoration: none; color: inherit;">← Blog</a>
+        {post.data.tags?.map(tag => (
+          <span class="eyebrow" style="color: var(--ember);">{tag}</span>
+        ))}
+      </div>
+      <h1>{post.data.title}</h1>
+      <div class="article-meta">
+        <span>{date}</span>
+        <span class="article-meta__dot"></span>
+        <span>{post.data.author}</span>
+      </div>
+    </header>
+
+    <div class="article-body">
+      <Content />
     </div>
+
   </div>
 </Layout>

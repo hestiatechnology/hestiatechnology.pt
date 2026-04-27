@@ -1,6 +1,6 @@
-import { Linkedin, Instagram, Facebook, ArrowRight } from "lucide-react";
+import { Linkedin, Instagram, Facebook } from "lucide-react";
 import { translations } from "@/lib/translations";
-import { GoogleCalendarButton } from "@/components/GoogleCalendarButton";
+import CTAHome from "@/components/home/CTAHome";
 
 interface FooterProps {
   locale: keyof typeof translations;
@@ -13,38 +13,9 @@ export default function Footer({ locale }: FooterProps) {
     return translations[locale][key] || translations.en[key];
   };
 
-  const ctaTitle =
-    locale === "pt"
-      ? "Pronto para transformar a sua empresa têxtil?"
-      : "Ready to transform your factory?";
-  const ctaSubtitle =
-    locale === "pt"
-      ? "Junte-se ao programa de acesso antecipado. Lugares limitados."
-      : "Join the early access program. Limited spots available.";
-  const ctaButton =
-    locale === "pt" ? "Agendar uma Demonstração" : "Book a Demo";
-
   return (
     <footer className="bg-background text-foreground">
-      {/* Pre-footer CTA - dark, high-impact */}
-      <div className="relative bg-[#060E24] text-white overflow-hidden">
-        {/* Background glow */}
-        <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-150 h-150 bg-primary/15 rounded-full blur-[120px]" />
-        </div>
-        <div className="container relative mx-auto px-4 md:px-6 py-24 text-center">
-          <p className="text-[10px] uppercase tracking-[0.2em] text-white/30 mb-5">
-            {locale === "pt" ? "Dê o próximo passo" : "Take the next step"}
-          </p>
-          <h2 className="font-heading text-3xl md:text-5xl text-white mb-5 max-w-2xl mx-auto leading-tight">
-            {ctaTitle}
-          </h2>
-          <p className="text-white/45 max-w-lg mx-auto mb-10 text-lg leading-relaxed">
-            {ctaSubtitle}
-          </p>
-          <GoogleCalendarButton label={ctaButton} size="lg" className="bg-white! text-[#060E24]! hover:bg-white/90! rounded-xl!! h-13! px-8! text-base! shadow-xl! shadow-white/10!" />
-        </div>
-      </div>
+      <CTAHome />
 
       {/* Footer body */}
       <div className="border-t border-border/60">

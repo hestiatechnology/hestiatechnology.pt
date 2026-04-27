@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
 
-export const CustomCursor = () => {
+export default function CustomCursor() {
   const [position, setPosition] = useState({ x: 0, y: 0 });
   const [isPointer, setIsPointer] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
@@ -67,6 +67,4 @@ export const CustomCursor = () => {
       />
     </div>
   );
-};
-
-export default CustomCursor;
+}

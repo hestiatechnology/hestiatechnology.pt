@@ -84,7 +84,7 @@ interface ContactFormProps {
   siteKey: string;
 }
 
-export function ContactForm({ labels, siteKey }: ContactFormProps) {
+export default function ContactForm({ labels, siteKey }: ContactFormProps) {
   const [captchaToken, setCaptchaToken] = useState("");
   const [message, setMessage] = useState("");
   const [topic, setTopic] = useState("");

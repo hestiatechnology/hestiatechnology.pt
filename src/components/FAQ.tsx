@@ -14,7 +14,7 @@ interface FAQProps {
   items: FAQItem[];
 }
 
-export function FAQ({ items }: FAQProps) {
+export default function FAQ({ items }: FAQProps) {
   return (
     <Accordion type="single" collapsible className="w-full bg-background border rounded-xl p-2 shadow-sm">
       {items.map((item, index) => (

@@ -1,6 +1,6 @@
 ---
 import "@/styles/global.css";
-// import { AnnouncementBar } from "@/components/annoucement-bar";
+import SiteAnnouncement from "@/components/home/SiteAnnouncement";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import { translations } from "@/lib/translations";
@@ -59,6 +59,7 @@ const ptURL = new URL(`/pt${pathWithoutLocale}`, siteUrl).href;
       };
       setDarkMode();
       window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', setDarkMode);
+      document.addEventListener('astro:after-swap', setDarkMode);
     </script>
     
     <ClientRouter />
@@ -66,7 +67,7 @@ const ptURL = new URL(`/pt${pathWithoutLocale}`, siteUrl).href;
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Syne:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&family=Geist+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 
     <title>Hestia - {title}</title>
     <meta
@@ -106,17 +107,11 @@ const ptURL = new URL(`/pt${pathWithoutLocale}`, siteUrl).href;
     })} />
   </head>
   <body class="min-h-screen flex flex-col antialiased">
-    {/* <AnnouncementBar
-      message={t("announcement.message")}
-      type="promotion"
-      actionText={t("announcement.action")}
-      actionHref=`/${Astro.currentLocale}/investments`
-    /> */}
-    <Header client:load locale={locale} darkHero={darkHero} />
+    <Header client:load locale={locale} darkHero={darkHero} transition:persist />
     <main class="flex-1">
       <slot />
     </main>
-    <Footer client:only="react" locale={locale} />
-    <CustomCursor client:load />
+    <Footer client:only="react" locale={locale} transition:persist />
+    <CustomCursor client:load transition:persist />
   </body>
 </html>

@@ -1,0 +1,17 @@
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  
+  <circle cx="32" cy="32" r="29.5" fill="none" stroke="#003DA5" stroke-width="2"></circle>
+  
+  <circle cx="32" cy="32" r="26" fill="none" stroke="#003DA5" stroke-width="0.75" stroke-dasharray="1 2"></circle>
+  
+  <g fill="#003DA5">
+    
+    <rect x="22" y="22" width="3" height="20" rx="0.5"></rect>
+    <rect x="39" y="22" width="3" height="20" rx="0.5"></rect>
+    <rect x="22" y="30" width="20" height="3" rx="0.5"></rect>
+  </g>
+  
+  <text x="32" y="18" text-anchor="middle" font-family="Geist, Inter, system-ui, sans-serif" font-size="6.5" font-weight="700" letter-spacing="2.4" fill="#003DA5">DPP</text>
+  <text x="32" y="50" text-anchor="middle" font-family="Geist, Inter, system-ui, sans-serif" font-size="3.6" font-weight="600" letter-spacing="1.2" fill="#003DA5" opacity=".7">VERIFIED · HESTIA</text>
+</svg>

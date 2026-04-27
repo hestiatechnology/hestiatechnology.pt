@@ -7,8 +7,9 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        sans: ["DM Sans", "sans-serif"],
-        heading: ["Syne", "sans-serif"],
+        sans: ["Geist", "DM Sans", "sans-serif"],
+        heading: ["Geist", "DM Sans", "sans-serif"],
+        mono: ["Geist Mono", "ui-monospace", "monospace"],
       },
       fontSize: {
         '7xl': '5rem',

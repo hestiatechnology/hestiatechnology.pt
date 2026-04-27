@@ -13,7 +13,7 @@ interface GoogleCalendarButtonProps {
   className?: string;
 }
 
-export function GoogleCalendarButton({
+export default function GoogleCalendarButton({
   label = "Agendar uma Demonstração",
   variant = "primary",
   size = "lg",
