@@ -1,3 +1,4 @@
+"use client";
 import { useState, useEffect } from "react";
 import Logo from "@/assets/HestiaTechnology.svg";
 import LogoWhite from "@/assets/HestiaTechnologyWhite.svg";

@@ -1,3 +1,4 @@
+"use client";
 import { Slot } from "@radix-ui/react-slot";
 import * as Stepperize from "@stepperize/react";
 import { cva, type VariantProps } from "class-variance-authority";
