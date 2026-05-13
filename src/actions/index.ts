@@ -5,7 +5,8 @@ import { ActionError, defineAction } from "astro:actions";
 import { z } from "astro:schema";
 import { Resend } from "resend";
 
-const resend = new Resend(import.meta.env.RESEND_API_KEY);
+// Fallback prevent crash on dev startup if .env is missing
+const resend = new Resend(import.meta.env.RESEND_API_KEY || "re_dummy_key_for_dev");
 
 export const server = {
   email: defineAction({

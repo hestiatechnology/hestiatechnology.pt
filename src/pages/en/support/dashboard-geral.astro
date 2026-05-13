@@ -1,0 +1,37 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import ArticlePage from "@/components/pages/ArticlePage";
+---
+
+<Layout title="Dashboard Geral — Suporte Hestia Technology">
+  <ArticlePage client:load
+    title="Dashboard geral"
+    description="Uma visão geral rápida de todas as funcionalidades."
+    backHref="/en/support"
+  >
+      <div class="space-y-6">
+        <p>
+          O <strong>Dashboard Geral</strong> é o coração do Hestia ERP. Ao entrar no sistema, esta é a primeira página que verá, consolidando as informações mais importantes num piscar de olhos.
+        </p>
+
+        <h3 class="text-xl font-semibold mt-8 mb-4">Vídeo de Introdução</h3>
+        <div class="aspect-video w-full rounded-xl overflow-hidden bg-neutral-100 dark:bg-neutral-800 border flex items-center justify-center">
+          <p class="text-neutral-500">[ Espaço para o Vídeo do Dashboard ]</p>
+        </div>
+
+        <h3 class="text-xl font-semibold mt-8 mb-4">O que vai encontrar no Dashboard</h3>
+        <ul class="list-disc pl-5 space-y-2">
+          <li><strong>Métricas Principais:</strong> Faturação mensal, pagamentos em atraso, orçamentos em aberto.</li>
+          <li><strong>Gráficos de Desempenho:</strong> Analise visualmente a evolução das suas vendas ao longo do tempo.</li>
+          <li><strong>Acesso Rápido:</strong> Atalhos para criar faturas, orçamentos e guias de forma instantânea.</li>
+          <li><strong>Alertas e Notificações:</strong> Receba updates automáticos sobre dados da Autoridade Tributária ou pendências na sua conta.</li>
+        </ul>
+
+        <div class="bg-primary/5 border border-primary/20 p-4 rounded-lg mt-6">
+          <p class="text-sm">
+            <strong>Nota:</strong> Pode personalizar a disposição dos diferentes painéis arrastando as caixas dentro do dashboard.
+          </p>
+        </div>
+      </div>
+  </ArticlePage>
+</Layout>

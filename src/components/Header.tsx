@@ -24,6 +24,7 @@ export default function Header({ locale, darkHero = false }: HeaderProps) {
     { href: `/${locale}/prices`, label: t("header.nav.prices") },
     { href: `/${locale}/about`, label: t("header.nav.about") },
     { href: `/${locale}/blog`, label: t("header.nav.blog") },
+    { href: `/${locale}/support`, label: t("header.nav.support") },
   ];
 
   const altLocale = locale === "en" ? "pt" : "en";
