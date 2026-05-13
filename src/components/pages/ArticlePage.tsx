@@ -11,7 +11,7 @@ interface ArticlePageProps {
 export default function ArticlePage({ title, description, children, backHref = "/pt/support" }: ArticlePageProps) {
   return (
     <div className="w-full min-h-screen bg-neutral-50 dark:bg-neutral-950 py-20 px-4 md:px-8 mt-16">
-      <div className="max-w-3xl mx-auto space-y-8">
+      <div className="max-w-[1400px] w-[95%] mx-auto space-y-8">
         <a 
           href={backHref} 
           className="inline-flex items-center text-sm font-medium text-neutral-500 hover:text-neutral-900 dark:hover:text-neutral-50 transition-colors"

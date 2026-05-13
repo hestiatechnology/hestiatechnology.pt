@@ -1,6 +1,7 @@
 ---
 import Layout from "@/layouts/Layout.astro";
 import ArticlePage from "@/components/pages/ArticlePage";
+import InteractiveDashboardDemo from "@/components/support/InteractiveDashboardDemo";
 ---
 
 <Layout title="Dashboard Geral — Suporte Hestia Technology">
@@ -14,10 +15,10 @@ import ArticlePage from "@/components/pages/ArticlePage";
           O <strong>Dashboard Geral</strong> é o coração do Hestia ERP. Ao entrar no sistema, esta é a primeira página que verá, consolidando as informações mais importantes num piscar de olhos.
         </p>
 
-        <h3 class="text-xl font-semibold mt-8 mb-4">Vídeo de Introdução</h3>
-        <div class="aspect-video w-full rounded-xl overflow-hidden bg-neutral-100 dark:bg-neutral-800 border flex items-center justify-center">
-          <p class="text-neutral-500">[ Espaço para o Vídeo do Dashboard ]</p>
-        </div>
+        <h3 class="text-xl font-semibold mt-8 mb-4">Tour Interativo</h3>
+        
+        {/* Aqui injetamos o nosso componente falso com a demonstração */}
+        <InteractiveDashboardDemo client:visible />
 
         <h3 class="text-xl font-semibold mt-8 mb-4">O que vai encontrar no Dashboard</h3>
         <ul class="list-disc pl-5 space-y-2">

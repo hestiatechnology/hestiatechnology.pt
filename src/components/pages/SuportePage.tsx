@@ -32,10 +32,10 @@ export default function SuportePage() {
   const activeArticles = ARTICLES[activeTab] || [];
 
   return (
-    <div className="w-full min-h-screen bg-neutral-50 dark:bg-neutral-950 py-20 px-4 md:px-8 pt-32">
-      <div className="max-w-6xl mx-auto space-y-12">
+    <div className="w-full min-h-screen bg-neutral-50 dark:bg-neutral-950 py-20 px-4 md:px-8 mt-16">
+      <div className="max-w-[1400px] w-[95%] mx-auto space-y-12">
         {/* Header Section */}
-        <div className="text-center space-y-6 max-w-2xl mx-auto">
+        <div className="text-center space-y-6 max-w-4xl mx-auto">
           <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-neutral-900 dark:text-neutral-50">
             Centro de Suporte
           </h1>
