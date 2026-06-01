@@ -1,18 +1,18 @@
 const steps = [
   {
     n: "01",
-    title: "Conecte os seus dados",
-    desc: "Importação ERP legado, Excel, máquinas Picanol/Toyota/Sulzer e sensores IoT existentes. Zero re-instalação.",
+    title: "Recolha a cadeia de valor",
+    desc: "Fornecedores, fibras, tinturaria e processos — importados do seu ERP, Excel ou registados em segundos. Cada elo fica ligado ao produto.",
   },
   {
     n: "02",
-    title: "Veja em tempo real",
-    desc: "Cada tear, lote, ordem e operador num único painel. KPIs ao segundo, alertas no telemóvel do diretor de produção.",
+    title: "Gere o passaporte",
+    desc: "O TextileEco compõe automaticamente o Passaporte Digital de cada produto ou lote: origem, pegada de carbono, reciclabilidade e conformidade REACH.",
   },
   {
     n: "03",
-    title: "Cumpra a regulação",
-    desc: "Passaporte Digital de Produto, ESPR e relatórios CSRD são gerados automaticamente para cada lote enviado.",
+    title: "Partilhe e prove",
+    desc: "Exportação direta para QR, NFC e GS1 Digital Link. O consumidor, o cliente e o auditor acedem ao mesmo registo — pronto para o ESPR.",
   },
 ];
 
@@ -26,10 +26,10 @@ export default function HowItWorksHome() {
             <span style={{ fontSize: 12, fontWeight: 700, letterSpacing: "0.18em", textTransform: "uppercase", color: "var(--primary)" }}>O processo</span>
           </div>
           <h2 style={{ fontSize: "clamp(2rem, 3.5vw, 3rem)", fontWeight: 700, lineHeight: 1.1, letterSpacing: "-0.03em", marginBottom: 16 }}>
-            Três passos. Sem consultoria de seis meses.
+            Do fio ao passaporte. Em três passos.
           </h2>
           <p style={{ fontSize: 18, lineHeight: 1.6, color: "var(--muted-foreground)" }}>
-            Trocar o ERP de uma fábrica não tem de ser um projeto de 18 meses. A Hestia foi construída para entrar a operar antes do próximo trimestre fechar.
+            Criar um Passaporte Digital não tem de ser um projeto de meses nem uma folha de Excel por produto. O TextileEco transforma os dados que já tem num registo conforme e partilhável.
           </p>
         </div>
 

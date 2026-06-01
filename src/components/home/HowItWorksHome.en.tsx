@@ -1,18 +1,18 @@
 const steps = [
   {
     n: "01",
-    title: "Connect Your Data",
-    desc: "Legacy ERP import, Excel, Picanol/Toyota/Sulzer machines and existing IoT sensors. Zero reinstallation.",
+    title: "Capture the value chain",
+    desc: "Suppliers, fibers, dyeing and processes — imported from your ERP, Excel, or logged in seconds. Every link stays tied to the product.",
   },
   {
     n: "02",
-    title: "Real-Time Visibility",
-    desc: "Every loom, batch, order and operator in one dashboard. Per-second KPIs, alerts on the production manager's phone.",
+    title: "Generate the passport",
+    desc: "TextileEco automatically composes the Digital Product Passport for each product or lot: origin, carbon footprint, recyclability and REACH compliance.",
   },
   {
     n: "03",
-    title: "Meet Regulations",
-    desc: "Digital Product Passport, ESPR and CSRD reports are automatically generated for every batch shipped.",
+    title: "Share and prove it",
+    desc: "Direct export to QR, NFC and GS1 Digital Link. Consumer, customer and auditor all read the same record — ESPR-ready.",
   },
 ];
 
@@ -26,10 +26,10 @@ export default function HowItWorksHomeEn() {
             <span style={{ fontSize: 12, fontWeight: 700, letterSpacing: "0.18em", textTransform: "uppercase", color: "var(--primary)" }}>How It Works</span>
           </div>
           <h2 style={{ fontSize: "clamp(2rem, 3.5vw, 3rem)", fontWeight: 700, lineHeight: 1.1, letterSpacing: "-0.03em", marginBottom: 16 }}>
-            Three steps. No six-month consulting project.
+            From fiber to passport. In three steps.
           </h2>
           <p style={{ fontSize: 18, lineHeight: 1.6, color: "var(--muted-foreground)" }}>
-            Replacing a factory ERP doesn't have to be an 18-month project. Hestia is built to be running before next quarter closes.
+            Creating a Digital Product Passport shouldn't be a months-long project, nor a spreadsheet per product. TextileEco turns the data you already have into a compliant, shareable record.
           </p>
         </div>
 

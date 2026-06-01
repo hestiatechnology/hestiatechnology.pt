@@ -1,19 +1,19 @@
 const legacy = [
-  "Licenças perpétuas + manutenção 18%",
-  "Implementação 6–18 meses",
-  "Sem suporte DPP / ESPR",
-  "Customização cara, lock-in do fornecedor",
-  "Atualizações regulatórias manuais",
-  "Sem app móvel para o chão de fábrica",
+  "Uma folha de Excel por produto e fornecedor",
+  "Dados dispersos, sem fonte única",
+  "Recolha manual a cada pedido de cliente",
+  "Sem QR público nem GS1 Digital Link",
+  "Risco de não-conformidade com o ESPR",
+  "Cada auditoria custa semanas de trabalho",
 ];
 
 const hestia = [
-  "Subscrição mensal · sem custo de licença",
-  "A operar em 2–4 semanas",
-  "DPP-ready desde o primeiro lote",
-  "API aberta · sem lock-in",
-  "Atualizações regulatórias automáticas",
-  "App nativa para tablet de fábrica",
+  "Um registo por produto, ao nível da fibra",
+  "Fonte única e imutável",
+  "Passaporte gerado automaticamente",
+  "QR, NFC e GS1 Digital Link nativos",
+  "Conforme com o ESPR desde já",
+  "Auditoria com um clique, via API",
 ];
 
 function XIcon() {
@@ -41,9 +41,9 @@ export default function ComparisonHome() {
             <span style={{ width: 28, height: 1, background: "var(--primary)", display: "inline-block", opacity: 0.55 }} />
             <span style={{ fontSize: 12, fontWeight: 700, letterSpacing: "0.18em", textTransform: "uppercase", color: "var(--primary)" }}>Compare</span>
           </div>
-          <h2 style={{ fontSize: "clamp(2rem, 3.5vw, 3rem)", fontWeight: 700, lineHeight: 1.1, letterSpacing: "-0.03em", marginBottom: 16 }}>ERPs legados vs. Hestia.</h2>
+          <h2 style={{ fontSize: "clamp(2rem, 3.5vw, 3rem)", fontWeight: 700, lineHeight: 1.1, letterSpacing: "-0.03em", marginBottom: 16 }}>Conformidade manual vs. TextileEco.</h2>
           <p style={{ fontSize: 18, lineHeight: 1.6, color: "var(--muted-foreground)" }}>
-            Os ERPs têxteis tradicionais foram desenhados nos anos 90, com licenças perpétuas, projetos de implementação intermináveis e zero conformidade europeia. A Hestia é o oposto disso — em todas as dimensões.
+            Hoje, a maioria das empresas têxteis prepara o Passaporte Digital à mão — folhas de Excel, PDFs de fornecedores e e-mails dispersos. O TextileEco substitui esse caos por um registo único, conforme e partilhável.
           </p>
         </div>
 
@@ -55,8 +55,8 @@ export default function ComparisonHome() {
             borderRadius: 16,
             padding: 32,
           }}>
-            <h3 style={{ fontSize: 24, fontWeight: 700, letterSpacing: "-0.025em", marginBottom: 4 }}>ERP Legado</h3>
-            <div style={{ fontSize: 14, color: "var(--muted-foreground)", marginBottom: 24 }}>SAP, Datatêxtil, Wintex, etc.</div>
+            <h3 style={{ fontSize: 24, fontWeight: 700, letterSpacing: "-0.025em", marginBottom: 4 }}>Conformidade Manual</h3>
+            <div style={{ fontSize: 14, color: "var(--muted-foreground)", marginBottom: 24 }}>Excel, PDFs, e-mails</div>
             <ul style={{ listStyle: "none", padding: 0, margin: 0 }}>
               {legacy.map((item, i) => (
                 <li key={i} style={{ display: "flex", gap: 12, padding: "12px 0", borderTop: i > 0 ? "1px solid var(--border)" : undefined, fontSize: 14.5, lineHeight: 1.5 }}>
@@ -66,8 +66,8 @@ export default function ComparisonHome() {
               ))}
             </ul>
             <div style={{ marginTop: 24, padding: 16, background: "var(--muted)", borderRadius: 10 }}>
-              <div style={{ fontSize: 12, fontWeight: 600, letterSpacing: "0.08em", textTransform: "uppercase", color: "var(--muted-foreground)" }}>Custo TCO 3 anos</div>
-              <div style={{ fontSize: 28, fontWeight: 600, marginTop: 4, fontVariantNumeric: "tabular-nums" }}>€420.000</div>
+              <div style={{ fontSize: 12, fontWeight: 600, letterSpacing: "0.08em", textTransform: "uppercase", color: "var(--muted-foreground)" }}>Tempo por passaporte</div>
+              <div style={{ fontSize: 28, fontWeight: 600, marginTop: 4, fontVariantNumeric: "tabular-nums" }}>~6 horas</div>
             </div>
           </div>
 
@@ -92,9 +92,9 @@ export default function ComparisonHome() {
               fontWeight: 700,
               letterSpacing: "0.08em",
               textTransform: "uppercase",
-            }}>Hestia</div>
-            <h3 style={{ fontSize: 24, fontWeight: 700, letterSpacing: "-0.025em", marginBottom: 4 }}>Hestia ERP</h3>
-            <div style={{ fontSize: 14, color: "var(--muted-foreground)", marginBottom: 24 }}>Cloud · IA-nativa · DPP-ready</div>
+            }}>TextileEco</div>
+            <h3 style={{ fontSize: 24, fontWeight: 700, letterSpacing: "-0.025em", marginBottom: 4 }}>TextileEco DPP</h3>
+            <div style={{ fontSize: 14, color: "var(--muted-foreground)", marginBottom: 24 }}>Registo ao nível da fibra · ESPR-ready</div>
             <ul style={{ listStyle: "none", padding: 0, margin: 0 }}>
               {hestia.map((item, i) => (
                 <li key={i} style={{ display: "flex", gap: 12, padding: "12px 0", borderTop: i > 0 ? "1px solid var(--border)" : undefined, fontSize: 14.5, lineHeight: 1.5 }}>
@@ -104,10 +104,10 @@ export default function ComparisonHome() {
               ))}
             </ul>
             <div style={{ marginTop: 24, padding: 16, background: "var(--ember-tint)", borderRadius: 10 }}>
-              <div style={{ fontSize: 12, fontWeight: 600, letterSpacing: "0.08em", textTransform: "uppercase", color: "var(--ember)" }}>Custo TCO 3 anos</div>
+              <div style={{ fontSize: 12, fontWeight: 600, letterSpacing: "0.08em", textTransform: "uppercase", color: "var(--ember)" }}>Tempo por passaporte</div>
               <div style={{ fontSize: 28, fontWeight: 600, marginTop: 4, fontVariantNumeric: "tabular-nums" }}>
-                €258.000{" "}
-                <span style={{ fontSize: 14, color: "var(--ember)", fontWeight: 500, marginLeft: 8 }}>−38%</span>
+                &lt; 5 min{" "}
+                <span style={{ fontSize: 14, color: "var(--ember)", fontWeight: 500, marginLeft: 8 }}>−98%</span>
               </div>
             </div>
           </div>

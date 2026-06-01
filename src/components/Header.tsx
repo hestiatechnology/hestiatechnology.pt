@@ -21,6 +21,7 @@ export default function Header({ locale, darkHero = false }: HeaderProps) {
 
   const navigationLinks = [
     { href: `/${locale}`, label: t("header.nav.home") },
+    { href: "https://textileeco.com", label: t("header.nav.dpp"), external: true },
     { href: `/${locale}/features`, label: t("header.nav.features") },
     { href: `/${locale}/prices`, label: t("header.nav.prices") },
     { href: `/${locale}/about`, label: t("header.nav.about") },
@@ -85,6 +86,8 @@ export default function Header({ locale, darkHero = false }: HeaderProps) {
                 <a
                   key={link.href}
                   href={link.href}
+                  target={link.external ? "_blank" : undefined}
+                  rel={link.external ? "noopener noreferrer" : undefined}
                   className={`px-4 py-2 text-sm font-medium transition-colors rounded-lg ${
                     isTransparentDark
                       ? "text-white/60 hover:text-white hover:bg-white/10"
@@ -154,6 +157,8 @@ export default function Header({ locale, darkHero = false }: HeaderProps) {
                 <a
                   key={link.href}
                   href={link.href}
+                  target={link.external ? "_blank" : undefined}
+                  rel={link.external ? "noopener noreferrer" : undefined}
                   className="flex items-center px-3 py-2.5 text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-muted/50 rounded-lg transition-colors"
                   onClick={() => setMobileOpen(false)}
                 >

@@ -3,23 +3,23 @@ import { useState, useRef, useEffect } from "react";
 
 const ITEMS = [
   {
-    title: "Chão de fábrica em tempo real",
-    desc: "Cada tear, agulha e operador transmitem ao segundo. OEE, paragens e alertas chegam ao telemóvel do diretor antes da pausa do café.",
-    visual: "floor" as const,
-  },
-  {
-    title: "Lotes, ordens e fiação",
-    desc: "Do recibo de fio cru à expedição. Rastreio por lote, controlo de tonalidade e GSM, retenções de qualidade e libertação digital.",
-    visual: "lots" as const,
-  },
-  {
-    title: "Passaporte Digital de Produto",
-    desc: "DPP gerado por defeito em todos os lotes. Conformidade ESPR sem folha de Excel — exportação para QR, NFC e GS1.",
+    title: "O registo ao nível da fibra",
+    desc: "Cada produto ganha um Passaporte Digital completo: origem, pegada de carbono, reciclabilidade e conformidade REACH — gerado por defeito, não numa folha de Excel.",
     visual: "dpp" as const,
   },
   {
-    title: "IA para previsão e qualidade",
-    desc: "Modelos treinados em dados têxteis europeus. Previsão de prazos, deteção de defeitos por imagem e otimização de carga de teares.",
+    title: "Passaporte público via QR e NFC",
+    desc: "Exportação direta para QR, NFC e GS1 Digital Link. O consumidor lê a história do produto; o cliente e o auditor acedem ao mesmo registo imutável.",
+    visual: "lots" as const,
+  },
+  {
+    title: "Ligado ao seu chão de fábrica",
+    desc: "O TextileEco assenta sobre o ERP têxtil Hestia: lotes, teares e ordens alimentam o passaporte automaticamente, sem dupla introdução de dados.",
+    visual: "floor" as const,
+  },
+  {
+    title: "IA para dados e conformidade",
+    desc: "Modelos treinados em dados têxteis europeus preenchem lacunas, validam declarações de fornecedores e sinalizam não-conformidades antes da auditoria.",
     visual: "ai" as const,
   },
 ];
@@ -191,7 +191,7 @@ export default function FeatureShowcaseHome() {
             <span style={{ width: 28, height: 1, background: "var(--primary)", display: "inline-block", opacity: 0.55 }} />
           </div>
           <h2 style={{ fontSize: "clamp(2rem, 3.5vw, 3rem)", fontWeight: 700, lineHeight: 1.1, letterSpacing: "-0.03em" }}>
-            Tudo o que uma fábrica têxtil precisa.<br />Numa só plataforma.
+            Tudo o que o Passaporte Digital exige.<br />Num só registo.
           </h2>
         </div>
 
